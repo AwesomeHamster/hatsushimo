@@ -44,23 +44,41 @@ export interface HitokotoRet {
 
 export const name = "hitokoto";
 
-export async function apply(ctx: Context, _options?: HitokotoOptions): Promise<void> {
-  const options = {
+export async function apply(ctx: Context, _config?: HitokotoOptions): Promise<void> {
+  const config = {
     apiUrl: "https://v1.hitokoto.cn/",
     template: hitokotoTemplates,
     timeout: 3000,
-    ..._options,
+    ..._config,
   };
 
-  template.set("hitokoto", options.template);
+  template.set("hitokoto", config.template);
 
   ctx
     .command("hitokoto", "随机一言")
     .alias("一言")
-    .action(async () => {
+    .option(
+      "type",
+      "-t <type:string> 只返回指定类型的一言",
+    )
+    .option("min-length", "-l <length:int> 只返回长度大于指定值的一言")
+    .option("max-length", "-L <length:int> 只返回长度小于指定值的一言")
+    .action(async ({ options }) => {
+      const params = new URLSearchParams();
+      if (options?.type || config.defaultTypes) {
+        (options?.type?.split(",") || config.defaultTypes || []).forEach((type) => params.append("c", type));
+      }
+      if (options?.["min-length"] || config.minLength) {
+        params.append("min_length", options?.["min-length"] || config.minLength?.toString());
+      }
+      if (options?.["max-length"] || config.maxLength) {
+        params.append("max_length", options?.["max-length"] || config.maxLength?.toString());
+      }
+
       try {
-        const resp = await axios.get<HitokotoRet>(options.apiUrl, {
-          timeout: options.timeout,
+        const resp = await axios.get<HitokotoRet>(config.apiUrl, {
+          timeout: config.timeout,
+          params,
         });
         if (resp.status !== 200) {
           return template("hitokoto.service_unavailable");
