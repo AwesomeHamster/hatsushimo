@@ -22,7 +22,7 @@ export interface HitokotoOptions {
    * For costumizing the hitokoto response format.
    *
    * Available templates can be found on:
-   * https://github.com/AwesomeHamster/koishi-plugin-hitokoto/blob/master/template.ts
+   * https://github.com/AwesomeHamster/koishi-plugin-hitokoto/blob/master/src/template.ts
    */
   template?: { [key: string]: string };
 }
