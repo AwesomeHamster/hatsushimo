@@ -2,7 +2,7 @@
 
 A simple plugin for [koishi](https://github.com/koishijs/koishi) that provides a command `hitokoto` to get a random hitokoto sentence, which is from [https://hitokoto.cn](https://hitokoto.cn).
 
-[koishi](https://github.com/koishijs/koishi)的插件，提供一个`hitokoto`的指令，用于获取随机一言。该服务由[https://hitokoto.cn](https://hitokoto.cn)提供。
+[koishi](https://github.com/koishijs/koishi) 的插件，提供一个`hitokoto`的指令，用于获取随机一言。该服务由 [https://hitokoto.cn](https://hitokoto.cn) 提供。
 
 ## Usage 用法
 
@@ -31,6 +31,7 @@ export interface HitokotoOptions {
    * @default "https://v1.hitokoto.cn"
    */
   apiUrl?: string;
+  timeout?: number;
   minLength?: number;
   maxLength?: number;
   /**
@@ -44,7 +45,7 @@ export interface HitokotoOptions {
    * For costumizing the hitokoto response format.
    *
    * Available templates can be found on:
-   * https://github.com/AwesomeHamster/koishi-plugin-hitokoto/blob/master/template.ts
+   * https://github.com/AwesomeHamster/koishi-plugin-hitokoto/blob/master/src/template.ts
    */
   template?: { [key: string]: string };
 }
