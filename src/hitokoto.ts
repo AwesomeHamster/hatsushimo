@@ -47,12 +47,14 @@ export const name = "hitokoto";
 export async function apply(ctx: Context, _config?: HitokotoOptions): Promise<void> {
   const config = {
     apiUrl: "https://v1.hitokoto.cn/",
-    template: hitokotoTemplates,
     timeout: 3000,
     ..._config,
   };
 
-  template.set("hitokoto", config.template);
+  template.set("hitokoto", hitokotoTemplates);
+  if (config.template) {
+    template.set("hitokoto", config.template);
+  }
 
   ctx
     .command("hitokoto", template("hitokoto.description"))
