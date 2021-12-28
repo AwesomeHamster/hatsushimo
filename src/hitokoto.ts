@@ -8,6 +8,7 @@ export interface HitokotoOptions {
    * @default "https://v1.hitokoto.cn"
    */
   apiUrl?: string;
+  timeout?: number;
   minLength?: number;
   maxLength?: number;
   /**
@@ -47,6 +48,7 @@ export async function apply(ctx: Context, _options?: HitokotoOptions): Promise<v
   const options = {
     apiUrl: "https://v1.hitokoto.cn/",
     template: hitokotoTemplates,
+    timeout: 3000,
     ..._options,
   };
 
@@ -58,7 +60,7 @@ export async function apply(ctx: Context, _options?: HitokotoOptions): Promise<v
     .action(async () => {
       try {
         const resp = await axios.get<HitokotoRet>(options.apiUrl, {
-          timeout: 1000,
+          timeout: options.timeout,
         });
         if (resp.status !== 200) {
           return template("hitokoto.service_unavailable");
