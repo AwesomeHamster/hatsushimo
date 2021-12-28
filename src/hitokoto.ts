@@ -55,14 +55,14 @@ export async function apply(ctx: Context, _config?: HitokotoOptions): Promise<vo
   template.set("hitokoto", config.template);
 
   ctx
-    .command("hitokoto", "随机一言")
+    .command("hitokoto", template("hitokoto.description"))
     .alias("一言")
     .option(
       "type",
-      "-t <type:string> 只返回指定类型的一言",
+      `-t <type:string> ${template("hitokoto.option.type")}`,
     )
-    .option("min-length", "-l <length:int> 只返回长度大于指定值的一言")
-    .option("max-length", "-L <length:int> 只返回长度小于指定值的一言")
+    .option("min-length", `-l <length:int> ${template("hitokoto.option.min_length")}`)
+    .option("max-length", `-L <length:int> ${template("hitokoto.option.max_length")}`)
     .action(async ({ options }) => {
       const params = new URLSearchParams();
       if (options?.type || config.defaultTypes) {

@@ -1,4 +1,11 @@
 export default {
+  description: "随机一言",
+  option: {
+    type: "只返回指定类型的一言，" +
+      "可选类型请参考 https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0",
+    min_length: "只返回长度大于指定值的一言",
+    max_length: "只返回长度小于指定值的一言",
+  },
   // more placeholders can be found on:
   // https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
   format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》",
