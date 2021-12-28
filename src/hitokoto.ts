@@ -63,6 +63,28 @@ export async function apply(ctx: Context, _config?: HitokotoOptions): Promise<vo
     )
     .option("min-length", `-l <length:int> ${template("hitokoto.option.min_length")}`)
     .option("max-length", `-L <length:int> ${template("hitokoto.option.max_length")}`)
+    .check(async ({ options }) => {
+      if (typeof options?.type !== "undefined") {
+        if (!options.type) {
+          return template("hitokoto.option.invalid_type");
+        }
+        const types = options.type.split(",");
+        if (types.length <= 0) {
+          return template("hitokoto.option.invalid_type");
+        } else {
+          for (const type of types) {
+            if (!type) {
+              return template("hitokoto.option.invalid_type");
+            }
+          }
+        }
+      }
+      if (options?.["min-length"] && options?.["max-length"]) {
+        if (options["min-length"] > options["max-length"]) {
+          return template("hitokoto.option.min_length_gt_max_length");
+        }
+      }
+    })
     .action(async ({ options }) => {
       const params = new URLSearchParams();
       if (options?.type || config.defaultTypes) {
