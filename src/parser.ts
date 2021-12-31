@@ -3,6 +3,13 @@
  */
 export function parseMacroDescriptionForHtml(description: string): string {
   return description
+    // A weird character in Japanese macro description
+    .replace(/\ue070/g, "→")
+    // The soft indent(?) in French / German macro description
+    .replace(/<Indent\/>/g, " ")
+    // remove soft hyphen that is used in deutschen makro
+    .replace(/<SoftHyphen\/>/g, "")
+    // escape
     .replace(
       // FFXIV use color code in macro description
       // to highlight the wrapped text with orange color.
@@ -11,11 +18,6 @@ export function parseMacroDescriptionForHtml(description: string): string {
       /<UIForeground>F201FA<\/UIForeground><UIGlow>F201FB<\/UIGlow>(.*?)<UIGlow>01<\/UIGlow><UIForeground>01<\/UIForeground>/g,
       "<span class='highlight'>$1</span>",
     )
-    // A weird character in Japanese macro description
-    .replace(/\ue070/g, "→")
-    .replace(/\n/g, "<br>")
-    // The soft indent(?) in French / German macro description
-    .replace(/<Indent\/>/g, " ")
-    // remove soft hyphen that is used in deutschen makro
-    .replace(/<SoftHyphen\/>/g, "");
+    .replace(/<(\w+)>/g, "&lt;$1&gt;")
+    .replace(/\n/g, "<br>");
 }
