@@ -1,0 +1,10 @@
+{
+  "name": "hatsushimo",
+  "version": "1.0.0",
+  "description": "A QQ/Discord Bot for our FFXIV-related group (Eorzea Macrology Association)",
+  "main": "cli/index.mjs",
+  "repository": "git@github.com:AwesomeHamster/hatsushimo.git",
+  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
