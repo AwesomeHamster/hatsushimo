@@ -1,0 +1,6 @@
+# identify yarn bundles as binary content,
+# so that Git won't show unnessary massive diff information.
+/.yarn/releases/**/* binary
+/.yarn/plugins/**/* binary
+/.yarn/sdks/**/* binary
+/.pnp.* binary
