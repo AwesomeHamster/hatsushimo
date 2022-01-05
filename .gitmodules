@@ -1,6 +1,6 @@
 [submodule "koishi-plugin-hitokoto"]
 	path = plugins/hitokoto
-	url = git@github.com:AwesomeHamster/koishi-plugin-hitokoto.git
+	url = https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git
 [submodule "koishi-plugin-ffxiv-macrodict"]
 	path = plugins/macrodict
-	url = git@github.com:AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
+	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
