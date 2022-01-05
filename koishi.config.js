@@ -45,7 +45,9 @@ module.exports = {
     })(),
 
     "common": {},
-    "puppeteer": {},
+    "puppeteer": {
+      browser: { args: ['--no-sandbox'] },
+    },
 
     "hitokoto": {
       template: {
