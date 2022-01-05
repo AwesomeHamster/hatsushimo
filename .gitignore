@@ -136,4 +136,5 @@ dist
 /package-lock.json
 
 # Koishi
+.config/*
 .temp/

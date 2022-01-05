@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@koishijs/plugin-database-mongo", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.1"],
             ["@koishijs/utils", "npm:5.0.0-rc.0"],
             ["cross-env", "npm:7.0.3"],
+            ["dotenv", "npm:10.0.0"],
             ["js-yaml", "npm:4.1.0"],
             ["koishi", "npm:4.0.0-rc.1"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
@@ -1041,6 +1042,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["dotenv", [
+        ["npm:10.0.0", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-10.0.0-36b272df25-f412c5fe8c.zip/node_modules/dotenv/",
+          "packageDependencies": [
+            ["dotenv", "npm:10.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["ee-first", [
         ["npm:1.1.1", {
           "packageLocation": "./.yarn/cache/ee-first-npm-1.1.1-33f8535b39-1b4cac778d.zip/node_modules/ee-first/",
@@ -1532,6 +1542,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@koishijs/plugin-database-mongo", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.1"],
             ["@koishijs/utils", "npm:5.0.0-rc.0"],
             ["cross-env", "npm:7.0.3"],
+            ["dotenv", "npm:10.0.0"],
             ["js-yaml", "npm:4.1.0"],
             ["koishi", "npm:4.0.0-rc.1"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
