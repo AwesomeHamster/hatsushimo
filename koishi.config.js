@@ -36,7 +36,6 @@ module.exports = {
           "database-mongo": {
             protocol: "mongodb+srv",
             host: process.env["HATSUSHIMO_MONGO_HOST"] || "localhost",
-            port: parseInt(process.env["HATSUSHIMO_MONGO_PORT"] || "0") || undefined,
             username: process.env["HATSUSHIMO_MONGO_USERNAME"] || "root",
             password: process.env["HATSUSHIMO_MONGO_PASSWORD"] || "",
             database: process.env["HATSUSHIMO_MONGO_DATABASE"] || "koishiv4",
