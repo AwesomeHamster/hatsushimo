@@ -35,8 +35,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
       ["hatsushimo", ["workspace:."]],
-      ["koishi-plugin-ffxiv-macrodict", ["workspace:plugins/macrodict"]],
-      ["koishi-plugin-hitokoto", ["workspace:plugins/hitokoto"]]
+      ["koishi-plugin-ffxiv-macrodict", ["virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/macrodict", "workspace:plugins/macrodict"]],
+      ["koishi-plugin-hitokoto", ["virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/hitokoto", "workspace:plugins/hitokoto"]]
     ],
     "fallbackPool": [
     ],
@@ -55,6 +55,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:10.0.0"],
             ["js-yaml", "npm:4.1.0"],
             ["koishi", "npm:4.0.0-rc.1"],
+            ["koishi-plugin-ffxiv-macrodict", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/macrodict"],
+            ["koishi-plugin-hitokoto", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/hitokoto"],
             ["lerna", "npm:4.0.0"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
           ],
@@ -342,6 +344,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:3.0.0-rc.0", {
+          "packageLocation": "./.yarn/__virtual__/@koishijs-plugin-puppeteer-virtual-f598fe1812/0/cache/@koishijs-plugin-puppeteer-npm-3.0.0-rc.0-845398c408-fb1947a614.zip/node_modules/@koishijs/plugin-puppeteer/",
+          "packageDependencies": [
+            ["@koishijs/plugin-puppeteer", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:3.0.0-rc.0"],
+            ["@types/koishi", null],
+            ["chrome-finder", "npm:1.0.7"],
+            ["koishi", "npm:4.0.0-rc.1"],
+            ["pngjs", "npm:6.0.0"],
+            ["puppeteer-core", "npm:10.4.0"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/koishi",
+            "koishi"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:8c41ec99370a5c038896d46e04539a90356ffe41c739ae4d3a58f5d551e6b310e0490fa48157fccf449d29a7dc742bf0ad49735ea6a2ab9e7c1d8e4001e08e48#npm:3.0.0-rc.0", {
           "packageLocation": "./.yarn/__virtual__/@koishijs-plugin-puppeteer-virtual-46b9798a5e/0/cache/@koishijs-plugin-puppeteer-npm-3.0.0-rc.0-845398c408-fb1947a614.zip/node_modules/@koishijs/plugin-puppeteer/",
           "packageDependencies": [
@@ -352,7 +372,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pngjs", "npm:6.0.0"],
             ["puppeteer-core", "npm:10.4.0"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:46b9798a5eddb132e2175343a71599092761e2e094898d354b5c87f05e3120020819fa9cfc4063d5b5c2704dd2c6cb1e7fcf92e53d581d8ca92e9e5141af108a#npm:17.0.2"]
+            ["react-dom", "virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/koishi",
@@ -4540,6 +4560,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:10.0.0"],
             ["js-yaml", "npm:4.1.0"],
             ["koishi", "npm:4.0.0-rc.1"],
+            ["koishi-plugin-ffxiv-macrodict", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/macrodict"],
+            ["koishi-plugin-hitokoto", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/hitokoto"],
             ["lerna", "npm:4.0.0"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
           ],
@@ -5512,6 +5534,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["koishi-plugin-ffxiv-macrodict", [
+        ["virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/macrodict", {
+          "packageLocation": "./.yarn/__virtual__/koishi-plugin-ffxiv-macrodict-virtual-48bcf1ab83/1/plugins/macrodict/",
+          "packageDependencies": [
+            ["koishi-plugin-ffxiv-macrodict", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/macrodict"],
+            ["@fast-csv/parse", "npm:4.3.6"],
+            ["@koishijs/plugin-puppeteer", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:3.0.0-rc.0"],
+            ["@types/koishi", null],
+            ["@types/koishijs__plugin-puppeteer", null],
+            ["@types/node", "npm:17.0.8"],
+            ["@types/pug", "npm:2.0.6"],
+            ["axios", "npm:0.24.0"],
+            ["chai", "npm:4.3.4"],
+            ["koishi", "npm:4.0.0-rc.1"],
+            ["koishi-test-utils", "npm:7.0.2"],
+            ["mocha", "npm:9.1.3"],
+            ["pug", "npm:3.0.2"],
+            ["ts-node", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0"],
+            ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
+          ],
+          "packagePeers": [
+            "@types/koishi",
+            "@types/koishijs__plugin-puppeteer",
+            "koishi"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:plugins/macrodict", {
           "packageLocation": "./plugins/macrodict/",
           "packageDependencies": [
@@ -5526,13 +5574,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["koishi-test-utils", "npm:7.0.2"],
             ["mocha", "npm:9.1.3"],
             ["pug", "npm:3.0.2"],
-            ["ts-node", "virtual:3bedef569b9707c260c2452cf7bfe0cb0f9120130b6fe02c845ac693616c54422c5d20e92a81f6119b227ffaea612b2019ff4eb038268acbdf471345892de2b5#npm:10.4.0"],
+            ["ts-node", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
       ]],
       ["koishi-plugin-hitokoto", [
+        ["virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/hitokoto", {
+          "packageLocation": "./.yarn/__virtual__/koishi-plugin-hitokoto-virtual-a88ca1c8d4/1/plugins/hitokoto/",
+          "packageDependencies": [
+            ["koishi-plugin-hitokoto", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/hitokoto"],
+            ["@types/koishi", null],
+            ["@types/node", "npm:17.0.8"],
+            ["axios", "npm:0.24.0"],
+            ["koishi", "npm:4.0.0-rc.1"],
+            ["koishi-test-utils", "npm:7.0.2"],
+            ["mocha", "npm:9.1.3"],
+            ["ts-node", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0"],
+            ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
+          ],
+          "packagePeers": [
+            "@types/koishi",
+            "koishi"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:plugins/hitokoto", {
           "packageLocation": "./plugins/hitokoto/",
           "packageDependencies": [
@@ -5542,7 +5609,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["koishi", "npm:4.0.0-rc.2"],
             ["koishi-test-utils", "npm:7.0.2"],
             ["mocha", "npm:9.1.3"],
-            ["ts-node", "virtual:3bedef569b9707c260c2452cf7bfe0cb0f9120130b6fe02c845ac693616c54422c5d20e92a81f6119b227ffaea612b2019ff4eb038268acbdf471345892de2b5#npm:10.4.0"],
+            ["ts-node", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
           ],
           "linkType": "SOFT",
@@ -7636,10 +7703,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:46b9798a5eddb132e2175343a71599092761e2e094898d354b5c87f05e3120020819fa9cfc4063d5b5c2704dd2c6cb1e7fcf92e53d581d8ca92e9e5141af108a#npm:17.0.2", {
-          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-69412b66fd/0/cache/react-dom-npm-17.0.2-f551215af1-1c1eaa3bca.zip/node_modules/react-dom/",
+        ["virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2", {
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-feafdee086/0/cache/react-dom-npm-17.0.2-f551215af1-1c1eaa3bca.zip/node_modules/react-dom/",
           "packageDependencies": [
-            ["react-dom", "virtual:46b9798a5eddb132e2175343a71599092761e2e094898d354b5c87f05e3120020819fa9cfc4063d5b5c2704dd2c6cb1e7fcf92e53d581d8ca92e9e5141af108a#npm:17.0.2"],
+            ["react-dom", "virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2"],
             ["@types/react", null],
             ["loose-envify", "npm:1.4.0"],
             ["object-assign", "npm:4.1.1"],
@@ -8801,10 +8868,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:3bedef569b9707c260c2452cf7bfe0cb0f9120130b6fe02c845ac693616c54422c5d20e92a81f6119b227ffaea612b2019ff4eb038268acbdf471345892de2b5#npm:10.4.0", {
-          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-ed2a2eade6/0/cache/ts-node-npm-10.4.0-04cb6e2279-3933ac0a93.zip/node_modules/ts-node/",
+        ["virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0", {
+          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-b2009514e0/0/cache/ts-node-npm-10.4.0-04cb6e2279-3933ac0a93.zip/node_modules/ts-node/",
           "packageDependencies": [
-            ["ts-node", "virtual:3bedef569b9707c260c2452cf7bfe0cb0f9120130b6fe02c845ac693616c54422c5d20e92a81f6119b227ffaea612b2019ff4eb038268acbdf471345892de2b5#npm:10.4.0"],
+            ["ts-node", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0"],
             ["@cspotcode/source-map-support", "npm:0.7.0"],
             ["@swc/core", null],
             ["@swc/wasm", null],

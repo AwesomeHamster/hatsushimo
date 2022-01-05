@@ -3900,6 +3900,8 @@ __metadata:
     dotenv: ^10.0.0
     js-yaml: ^4.1.0
     koishi: ^4.0.0-beta.7
+    koishi-plugin-ffxiv-macrodict: ^2.0.0-rc.0
+    koishi-plugin-hitokoto: ^2.0.0-rc.0
     lerna: ^4.0.0
     typescript: ^4.5.4
   languageName: unknown
@@ -4718,7 +4720,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-plugin-ffxiv-macrodict@workspace:plugins/macrodict":
+"koishi-plugin-ffxiv-macrodict@^2.0.0-rc.0, koishi-plugin-ffxiv-macrodict@workspace:plugins/macrodict":
   version: 0.0.0-use.local
   resolution: "koishi-plugin-ffxiv-macrodict@workspace:plugins/macrodict"
   dependencies:
@@ -4740,7 +4742,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"koishi-plugin-hitokoto@workspace:plugins/hitokoto":
+"koishi-plugin-hitokoto@^2.0.0-rc.0, koishi-plugin-hitokoto@workspace:plugins/hitokoto":
   version: 0.0.0-use.local
   resolution: "koishi-plugin-hitokoto@workspace:plugins/hitokoto"
   dependencies:
