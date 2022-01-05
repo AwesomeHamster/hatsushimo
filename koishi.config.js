@@ -45,6 +45,7 @@ module.exports = {
     })(),
 
     "common": {},
+    "puppeteer": {},
 
     "hitokoto": {
       template: {
