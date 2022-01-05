@@ -45,5 +45,14 @@ module.exports = {
     })(),
 
     "common": {},
+
+    "hitokoto": {
+      template: {
+        format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》\n\nPowered by: https://hitokoto.cn",
+      },
+    },
+    "ffxiv-macrodict": {
+      aliases: ["?", "宏学词典", "macro", "macros", "宏"],
+    },
   },
 };
