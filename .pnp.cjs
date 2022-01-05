@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@koishijs/plugin-common", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:5.0.0-rc.1"],
             ["@koishijs/plugin-database-memory", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:1.0.0-rc.1"],
             ["@koishijs/plugin-database-mongo", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.1"],
+            ["@koishijs/plugin-puppeteer", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.0"],
             ["@koishijs/utils", "npm:5.0.0-rc.0"],
             ["cross-env", "npm:7.0.3"],
             ["dotenv", "npm:10.0.0"],
@@ -344,17 +345,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:3.0.0-rc.0", {
-          "packageLocation": "./.yarn/__virtual__/@koishijs-plugin-puppeteer-virtual-f598fe1812/0/cache/@koishijs-plugin-puppeteer-npm-3.0.0-rc.0-845398c408-fb1947a614.zip/node_modules/@koishijs/plugin-puppeteer/",
+        ["virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.0", {
+          "packageLocation": "./.yarn/__virtual__/@koishijs-plugin-puppeteer-virtual-0bce4718a9/0/cache/@koishijs-plugin-puppeteer-npm-3.0.0-rc.0-845398c408-fb1947a614.zip/node_modules/@koishijs/plugin-puppeteer/",
           "packageDependencies": [
-            ["@koishijs/plugin-puppeteer", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:3.0.0-rc.0"],
+            ["@koishijs/plugin-puppeteer", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.0"],
             ["@types/koishi", null],
             ["chrome-finder", "npm:1.0.7"],
             ["koishi", "npm:4.0.0-rc.1"],
             ["pngjs", "npm:6.0.0"],
             ["puppeteer-core", "npm:10.4.0"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2"]
+            ["react-dom", "virtual:0bce4718a96a775cdd8613c35b6509ff2235ecd20d0b64e6b90b306a454f2493c36c0b98afe2cd00cb0ba4435a8ced4616f3e74ebbf555aebbde7a7fa8f42823#npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/koishi",
@@ -372,7 +373,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pngjs", "npm:6.0.0"],
             ["puppeteer-core", "npm:10.4.0"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2"]
+            ["react-dom", "virtual:0bce4718a96a775cdd8613c35b6509ff2235ecd20d0b64e6b90b306a454f2493c36c0b98afe2cd00cb0ba4435a8ced4616f3e74ebbf555aebbde7a7fa8f42823#npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/koishi",
@@ -4555,6 +4556,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@koishijs/plugin-common", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:5.0.0-rc.1"],
             ["@koishijs/plugin-database-memory", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:1.0.0-rc.1"],
             ["@koishijs/plugin-database-mongo", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.1"],
+            ["@koishijs/plugin-puppeteer", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.0"],
             ["@koishijs/utils", "npm:5.0.0-rc.0"],
             ["cross-env", "npm:7.0.3"],
             ["dotenv", "npm:10.0.0"],
@@ -5539,7 +5541,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["koishi-plugin-ffxiv-macrodict", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#workspace:plugins/macrodict"],
             ["@fast-csv/parse", "npm:4.3.6"],
-            ["@koishijs/plugin-puppeteer", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:3.0.0-rc.0"],
+            ["@koishijs/plugin-puppeteer", "virtual:73cca85d9f75ab01196726c9fccd39decc4f4aa93fefce0dba61263dc3dff6dbda7770fa2dac4844c46dad123f5d0aad2e42deb466e4ea589a4c44b9a5760a28#npm:3.0.0-rc.0"],
             ["@types/koishi", null],
             ["@types/koishijs__plugin-puppeteer", null],
             ["@types/node", "npm:17.0.8"],
@@ -5554,6 +5556,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"]
           ],
           "packagePeers": [
+            "@koishijs/plugin-puppeteer",
             "@types/koishi",
             "@types/koishijs__plugin-puppeteer",
             "koishi"
@@ -7703,10 +7706,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2", {
-          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-feafdee086/0/cache/react-dom-npm-17.0.2-f551215af1-1c1eaa3bca.zip/node_modules/react-dom/",
+        ["virtual:0bce4718a96a775cdd8613c35b6509ff2235ecd20d0b64e6b90b306a454f2493c36c0b98afe2cd00cb0ba4435a8ced4616f3e74ebbf555aebbde7a7fa8f42823#npm:17.0.2", {
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-3f66c21195/0/cache/react-dom-npm-17.0.2-f551215af1-1c1eaa3bca.zip/node_modules/react-dom/",
           "packageDependencies": [
-            ["react-dom", "virtual:f598fe18123a79f37779c2a82749259e992bde1f8e5adf0061cc0073184534b1d70e65c40a91220e2a5d8ea4f97cad9208a8f15e15118361e6d95dd6c3614f9d#npm:17.0.2"],
+            ["react-dom", "virtual:0bce4718a96a775cdd8613c35b6509ff2235ecd20d0b64e6b90b306a454f2493c36c0b98afe2cd00cb0ba4435a8ced4616f3e74ebbf555aebbde7a7fa8f42823#npm:17.0.2"],
             ["@types/react", null],
             ["loose-envify", "npm:1.4.0"],
             ["object-assign", "npm:4.1.1"],
