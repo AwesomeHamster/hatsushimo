@@ -4884,7 +4884,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"koishi-plugin-image-search@npm:^4.0.0-rc.0":
+"koishi-plugin-image-search@npm:4.0.0-rc.0":
   version: 4.0.0-rc.0
   resolution: "koishi-plugin-image-search@npm:4.0.0-rc.0"
   dependencies:
@@ -4894,6 +4894,19 @@ __metadata:
   peerDependencies:
     koishi: ^4.0.0-rc.0
   checksum: c8e647d3c71b7cc725d3062ea61a3d20816a86f4cc86bdfab1abdee79d376e08665753df8078b0e7025ccd1e56b314474a4e2b10a43fabd541b8091aae4bb16f
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-image-search@patch:koishi-plugin-image-search@npm:4.0.0-rc.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-rc.0-b5db92e560::locator=hatsushimo%40workspace%3A.":
+  version: 4.0.0-rc.0
+  resolution: "koishi-plugin-image-search@patch:koishi-plugin-image-search@npm%3A4.0.0-rc.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-rc.0-b5db92e560::version=4.0.0-rc.0&hash=9169ea&locator=hatsushimo%40workspace%3A."
+  dependencies:
+    cheerio: ^1.0.0-rc.10
+    iqdb-client: ^1.0.5
+    nhentai-api: ^3.0.2
+  peerDependencies:
+    koishi: ^4.0.0-rc.0
+  checksum: 97001b80181c031b5ab2ab6a39e24d645a3a573c9814698341a7c7a53a24d38f5da8870bdd7cf841dcc2a4ba16a3064ea6ef6e817187622ba90b582c12607cc0
   languageName: node
   linkType: hard
 
