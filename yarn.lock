@@ -4931,7 +4931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi@npm:^4.0.0-rc.2":
+"koishi@npm:4.0.0-rc.2":
   version: 4.0.0-rc.2
   resolution: "koishi@npm:4.0.0-rc.2"
   dependencies:
@@ -4950,6 +4950,28 @@ __metadata:
     proxy-agent: ^5.0.0
     ws: ^8.2.1
   checksum: 57b952ab71f2d7a697bcbb4474abb443fbed841fd1efcbb79832cbe1b7ce6bdf41d63b5748de603aa10aa57e0aaafb3ed410d7f3ba7cfab638e95e3cbe424cc1
+  languageName: node
+  linkType: hard
+
+"koishi@patch:koishi@npm:4.0.0-rc.2#.yarn/patches/koishi-npm-4.0.0-rc.2-61b1a630b5::locator=hatsushimo%40workspace%3A.":
+  version: 4.0.0-rc.2
+  resolution: "koishi@patch:koishi@npm%3A4.0.0-rc.2#.yarn/patches/koishi-npm-4.0.0-rc.2-61b1a630b5::version=4.0.0-rc.2&hash=d92ffc&locator=hatsushimo%40workspace%3A."
+  dependencies:
+    "@koa/router": ^10.1.1
+    "@koishijs/core": ^4.0.0-rc.2
+    "@koishijs/utils": ^5.0.0-rc.0
+    "@types/koa": "*"
+    "@types/koa__router": "*"
+    "@types/ws": ^7.4.7
+    axios: ^0.21.4
+    file-type: ^16.5.3
+    koa: ^2.13.1
+    koa-bodyparser: ^4.3.0
+    parseurl: ^1.3.3
+    path-to-regexp: ^6.2.0
+    proxy-agent: ^5.0.0
+    ws: ^8.2.1
+  checksum: 750efe744b954c25af8f60b8d424d7f7e6bc35df5da9984e180e2408bc253afb3280434f857b453b6748d13af11867bad249c105dda1a59aa653548df1142071
   languageName: node
   linkType: hard
 
