@@ -5632,7 +5632,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["koishi-plugin-hitokoto", "workspace:plugins/hitokoto"],
             ["@types/node", "npm:17.0.8"],
             ["axios", "npm:0.24.0"],
-            ["koishi", "npm:4.0.0-rc.2"],
             ["koishi-test-utils", "npm:7.0.2"],
             ["mocha", "npm:9.1.3"],
             ["ts-node", "virtual:48bcf1ab834aaba0d7f0b44e8d2fe107576bd6a464e062dfe0f6afd4aedbb27715738bb9b3201fc7ba5bc0f768f9249695519960878ea0d8d96c2c68dd45749a#npm:10.4.0"],
