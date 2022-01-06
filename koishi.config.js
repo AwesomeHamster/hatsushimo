@@ -49,6 +49,10 @@ module.exports = {
       browser: { args: ['--no-sandbox'] },
     },
 
+    "image-search": {
+      saucenaoApiKey: process.env["HATSUSHIMO_SAUCENAO_API_KEY"].split(","),
+    },
+
     "./plugins/hitokoto": {
       template: {
         format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》\n\nPowered by: https://hitokoto.cn",
