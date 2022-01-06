@@ -56,6 +56,9 @@ module.exports = {
     },
     "ffxiv-macrodict": {
       aliases: ["?", "宏学词典", "macro", "macros", "宏"],
+      template: {
+        puppeteer_error: "koishi-plugin-puppeteer 插件错误，无法渲染宏指令\n{{message}}\n{{stack}}",
+      },
     },
   },
 };
