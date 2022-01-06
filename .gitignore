@@ -114,12 +114,12 @@ dist
 # using Zero-Installs, so .yarn/cache should not be ignored.
 # for more details, see https://yarnpkg.com/getting-started/qa/#which-files-should-be-gitignored
 .yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# !.yarn/cache
+# !.yarn/patches
+# !.yarn/plugins
+# !.yarn/releases
+# !.yarn/sdks
+# !.yarn/versions
 
 # VSCode
 .vscode/
