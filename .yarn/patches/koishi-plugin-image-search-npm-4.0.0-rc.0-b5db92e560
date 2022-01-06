@@ -1,0 +1,22 @@
+diff --git a/lib/index.js b/lib/index.js
+index 3432a79040d6568ece357b6bc2461e7c2c37b941..41c8558e9afafafa99bfbd6367fa56af0832afc4 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -254,7 +254,7 @@ async function handleResult(result, session, output) {
+       if (book) {
+         imageUrl = `https://nhentai.net/g/${book.id}/`;
+       } else {
+-        output.push("没有在 nhentai 找到对应的本子_(:3」∠)_");
++        output.push("（你个LSP，nhentai 都找不到这个本子）");
+       }
+     } catch (error) {
+       logger2.debug(error);
+@@ -383,7 +383,7 @@ function apply(ctx, config = {}) {
+           return next();
+         return searchUrl(session, code2.data.url, callback);
+       });
+-      return "请发送图片。";
++      return "快点发送你要搜索的色图吧。";
+     };
+   }
+   __name(search2, "search");
