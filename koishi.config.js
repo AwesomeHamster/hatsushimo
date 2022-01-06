@@ -49,12 +49,12 @@ module.exports = {
       browser: { args: ['--no-sandbox'] },
     },
 
-    "hitokoto": {
+    "./plugins/hitokoto": {
       template: {
         format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》\n\nPowered by: https://hitokoto.cn",
       },
     },
-    "ffxiv-macrodict": {
+    "./plugins/macrodict": {
       aliases: ["?", "宏学词典", "macro", "macros", "宏"],
       template: {
         puppeteer_error: "koishi-plugin-puppeteer 插件错误，无法渲染宏指令\n{{message}}\n{{stack}}",
