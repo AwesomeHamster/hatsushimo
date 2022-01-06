@@ -109,30 +109,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/cli@npm:^4.0.0-rc.0":
-  version: 4.0.0-rc.0
-  resolution: "@koishijs/cli@npm:4.0.0-rc.0"
+"@koishijs/cli@npm:^4.0.0-rc.1":
+  version: 4.0.0-rc.1
+  resolution: "@koishijs/cli@npm:4.0.0-rc.1"
   dependencies:
     cac: ^6.7.3
     chokidar: ^3.5.2
     js-yaml: ^4.1.0
     kleur: ^4.1.4
-    koishi: ^4.0.0-rc.0
+    koishi: ^4.0.0-rc.2
     prompts: ^2.4.1
   bin:
     koishi: lib/index.js
-  checksum: c3e5d0769425b156c86380631c619c4f7618e25a307b51f11e4a299e478b85a9393fdaf8b85474c0e4f88c4328eb49b92c1d95ed834877b5fdff8ce87830f155
-  languageName: node
-  linkType: hard
-
-"@koishijs/core@npm:^4.0.0-rc.1":
-  version: 4.0.0-rc.1
-  resolution: "@koishijs/core@npm:4.0.0-rc.1"
-  dependencies:
-    "@koishijs/utils": ^5.0.0-rc.0
-    fastest-levenshtein: ^1.0.12
-    schemastery: ^2.1.2
-  checksum: 9059d596603e2690bf7534f4dbee6451765119e541c1cdae693bc453b05c11d6f718dcdd30f90d1fae54a79c027db23d00f08c772c9c3aae66e0941d84d15d13
+  checksum: db29962bd2b24ae66301eecd42f3aafb68175cd0ef752901e70084a7f31405e35c25793eb118b2f81546a000707a7d5f471ffeafbfe36f3689f0e5fc63a1e6dd
   languageName: node
   linkType: hard
 
@@ -156,17 +145,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-adapter-discord@npm:^2.0.0-rc.0":
-  version: 2.0.0-rc.0
-  resolution: "@koishijs/plugin-adapter-discord@npm:2.0.0-rc.0"
+"@koishijs/plugin-adapter-discord@npm:^2.0.0-rc.1":
+  version: 2.0.0-rc.1
+  resolution: "@koishijs/plugin-adapter-discord@npm:2.0.0-rc.1"
   dependencies:
     es-aggregate-error: ^1.0.5
     file-type: ^16.5.3
     form-data: ^4.0.0
     ws: ^8.2.1
   peerDependencies:
-    koishi: ^4.0.0-rc.0
-  checksum: daacff92c089fa8dc82813ea98b666798743b05f94d40a281890ac05edd67de062dc3b239f5b6f9691f6490115d39f251c28800b607ee4507306e57e0d5c3ef3
+    koishi: ^4.0.0-rc.2
+  checksum: a95ab8a5cde29212fe0ff0b97397e74c070d6b0d43521c515f464ce581090872e6c2c0d7dba4263e7bdd84e7aaf055b1bb552d0386dfefaaf70f7ded938cfff4
   languageName: node
   linkType: hard
 
@@ -3897,8 +3886,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hatsushimo@workspace:."
   dependencies:
-    "@koishijs/cli": ^4.0.0-rc.0
-    "@koishijs/plugin-adapter-discord": ^2.0.0-rc.0
+    "@koishijs/cli": ^4.0.0-rc.1
+    "@koishijs/plugin-adapter-discord": ^2.0.0-rc.1
     "@koishijs/plugin-common": ^5.0.0-rc.1
     "@koishijs/plugin-database-memory": ^1.0.0-rc.1
     "@koishijs/plugin-database-mongo": ^3.0.0-rc.1
@@ -3907,9 +3896,7 @@ __metadata:
     cross-env: ^7.0.3
     dotenv: ^10.0.0
     js-yaml: ^4.1.0
-    koishi: ^4.0.0-beta.7
-    koishi-plugin-ffxiv-macrodict: ^2.0.0-rc.0
-    koishi-plugin-hitokoto: ^2.0.0-rc.0
+    koishi: ^4.0.0-rc.2
     lerna: ^4.0.0
     puppeteer: ^13.0.1
     typescript: ^4.5.4
@@ -4729,17 +4716,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-plugin-ffxiv-macrodict@^2.0.0-rc.0, koishi-plugin-ffxiv-macrodict@workspace:plugins/macrodict":
+"koishi-plugin-ffxiv-macrodict@workspace:plugins/macrodict":
   version: 0.0.0-use.local
   resolution: "koishi-plugin-ffxiv-macrodict@workspace:plugins/macrodict"
   dependencies:
     "@fast-csv/parse": ^4.3.6
-    "@koishijs/plugin-puppeteer": ^3.0.0-rc.0
     "@types/node": ^17.0.5
     "@types/pug": ^2.0.6
     axios: ^0.24.0
     chai: ^4.3.4
-    koishi: ^4.0.0-rc.1
     koishi-test-utils: ^7.0.2
     mocha: ^9.1.3
     pug: ^3.0.2
@@ -4751,7 +4736,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"koishi-plugin-hitokoto@^2.0.0-rc.0, koishi-plugin-hitokoto@workspace:plugins/hitokoto":
+"koishi-plugin-hitokoto@workspace:plugins/hitokoto":
   version: 0.0.0-use.local
   resolution: "koishi-plugin-hitokoto@workspace:plugins/hitokoto"
   dependencies:
@@ -4787,29 +4772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi@npm:^4.0.0-beta.7, koishi@npm:^4.0.0-rc.0":
-  version: 4.0.0-rc.1
-  resolution: "koishi@npm:4.0.0-rc.1"
-  dependencies:
-    "@koa/router": ^10.1.1
-    "@koishijs/core": ^4.0.0-rc.1
-    "@koishijs/utils": ^5.0.0-rc.0
-    "@types/koa": "*"
-    "@types/koa__router": "*"
-    "@types/ws": ^7.4.7
-    axios: ^0.21.4
-    file-type: ^16.5.3
-    koa: ^2.13.1
-    koa-bodyparser: ^4.3.0
-    parseurl: ^1.3.3
-    path-to-regexp: ^6.2.0
-    proxy-agent: ^5.0.0
-    ws: ^8.2.1
-  checksum: d584824bd00fe86dee1c8f5fe9d695a6839ef46be1f64ed143a530b9619ceabf366b1415a892dd84db10297fc99bade925aa739643590f905387390ccfea7ace
-  languageName: node
-  linkType: hard
-
-"koishi@npm:^4.0.0-rc.1":
+"koishi@npm:^4.0.0-rc.2":
   version: 4.0.0-rc.2
   resolution: "koishi@npm:4.0.0-rc.2"
   dependencies:
