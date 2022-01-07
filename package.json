@@ -1,0 +1,44 @@
+{
+  "name": "koishi-plugin-ffxiv-eorzea",
+  "version": "1.0.0",
+  "description": "A plugin includes tool functions for FFXIV (Final Fantasy XIV) players in Eorzea.",
+  "keywords": [
+    "bot",
+    "qqbot",
+    "chatbot",
+    "plugin",
+    "koishi",
+    "koishijs",
+    "ffxiv",
+    "eorzea"
+  ],
+  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha ./__tests__"
+  },
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea/issues"
+  },
+  "peerDependencies": {
+    "koishi": "^4.0.0-rc.1"
+  },
+  "packageManager": "yarn@3.1.1"
+}
