@@ -6,10 +6,9 @@ require("dotenv").config();
 
 const isDev = process.env.NODE_ENV === "dev";
 
-function loadYamlFile(filepath) {
-  return yaml.load(String(fs.readFileSync(path.resolve(__dirname, filepath))));
-}
-
+/**
+ * @type {import("koishi").App.Config}
+ */
 module.exports = {
   host: "0.0.0.0",
   port: 8080,
