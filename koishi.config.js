@@ -2,7 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
 
-require("dotenv").config();
+try {
+  require("dotenv").config();
+} catch (e) {}
 
 const isDev = process.env.NODE_ENV === "dev";
 
