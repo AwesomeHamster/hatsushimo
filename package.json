@@ -28,7 +28,7 @@
     "@koishijs/utils": "^5.0.0-rc.0",
     "koishi": "^4.0.0-rc.2",
     "koishi-plugin-image-search": "^4.0.0-rc.0",
-    "puppeteer": "^13.0.1"
+    "puppeteer-core": "^13.0.1"
   },
   "devDependencies": {
     "@koishijs/plugin-database-memory": "^1.0.0-rc.1",
