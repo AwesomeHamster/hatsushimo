@@ -4005,7 +4005,7 @@ __metadata:
     koishi: ^4.0.0-rc.2
     koishi-plugin-image-search: ^4.0.0-rc.0
     lerna: ^4.0.0
-    puppeteer: ^13.0.1
+    puppeteer-core: ^13.0.1
     typescript: ^4.5.4
   languageName: unknown
   linkType: soft
@@ -6820,9 +6820,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer@npm:^13.0.1":
+"puppeteer-core@npm:^13.0.1":
   version: 13.0.1
-  resolution: "puppeteer@npm:13.0.1"
+  resolution: "puppeteer-core@npm:13.0.1"
   dependencies:
     debug: 4.3.2
     devtools-protocol: 0.0.937139
@@ -6836,7 +6836,7 @@ __metadata:
     tar-fs: 2.1.1
     unbzip2-stream: 1.4.3
     ws: 8.2.3
-  checksum: 2ae12dce25bac65d91e794a559f02f25adee0e254829e11972d074b08bb0801ce77dce8df678a692114332d28873451dc756241590175830940e96cf1442a7a8
+  checksum: 5b77ede763e438cb4d61349e072a800d92043d8d12087d7ae4ba868d171aca85c648dce92e033f2efccfb32acb9d92ebfea9b65080e3d678c1de42095efd8188
   languageName: node
   linkType: hard
 
