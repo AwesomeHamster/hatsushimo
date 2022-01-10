@@ -64,6 +64,7 @@ module.exports = {
       template: {
         puppeteer_error: "koishi-plugin-puppeteer 插件错误，无法渲染宏指令\n{{message}}\n{{stack}}",
       },
+      fetchOnStart: isDev ? true : false,
     },
   },
 };
