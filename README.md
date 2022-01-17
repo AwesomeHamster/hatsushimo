@@ -4,6 +4,16 @@ A [koishi](https://github.com/koishijs/koishi) plugin for searching macro descri
 
 [koishi](https://github.com/koishijs/koishi) 的插件，用于搜索著名的MMORPG网络游戏 [FFXIV (Final Fantasy XIV)](https://www.finalfantasyxiv.com/) 的宏描述文本信息。
 
+## Features 功能
+
+The plugin add two new commands: `macrodict` to search macro descriptions, and `macrodict.update` to update those data.
+
+本插件添加了 `macrodict` 命令用于搜索宏描述文本信息，以及 `macrodict.update` 命令用于更新这些数据。
+
+You can invoke `help` command to see the description and usage of these commands after installing the plugin.
+
+你可以在安装插件后使用 `help` 命令查看这些命令的介绍与使用方法。
+
 ## Usage 用法
 
 First, you should install the plugin via `npm` or `yarn`:
@@ -39,7 +49,7 @@ This plugin expose the following configuration:
 export interface MacroDictConfig {
   aliases?: string[];
   template?: template.Node;
-  axiosConfig?: AxiosRequestConfig;
+  fetchOnStart?: boolean;
 }
 ```
 

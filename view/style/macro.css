@@ -16,6 +16,19 @@ code {
   background-color: #3e3e3e;
 }
 
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  line-height: 10px;
+  color: rgb(201, 209, 217);
+  vertical-align: middle;
+  background-color: rgb(22, 27, 34);
+  border: solid 1px rgba(110, 118, 129, 0);
+  border-bottom-color: rgba(110, 118, 129, 0);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 rgba(110, 118, 129, 0);
+}
+
 #container {
   margin: 0px;
   padding: 10px 30px;

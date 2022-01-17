@@ -1,11 +1,11 @@
-import { segment, template } from "koishi-core";
+import { segment, template } from "koishi";
 import path from "path";
 
 import pug from "pug";
 
 import { parseMacroDescriptionForHtml } from "./parser";
 
-import { Puppeteer } from "koishi-plugin-puppeteer";
+import Puppeteer from "@koishijs/plugin-puppeteer";
 
 /**
  * Render the macro definition text to HTML-based image.
@@ -19,10 +19,7 @@ export async function renderMacroView(
   let screenshot: Buffer;
 
   const { name, description } = macro;
-  const html = pug.renderFile(
-    path.resolve(__dirname, "../view/macro.pug"),
-    { name, description: parseMacroDescriptionForHtml(description) },
-  );
+  const descriptionHtml = parseMacroDescriptionForHtml(description);
 
   const page = await puppeteer.page();
 
@@ -31,9 +28,24 @@ export async function renderMacroView(
   }
 
   try {
-    await page.goto(`file:///${path.resolve(__dirname, "../view/index.html")}`);
+    await page.goto(`file:///${path.resolve(__dirname, "../view/macro.html")}`);
 
-    await page.setContent(html);
+    const result = await page.evaluate((name, description) => {
+      let el = document.getElementById("macro-name");
+      if (!el) {
+        return false;
+      }
+      el.innerText = name;
+      el = document.getElementById("macro-description");
+      if (!el) {
+        return false;
+      }
+      el.innerHTML = description;
+    }, name, descriptionHtml);
+
+    if (result === false) {
+      return template("macrodict.puppeteer_error");
+    }
 
     // set the viewport to the same size as the page
     const { width, height } = await page.evaluate(() => {

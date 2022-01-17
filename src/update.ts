@@ -1,6 +1,5 @@
 import { parseStream } from "@fast-csv/parse";
-import { AxiosInstance } from "axios";
-import { Context, Logger } from "koishi-core";
+import { Context, Logger } from "koishi";
 
 import type {} from "./index";
 
@@ -26,11 +25,11 @@ export type IntlMacros = Record<
 
 const logger = new Logger("macrodict");
 
-export async function updateMacros(axios: AxiosInstance, ctx: Context): Promise<void> {
+export async function updateMacros(ctx: Context): Promise<void> {
   logger.info("start updating macros");
-  const macros = normalizeMacros(await fetchIntlMacros(axios));
-  const cnMacros = normalizeMacros(await fetchCnMacros(axios));
-  const koMacros = normalizeMacros(await fetchKoMacros(axios));
+  const macros = normalizeMacros(await fetchIntlMacros(ctx));
+  const cnMacros = normalizeMacros(await fetchCnMacros(ctx));
+  const koMacros = normalizeMacros(await fetchKoMacros(ctx));
   for (const [id, macro] of [...Object.entries(cnMacros), ...Object.entries(koMacros)]) {
     if (id in macros) {
       macros[id] = { ...macros[id], ...macro };
@@ -38,33 +37,26 @@ export async function updateMacros(axios: AxiosInstance, ctx: Context): Promise<
       macros[id] = macro as any;
     }
   }
-  for (const [id, data] of Object.entries(macros)) {
-    if ((await ctx.database.get("macrodict", id)).length >= 1) {
-      await ctx.database.update("macrodict", [data], "id");
-    } else {
-      await ctx.database.create("macrodict", data);
-    }
-  }
+  await ctx.database.upsert("macrodict", Object.values(macros));
   logger.info("macros updated");
 }
 
-export async function fetchXivapi<T>(axios: AxiosInstance, url: string, columns: string[]): Promise<T[]> {
+export async function fetchXivapi<T>(ctx: Context, url: string, columns: string[]): Promise<T[]> {
   const ret: T[] = [];
-  let { data } = await axios.get<XivapiResponse<T>>(url, { params: { columns: columns.join(",") }});
+  let data = await ctx.http.get<XivapiResponse<T>>(url, { params: { columns: columns.join(",") }});
   ret.push(...data.Results);
   while (data && data.Pagination.PageNext) {
-    const resp = await axios.get<XivapiResponse<T>>(url, {
+    data = await ctx.http.get<XivapiResponse<T>>(url, {
       params: { columns: columns.join(","), page: data.Pagination.PageNext },
     });
-    data = resp.data;
     ret.push(...data.Results);
   }
   return ret;
 }
 
-export async function fetchIntlMacros(axios: AxiosInstance): Promise<IntlMacros[]> {
+export async function fetchIntlMacros(ctx: Context): Promise<IntlMacros[]> {
   const data = await fetchXivapi<IntlMacros>(
-    axios,
+    ctx,
     "https://xivapi.com/TextCommand",
     [
       "ID",
@@ -77,17 +69,17 @@ export async function fetchIntlMacros(axios: AxiosInstance): Promise<IntlMacros[
   return data;
 }
 
-export async function fetchCnMacros(axios: AxiosInstance): Promise<Record<`${Fields}_chs` | "ID", string>[]> {
+export async function fetchCnMacros(ctx: Context): Promise<Record<`${Fields}_chs` | "ID", string>[]> {
   const data = await fetchXivapi<Record<`${Fields}_chs` | "ID", string>>(
-    axios,
+    ctx,
     "https://cafemaker.wakingsands.com/TextCommand",
     ["ID", "Command_chs", "ShortCommand_chs", "Alias_chs", "ShortAlias_chs", "Description_chs"],
   );
   return data;
 }
 
-export async function fetchKoMacros(axios: AxiosInstance): Promise<Record<`${Fields}_ko` | "ID", string>[]> {
-  const { data: content } = await axios.get<NodeJS.ReadableStream>(
+export async function fetchKoMacros(ctx: Context): Promise<Record<`${Fields}_ko` | "ID", string>[]> {
+  const content = await ctx.http.get<NodeJS.ReadableStream>(
     "https://cdn.jsdelivr.net/gh/Ra-Workspace/ffxiv-datamining-ko@master/csv/TextCommand.csv",
     {
       responseType: "stream",
