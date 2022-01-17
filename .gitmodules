@@ -1,11 +1,9 @@
 [submodule "koishi-plugin-hitokoto"]
 	path = plugins/hitokoto
 	url = https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git
-	branch = v4-support
 [submodule "koishi-plugin-ffxiv-macrodict"]
 	path = plugins/macrodict
 	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
-	branch = v4-support
 [submodule "koishi-plugin-ffxiv-eorzea"]
 	path = plugins/eorzea
 	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git
