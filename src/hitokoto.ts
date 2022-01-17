@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Context, template } from "koishi-core";
+import { Context, Schema, template } from "koishi";
 
 import hitokotoTemplates from "./template";
 
@@ -24,8 +24,17 @@ export interface HitokotoOptions {
    * Available templates can be found on:
    * https://github.com/AwesomeHamster/koishi-plugin-hitokoto/blob/master/src/template.ts
    */
-  template?: { [key: string]: string };
+  template?: template.Node;
 }
+
+export const Config = Schema.object({
+  apiUrl: Schema.string().description("获取一言的API地址").default("https://v1.hitokoto.cn"),
+  timeout: Schema.number().description("请求API时的超时时间").default(3000),
+  minLength: Schema.number().description("一言的最小长度"),
+  maxLength: Schema.number().description("一言的最大长度"),
+  defaultTypes: Schema.array(Schema.string()).description("默认一言类别"),
+  template: Schema.dict(Schema.string()).description("回复文本模板"),
+});
 
 export interface HitokotoRet {
   id: number;
@@ -44,7 +53,7 @@ export interface HitokotoRet {
 
 export const name = "hitokoto";
 
-export async function apply(ctx: Context, _config?: HitokotoOptions): Promise<void> {
+export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promise<void> {
   const config = {
     apiUrl: "https://v1.hitokoto.cn/",
     timeout: 3000,
@@ -65,7 +74,7 @@ export async function apply(ctx: Context, _config?: HitokotoOptions): Promise<vo
     )
     .option("min-length", `-l <length:int> ${template("hitokoto.option.min_length")}`)
     .option("max-length", `-L <length:int> ${template("hitokoto.option.max_length")}`)
-    .check(async ({ options }) => {
+    .before(async ({ options }) => {
       if (typeof options?.type !== "undefined") {
         if (!options.type) {
           return template("hitokoto.option.invalid_type");

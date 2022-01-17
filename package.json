@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-hitokoto",
-  "version": "1.0.3",
+  "version": "2.0.0-rc.0",
   "description": "A simple plugin for koishi that provides a command hitokoto to get a random hitokoto sentence, which is from https://hitokoto.cn.",
   "keywords": [
     "bot",
@@ -38,8 +38,7 @@
     "url": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto/issues"
   },
   "peerDependencies": {
-    "koishi": "*",
-    "koishi-core": "*"
+    "koishi": "^4.0.0-rc.1"
   },
   "dependencies": {
     "axios": "^0.24.0"
