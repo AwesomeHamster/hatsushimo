@@ -45,7 +45,11 @@ module.exports = {
       }
     })(),
 
-    "common": {},
+    "echo": {},
+    "recall": {},
+    "feedback": {
+      operators: process.env["HATSUSHIMO_FEEDBACK_OPERATORS"].split(","),
+    },
     "puppeteer": {
       browser: { args: ['--no-sandbox'] },
     },
