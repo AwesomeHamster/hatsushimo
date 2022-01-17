@@ -1,5 +1,6 @@
 export default {
   description: "宏学词典",
+  update_description: "更新宏学词典",
   database_error: "数据库错误，无法搜索到宏指令",
   not_updated: "宏学词典未更新",
   wrong_language: "语言错误，可用的语言有：[{0}]",

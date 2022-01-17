@@ -1,12 +1,11 @@
-import Axios from "axios";
-import { Context, Tables, template } from "koishi-core";
+import { Context, template } from "koishi";
 
 import { MacroDictConfig } from "./config";
 import { renderMacroView } from "./render";
 import macrodictTemplates from "./template";
 import { updateMacros } from "./update";
 
-declare module "koishi-core" {
+declare module "koishi" {
   interface Tables {
     macrodict: MacroDictDatabase;
   }
@@ -25,22 +24,21 @@ export type MacroDictDatabase =
 
 export const name = "macrodict";
 
-export async function apply(ctx: Context, _config: MacroDictConfig): Promise<void> {
-  // only allow when database available
-  ctx = ctx.select("database");
+// only allow when database available
+export const using = ["database"];
 
+export async function apply(ctx: Context, _config: MacroDictConfig): Promise<void> {
   // set database
-  Tables.extend("macrodict", {
+  ctx.model.extend("macrodict", {
+    id: "unsigned",
+    lastUpdated: "integer",
+    ...localizedKeys("Command", "string"),
+    ...localizedKeys("ShortCommand", "string"),
+    ...localizedKeys("Alias", "string"),
+    ...localizedKeys("ShortAlias", "string"),
+    ...localizedKeys("Description", "string"),
+  }, {
     primary: "id",
-    fields:{
-      id: "unsigned",
-      lastUpdated: "integer",
-      ...localizedKeys("Command", "string"),
-      ...localizedKeys("ShortCommand", "string"),
-      ...localizedKeys("Alias", "string"),
-      ...localizedKeys("ShortAlias", "string"),
-      ...localizedKeys("Description", "string"),
-    },
   });
 
   const config = {
@@ -48,9 +46,6 @@ export async function apply(ctx: Context, _config: MacroDictConfig): Promise<voi
     axiosConfig: {},
     ..._config,
   };
-
-  // initialize axios for HTTP requesting
-  const axios = Axios.create(config.axiosConfig);
 
   template.set("macrodict", macrodictTemplates);
   if (config.template) {
@@ -69,8 +64,8 @@ export async function apply(ctx: Context, _config: MacroDictConfig): Promise<voi
       }
       macro = macro.startsWith("/") ? macro : "/" + macro;
       const db = await ctx.database.get("macrodict", {
-        [`Command_${lang}`]: { $eq: macro },
         $or: [
+          { [`Command_${lang}`]: { $eq: macro } },
           { [`ShortCommand_${lang}`]: { $eq: macro } },
           { [`Alias_${lang}`]: { $eq: macro } },
           { [`ShortAlias_${lang}`]: { $eq: macro } },
@@ -81,7 +76,7 @@ export async function apply(ctx: Context, _config: MacroDictConfig): Promise<voi
         ],
       }, [`Command_${lang}`, `Description_${lang}`, "id"]);
 
-      const puppeteer = ctx.app?.puppeteer;
+      const puppeteer = ctx.puppeteer;
 
       if (!puppeteer) {
         return template("macrodict.not_found_puppeteer");
@@ -96,13 +91,16 @@ export async function apply(ctx: Context, _config: MacroDictConfig): Promise<voi
         description: db[0][`Description_${lang}`]});
     });
 
-  // update macro database when bot connected successfully.
-  ctx.on("connect", () => updateMacros(axios, ctx));
+  if (config.fetchOnStart) {
+    // update macro database when bot connected successfully.
+    ctx.on("ready", () => updateMacros(ctx));
+  }
+
   ctx
-    .command("macrodict.update")
+    .command("macrodict.update", template("macrodict.update_description"))
     .action(({ session }) => {
       session?.sendQueued(template("macrodict.start_updating_macros"));
-      updateMacros(axios, ctx);
+      updateMacros(ctx);
     });
 }
 

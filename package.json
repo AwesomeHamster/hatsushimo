@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-macrodict",
-  "version": "1.0.0",
+  "version": "2.0.0-rc.3",
   "description": "A koishi plugin for searching macro descriptions which is used in the famous video game FFXIV (Final Fantasy XIV)",
   "keywords": [
     "ffxiv",
@@ -45,13 +45,10 @@
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
-    "koishi": "*",
-    "koishi-core": "*",
-    "koishi-plugin-puppeteer": "*"
+    "@koishijs/plugin-puppeteer": "^3.0.0-rc.0",
+    "koishi": "^4.0.0-rc.1"
   },
   "dependencies": {
-    "@fast-csv/parse": "^4.3.6",
-    "axios": "^0.24.0",
-    "pug": "^3.0.2"
+    "@fast-csv/parse": "^4.3.6"
   }
 }
