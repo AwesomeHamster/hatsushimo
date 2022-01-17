@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-macrodict",
-  "version": "2.0.0-rc.3",
+  "version": "2.0.0",
   "description": "A koishi plugin for searching macro descriptions which is used in the famous video game FFXIV (Final Fantasy XIV)",
   "keywords": [
     "ffxiv",
