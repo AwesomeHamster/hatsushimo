@@ -1,6 +1,4 @@
-const fs = require("fs");
-const path = require("path");
-const yaml = require("js-yaml");
+const { Random } = require("koishi");
 
 try {
   require("dotenv").config();
@@ -20,6 +18,8 @@ module.exports = {
     character: 5,
     prompt: 60000,
   },
+  autoAssign: true,
+  autoAuthorize: isDev ? 4 : 1,
   plugins: {
     "adapter-discord": {
       selfId: process.env["HATSUSHIMO_DISCORD_SELF_ID"],
@@ -45,11 +45,26 @@ module.exports = {
       }
     })(),
 
+    "admin": {},
+    "sudo": {},
+
+    "bind": {
+      generateToken: () => 'hataushimo/' + Random.id(6, 10),
+    },
+    "callme": {},
     "echo": {},
     "recall": {},
     "feedback": {
       operators: process.env["HATSUSHIMO_FEEDBACK_OPERATORS"].split(","),
     },
+    "schedule": {},
+    "repeater": {
+      onRepeat: {
+        minTimes: 3,
+        probability: .75,
+      },
+    },
+
     "puppeteer": {
       browser: { args: ['--no-sandbox'] },
     },
