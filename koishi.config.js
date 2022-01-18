@@ -19,7 +19,7 @@ module.exports = {
     prompt: 60000,
   },
   autoAssign: true,
-  autoAuthorize: isDev ? 4 : 1,
+  autoAuthorize: isDev ? 2 : 1,
   plugins: {
     "adapter-discord": {
       selfId: process.env["HATSUSHIMO_DISCORD_SELF_ID"],
