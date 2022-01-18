@@ -149,6 +149,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-admin@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@koishijs/plugin-admin@npm:1.0.0"
+  dependencies:
+    "@koishijs/command-utils": ^1.0.0
+  peerDependencies:
+    koishi: ^4.0.0-rc.3
+  checksum: 0d83f98cd457e82468c77eca4e3034a8b677b61b9bbf9aba84f6f0aa93f1198336b1b9f8c975d356929674e8f5345a52454bdc9446cb9037d728709924e16590
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-bind@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@koishijs/plugin-bind@npm:1.0.0"
+  dependencies:
+    "@koishijs/command-utils": ^1.0.0
+  peerDependencies:
+    koishi: ^4.0.0-rc.3
+  checksum: 295a43fb627803bd647821efff3080c266dbb6d47e4883447f0de9822c3777caa37b34c153b69dd19b73a555018fb4786a8606559a9a70dbcf99e0855cac95a8
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-callme@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@koishijs/plugin-callme@npm:1.0.0"
+  dependencies:
+    "@koishijs/command-utils": ^1.0.0
+  peerDependencies:
+    koishi: ^4.0.0-rc.3
+  checksum: 546590d287470b4a25b29af621befd9aa11ab9eb8e15a782ca9e4bb69b7d715d62cdb26b024c0aa746c2802321c010544e71fb80eeac15ebd9f688b2b681881e
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-database-memory@npm:^1.0.0":
   version: 1.0.0
   resolution: "@koishijs/plugin-database-memory@npm:1.0.0"
@@ -224,6 +257,35 @@ __metadata:
   peerDependencies:
     koishi: ^4.0.0-rc.3
   checksum: 86d6d6bc71a9195b0f55de03753a735d649d3e41554ac420c0e43f030e1660fb89cc3b06a369b9bf5449346ad574124c53b2ee105872d43f3497c47f5e2fd2af
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-repeater@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@koishijs/plugin-repeater@npm:1.0.0"
+  peerDependencies:
+    koishi: ^4.0.0-rc.2
+  checksum: ea549fe8b1978d40a399320f3f813ec0927b317082570f46ab1c7badb2c4b362d18588c992f70d35a44a95a29a8c6378aae464aa4dd6afa3243ab1caa90bae32
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-schedule@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@koishijs/plugin-schedule@npm:4.0.0"
+  peerDependencies:
+    koishi: ^4.0.0
+  checksum: 47ebaaf23240c9dba562b04bf6117e4fc8265baae68e3cb692c8b58d40b0bb2ec867118232aeb4e83da3f17a748246f04ac1f62fb74deb1c795650f78f3822b5
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-sudo@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@koishijs/plugin-sudo@npm:1.0.0"
+  dependencies:
+    "@koishijs/command-utils": ^1.0.0
+  peerDependencies:
+    koishi: ^4.0.0-rc.3
+  checksum: 7d584296911210f916e71a29480b87e139d2916265cc22c28c67abe3b65e96912b6b389e76e5042d322393e44bd2b6f2c7c60f160d7e723866076a5b9363fe63
   languageName: node
   linkType: hard
 
@@ -3974,6 +4036,9 @@ __metadata:
   dependencies:
     "@koishijs/cli": ^4.0.0
     "@koishijs/plugin-adapter-discord": ^2.0.0
+    "@koishijs/plugin-admin": ^1.0.0
+    "@koishijs/plugin-bind": ^1.0.0
+    "@koishijs/plugin-callme": ^1.0.0
     "@koishijs/plugin-database-memory": ^1.0.0
     "@koishijs/plugin-database-mongo": ^3.0.0
     "@koishijs/plugin-echo": ^1.0.0
@@ -3981,6 +4046,9 @@ __metadata:
     "@koishijs/plugin-puppeteer": ^3.0.0
     "@koishijs/plugin-rate-limit": ^1.0.0
     "@koishijs/plugin-recall": ^1.0.0
+    "@koishijs/plugin-repeater": ^1.0.0
+    "@koishijs/plugin-schedule": ^4.0.0
+    "@koishijs/plugin-sudo": ^1.0.0
     "@koishijs/utils": ^5.0.0
     cross-env: ^7.0.3
     dotenv: ^10.0.0
