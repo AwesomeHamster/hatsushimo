@@ -72,7 +72,11 @@ module.exports = {
     "image-search": {
       saucenaoApiKey: process.env["HATSUSHIMO_SAUCENAO_API_KEY"].split(","),
     },
-
+    "./plugins/eorzea": {
+      template: {
+        format: "现在艾欧泽亚时间是 {{eorzeaTime}}",
+      },
+    },
     "./plugins/hitokoto": {
       template: {
         format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》\n\nPowered by: https://hitokoto.cn",
