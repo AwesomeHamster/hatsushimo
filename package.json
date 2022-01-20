@@ -15,7 +15,7 @@
   "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
   "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/eorzea.js",
   "directories": {
     "src": "src",
     "test": "__tests__"
@@ -25,7 +25,7 @@
     "README.md",
     "LICENSE"
   ],
-  "types": "dist/index.d.ts",
+  "types": "dist/eorzea.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git"
