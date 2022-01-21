@@ -9,7 +9,8 @@
   "scripts": {
     "build": "yarn lerna run build",
     "start": "koishi start koishi.config.js",
-    "start:dev": "koishi start koishi.config.js"
+    "start:dev": "koishi start koishi.config.js",
+    "test": "yarn lerna run test"
   },
   "workspaces": [
     "plugins/*"
