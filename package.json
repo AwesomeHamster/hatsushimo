@@ -20,7 +20,7 @@
   },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
-    "@koishijs/cli": "^4.0.0",
+    "@koishijs/cli": "^4.0.1",
     "@koishijs/plugin-adapter-discord": "^2.0.0",
     "@koishijs/plugin-admin": "^1.0.0",
     "@koishijs/plugin-bind": "^1.0.0",
@@ -35,7 +35,7 @@
     "@koishijs/plugin-schedule": "^4.0.0",
     "@koishijs/plugin-sudo": "^1.0.0",
     "@koishijs/utils": "^5.0.0",
-    "koishi": "^4.0.0",
+    "koishi": "^4.0.1",
     "koishi-plugin-image-search": "^4.0.0",
     "puppeteer-core": "^13.0.1"
   },
@@ -47,7 +47,6 @@
     "typescript": "^4.5.4"
   },
   "resolutions": {
-    "koishi": "patch:koishi@npm:4.0.0-rc.2#.yarn/patches/koishi-npm-4.0.0-rc.2-61b1a630b5",
     "koishi-plugin-image-search": "patch:koishi-plugin-image-search@npm:4.0.0-rc.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-rc.0-b5db92e560"
   }
 }
