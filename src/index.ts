@@ -25,7 +25,7 @@ export type MacroDictDatabase =
 export const name = "macrodict";
 
 // only allow when database available
-export const using = ["database"];
+export const using = ["database"] as const;
 
 export async function apply(ctx: Context, _config: MacroDictConfig): Promise<void> {
   // set database
