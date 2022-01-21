@@ -1,11 +1,14 @@
-import { MockedApp } from "koishi-test-utils";
+import { App } from "koishi";
+import mock from "@koishijs/plugin-mock";
+import memory from "@koishijs/plugin-database-memory";
 
 import * as hitokoto from "../src/hitokoto";
 
 describe("basic", () => {
-  const app = new MockedApp({
-    mockDatabase: true,
-  });
+  const app = new App();
+
+  app.plugin(mock);
+  app.plugin(memory);
 
   app.plugin(hitokoto, {
     minLength: 10,
@@ -16,21 +19,21 @@ describe("basic", () => {
     },
   });
 
-  const session = app.session("123");
+  const client = app.mock.client("123");
 
   before(async () => {
-    await app.initUser("123", 4);
+    await app.mock.initUser("123", 4);
   });
 
   it("should reply hitokoto", async () => {
-    await session.shouldReply("hitokoto");
+    await client.shouldReply("hitokoto");
   });
 
   it("should reply a 10-length a-type hitokoto", async () => {
-    await session.shouldReply("hitokoto -t a", /^\w{10} | a$/);
+    await client.shouldReply("hitokoto -t a", /^\w{10} | a$/);
   });
 
   it("should reply a 20-length hitokoto", async () => {
-    await session.shouldReply("hitokoto -l 20 -L 20", /^\w{20} | .*$/);
+    await client.shouldReply("hitokoto -l 20 -L 20", /^\w{20} | .*$/);
   });
 });
