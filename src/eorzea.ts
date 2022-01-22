@@ -11,7 +11,6 @@ export const name = "eorzea";
 export interface EorzeaOptions {
 
   defaultTypes?: string[];
-
   template?: template.Node;
 
 }
