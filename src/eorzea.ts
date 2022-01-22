@@ -13,6 +13,7 @@ export interface EorzeaOptions {
   defaultTypes?: string[];
 
   template?: template.Node;
+
 }
 
 export async function apply(context: Context, _config: EorzeaOptions = {}): Promise<void> {
