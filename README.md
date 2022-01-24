@@ -2,7 +2,7 @@
 
 A [koishi](https://github.com/koishijs/koishi) plugin for searching macro descriptions which is used in the famous video game [FFXIV (Final Fantasy XIV)](https://www.finalfantasyxiv.com/)
 
-[koishi](https://github.com/koishijs/koishi) 的插件，用于搜索著名的MMORPG网络游戏 [FFXIV (Final Fantasy XIV)](https://www.finalfantasyxiv.com/) 的宏描述文本信息。
+[koishi](https://github.com/koishijs/koishi) 的插件，用于搜索著名的 MMORPG 网络游戏 [FFXIV (Final Fantasy XIV)](https://www.finalfantasyxiv.com/) 的宏描述文本信息。
 
 ## Features 功能
 
@@ -37,7 +37,7 @@ To use this plugin, you need to install the `koishi-plugin-puppeteer` plugin fir
 
 The plugin will automatically fetch data from [xivapi.com](https://xivapi.com/) for international ragion, [cafemaker](https://cafemaker.wakingsands.com/) for Chinese ragion and [Ra-Workspace/ffxiv-datamining-ko](https://github.com/Ra-Workspace/ffxiv-datamining-ko) for Korean ragion, and cache it locally in the database (currently only MongoDB supported, sorry!).
 
-本插件会自动从 [xivapi.com](https://xivapi.com/) 获取国际服数据，从 [cafemaker](https://cafemaker.wakingsands.com/) 获取中文服数据，从 [Ra-Workspace/ffxiv-datamining-ko](https://github.com/Ra-Workspace/ffxiv-datamining-ko) 获取韩服数据，并缓存到本地数据库中（目前仅支持MongoDB，抱歉！）。
+本插件会自动从 [xivapi.com](https://xivapi.com/) 获取国际服数据，从 [cafemaker](https://cafemaker.wakingsands.com/) 获取中文服数据，从 [Ra-Workspace/ffxiv-datamining-ko](https://github.com/Ra-Workspace/ffxiv-datamining-ko) 获取韩服数据，并缓存到本地数据库中（目前仅支持 MongoDB，抱歉！）。
 
 ## Configuration 配置
 
