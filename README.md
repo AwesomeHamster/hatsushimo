@@ -55,4 +55,4 @@ export interface HitokotoOptions {
 
 This project is licensed under the MIT license.
 
-该项目遵循MIT协议。
+该项目遵循 MIT 协议。
