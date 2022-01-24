@@ -1,8 +1,6 @@
 import { segment, template } from "koishi";
 import path from "path";
 
-import pug from "pug";
-
 import { parseMacroDescriptionForHtml } from "./parser";
 
 import Puppeteer from "@koishijs/plugin-puppeteer";
