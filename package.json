@@ -10,6 +10,7 @@
     "build": "yarn lerna run build",
     "start": "koishi start koishi.config.js",
     "start:dev": "koishi start koishi.config.js",
+    "format": "prettier --write '**/*.{js,json,md,yml}'",
     "test": "yarn lerna run test"
   },
   "workspaces": [
@@ -28,7 +29,6 @@
     "singleQuote": false,
     "trailingComma": "all",
     "bracketSpacing": true,
-    "jsxBracketSameLine": false,
     "arrowParens": "always",
     "endOfLine": "lf",
     "quoteProps": "consistent",
