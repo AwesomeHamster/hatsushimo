@@ -31,7 +31,7 @@ module.exports = {
       if (isDev) {
         return {
           "database-memory": {},
-        }
+        };
       } else {
         return {
           "database-mongo": {
@@ -41,7 +41,7 @@ module.exports = {
             password: process.env["HATSUSHIMO_MONGO_PASSWORD"] || "",
             database: process.env["HATSUSHIMO_MONGO_DATABASE"] || "koishiv4",
           },
-        }
+        };
       }
     })(),
 
@@ -49,7 +49,7 @@ module.exports = {
     "sudo": {},
 
     "bind": {
-      generateToken: () => 'hataushimo/' + Random.id(6, 10),
+      generateToken: () => "hataushimo/" + Random.id(6, 10),
     },
     "callme": {},
     "echo": {},
@@ -61,12 +61,12 @@ module.exports = {
     "repeater": {
       onRepeat: {
         minTimes: 3,
-        probability: .75,
+        probability: 0.75,
       },
     },
 
     "puppeteer": {
-      browser: { args: ['--no-sandbox'] },
+      browser: { args: ["--no-sandbox"] },
     },
 
     "image-search": {
