@@ -28,18 +28,22 @@ export async function renderMacroView(
   try {
     await page.goto(`file:///${path.resolve(__dirname, "../view/macro.html")}`);
 
-    const result = await page.evaluate((name, description) => {
-      let el = document.getElementById("macro-name");
-      if (!el) {
-        return false;
-      }
-      el.innerText = name;
-      el = document.getElementById("macro-description");
-      if (!el) {
-        return false;
-      }
-      el.innerHTML = description;
-    }, name, descriptionHtml);
+    const result = await page.evaluate(
+      (name, description) => {
+        let el = document.getElementById("macro-name");
+        if (!el) {
+          return false;
+        }
+        el.innerText = name;
+        el = document.getElementById("macro-description");
+        if (!el) {
+          return false;
+        }
+        el.innerHTML = description;
+      },
+      name,
+      descriptionHtml,
+    );
 
     if (result === false) {
       return template("macrodict.puppeteer_error");
