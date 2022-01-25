@@ -1,23 +1,19 @@
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
 
-
 interface EorzeaTimeInterface {
+  getEorzeaTimeWithLocalTime(): string;
 
-  getEorzeaTimeWithLocalTime():string;
+  toEorzeaTime(localDate: Date): Date;
 
-  toEorzeaTime(localDate: Date):Date;
-
-  toLocalTime(eorzeaDate: Date):Date;
+  toLocalTime(eorzeaDate: Date): Date;
 }
 
-
 @injectable()
-export class EorzeaTimeService implements EorzeaTimeInterface{
-
+export class EorzeaTimeService implements EorzeaTimeInterface {
   getEorzeaTimeWithLocalTime() {
-    let et = this.toEorzeaTime(new Date)
-    return et.getUTCHours() + ':' + et.getUTCMinutes() + ':' + et.getUTCSeconds();
+    let et = this.toEorzeaTime(new Date());
+    return et.getUTCHours() + ":" + et.getUTCMinutes() + ":" + et.getUTCSeconds();
   }
 
   toEorzeaTime(localDate: Date) {
@@ -31,9 +27,8 @@ export class EorzeaTimeService implements EorzeaTimeInterface{
 
   toLocalTime(eorzeaDate: Date) {
     const EORZEA_MULTIPLIER: number = 3600 / 175;
-    let epochTicks: number = Math.round((eorzeaDate.getTime()) / EORZEA_MULTIPLIER);
+    let epochTicks: number = Math.round(eorzeaDate.getTime() / EORZEA_MULTIPLIER);
     let localTicks: number = epochTicks + new Date(1970, 1, 1).getTime();
     return new Date(localTicks);
   }
-
 }
