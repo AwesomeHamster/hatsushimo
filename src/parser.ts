@@ -1,4 +1,4 @@
-const keyMap: { [k: string]: string} = {
+const keyMap: { [k: string]: string } = {
   "1": "↑",
   "2": "↓",
   "3": "←",
@@ -35,7 +35,10 @@ export function parseMacroDescriptionForHtml(description: string): string {
       // to highlight the wrapped text with orange color.
       // So we need to replace the color code with span tag.
       // eslint-disable-next-line max-len
-      const m = /^<UIForeground>F201FA<\/UIForeground><UIGlow>F201FB<\/UIGlow>(.*?)<UIGlow>01<\/UIGlow><UIForeground>01<\/UIForeground>/.exec(sub);
+      const m =
+        /^<UIForeground>F201FA<\/UIForeground><UIGlow>F201FB<\/UIGlow>(.*?)<UIGlow>01<\/UIGlow><UIForeground>01<\/UIForeground>/.exec(
+          sub,
+        );
       if (!m) {
         throw new Error("parse error");
       }

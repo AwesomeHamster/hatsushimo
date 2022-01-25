@@ -18,10 +18,7 @@ export type XivapiResponse<T = any> = {
 
 export type Fields = "Command" | "ShortCommand" | "Alias" | "ShortAlias" | "Description";
 
-export type IntlMacros = Record<
-  `${Fields}_${"en" | "de" | "fr" | "ja"}` | "ID",
-  string
->;
+export type IntlMacros = Record<`${Fields}_${"en" | "de" | "fr" | "ja"}` | "ID", string>;
 
 const logger = new Logger("macrodict");
 
@@ -43,7 +40,7 @@ export async function updateMacros(ctx: Context): Promise<void> {
 
 export async function fetchXivapi<T>(ctx: Context, url: string, columns: string[]): Promise<T[]> {
   const ret: T[] = [];
-  let data = await ctx.http.get<XivapiResponse<T>>(url, { params: { columns: columns.join(",") }});
+  let data = await ctx.http.get<XivapiResponse<T>>(url, { params: { columns: columns.join(",") } });
   ret.push(...data.Results);
   while (data && data.Pagination.PageNext) {
     data = await ctx.http.get<XivapiResponse<T>>(url, {
@@ -55,17 +52,13 @@ export async function fetchXivapi<T>(ctx: Context, url: string, columns: string[
 }
 
 export async function fetchIntlMacros(ctx: Context): Promise<IntlMacros[]> {
-  const data = await fetchXivapi<IntlMacros>(
-    ctx,
-    "https://xivapi.com/TextCommand",
-    [
-      "ID",
-      ...["en", "de", "fr", "ja"].reduce<string[]>((arr, loc) => {
-        arr.push(`Command_${loc}`, `ShortCommand_${loc}`, `Alias_${loc}`, `ShortAlias_${loc}`, `Description_${loc}`);
-        return arr;
-      }, []),
-    ],
-  );
+  const data = await fetchXivapi<IntlMacros>(ctx, "https://xivapi.com/TextCommand", [
+    "ID",
+    ...["en", "de", "fr", "ja"].reduce<string[]>((arr, loc) => {
+      arr.push(`Command_${loc}`, `ShortCommand_${loc}`, `Alias_${loc}`, `ShortAlias_${loc}`, `Description_${loc}`);
+      return arr;
+    }, []),
+  ]);
   return data;
 }
 
@@ -93,29 +86,28 @@ export async function fetchKoMacros(ctx: Context): Promise<Record<`${Fields}_ko`
       ignoreEmpty: false,
       headers: true,
     })
-    .on("error", (err) => reject(err))
-    .on("data", (row) => {
-      // CSV files from SaintCoinach has the first 3 rows as headers,
-      // but only the second row is useful for naming.
-      // the third row is type information, which we don't need.
-      // `#` column is the ID, which is always number.
-      if (/^[0-9]+$/.test(row?.["#"])) {
-        rows.push({
-          ID: row?.["#"],
-          Alias_ko: row.Alias,
-          Command_ko: row.Command,
-          Description_ko: row.Description,
-          ShortAlias_ko: row.ShortAlias,
-          ShortCommand_ko: row.ShortCommand,
-        });
-      }
-    })
-    .on("end", (rowCount: number) => {
-      if (rowCount === 0)
-        reject("csv reads no data");
+      .on("error", (err) => reject(err))
+      .on("data", (row) => {
+        // CSV files from SaintCoinach has the first 3 rows as headers,
+        // but only the second row is useful for naming.
+        // the third row is type information, which we don't need.
+        // `#` column is the ID, which is always number.
+        if (/^[0-9]+$/.test(row?.["#"])) {
+          rows.push({
+            ID: row?.["#"],
+            Alias_ko: row.Alias,
+            Command_ko: row.Command,
+            Description_ko: row.Description,
+            ShortAlias_ko: row.ShortAlias,
+            ShortCommand_ko: row.ShortCommand,
+          });
+        }
+      })
+      .on("end", (rowCount: number) => {
+        if (rowCount === 0) reject("csv reads no data");
 
-      resolve(rows);
-    });
+        resolve(rows);
+      });
   });
 
   return rows;
