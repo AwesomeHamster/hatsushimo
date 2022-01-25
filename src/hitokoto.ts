@@ -27,6 +27,7 @@ export interface HitokotoOptions {
   template?: template.Node;
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Config = Schema.object({
   apiUrl: Schema.string().description("获取一言的API地址").default("https://v1.hitokoto.cn"),
   timeout: Schema.number().description("请求API时的超时时间").default(3000),
