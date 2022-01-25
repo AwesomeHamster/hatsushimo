@@ -1,13 +1,7 @@
 import { injectable, inject } from "inversify";
 import "reflect-metadata";
 
-
-interface EorzeaItemInterface {
-
-}
-
+interface EorzeaItemInterface {}
 
 @injectable()
-export class EorzeaItemService implements EorzeaItemInterface{
-
-}
+export class EorzeaItemService implements EorzeaItemInterface {}
