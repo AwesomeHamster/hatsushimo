@@ -76,10 +76,12 @@ export async function apply(ctx: Context, _config: MacroDictConfig): Promise<voi
             { [`ShortCommand_${lang}`]: { $eq: macro } },
             { [`Alias_${lang}`]: { $eq: macro } },
             { [`ShortAlias_${lang}`]: { $eq: macro } },
+            /* eslint-disable @typescript-eslint/naming-convention */
             { Command_en: { $eq: macro } },
             { ShortCommand_en: { $eq: macro } },
             { Alias_en: { $eq: macro } },
             { ShortAlias_en: { $eq: macro } },
+            /* eslint-enable @typescript-eslint/naming-convention */
           ],
         },
         [`Command_${lang}`, `Description_${lang}`, "id"],

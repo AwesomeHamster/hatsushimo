@@ -4,6 +4,7 @@ import { Context, Logger } from "koishi";
 import type {} from "./index";
 
 export type XivapiResponse<T = any> = {
+  /* eslint-disable @typescript-eslint/naming-convention */
   Pagination: {
     Page: number;
     PageNext: number | null;
@@ -14,6 +15,7 @@ export type XivapiResponse<T = any> = {
     ResultsTotal: number;
   };
   Results: T[];
+  /* eslint-enable @typescript-eslint/naming-convention */
 };
 
 export type Fields = "Command" | "ShortCommand" | "Alias" | "ShortAlias" | "Description";
@@ -94,17 +96,19 @@ export async function fetchKoMacros(ctx: Context): Promise<Record<`${Fields}_ko`
         // `#` column is the ID, which is always number.
         if (/^[0-9]+$/.test(row?.["#"])) {
           rows.push({
+            /* eslint-disable @typescript-eslint/naming-convention */
             ID: row?.["#"],
             Alias_ko: row.Alias,
             Command_ko: row.Command,
             Description_ko: row.Description,
             ShortAlias_ko: row.ShortAlias,
             ShortCommand_ko: row.ShortCommand,
+            /* eslint-enable @typescript-eslint/naming-convention */
           });
         }
       })
       .on("end", (rowCount: number) => {
-        if (rowCount === 0) reject("csv reads no data");
+        if (rowCount === 0) reject(new Error("csv reads no data"));
 
         resolve(rows);
       });
