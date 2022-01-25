@@ -38,17 +38,17 @@ export const Config = Schema.object({
 
 export interface HitokotoRet {
   id: number;
-  hitokoto:	string;
-  type:	string;
-  from:	string;
-  from_who:	string | null;
-  creator:	string;
+  hitokoto: string;
+  type: string;
+  from: string;
+  from_who: string | null;
+  creator: string;
   creator_uid: number;
-  reviewer:	number;
-  uuid:	string;
-  commit_from:	string;
-  created_at:	string;
-  length:	number;
+  reviewer: number;
+  uuid: string;
+  commit_from: string;
+  created_at: string;
+  length: number;
 }
 
 export const name = "hitokoto";
@@ -68,10 +68,7 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
   ctx
     .command("hitokoto", template("hitokoto.description"))
     .alias("一言")
-    .option(
-      "type",
-      `-t <type:string> ${template("hitokoto.option.type")}`,
-    )
+    .option("type", `-t <type:string> ${template("hitokoto.option.type")}`)
     .option("min-length", `-l <length:int> ${template("hitokoto.option.min_length")}`)
     .option("max-length", `-L <length:int> ${template("hitokoto.option.max_length")}`)
     .before(async ({ options }) => {
