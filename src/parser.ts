@@ -34,8 +34,8 @@ export function parseMacroDescriptionForHtml(description: string): string {
       // FFXIV use color code in macro description
       // to highlight the wrapped text with orange color.
       // So we need to replace the color code with span tag.
-      // eslint-disable-next-line max-len
       const m =
+        // eslint-disable-next-line max-len
         /^<UIForeground>F201FA<\/UIForeground><UIGlow>F201FB<\/UIGlow>(.*?)<UIGlow>01<\/UIGlow><UIForeground>01<\/UIForeground>/.exec(
           sub,
         );
