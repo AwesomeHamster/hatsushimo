@@ -35,7 +35,7 @@ rules:
 
   max-len:
     - warn
-    - 160
+    - 120
 
   multiline-ternary: off
 
