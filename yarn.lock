@@ -285,6 +285,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-manager@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@koishijs/plugin-manager@npm:1.2.0"
+  dependencies:
+    cross-spawn: ^7.0.3
+    semver: ^7.3.5
+  peerDependencies:
+    "@koishijs/cli": ^4.1.1
+    "@koishijs/plugin-console": ^2.0.0
+    koishi: ^4.1.1
+  checksum: 26a8a73f292a57d383f84b6ce0581817e9dab207be4450d9cb26ededde77e0adcd70faa81f956206dbe6b37c681271ba1a982dd9d2f1933b1b190948fb24878f
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-mock@npm:^1.0.0":
   version: 1.0.1
   resolution: "@koishijs/plugin-mock@npm:1.0.1"
@@ -342,6 +356,18 @@ __metadata:
   peerDependencies:
     koishi: ^4.0.1
   checksum: bf10311ef65cd83de942aa4e0f8e22bf8686fe1ef8aba5ee770fbadbfc0136d3fa510ce00fd3ac6e1172a8e71741ee87e9866c036bf6c962c5c27852c3bdd30b
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-status@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@koishijs/plugin-status@npm:5.2.0"
+  dependencies:
+    systeminformation: ^5.10.0
+  peerDependencies:
+    "@koishijs/plugin-console": ^2.0.0
+    koishi: ^4.1.1
+  checksum: 4552c48661c69eaf69d31105073cb24d13e1e9e62d7f974902d2824809cb4b2dc59fae13e8112cfcc6379563c741868f8e879360f1bc167939bffb5a82bd76d9
   languageName: node
   linkType: hard
 
@@ -4604,11 +4630,13 @@ __metadata:
     "@koishijs/plugin-database-mongo": ^3.0.0
     "@koishijs/plugin-echo": ^1.0.0
     "@koishijs/plugin-feedback": ^1.0.2
+    "@koishijs/plugin-manager": ^1.2.0
     "@koishijs/plugin-puppeteer": ^3.0.0
     "@koishijs/plugin-rate-limit": ^1.0.0
     "@koishijs/plugin-recall": ^1.0.0
     "@koishijs/plugin-repeater": ^1.0.0
     "@koishijs/plugin-schedule": ^4.0.0
+    "@koishijs/plugin-status": ^5.2.0
     "@koishijs/plugin-sudo": ^1.0.0
     "@koishijs/utils": ^5.0.0
     "@typescript-eslint/eslint-plugin": ^5.10.1
@@ -8382,6 +8410,16 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"systeminformation@npm:^5.10.0":
+  version: 5.11.0
+  resolution: "systeminformation@npm:5.11.0"
+  bin:
+    systeminformation: lib/cli.js
+  checksum: b8574d60fa33c7b69a6c78127229b9ed957d386b8986da5220151555c771a0aeb7f9838600aac2f1b0f9fac4512df6a0e58372a45faf56cfe3fa720408821958
+  conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
 
