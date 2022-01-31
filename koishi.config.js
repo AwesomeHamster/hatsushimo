@@ -11,7 +11,7 @@ const isDev = process.env.NODE_ENV === "dev";
  */
 module.exports = {
   host: "0.0.0.0",
-  port: process.env.PORT || 8080,
+  port: Number(process.env.PORT) || 8080,
   nickname: ["hamster", "仓鼠"],
   prefix: ["/", "."],
   delay: {
