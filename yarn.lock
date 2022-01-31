@@ -5587,29 +5587,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"koishi-plugin-image-search@npm:4.0.0-rc.0":
-  version: 4.0.0-rc.0
-  resolution: "koishi-plugin-image-search@npm:4.0.0-rc.0"
+"koishi-plugin-image-search@npm:4.0.0":
+  version: 4.0.0
+  resolution: "koishi-plugin-image-search@npm:4.0.0"
   dependencies:
     cheerio: ^1.0.0-rc.10
     iqdb-client: ^1.0.5
     nhentai-api: ^3.0.2
   peerDependencies:
-    koishi: ^4.0.0-rc.0
-  checksum: c8e647d3c71b7cc725d3062ea61a3d20816a86f4cc86bdfab1abdee79d376e08665753df8078b0e7025ccd1e56b314474a4e2b10a43fabd541b8091aae4bb16f
+    koishi: ^4.0.0
+  checksum: 707c1ea9325602e2a8b1c384904c66205f7a43cb2ab9b7e7ba49238bd34b45c15c5eebbf8a5969f452ddbf9973ad0e0e5b358d53bafe07b315fa80b8f44ada73
   languageName: node
   linkType: hard
 
-"koishi-plugin-image-search@patch:koishi-plugin-image-search@npm:4.0.0-rc.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-rc.0-b5db92e560::locator=hatsushimo%40workspace%3A.":
-  version: 4.0.0-rc.0
-  resolution: "koishi-plugin-image-search@patch:koishi-plugin-image-search@npm%3A4.0.0-rc.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-rc.0-b5db92e560::version=4.0.0-rc.0&hash=0ff82e&locator=hatsushimo%40workspace%3A."
+"koishi-plugin-image-search@patch:koishi-plugin-image-search@npm:4.0.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-f0d6a86575::locator=hatsushimo%40workspace%3A.":
+  version: 4.0.0
+  resolution: "koishi-plugin-image-search@patch:koishi-plugin-image-search@npm%3A4.0.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-f0d6a86575::version=4.0.0&hash=7d1b0f&locator=hatsushimo%40workspace%3A."
   dependencies:
     cheerio: ^1.0.0-rc.10
     iqdb-client: ^1.0.5
     nhentai-api: ^3.0.2
   peerDependencies:
-    koishi: ^4.0.0-rc.0
-  checksum: 9d6bb426ac3d3586f6fc2604a7c37819f28a7e74256c670e1d89e2377fb08fb6f975a4aaeb01e5ac0413414b29ab46100ee820bd21e2e43f052ef6549771b3cb
+    koishi: ^4.0.0
+  checksum: fd7d12da273428373e9b7741dd1dfac2fdc11449b3336d40bd8d68399d82f253eb8365ecf3b7fb3c03f1f3860a88b7c9af0623e3ae61c74271cf4d7a2a673d3e
   languageName: node
   linkType: hard
 
