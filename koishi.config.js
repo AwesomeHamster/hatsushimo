@@ -48,6 +48,8 @@ module.exports = {
     "admin": {},
     "sudo": {},
     "console": {},
+    "manager": {},
+    "status": {},
 
     "bind": {
       generateToken: () => "hataushimo/" + Random.id(6, 10),
