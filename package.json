@@ -78,6 +78,6 @@
     "typescript": "^4.5.4"
   },
   "resolutions": {
-    "koishi-plugin-image-search": "patch:koishi-plugin-image-search@npm:4.0.0-rc.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-rc.0-b5db92e560"
+    "koishi-plugin-image-search": "patch:koishi-plugin-image-search@npm:4.0.0#.yarn/patches/koishi-plugin-image-search-npm-4.0.0-f0d6a86575"
   }
 }

@@ -1,8 +1,8 @@
 diff --git a/lib/index.js b/lib/index.js
-index 3432a79040d6568ece357b6bc2461e7c2c37b941..f76dce22b1870cecfb42eca11ea4953b18d16a64 100644
+index b0e2d2663667aa92b6205e7ba7ba6aba58fb00a0..ef2c88f9483881b2888186b67911a5146e156c19 100644
 --- a/lib/index.js
 +++ b/lib/index.js
-@@ -254,7 +254,7 @@ async function handleResult(result, session, output) {
+@@ -269,7 +269,7 @@ async function handleResult(result, session, output) {
        if (book) {
          imageUrl = `https://nhentai.net/g/${book.id}/`;
        } else {
@@ -11,7 +11,7 @@ index 3432a79040d6568ece357b6bc2461e7c2c37b941..f76dce22b1870cecfb42eca11ea4953b
        }
      } catch (error) {
        logger2.debug(error);
-@@ -370,7 +370,7 @@ function apply(ctx, config = {}) {
+@@ -387,7 +387,7 @@ function apply(ctx, config = {}) {
      return async ({ session }) => {
        const id = session.channelId;
        if (pendings.has(id))
@@ -20,7 +20,7 @@ index 3432a79040d6568ece357b6bc2461e7c2c37b941..f76dce22b1870cecfb42eca11ea4953b
        const code = import_koishi5.segment.from(session.content, { type: "image" });
        if (code && code.data.url) {
          pendings.add(id);
-@@ -383,7 +383,7 @@ function apply(ctx, config = {}) {
+@@ -400,7 +400,7 @@ function apply(ctx, config = {}) {
            return next();
          return searchUrl(session, code2.data.url, callback);
        });
