@@ -47,6 +47,7 @@ module.exports = {
 
     "admin": {},
     "sudo": {},
+    "console": {},
 
     "bind": {
       generateToken: () => "hataushimo/" + Random.id(6, 10),
