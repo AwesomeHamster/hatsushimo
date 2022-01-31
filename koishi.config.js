@@ -11,7 +11,7 @@ const isDev = process.env.NODE_ENV === "dev";
  */
 module.exports = {
   host: "0.0.0.0",
-  port: 8080,
+  port: process.env.PORT || 8080,
   nickname: ["hamster", "仓鼠"],
   prefix: ["/", "."],
   delay: {
@@ -87,7 +87,7 @@ module.exports = {
       template: {
         puppeteer_error: "koishi-plugin-puppeteer 插件错误，无法渲染宏指令\n{{message}}\n{{stack}}",
       },
-      fetchOnStart: isDev ? true : false,
+      fetchOnStart: !!isDev,
     },
   },
 };
