@@ -1,6 +1,6 @@
 import { Context, template } from "koishi";
 
-import { MacroDictConfig } from "./config";
+import { Config } from "./config";
 import { renderMacroView } from "./render";
 import macrodictTemplates from "./template";
 import { updateMacros } from "./update";
@@ -10,6 +10,8 @@ declare module "koishi" {
     macrodict: MacroDictDatabase;
   }
 }
+
+export { Config };
 
 const locales = ["en", "de", "fr", "ja", "ko", "chs"] as const;
 
@@ -28,7 +30,7 @@ export const name = "macrodict";
 // only allow when database available
 export const using = ["database"] as const;
 
-export async function apply(ctx: Context, _config: MacroDictConfig): Promise<void> {
+export async function apply(ctx: Context, _config: Config): Promise<void> {
   // set database
   ctx.model.extend(
     "macrodict",
@@ -49,23 +51,22 @@ export async function apply(ctx: Context, _config: MacroDictConfig): Promise<voi
   const config = {
     aliases: [],
     axiosConfig: {},
+    defaultLanguage: "en",
     ..._config,
   };
 
   template.set("macrodict", macrodictTemplates);
-  if (config.template) {
-    template.set("macrodict", config.template);
-  }
 
   ctx
     .command("macrodict <macro>", template("macrodict.description"))
     .alias(...config.aliases)
     .usage("macrodict <macro>")
     .option("lang", "-l <language:string>")
-    .action(async ({ options }, macro) => {
-      const lang = (options?.lang as typeof locales[number]) ?? "chs";
+    .action(async ({ session, options }, macro) => {
+      let lang = options?.lang as typeof locales[number] ?? config.defaultLanguage;
       if (!lang || !locales.includes(lang)) {
-        return template("macrodict.wrong_language", locales.join(", "));
+        session?.sendQueued(template("macrodict.wrong_language", locales.join(", "), config.defaultLanguage));
+        lang = config.defaultLanguage as typeof locales[number];
       }
       macro = macro.startsWith("/") ? macro : "/" + macro;
       const db = await ctx.database.get(

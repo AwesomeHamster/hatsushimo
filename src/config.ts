@@ -1,7 +1,14 @@
-import { template } from "koishi";
+import { Schema } from "koishi";
 
-export interface MacroDictConfig {
+export interface Config {
   aliases?: string[];
-  template?: template.Node;
+  defaultLanguage?: string;
   fetchOnStart?: boolean;
 }
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const Config = Schema.object({
+  aliases: Schema.array(Schema.string()),
+  defaultLanguage: Schema.union(["en", "de", "fr", "ja", "ko", "chs"]),
+  fetchOnStart: Schema.boolean(),
+});
