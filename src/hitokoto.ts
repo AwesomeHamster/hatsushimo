@@ -18,13 +18,6 @@ export interface HitokotoOptions {
    * https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
    */
   defaultTypes?: string[];
-  /**
-   * For costumizing the hitokoto response format.
-   *
-   * Available templates can be found on:
-   * https://github.com/AwesomeHamster/koishi-plugin-hitokoto/blob/master/src/template.ts
-   */
-  template?: template.Node;
 }
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -34,7 +27,6 @@ export const Config = Schema.object({
   minLength: Schema.number().description("一言的最小长度"),
   maxLength: Schema.number().description("一言的最大长度"),
   defaultTypes: Schema.array(Schema.string()).description("默认一言类别"),
-  template: Schema.dict(Schema.string()).description("回复文本模板"),
 });
 
 export interface HitokotoRet {
@@ -62,9 +54,6 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
   };
 
   template.set("hitokoto", hitokotoTemplates);
-  if (config.template) {
-    template.set("hitokoto", config.template);
-  }
 
   ctx
     .command("hitokoto", template("hitokoto.description"))
