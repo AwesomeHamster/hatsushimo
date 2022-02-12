@@ -10,3 +10,6 @@
 [submodule "koishi-plugin-alarm"]
 	path = plugins/alarm
 	url = https://github.com/AwesomeHamster/koishi-plugin-alarm.git
+[submodule "koishi-plugin-pics"]
+	path = plugins/pics
+	url = https://code.mycard.moe/3rdeye/koishi-plugin-pics.git
