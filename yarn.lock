@@ -6337,6 +6337,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"koishi-plugin-pics@npm:^8.2.4":
+  version: 8.2.4
+  resolution: "koishi-plugin-pics@npm:8.2.4"
+  dependencies:
+    koishi-thirdeye: ^8.2.1
+    lodash: ^4.17.21
+    source-map-support: ^0.5.20
+  peerDependencies:
+    koishi: ^4.2.0
+  checksum: 6a4936d2f2265683eeb6f5120d09d49be1ff6eb8f83bc4b0351b9162b32f4ac071676b3192f3c6a8f1761dc93db04ee43d7c1b2d18ceca4ee7c88124bcb2381e
+  languageName: node
+  linkType: hard
+
 "koishi-plugin-pics@workspace:plugins/pics":
   version: 0.0.0-use.local
   resolution: "koishi-plugin-pics@workspace:plugins/pics"
@@ -6361,6 +6374,33 @@ __metadata:
     ws: ^8.3.0
   peerDependencies:
     koishi: ^4.2.0
+  languageName: unknown
+  linkType: soft
+
+"koishi-plugin-picsource-lolicon@workspace:plugins/picsource-lolicon":
+  version: 0.0.0-use.local
+  resolution: "koishi-plugin-picsource-lolicon@workspace:plugins/picsource-lolicon"
+  dependencies:
+    "@types/node": ^16.11.4
+    "@typescript-eslint/eslint-plugin": ^4.33.0
+    "@typescript-eslint/parser": ^4.33.0
+    eslint: ^7.32.0
+    eslint-config-prettier: ^8.3.0
+    eslint-plugin-prettier: ^3.4.1
+    koishi: ^4.2.0
+    koishi-plugin-pics: ^8.2.4
+    prettier: ^2.4.1
+    raw-loader: ^4.0.2
+    schemastery-gen: ^2.4.1
+    source-map-support: ^0.5.20
+    ts-loader: ^9.2.6
+    typescript: ^4.4.4
+    webpack: ^5.59.1
+    webpack-cli: ^4.9.1
+    ws: ^8.3.0
+  peerDependencies:
+    koishi: ^4.2.0
+    koishi-plugin-pics: ^8.2.2
   languageName: unknown
   linkType: soft
 
@@ -6391,6 +6431,24 @@ __metadata:
   peerDependencies:
     koishi: ^4.1.1
   checksum: 691cb3b2503bff3ee554b67c4b0bbcc9ded06723639dd86d15bf239b7d035f51ab33209417f0c0f32d02577d10e6311857bb269b263e92f94112241b244a0006
+  languageName: node
+  linkType: hard
+
+"koishi-thirdeye@npm:^8.2.1":
+  version: 8.2.1
+  resolution: "koishi-thirdeye@npm:8.2.1"
+  dependencies:
+    "@types/koa": ^2.13.4
+    "@types/koa__router": ^8.0.11
+    koishi-decorators: ^1.0.6
+    lodash: ^4.17.21
+    reflect-metadata: ^0.1.13
+    schemastery: ^2.4.2
+    schemastery-gen: ^2.4.1
+    typed-reflector: ^1.0.9
+  peerDependencies:
+    koishi: ^4.2.0
+  checksum: 9ee647f0a63c6ad9e81b631546bbbd1b881606280e5c497bbbc2d777707c73539e7e7fc8b1d65c9ec9469230ad02d7e0a3fb2a7e88f18930fccf72a336d35846
   languageName: node
   linkType: hard
 
@@ -8826,6 +8884,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"schemastery-gen@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "schemastery-gen@npm:2.4.1"
+  dependencies:
+    lodash: ^4.17.21
+    reflect-metadata: ^0.1.13
+    typed-reflector: ^1.0.8
+  peerDependencies:
+    schemastery: ^2.4.1
+  checksum: 21d396adbdd4a8a69bacc70e0197f6d39d5455a4b5816c6bebf7d7ec807519f540706452e91bcc64ae0eb0e0d61333a6e831c3af1a4029dbe1fb00deaef04646
+  languageName: node
+  linkType: hard
+
 "schemastery@npm:^2.1.2, schemastery@npm:^2.4.1":
   version: 2.4.1
   resolution: "schemastery@npm:2.4.1"
@@ -8837,6 +8908,13 @@ __metadata:
   version: 2.2.0
   resolution: "schemastery@npm:2.2.0"
   checksum: 3028c6268ce6384f0d5adc6e3ff3aebfc0a28bb99150dbf7642a73c9015236f5d8a18cfeda9ec33348c6534bc04249fdc6d3229dd9a043ae8cd5877eb69f8727
+  languageName: node
+  linkType: hard
+
+"schemastery@npm:^2.4.2":
+  version: 2.4.2
+  resolution: "schemastery@npm:2.4.2"
+  checksum: cad0509328fb81da211b154f1ada8e406b5cb039ea61be00ff4edfaf93aedf3d70aa74bc2dbac5ac0f17c89a6288a4e59c940f952089a2121ab20c50fb5c551f
   languageName: node
   linkType: hard
 

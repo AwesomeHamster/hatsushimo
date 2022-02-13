@@ -13,3 +13,6 @@
 [submodule "koishi-plugin-pics"]
 	path = plugins/pics
 	url = https://code.mycard.moe/3rdeye/koishi-plugin-pics.git
+[submodule "koishi-plugin-picsource-lolicon"]
+	path = plugins/picsource-lolicon
+	url = https://code.mycard.moe/3rdeye/koishi-plugin-picsource-lolicon.git
