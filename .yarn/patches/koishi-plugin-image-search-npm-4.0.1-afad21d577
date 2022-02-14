@@ -1,5 +1,5 @@
 diff --git a/lib/index.js b/lib/index.js
-index b0e2d2663667aa92b6205e7ba7ba6aba58fb00a0..ef2c88f9483881b2888186b67911a5146e156c19 100644
+index fdc6a6584b629509238474b46ab4d85cdeb85141..8c3724379372c5e2fec71c671830af8814c13bfb 100644
 --- a/lib/index.js
 +++ b/lib/index.js
 @@ -269,7 +269,7 @@ async function handleResult(result, session, output) {
