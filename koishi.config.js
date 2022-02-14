@@ -92,5 +92,10 @@ module.exports = {
       },
       fetchOnStart: !!isDev,
     },
+
+    "./plugins/pics": {
+      commandName: "setu",
+    },
+    "./plugins/picsource-lolicon": {},
   },
 };
