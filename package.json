@@ -20,7 +20,7 @@
     "================== ONEBOT ==================": "",
     "onebot:encrypt": "node ./scripts/crypt.js encrypt",
     "onebot:decrypt": "node ./scripts/crypt.js decrypt",
-    "heroku-postbuild": "echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js"
+    "heroku-postbuild": "yarn build && echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js"
   },
   "workspaces": [
     "plugins/*"
