@@ -60,7 +60,6 @@ module.exports = {
     admin: {},
     sudo: {},
     console: {},
-    manager: {},
     auth: {},
     status: {},
 
