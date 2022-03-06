@@ -28,6 +28,7 @@ const prodPlugins = [
   "status",
   "chat",
   "dataview",
+  "sandbox",
   "bind",
   "callme",
   "echo",
@@ -78,6 +79,7 @@ const plugins = {
   status: {},
   chat: {},
   dataview: {},
+  sandbox: {},
 
   bind: {
     generateToken: () => "hataushimo/" + Random.id(6, 10),
