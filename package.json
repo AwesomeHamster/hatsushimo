@@ -67,6 +67,8 @@
     "koishi": "^4.2.1",
     "koishi-plugin-gocqhttp": "^2.2.2",
     "koishi-plugin-image-search": "^4.0.1",
+    "koishi-plugin-pics": "^8.5.1",
+    "koishi-plugin-picsource-lolicon": "^8.4.1",
     "puppeteer-core": "^13.3.2"
   },
   "devDependencies": {
