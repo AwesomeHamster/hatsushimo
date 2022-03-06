@@ -37,6 +37,8 @@ const prodPlugins = [
   "repeater",
   "puppeteer",
   "image-search",
+  "pics",
+  "picsource-lolicon",
   "./plugins/eorzea",
   "./plugins/hitokoto",
   "./plugins/macrodict",
