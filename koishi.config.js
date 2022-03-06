@@ -13,6 +13,8 @@ const devPlugins = [
   "./plugins/eorzea",
   "./plugins/hitokoto",
   "./plugins/macrodict",
+  "pics",
+  "picsource-lolicon",
 ];
 const prodPlugins = [
   "adapter-discord",
@@ -24,6 +26,8 @@ const prodPlugins = [
   "console",
   "auth",
   "status",
+  "chat",
+  "dataview",
   "bind",
   "callme",
   "echo",
@@ -70,6 +74,8 @@ const plugins = {
   console: {},
   auth: {},
   status: {},
+  chat: {},
+  dataview: {},
 
   bind: {
     generateToken: () => "hataushimo/" + Random.id(6, 10),
@@ -107,10 +113,10 @@ const plugins = {
     fetchOnStart: !!isDev,
   },
 
-  // pics: {
-  //   commandName: "setu",
-  // },
-  // "picsource-lolicon": {},
+  pics: {
+    commandName: "setu",
+  },
+  "picsource-lolicon": {},
 };
 
 const getPlugins = (isDev) => {
@@ -135,5 +141,8 @@ module.exports = {
   },
   autoAssign: true,
   autoAuthorize: isDev ? 2 : 1,
+  request: {
+    proxyAgent: process.env["HTTP_PROXY"] || process.env["HTTPS_PROXY"] || undefined,
+  },
   plugins: getPlugins(isDev),
 };

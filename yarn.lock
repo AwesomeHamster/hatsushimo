@@ -247,6 +247,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-chat@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@koishijs/plugin-chat@npm:1.2.2"
+  peerDependencies:
+    koishi: ^4.3.2
+  checksum: 54a897b60a0df58027fa1de32a13d013d629ece5ec31a14011e26402895d29f1f2a0e7dab97e5d0d08c0e1faca4a1df5767a06ef42e64f592c2aea2b7c9b6dad
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-console@npm:^3.2.2":
   version: 3.2.2
   resolution: "@koishijs/plugin-console@npm:3.2.2"
@@ -291,6 +300,16 @@ __metadata:
   peerDependencies:
     koishi: ^4.2.0
   checksum: baf191102a05195e5d9f5181b720b0df49b04db154f27dbb38ce8788b6d26ae61eda0cc8916930a2f9d4e744e01c5c75b680cda336b7c4a7deae92b39af5cdeb
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-dataview@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@koishijs/plugin-dataview@npm:1.2.1"
+  peerDependencies:
+    "@koishijs/plugin-console": ^3.1.0
+    koishi: ^4.2.2
+  checksum: 9dc05e0e18d68f827b65931fb5f1202d01712f3aed61a6d729e97b5463be5d89b631737c700831e7b0452f4b8b5c20d17c858d4ae411f4819a29e36220df5955
   languageName: node
   linkType: hard
 
@@ -4630,9 +4649,11 @@ __metadata:
     "@koishijs/plugin-auth": ^1.1.0
     "@koishijs/plugin-bind": ^1.0.2
     "@koishijs/plugin-callme": ^1.0.2
+    "@koishijs/plugin-chat": ^1.2.2
     "@koishijs/plugin-console": ^3.2.2
     "@koishijs/plugin-database-memory": ^1.0.2
     "@koishijs/plugin-database-mongo": ^3.0.4
+    "@koishijs/plugin-dataview": ^1.2.1
     "@koishijs/plugin-echo": ^1.0.2
     "@koishijs/plugin-feedback": ^1.0.5
     "@koishijs/plugin-puppeteer": ^3.0.3
