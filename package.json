@@ -10,8 +10,8 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn lerna run build",
-    "prestart": "yarn onebot:decrypt",
-    "start": "koishi start koishi.config.js",
+    "prepare:onebot": "yarn onebot:decrypt",
+    "start": "yarn prepare:onebot && koishi start koishi.config.js",
     "start:dev": "koishi start koishi.config.js",
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
@@ -19,7 +19,8 @@
     "prepare": "husky install",
     "================== ONEBOT ==================": "",
     "onebot:encrypt": "node ./scripts/crypt.js encrypt",
-    "onebot:decrypt": "node ./scripts/crypt.js decrypt"
+    "onebot:decrypt": "node ./scripts/crypt.js decrypt",
+    "heroku-postbuild": "echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js"
   },
   "workspaces": [
     "plugins/*"
