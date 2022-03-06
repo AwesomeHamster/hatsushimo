@@ -61,6 +61,7 @@
     "@koishijs/plugin-rate-limit": "^1.0.3",
     "@koishijs/plugin-recall": "^1.0.2",
     "@koishijs/plugin-repeater": "1.0.0",
+    "@koishijs/plugin-sandbox": "^1.0.2",
     "@koishijs/plugin-schedule": "^4.0.3",
     "@koishijs/plugin-status": "^5.3.2",
     "@koishijs/plugin-sudo": "^1.0.2",
