@@ -100,16 +100,10 @@ const plugins = {
       format: "现在艾欧泽亚时间是 {{eorzeaTime}}",
     },
   },
-  "./plugins/hitokoto": {
-    template: {
-      format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》\n\nPowered by: https://hitokoto.cn",
-    },
-  },
+  "./plugins/hitokoto": {},
   "./plugins/macrodict": {
     aliases: ["?", "宏学词典", "macro", "macros", "宏"],
-    template: {
-      puppeteer_error: "koishi-plugin-puppeteer 插件错误，无法渲染宏指令\n{{message}}\n{{stack}}",
-    },
+    defaultLanguage: "chs",
     fetchOnStart: !!isDev,
   },
 
