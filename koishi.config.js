@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const { Random } = require("koishi");
 
 try {
@@ -26,6 +27,17 @@ module.exports = {
       token: process.env["HATSUSHIMO_DISCORD_TOKEN"],
     },
 
+    gocqhttp: {},
+
+    "adapter-onebot": {
+      gocqhttp: true,
+      selfId: process.env["HATSUSHIMO_ONEBOT_SELF_ID"],
+      password: process.env["HATSUSHIMO_ONEBOT_PASSWORD"],
+      protocol: "ws",
+      token: process.env["HATSUSHIMO_ONEBOT_TOKEN"],
+      endpoint: "ws://localhost:6700/",
+    },
+
     // database
     ...(() => {
       if (isDev) {
@@ -45,30 +57,31 @@ module.exports = {
       }
     })(),
 
-    "admin": {},
-    "sudo": {},
-    "console": {},
-    "manager": {},
-    "status": {},
+    admin: {},
+    sudo: {},
+    console: {},
+    manager: {},
+    auth: {},
+    status: {},
 
-    "bind": {
+    bind: {
       generateToken: () => "hataushimo/" + Random.id(6, 10),
     },
-    "callme": {},
-    "echo": {},
-    "recall": {},
-    "feedback": {
+    callme: {},
+    echo: {},
+    recall: {},
+    feedback: {
       operators: process.env["HATSUSHIMO_FEEDBACK_OPERATORS"].split(","),
     },
-    "schedule": {},
-    "repeater": {
+    schedule: {},
+    repeater: {
       onRepeat: {
         minTimes: 3,
         probability: 0.75,
       },
     },
 
-    "puppeteer": {
+    puppeteer: {
       browser: { args: ["--no-sandbox"] },
     },
 
