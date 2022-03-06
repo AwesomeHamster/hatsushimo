@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn lerna run build",
-    "prepare:onebot": "yarn onebot:decrypt",
+    "prepare:onebot": "mkdir -p accounts/$HATSUSHIMO_ONEBOT_SELF_ID && yarn onebot:decrypt",
     "start": "yarn prepare:onebot && koishi start koishi.config.js",
     "start:dev": "koishi start koishi.config.js",
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
