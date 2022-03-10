@@ -42,7 +42,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "mocha ./__tests__"
+    "test": "NODE_OPTIONS=\"-r ts-node/register\" mocha --extension .spec.ts ./__tests__"
   },
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea/issues"
