@@ -386,6 +386,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-sandbox@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@koishijs/plugin-sandbox@npm:1.0.2"
+  peerDependencies:
+    koishi: ^4.3.1
+  checksum: 5c1fc2ad1527d08acab92134aeb113e733d34eba86bfbe7bad875758c7e9b18cbca117fe95590eb157bac3663b93714a26d14980f2bf0cc05c40372b821dd348
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-schedule@npm:^4.1.0":
   version: 4.1.0
   resolution: "@koishijs/plugin-schedule@npm:4.1.0"
@@ -4667,6 +4676,7 @@ __metadata:
     "@koishijs/plugin-rate-limit": ^1.1.0
     "@koishijs/plugin-recall": ^1.1.0
     "@koishijs/plugin-repeater": ^1.0.1
+    "@koishijs/plugin-sandbox": ^1.0.2
     "@koishijs/plugin-schedule": ^4.1.0
     "@koishijs/plugin-status": ^5.3.3
     "@koishijs/plugin-sudo": ^1.1.0

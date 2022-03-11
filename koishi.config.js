@@ -8,8 +8,9 @@ try {
 const isDev = process.env.NODE_ENV === "dev";
 
 const devPlugins = [
-  "adapter-discord",
   "database-memory",
+  "console",
+  "sandbox",
   "./plugins/eorzea",
   "./plugins/hitokoto",
   "./plugins/macrodict",
@@ -28,7 +29,6 @@ const prodPlugins = [
   "status",
   "chat",
   "dataview",
-  "sandbox",
   "bind",
   "callme",
   "echo",
