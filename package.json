@@ -71,7 +71,8 @@
     "koishi-plugin-image-search": "^4.0.1",
     "koishi-plugin-pics": "^8.6.0",
     "koishi-plugin-picsource-lolicon": "^8.5.0",
-    "puppeteer-core": "^13.5.1"
+    "puppeteer-core": "^13.5.1",
+    "schemastery": "^3.1.1"
   },
   "devDependencies": {
     "@koishijs/plugin-database-memory": "^1.0.2",
@@ -80,7 +81,7 @@
     "@typescript-eslint/parser": "^5.14.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
-    "eslint": "^8.10.0",
+    "eslint": "^8.11.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
