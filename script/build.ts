@@ -34,5 +34,6 @@ esbuild.build({
   outfile: "dist/index.bundle.js",
   external: ["koishi"],
   minify: true,
+  sourcemap: true,
   plugins: [yamlPlugin()],
 });
