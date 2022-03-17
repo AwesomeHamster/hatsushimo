@@ -1,0 +1,17 @@
+description: Random Hitokoto (one sentence) in Chinese
+# more placeholders can be found on:
+# https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
+format: "「{{hitokoto}}」\n\t\t\t\t——{{from_who}}《{{from}}》"
+
+option:
+  type:
+    Returns Hitokoto sentence in specific type(s), you can use comma (,) to seperate different type names. The description of types could be found at https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
+  min_length: Returns Hitokoto sentence that has at least n characters
+  max_length: Returns Hitokoto sentence that has at most n characters
+
+error:
+  invalid_type: Invalid type
+  min_length_gt_max_length: min-length cannot be greater than max-length
+  service_unavailable: Service unavailable currently
+  unknown_error: "Unknown error, please retry later.\n{{message}}"
+  timeout: Request timeout, please retry later

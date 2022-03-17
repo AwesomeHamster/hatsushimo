@@ -2,7 +2,7 @@ import { App } from "koishi";
 import mock from "@koishijs/plugin-mock";
 import memory from "@koishijs/plugin-database-memory";
 
-import * as hitokoto from "../src/hitokoto";
+import * as hitokoto from "../src";
 
 describe("basic", () => {
   const app = new App();
