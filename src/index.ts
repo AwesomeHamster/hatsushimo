@@ -56,34 +56,34 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
   ctx.i18n.define("zh", i18n.zh);
 
   ctx
-    .command("hitokoto", template("hitokoto.description"))
+    .command("hitokoto")
     .alias("一言")
-    .option("type", `-t <type:string> ${template("hitokoto.option.type")}`)
-    .option("min-length", `-l <length:int> ${template("hitokoto.option.min_length")}`)
-    .option("max-length", `-L <length:int> ${template("hitokoto.option.max_length")}`)
-    .before(async ({ options }) => {
+    .option("type", `-t <type:string>`)
+    .option("min-length", `-l <length:int>`)
+    .option("max-length", `-L <length:int>`)
+    .before(async ({ options, session }) => {
       if (typeof options?.type !== "undefined") {
         if (!options.type) {
-          return template("hitokoto.option.invalid_type");
+          return session?.text(".error.invalid_type");
         }
         const types = options.type.split(",");
         if (types.length <= 0) {
-          return template("hitokoto.option.invalid_type");
+          return session?.text(".error.invalid_type");
         } else {
           for (const type of types) {
             if (!type) {
-              return template("hitokoto.option.invalid_type");
+              return session?.text(".error.invalid_type");
             }
           }
         }
       }
       if (options?.["min-length"] && options?.["max-length"]) {
         if (options["min-length"] > options["max-length"]) {
-          return template("hitokoto.option.min_length_gt_max_length");
+          return session?.text(".error.min_length_gt_max_length");
         }
       }
     })
-    .action(async ({ options }) => {
+    .action(async ({ options, session }) => {
       const params = new URLSearchParams();
       if (options?.type || config.defaultTypes) {
         (options?.type?.split(",") || config.defaultTypes || []).forEach((type) => params.append("c", type));
@@ -100,7 +100,7 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
           timeout: config.timeout,
           params,
         });
-        return template("hitokoto.format", {
+        return session?.text(".format", {
           ...resp,
           // the `from_who` field may be null.
           from_who: resp.from_who ?? "",
@@ -108,9 +108,9 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
       } catch (error) {
         const err = error as Error;
         if (/ETIMEOUT/.test(err.message)) {
-          return template("hitokoto.timeout");
+          return session?.text(".error.timeout");
         }
-        return template("hitokoto.unknown_error", err);
+        return session?.text(".error.unknown_error", err);
       }
     });
 }
