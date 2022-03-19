@@ -110,7 +110,9 @@ const plugins = {
       format: "现在艾欧泽亚时间是 {{eorzeaTime}}",
     },
   },
-  "./plugins/hitokoto": {},
+  "./plugins/hitokoto": {
+    apiUrl: "https://international.v1.hitokoto.cn",
+  },
   "./plugins/macrodict": {
     aliases: ["?", "宏学词典", "macro", "macros", "宏"],
     defaultLanguage: "chs",
