@@ -17,3 +17,9 @@ commands:
       # more placeholders can be found on:
       # https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
       format: "「{hitokoto}」\n\t\t\t\t——{from_who}《{from}》"
+
+  hitokoto.types:
+    description: 一言类型列表
+
+    messages:
+      list: "你可以指定以下的一个或多个类型，使用英文逗号(,)分割：\n{0}"
