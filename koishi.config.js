@@ -88,7 +88,7 @@ const plugins = {
   echo: {},
   recall: {},
   feedback: {
-    operators: process.env["HATSUSHIMO_FEEDBACK_OPERATORS"].split(","),
+    operators: (process.env["HATSUSHIMO_FEEDBACK_OPERATORS"] || "").split(","),
   },
   schedule: {},
   repeater: {
@@ -103,7 +103,7 @@ const plugins = {
   },
 
   "image-search": {
-    saucenaoApiKey: process.env["HATSUSHIMO_SAUCENAO_API_KEY"].split(","),
+    saucenaoApiKey: (process.env["HATSUSHIMO_SAUCENAO_API_KEY"] || "").split(","),
   },
   "./plugins/eorzea": {
     template: {
@@ -122,7 +122,9 @@ const plugins = {
   pics: {
     commandName: "setu",
   },
-  "picsource-lolicon": {},
+  "picsource-lolicon": {
+    default: true,
+  },
 };
 
 const getPlugins = (isDev) => {
