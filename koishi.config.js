@@ -123,7 +123,7 @@ const plugins = {
     commandName: "setu",
   },
   "picsource-lolicon": {
-    default: true,
+    isDefault: true,
   },
 };
 
