@@ -1,4 +1,4 @@
-import { Context, Schema, template } from "koishi";
+import { Context, Schema } from "koishi";
 
 import * as i18n from "./i18n";
 
@@ -64,22 +64,22 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
     .before(async ({ options, session }) => {
       if (typeof options?.type !== "undefined") {
         if (!options.type) {
-          return session?.text(".error.invalid_type");
+          return session?.text(".invalid_type");
         }
         const types = options.type.split(",");
         if (types.length <= 0) {
-          return session?.text(".error.invalid_type");
+          return session?.text(".invalid_type");
         } else {
           for (const type of types) {
             if (!type) {
-              return session?.text(".error.invalid_type");
+              return session?.text(".invalid_type");
             }
           }
         }
       }
       if (options?.["min-length"] && options?.["max-length"]) {
         if (options["min-length"] > options["max-length"]) {
-          return session?.text(".error.min_length_gt_max_length");
+          return session?.text(".min_length_gt_max_length");
         }
       }
     })
@@ -108,9 +108,9 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
       } catch (error) {
         const err = error as Error;
         if (/ETIMEOUT/.test(err.message)) {
-          return session?.text(".error.timeout");
+          return session?.text(".timeout");
         }
-        return session?.text(".error.unknown_error", err);
+        return session?.text(".unknown_error", err);
       }
     });
 }
