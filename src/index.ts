@@ -28,6 +28,21 @@ export const Config = Schema.object({
   defaultTypes: Schema.array(Schema.string()).description("默认一言类别"),
 });
 
+export const types = {
+  a: "动画",
+  b: "漫画",
+  c: "游戏",
+  d: "文学",
+  e: "原创",
+  f: "来自网络",
+  g: "其他",
+  h: "影视",
+  i: "诗词",
+  j: "网易云",
+  k: "哲学",
+  l: "抖机灵",
+};
+
 export interface HitokotoRet {
   id: number;
   hitokoto: string;
@@ -64,15 +79,15 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
     .before(async ({ options, session }) => {
       if (typeof options?.type !== "undefined") {
         if (!options.type) {
-          return session?.text(".invalid_type");
+          return session?.text(".invalid_type", [options.type]);
         }
         const types = options.type.split(",");
         if (types.length <= 0) {
-          return session?.text(".invalid_type");
+          return session?.text(".invalid_type", [options.type]);
         } else {
           for (const type of types) {
             if (!type) {
-              return session?.text(".invalid_type");
+              return session?.text(".invalid_type", [options.type]);
             }
           }
         }
@@ -113,4 +128,12 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
         return session?.text(".unknown_error", err);
       }
     });
+
+  ctx.command("hitokoto.types").action(async ({ session }) => {
+    return session?.text(".list", [
+      Object.entries(types)
+        .map(([type, desc]) => `${type} - ${desc}`)
+        .join("\n"),
+    ]);
+  });
 }
