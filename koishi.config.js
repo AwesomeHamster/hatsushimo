@@ -14,6 +14,7 @@ const devPlugins = [
   "./plugins/eorzea",
   "./plugins/hitokoto",
   "./plugins/macrodict",
+  "./plugins/lodestone",
   "pics",
   "picsource-lolicon",
 ];
@@ -118,6 +119,7 @@ const plugins = {
     defaultLanguage: "chs",
     fetchOnStart: !!isDev,
   },
+  "./plugins/lodestone": {},
 
   pics: {
     commandName: "setu",
