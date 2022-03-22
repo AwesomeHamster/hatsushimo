@@ -31,7 +31,7 @@
     "url": "git+https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git"
   },
   "scripts": {
-    "build": "ts-node script/build.ts && tsc --emitDeclarationOnly",
+    "build": "constructeur build && tsc --emitDeclarationOnly",
     "clean": "rimraf dist/*",
     "test": "NODE_OPTIONS=\"-r ts-node/register\" mocha --extension .spec.ts ./__tests__"
   },
@@ -48,6 +48,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.5",
+    "constructeur": "AwesomeHamster/constructeur#master",
     "esbuild": "^0.14.27",
     "fs-extra": "^10.0.1",
     "js-yaml": "^4.1.0",
