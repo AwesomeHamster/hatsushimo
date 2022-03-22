@@ -2862,6 +2862,7 @@ __metadata:
     js-yaml: ^4.1.0
   bin:
     constructeur: lib/index.js
+    ctr: lib/index.js
   languageName: unknown
   linkType: soft
 
