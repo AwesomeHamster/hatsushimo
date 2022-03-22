@@ -1,76 +1,76 @@
-import { Context, template } from "koishi";
+import { Context, template } from 'koishi'
 
-import { Config } from "./config";
-import { renderMacroView } from "./render";
-import macrodictTemplates from "./template";
-import { updateMacros } from "./update";
+import { Config } from './config'
+import { renderMacroView } from './render'
+import macrodictTemplates from './template'
+import { updateMacros } from './update'
 
-declare module "koishi" {
+declare module 'koishi' {
   interface Tables {
-    macrodict: MacroDictDatabase;
+    macrodict: MacroDictDatabase
   }
 }
 
-export { Config };
+export { Config }
 
-const locales = ["en", "de", "fr", "ja", "ko", "chs"] as const;
+const locales = ['en', 'de', 'fr', 'ja', 'ko', 'chs'] as const
 
-export type LocalizedKeys<T extends string> = `${T}_${typeof locales[number]}`;
+export type LocalizedKeys<T extends string> = `${T}_${typeof locales[number]}`
 
 export type MacroDictDatabase = Record<
-  LocalizedKeys<"Command" | "Alias" | "ShortCommand" | "ShortAlias" | "Description">,
+  LocalizedKeys<'Command' | 'Alias' | 'ShortCommand' | 'ShortAlias' | 'Description'>,
   string
 > & {
-  id: number;
-  lastUpdated: number;
-};
+  id: number
+  lastUpdated: number
+}
 
-export const name = "macrodict";
+export const name = 'macrodict'
 
 // only allow when database available
-export const using = ["database"] as const;
+export const using = ['database'] as const
 
 export async function apply(ctx: Context, _config: Config): Promise<void> {
   // set database
   ctx.model.extend(
-    "macrodict",
+    'macrodict',
     {
-      id: "unsigned",
-      lastUpdated: "integer",
-      ...localizedKeys("Command", "string"),
-      ...localizedKeys("ShortCommand", "string"),
-      ...localizedKeys("Alias", "string"),
-      ...localizedKeys("ShortAlias", "string"),
-      ...localizedKeys("Description", "string"),
+      id: 'unsigned',
+      lastUpdated: 'integer',
+      ...localizedKeys('Command', 'string'),
+      ...localizedKeys('ShortCommand', 'string'),
+      ...localizedKeys('Alias', 'string'),
+      ...localizedKeys('ShortAlias', 'string'),
+      ...localizedKeys('Description', 'string'),
     },
     {
-      primary: "id",
+      primary: 'id',
     },
-  );
+  )
 
   const config = {
     aliases: [],
     axiosConfig: {},
-    defaultLanguage: "en",
+    defaultLanguage: 'en',
     ..._config,
-  };
+  }
 
-  template.set("macrodict", macrodictTemplates);
+  template.set('macrodict', macrodictTemplates)
 
   ctx
-    .command("macrodict <macro>", template("macrodict.description"))
+    .command('macrodict <macro>', template('macrodict.description'))
     .alias(...config.aliases)
-    .usage("macrodict <macro>")
-    .option("lang", "-l <language:string>")
+    .usage('macrodict <macro>')
+    .option('lang', '-l <language:string>')
     .action(async ({ session, options }, macro) => {
-      let lang = options?.lang as typeof locales[number] ?? config.defaultLanguage;
+      let lang = (options?.lang as typeof locales[number]) ?? config.defaultLanguage
       if (!lang || !locales.includes(lang)) {
-        session?.sendQueued(template("macrodict.wrong_language", locales.join(", "), config.defaultLanguage));
-        lang = config.defaultLanguage as typeof locales[number];
+        session?.sendQueued(template('macrodict.wrong_language', locales.join(', '), config.defaultLanguage))
+        lang = config.defaultLanguage as typeof locales[number]
       }
-      macro = macro.startsWith("/") ? macro : "/" + macro;
+      macro = macro.startsWith('/') ? macro : '/' + macro
       const db = await ctx.database.get(
-        "macrodict",
+        'macrodict',
         {
           $or: [
             { [`Command_${lang}`]: { $eq: macro } },
@@ -85,36 +85,36 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
             /* eslint-enable @typescript-eslint/naming-convention */
           ],
         },
-        [`Command_${lang}`, `Description_${lang}`, "id"],
-      );
+        [`Command_${lang}`, `Description_${lang}`, 'id'],
+      )
 
-      const puppeteer = ctx.puppeteer;
+      const puppeteer = ctx.puppeteer
 
       if (!puppeteer) {
-        return template("macrodict.not_found_puppeteer");
+        return template('macrodict.not_found_puppeteer')
       }
 
       if (!db || !db[0]) {
-        return template("macrodict.not_found_macro", macro);
+        return template('macrodict.not_found_macro', macro)
       }
 
       return renderMacroView(puppeteer, {
         name: db[0][`Command_${lang}`],
         description: db[0][`Description_${lang}`],
-      });
-    });
+      })
+    })
 
   if (config.fetchOnStart) {
     // update macro database when bot connected successfully.
-    ctx.on("ready", () => updateMacros(ctx));
+    ctx.on('ready', () => updateMacros(ctx))
   }
 
-  ctx.command("macrodict.update", template("macrodict.update_description")).action(({ session }) => {
-    session?.sendQueued(template("macrodict.start_updating_macros"));
-    updateMacros(ctx);
-  });
+  ctx.command('macrodict.update', template('macrodict.update_description')).action(({ session }) => {
+    session?.sendQueued(template('macrodict.start_updating_macros'))
+    updateMacros(ctx)
+  })
 }
 
 export function localizedKeys<T extends string, V>(key: T, value: V): Record<LocalizedKeys<T>, V> {
-  return Object.fromEntries(locales.map((loc) => [`${key}_${loc}`, value])) as Record<LocalizedKeys<T>, V>;
+  return Object.fromEntries(locales.map((loc) => [`${key}_${loc}`, value])) as Record<LocalizedKeys<T>, V>
 }
