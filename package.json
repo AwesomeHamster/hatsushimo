@@ -34,14 +34,14 @@
     "printWidth": 120,
     "tabWidth": 2,
     "useTabs": false,
-    "semi": true,
-    "singleQuote": false,
+    "semi": false,
+    "singleQuote": true,
     "trailingComma": "all",
     "bracketSpacing": true,
     "arrowParens": "always",
     "endOfLine": "lf",
     "quoteProps": "consistent",
-    "jsxSingleQuote": false
+    "jsxSingleQuote": true
   },
   "dependencies": {
     "@koishijs/cli": "^4.4.1",
