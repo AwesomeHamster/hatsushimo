@@ -44,6 +44,7 @@ const prodPlugins = [
   './plugins/eorzea',
   './plugins/hitokoto',
   './plugins/macrodict',
+  './plugins/lodestone',
 ]
 
 const plugins = {
