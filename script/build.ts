@@ -1,8 +1,8 @@
-import { readFile } from "fs-extra";
-import { resolve } from "path";
+import { readFile } from 'fs-extra'
+import { resolve } from 'path'
 
-import esbuild, { Plugin } from "esbuild";
-import * as yaml from "js-yaml";
+import esbuild, { Plugin } from 'esbuild'
+import * as yaml from 'js-yaml'
 
 const yamlPlugin = (options: yaml.LoadOptions = {}): Plugin => ({
   name: 'yaml',
@@ -27,13 +27,13 @@ const yamlPlugin = (options: yaml.LoadOptions = {}): Plugin => ({
 
 esbuild.build({
   bundle: true,
-  format: "cjs",
-  platform: "node",
-  target: "node12",
-  entryPoints: ["src/index.ts"],
-  outfile: "dist/index.bundle.js",
-  external: ["koishi"],
+  format: 'cjs',
+  platform: 'node',
+  target: 'node12',
+  entryPoints: ['src/index.ts'],
+  outfile: 'dist/index.bundle.js',
+  external: ['koishi'],
   minify: true,
   sourcemap: true,
   plugins: [yamlPlugin()],
-});
+})

@@ -3,8 +3,7 @@ commands:
     description: Random Hitokoto (one sentence) in Chinese
 
     options:
-      type:
-        Return Hitokoto sentence in specific type(s), you can use comma (,) to seperate different type names. The description of types could be found at https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
+      type: Return Hitokoto sentence in specific type(s), you can use comma (,) to seperate different type names. The description of types could be found at https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
       min-length: Return Hitokoto sentence that has at least n characters
       max-length: Return Hitokoto sentence that has at most n characters
 
