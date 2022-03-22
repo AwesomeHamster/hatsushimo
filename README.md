@@ -47,9 +47,9 @@ This plugin expose the following configuration:
 
 ```typescript
 export interface MacroDictConfig {
-  aliases?: string[];
-  template?: template.Node;
-  fetchOnStart?: boolean;
+  aliases?: string[]
+  template?: template.Node
+  fetchOnStart?: boolean
 }
 ```
 
