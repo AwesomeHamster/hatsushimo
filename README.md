@@ -55,12 +55,12 @@ You can configure this plugin using the following configurations.
 
 该插件有以下配置项可以配置：
 
-| Name 名字 | Type 类型 | Required 是否必选 | Default 默认值 | Description 描述 |
-|:-:|:-:|:-:|:-:|:-:|
-| `apiUrl` | `string` | no 否 | `https://api.hitokoto.cn/` | The API URL of the service. 一言服务地址 |
-| `minLength` | `number` | no 否 | 0 | The minimum length of the sentence, can be override via options. 句子最小长度，可在调用指令时用选项覆盖。 |
-| `maxLength` | `number` | no 否 | 30 | The maximum length of the sentence, can be override via options. 句子最大长度，可在调用指令时用选项覆盖。 |
-| `defaultTypes` | `Array<string>` | no 否 | all types 所有类型 | The default types of the sentence, can be override via options. If an empty array was passed in, then the plugin would treat it as `['a']`. 默认句子类型，可在调用指令时用选项覆盖。若传入的是空字符串，则当作 `['a']` 类型。 |
+|   Name 名字    |    Type 类型    | Required 是否必选 |       Default 默认值       |                                                                                                       Description 描述                                                                                                        |
+| :------------: | :-------------: | :---------------: | :------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|    `apiUrl`    |    `string`     |       no 否       | `https://api.hitokoto.cn/` |                                                                                           The API URL of the service. 一言服务地址                                                                                            |
+|  `minLength`   |    `number`     |       no 否       |             0              |                                                           The minimum length of the sentence, can be override via options. 句子最小长度，可在调用指令时用选项覆盖。                                                           |
+|  `maxLength`   |    `number`     |       no 否       |             30             |                                                           The maximum length of the sentence, can be override via options. 句子最大长度，可在调用指令时用选项覆盖。                                                           |
+| `defaultTypes` | `Array<string>` |       no 否       |     all types 所有类型     | The default types of the sentence, can be override via options. If an empty array was passed in, then the plugin would treat it as `['a']`. 默认句子类型，可在调用指令时用选项覆盖。若传入的是空字符串，则当作 `['a']` 类型。 |
 
 ## License 许可证
 
