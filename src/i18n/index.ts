@@ -1,1 +1,1 @@
-export * as zh from "./zh/index.yml";
+export * as zh from './zh/index.yml'
