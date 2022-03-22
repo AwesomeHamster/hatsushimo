@@ -1,13 +1,13 @@
-declare module "*.yaml" {
+declare module '*.yaml' {
   const content: {
-    [key: string]: any;
-  };
-  export default content;
+    [key: string]: any
+  }
+  export default content
 }
 
-declare module "*.yml" {
+declare module '*.yml' {
   const content: {
-    [key: string]: any;
-  };
-  export default content;
+    [key: string]: any
+  }
+  export default content
 }
