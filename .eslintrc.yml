@@ -53,7 +53,7 @@ rules:
 
   quotes:
     - error
-    - double
+    - single
     - avoidEscape: true
       allowTemplateLiterals: true
 
@@ -80,7 +80,7 @@ rules:
   camelcase: off
   '@typescript-eslint/naming-convention':
     - error
-    
+
     # group selectors
     - selector: default
       format: [camelCase, UPPER_CASE]
@@ -119,10 +119,12 @@ rules:
   semi: off
   '@typescript-eslint/semi':
     - error
-    - always
+    - never
   '@typescript-eslint/member-delimiter-style':
     - error
     - multiline:
+        delimiter: none
+      singleline:
         delimiter: semi
 
   space-before-function-paren: off
