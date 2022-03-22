@@ -1,6 +1,6 @@
-export { EorzeaItemTypes };
+export { EorzeaItemTypes }
 
 const EorzeaItemTypes = {
-  KoishiEorzeaItemInterface: Symbol.for("KoishiEorzeaItemInterface"),
-  EorzeaItemInterface: Symbol.for("EorzeaItemInterface"),
-};
+  KoishiEorzeaItemInterface: Symbol.for('KoishiEorzeaItemInterface'),
+  EorzeaItemInterface: Symbol.for('EorzeaItemInterface'),
+}
