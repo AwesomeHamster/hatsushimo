@@ -9,22 +9,18 @@
     "tools"
   ],
   "private": true,
-  "scripts": {
-    "build": "tsc"
-  },
   "author": {
     "name": "Maiko Tan",
     "email": "maiko.tan.coding@gmail.com"
   },
   "homepage": "https://github.com/AwesomeHamster/constructeur",
   "license": "MIT",
-  "main": "dist/index.js",
-  "bin": "dist/index.js",
+  "main": "lib/index.js",
+  "bin": "lib/index.js",
   "directories": {
-    "src": "src",
+    "lib": "lib",
     "test": "__tests__"
   },
-  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AwesomeHamster/constructeur.git"
@@ -33,11 +29,6 @@
     "url": "https://github.com/AwesomeHamster/constructeur/issues"
   },
   "packageManager": "yarn@3.1.1",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
-    "typescript": "^4.6.2"
-  },
   "dependencies": {
     "cac": "^6.7.12",
     "esbuild": "^0.14.27",
