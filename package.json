@@ -23,7 +23,8 @@
     "heroku-postbuild": "yarn build && echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js"
   },
   "workspaces": [
-    "plugins/*"
+    "plugins/*",
+    "packages/*"
   ],
   "private": true,
   "engines": {
@@ -94,6 +95,7 @@
     "typescript": "^4.6.2"
   },
   "resolutions": {
-    "koishi-plugin-image-search@4.0.1": "patch:koishi-plugin-image-search@npm:4.0.1#.yarn/patches/koishi-plugin-image-search-npm-4.0.1-afad21d577"
+    "koishi-plugin-image-search@4.0.1": "patch:koishi-plugin-image-search@npm:4.0.1#.yarn/patches/koishi-plugin-image-search-npm-4.0.1-afad21d577",
+    "constructeur": "workspace:packages/constructeur"
   }
 }
