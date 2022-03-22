@@ -1,38 +1,38 @@
-import { injectable } from "inversify";
-import "reflect-metadata";
-import { Context, template } from "koishi";
-import { eorzeaContainer } from "../../../ioc/inversify.config";
-import { KoishiBaseInterface } from "../../../base/koshiBase";
-import { EorzeaTimeTypes } from "../eorzeaTimeTypes";
-import { EorzeaTimeService } from "../service/eorzeaTimeService";
+import { injectable } from 'inversify'
+import 'reflect-metadata'
+import { Context, template } from 'koishi'
+import { eorzeaContainer } from '../../../ioc/inversify.config'
+import { KoishiBaseInterface } from '../../../base/koshiBase'
+import { EorzeaTimeTypes } from '../eorzeaTimeTypes'
+import { EorzeaTimeService } from '../service/eorzeaTimeService'
 
 interface KoishiEorzeaTimeInterface extends KoishiBaseInterface {}
 
 @injectable()
 export class KoishiEorzeaTimeSerivce implements KoishiEorzeaTimeInterface {
-  templateName = "eorzeaTime";
+  templateName = 'eorzeaTime'
 
   template = {
-    description: "艾欧泽亚时间",
-    format: "现在艾欧泽亚时间是 {{eorzeaTime}}",
-  };
+    description: '艾欧泽亚时间',
+    format: '现在艾欧泽亚时间是 {{eorzeaTime}}',
+  }
 
-  commandName = "eorzea.time";
+  commandName = 'eorzea.time'
 
-  alias = ["et"];
+  alias = ['et']
 
   init(context: Context) {
-    template.set(this.templateName, this.template);
+    template.set(this.templateName, this.template)
     context
       .command(this.commandName, this.description())
       .alias(...this.alias)
       .action(() => {
-        return this.action();
-      });
+        return this.action()
+      })
   }
 
   description(): string {
-    return template(this.templateName + ".description");
+    return template(this.templateName + '.description')
   }
 
   action(): string {
@@ -40,7 +40,7 @@ export class KoishiEorzeaTimeSerivce implements KoishiEorzeaTimeInterface {
       eorzeaTime: eorzeaContainer
         .get<EorzeaTimeService>(EorzeaTimeTypes.EorzeaTimeInterface)
         .getEorzeaTimeWithLocalTime(),
-    };
-    return template(this.templateName + ".format", data);
+    }
+    return template(this.templateName + '.format', data)
   }
 }

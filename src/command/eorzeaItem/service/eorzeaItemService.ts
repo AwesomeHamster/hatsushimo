@@ -1,5 +1,5 @@
-import { injectable, inject } from "inversify";
-import "reflect-metadata";
+import { injectable, inject } from 'inversify'
+import 'reflect-metadata'
 
 interface EorzeaItemInterface {}
 
