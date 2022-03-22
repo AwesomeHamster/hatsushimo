@@ -4941,7 +4941,7 @@ __metadata:
     koishi-plugin-picsource-lolicon: ^8.5.1
     lerna: ^4.0.0
     prettier: ^2.6.0
-    puppeteer-core: ^13.5.1
+    puppeteer: ^13.5.1
     schemastery: ^3.1.1
     typescript: ^4.6.2
   languageName: unknown
@@ -7844,7 +7844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer-core@npm:^13.4.1, puppeteer-core@npm:^13.5.1":
+"puppeteer-core@npm:^13.4.1":
   version: 13.5.1
   resolution: "puppeteer-core@npm:13.5.1"
   dependencies:
@@ -7861,6 +7861,26 @@ __metadata:
     unbzip2-stream: 1.4.3
     ws: 8.5.0
   checksum: 9248311965ec1f3fe415f1a41e8816bb7d7764cca97abee1da48082d8d3f082d582acc9364c31b6285c61e9cd6e5b607235a38d8323970ed7f6d059b59136268
+  languageName: node
+  linkType: hard
+
+"puppeteer@npm:^13.5.1":
+  version: 13.5.1
+  resolution: "puppeteer@npm:13.5.1"
+  dependencies:
+    cross-fetch: 3.1.5
+    debug: 4.3.3
+    devtools-protocol: 0.0.969999
+    extract-zip: 2.0.1
+    https-proxy-agent: 5.0.0
+    pkg-dir: 4.2.0
+    progress: 2.0.3
+    proxy-from-env: 1.1.0
+    rimraf: 3.0.2
+    tar-fs: 2.1.1
+    unbzip2-stream: 1.4.3
+    ws: 8.5.0
+  checksum: adf7511977d9300386cc2b2699d83c7f4c2e890fb00a5d7a7b41a11561b599b1f19b26ac4ae9d469ce567c87a22be6362160166f31aca135d94148f68aeff2cc
   languageName: node
   linkType: hard
 
