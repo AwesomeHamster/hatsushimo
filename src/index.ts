@@ -36,6 +36,7 @@ export function apply(ctx: Context, config?: {}): void {
           .join('\n\n')
         return news
       } catch (e) {
+        console.error(e)
         return session?.text('.service_unavailable')
       }
     })

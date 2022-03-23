@@ -19,7 +19,7 @@ export const getNews = async (
   ragion: NewsRagion = 'jp',
 ): Promise<News[]> => {
   const url = `http://${ragion}.lodestonenews.com/news/${category}`
-  const json = (await ctx.http.get(url)).data as News[]
+  const json = (await ctx.http.get(url)) as News[]
   if (json.length > count) return json.slice(0, count)
   return json
 }
