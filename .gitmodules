@@ -16,3 +16,6 @@
 [submodule "constructeur"]
 	path = packages/constructeur
 	url = https://github.com/AwesomeHamster/constructeur.git
+[submodule "koishi-plugin-pics"]
+	path = plugins/pics
+	url = https://code.mycard.moe/3rdeye/koishi-plugin-pics.git
