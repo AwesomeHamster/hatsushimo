@@ -10,6 +10,7 @@ const isDev = process.env.NODE_ENV === 'dev'
 const devPlugins = [
   'database-memory',
   'console',
+  'manager',
   'sandbox',
   './plugins/eorzea',
   './plugins/hitokoto',
@@ -77,6 +78,7 @@ const plugins = {
   'admin': {},
   'sudo': {},
   'console': {},
+  'manager': {},
   'auth': {},
   'status': {},
   'chat': {},

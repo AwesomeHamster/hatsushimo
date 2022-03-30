@@ -992,6 +992,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-manager@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@koishijs/plugin-manager@npm:1.6.0"
+  dependencies:
+    cross-spawn: ^7.0.3
+    semver: ^7.3.5
+    which-pm-runs: ^1.1.0
+  peerDependencies:
+    "@koishijs/cli": ^4.5.0
+    "@koishijs/plugin-console": ^3.2.4
+    koishi: ^4.5.0
+  checksum: ee77e543c5189068bd8ac83695646dbcf9f7b7bc1a347de6e07f23b067cbc15fff44450f0ca00e52294c1b003f4d7da413576260bad68c97a2245f7d4aedb05b
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-mock@npm:^1.0.0":
   version: 1.0.3
   resolution: "@koishijs/plugin-mock@npm:1.0.3"
@@ -6665,6 +6680,7 @@ __metadata:
     "@koishijs/plugin-dataview": ^1.2.1
     "@koishijs/plugin-echo": ^1.1.0
     "@koishijs/plugin-feedback": ^1.1.0
+    "@koishijs/plugin-manager": ^1.6.0
     "@koishijs/plugin-puppeteer": ^3.0.4
     "@koishijs/plugin-rate-limit": ^1.1.0
     "@koishijs/plugin-recall": ^1.1.0
@@ -12630,6 +12646,13 @@ __metadata:
     is-string: ^1.0.5
     is-symbol: ^1.0.3
   checksum: 53ce774c7379071729533922adcca47220228405e1895f26673bbd71bdf7fb09bee38c1d6399395927c6289476b5ae0629863427fd151491b71c4b6cb04f3a5e
+  languageName: node
+  linkType: hard
+
+"which-pm-runs@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "which-pm-runs@npm:1.1.0"
+  checksum: 39a56ee50886fb33ec710e3b36dc9fe3d0096cac44850d9ca0c6186c4cb824d6c8125f013e0562e7c94744e1e8e4a6ab695592cdb12555777c7a4368143d822c
   languageName: node
   linkType: hard
 
