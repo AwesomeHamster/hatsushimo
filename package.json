@@ -1,0 +1,48 @@
+{
+  "name": "core",
+  "description": "The runtime core of Hamster (hatsushimo)",
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
+  "homepage": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/core.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto/issues"
+  },
+  "private": true,
+  "dependencies": {
+    "@koishijs/cli": "^4.4.1",
+    "@koishijs/plugin-adapter-discord": "^2.0.5",
+    "@koishijs/plugin-adapter-onebot": "^4.1.4",
+    "@koishijs/plugin-admin": "^1.1.0",
+    "@koishijs/plugin-auth": "^1.1.0",
+    "@koishijs/plugin-bind": "^1.1.0",
+    "@koishijs/plugin-chat": "^1.2.2",
+    "@koishijs/plugin-console": "^3.2.3",
+    "@koishijs/plugin-database-mongo": "^3.0.5",
+    "@koishijs/plugin-dataview": "^1.2.1",
+    "@koishijs/plugin-echo": "^1.1.0",
+    "@koishijs/plugin-feedback": "^1.1.0",
+    "@koishijs/plugin-puppeteer": "^3.0.4",
+    "@koishijs/plugin-rate-limit": "^1.1.0",
+    "@koishijs/plugin-recall": "^1.1.0",
+    "@koishijs/plugin-repeater": "^1.0.1",
+    "@koishijs/plugin-status": "^5.3.3",
+    "@koishijs/plugin-sudo": "^1.1.0",
+    "@koishijs/utils": "^5.2.0",
+    "cac": "^6.7.12",
+    "koishi": "^4.4.1",
+    "koishi-plugin-gocqhttp": "^2.2.4",
+    "koishi-plugin-image-search": "^4.0.1",
+    "koishi-plugin-pics": "^8.6.2",
+    "koishi-plugin-picsource-lolicon": "^8.5.1",
+    "puppeteer": "^13.5.1",
+    "schemastery": "^3.1.1"
+  },
+  "packageManager": "yarn@3.1.1"
+}
