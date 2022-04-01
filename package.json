@@ -64,7 +64,8 @@
     "@koishijs/plugin-database-memory": "^1.0.2",
     "@koishijs/plugin-manager": "^1.6.0",
     "@koishijs/plugin-sandbox": "^1.0.2",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "fs-extra": "^10.0.1"
   },
   "packageManager": "yarn@3.1.1"
 }
