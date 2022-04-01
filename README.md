@@ -62,6 +62,12 @@ You can configure this plugin using the following configurations.
 |  `maxLength`   |    `number`     |       no 否       |             30             |                                                           The maximum length of the sentence, can be override via options. 句子最大长度，可在调用指令时用选项覆盖。                                                           |
 | `defaultTypes` | `Array<string>` |       no 否       |     all types 所有类型     | The default types of the sentence, can be override via options. If an empty array was passed in, then the plugin would treat it as `['a']`. 默认句子类型，可在调用指令时用选项覆盖。若传入的是空字符串，则当作 `['a']` 类型。 |
 
+## ChangeLog 修订日志
+
+The change log of this plugin can be found [here](./CHANGELOG.md).
+
+你可以在[这里](./CHANGELOG.md)查看本插件的修订日志。
+
 ## License 许可证
 
 This project is licensed under the MIT license, and the use of data from [一言网](https://hitokoto.cn) is in non-commercial purposes.
