@@ -1,5 +1,5 @@
 const crypto = require('crypto')
-const { readFileSync, writeFileSync } = require('fs')
+const { readFile, outputFile } = require('fs-extra')
 
 const { cac } = require('cac')
 
@@ -41,19 +41,19 @@ const files = [
 
 const argv = cac('crypt')
 
-argv.command('encrypt', 'encrypt a file').action(() => {
+argv.command('encrypt', 'encrypt a file').action(async () => {
   for (const file of files) {
-    const encrypted = encrypt(readFileSync(file), process.env['HATSUSHIMO_ENCRYPT_KEY'])
+    const encrypted = encrypt(await readFile(file), process.env['HATSUSHIMO_ENCRYPT_KEY'])
     const outputName = `accounts/enc/${hash(file, 16)}`
-    writeFileSync(outputName, encrypted)
+    outputFile(outputName, encrypted)
   }
 })
 
-argv.command('decrypt', 'decrypt a file').action(() => {
+argv.command('decrypt', 'decrypt a file').action(async () => {
   for (const file of files) {
     const filename = `accounts/enc/${hash(file, 16)}`
-    const decryped = decrypt(readFileSync(filename), process.env['HATSUSHIMO_ENCRYPT_KEY'])
-    writeFileSync(file, decryped)
+    const decryped = decrypt(await readFile(filename), process.env['HATSUSHIMO_ENCRYPT_KEY'])
+    outputFile(file, decryped)
   }
 })
 
