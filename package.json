@@ -21,6 +21,7 @@
   },
   "files": [
     "dist",
+    "view",
     "LICENCE",
     "README.md"
   ],
