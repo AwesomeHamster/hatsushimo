@@ -12,10 +12,10 @@ const devPlugins = [
   'console',
   'manager',
   'sandbox',
-  './plugins/eorzea',
-  './plugins/hitokoto',
-  './plugins/macrodict',
-  './plugins/lodestone',
+  'hitokoto',
+  'ffxiv-eorzea',
+  'ffxiv-macrodict',
+  'ffxiv-lodestone',
   'pics',
   'picsource-lolicon',
 ]
@@ -40,10 +40,10 @@ const prodPlugins = [
   'image-search',
   'pics',
   'picsource-lolicon',
-  './plugins/eorzea',
-  './plugins/hitokoto',
-  './plugins/macrodict',
-  './plugins/lodestone',
+  'hitokoto',
+  'ffxiv-eorzea',
+  'ffxiv-macrodict',
+  'ffxiv-lodestone',
 ]
 
 const plugins = {
@@ -105,16 +105,16 @@ const plugins = {
   'image-search': {
     saucenaoApiKey: (process.env['HATSUSHIMO_SAUCENAO_API_KEY'] || '').split(','),
   },
-  './plugins/eorzea': {},
-  './plugins/hitokoto': {
+  'ffxiv-eorzea': {},
+  'hitokoto': {
     apiUrl: 'https://international.v1.hitokoto.cn',
   },
-  './plugins/macrodict': {
+  'ffxiv-macrodict': {
     aliases: ['?', '宏学词典', 'macro', 'macros', '宏'],
     defaultLanguage: 'chs',
     fetchOnStart: !!isDev,
   },
-  './plugins/lodestone': {},
+  'ffxiv-lodestone': {},
 
   'pics': {
     commandName: 'setu',

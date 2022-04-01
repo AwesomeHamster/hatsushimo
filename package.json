@@ -15,6 +15,14 @@
     "url": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto/issues"
   },
   "private": true,
+  "scripts": {
+    "start": "koishi start koishi.config.js",
+    "start:dev": "cross-env NODE_ENV=dev koishi start koishi.config.js",
+    "================== ONEBOT ==================": "",
+    "onebot:encrypt": "node ./scripts/crypt.js encrypt",
+    "onebot:decrypt": "node ./scripts/crypt.js decrypt",
+    "heroku-postbuild": "echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js"
+  },
   "dependencies": {
     "@koishijs/cli": "^4.4.1",
     "@koishijs/plugin-adapter-discord": "^2.0.5",
@@ -37,12 +45,22 @@
     "@koishijs/utils": "^5.2.0",
     "cac": "^6.7.12",
     "koishi": "^4.4.1",
+    "koishi-plugin-ffxiv-eorzea": "^0.0.2",
+    "koishi-plugin-ffxiv-lodestone": "^0.0.1",
+    "koishi-plugin-ffxiv-macrodict": "^2.0.1",
     "koishi-plugin-gocqhttp": "^2.2.4",
+    "koishi-plugin-hitokoto": "^2.1.1",
     "koishi-plugin-image-search": "^4.0.1",
     "koishi-plugin-pics": "^8.6.2",
     "koishi-plugin-picsource-lolicon": "^8.5.1",
     "puppeteer": "^13.5.1",
     "schemastery": "^3.1.1"
+  },
+  "devDependencies": {
+    "@koishijs/plugin-database-memory": "^1.0.2",
+    "@koishijs/plugin-manager": "^1.6.0",
+    "@koishijs/plugin-sandbox": "^1.0.2",
+    "cross-env": "^7.0.3"
   },
   "packageManager": "yarn@3.1.1"
 }
