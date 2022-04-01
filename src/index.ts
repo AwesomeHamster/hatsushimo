@@ -7,7 +7,6 @@ export interface HitokotoOptions {
    * @default "https://v1.hitokoto.cn"
    */
   apiUrl?: string
-  timeout?: number
   minLength?: number
   maxLength?: number
   /**
@@ -22,7 +21,6 @@ export interface HitokotoOptions {
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const Config = Schema.object({
   apiUrl: Schema.string().description('获取一言的 API 地址').default('https://v1.hitokoto.cn'),
-  timeout: Schema.number().description('请求 API 时的超时时间').default(3000),
   minLength: Schema.number().description('一言的最小长度'),
   maxLength: Schema.number().description('一言的最大长度'),
   defaultTypes: Schema.array(Schema.string()).description('默认一言类别'),
@@ -63,7 +61,6 @@ export const name = 'hitokoto'
 export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promise<void> {
   const config = {
     apiUrl: 'https://v1.hitokoto.cn/',
-    timeout: 3000,
     ..._config,
   }
 
@@ -112,7 +109,6 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
 
       try {
         const resp = await ctx.http.get<HitokotoRet>(config.apiUrl, {
-          timeout: config.timeout,
           params,
         })
         return session?.text('.format', {
