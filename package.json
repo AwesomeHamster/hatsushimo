@@ -14,7 +14,8 @@
   "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
   "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.bundle.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "src": "src",
     "test": "__tests__"
