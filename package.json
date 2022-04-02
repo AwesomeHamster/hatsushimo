@@ -51,7 +51,7 @@
     "koishi": "^4.5.0",
     "koishi-plugin-ffxiv-eorzea": "^0.0.2",
     "koishi-plugin-ffxiv-lodestone": "^0.0.1",
-    "koishi-plugin-ffxiv-macrodict": "^2.0.3",
+    "koishi-plugin-ffxiv-macrodict": "^2.0.4",
     "koishi-plugin-gocqhttp": "^2.2.4",
     "koishi-plugin-hitokoto": "^2.1.1",
     "koishi-plugin-image-search": "^4.0.1",
