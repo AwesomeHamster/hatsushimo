@@ -40,6 +40,7 @@
     "@koishijs/plugin-dataview": "^1.2.2",
     "@koishijs/plugin-echo": "^1.1.0",
     "@koishijs/plugin-feedback": "^1.1.0",
+    "@koishijs/plugin-forward": "^2.1.1",
     "@koishijs/plugin-puppeteer": "^3.0.4",
     "@koishijs/plugin-rate-limit": "^1.1.1",
     "@koishijs/plugin-recall": "^1.1.0",

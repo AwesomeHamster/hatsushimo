@@ -35,6 +35,7 @@ const prodPlugins = [
   'echo',
   'recall',
   'feedback',
+  'forward',
   'repeater',
   'puppeteer',
   'image-search',
@@ -86,6 +87,7 @@ const plugins = {
   'bind': {
     generateToken: () => 'hataushimo/' + Random.id(6, 10),
   },
+  'forward': {},
   'echo': {},
   'recall': {},
   'feedback': {
