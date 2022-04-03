@@ -1003,6 +1003,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-forward@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@koishijs/plugin-forward@npm:2.1.1"
+  dependencies:
+    "@koishijs/helpers": ^1.1.0
+  peerDependencies:
+    koishi: ^4.4.2
+  checksum: d88ead2f60dfe72aceefe9ace7d97e8f5914e15cde6260aba28d21d47639a0fa241a4f75b2d409732112b3d4f71b5637ecf0ecf9a551865f3ee4dbf292c2a88e
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-manager@npm:^1.6.0":
   version: 1.6.0
   resolution: "@koishijs/plugin-manager@npm:1.6.0"
@@ -4479,6 +4490,7 @@ __metadata:
     "@koishijs/plugin-dataview": ^1.2.2
     "@koishijs/plugin-echo": ^1.1.0
     "@koishijs/plugin-feedback": ^1.1.0
+    "@koishijs/plugin-forward": ^2.1.1
     "@koishijs/plugin-manager": ^1.6.0
     "@koishijs/plugin-puppeteer": ^3.0.4
     "@koishijs/plugin-rate-limit": ^1.1.1
