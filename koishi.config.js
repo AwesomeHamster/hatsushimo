@@ -140,7 +140,7 @@ const getPlugins = (isDev) => {
  */
 module.exports = {
   host: '0.0.0.0',
-  port: Number(process.env.PORT) || 8080,
+  port: 8080,
   nickname: ['hamster', '仓鼠'],
   prefix: ['/', '.'],
   delay: {
