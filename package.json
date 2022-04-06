@@ -1,0 +1,62 @@
+{
+  "name": "koishi-plugin-ffxiv-eorzea",
+  "version": "0.0.2",
+  "description": "A plugin includes tool functions for FFXIV (Final Fantasy XIV) players in Eorzea.",
+  "keywords": [
+    "bot",
+    "qqbot",
+    "chatbot",
+    "plugin",
+    "koishi",
+    "koishijs",
+    "ffxiv",
+    "eorzea"
+  ],
+  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "maintainers": [
+    {
+      "name": "Maiko Tan",
+      "email": "maiko.tan.coding@gmail.com"
+    },
+    {
+      "name": "ErinnerMO",
+      "email": "erinnermo@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea",
+  "license": "MIT",
+  "main": "dist/index.bundle.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git"
+  },
+  "scripts": {
+    "build": "constructeur build && tsc --emitDeclarationOnly",
+    "test": "NODE_OPTIONS=\"-r ts-node/register\" mocha --extension .spec.ts ./__tests__"
+  },
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea/issues"
+  },
+  "peerDependencies": {
+    "koishi": "^4.0.1"
+  },
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.12",
+    "constructeur": "AwesomeHamster/constructeur#master",
+    "mocha": "^9.2.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
