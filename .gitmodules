@@ -1,12 +1,3 @@
-[submodule "koishi-plugin-hitokoto"]
-	path = plugins/hitokoto
-	url = https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git
-[submodule "koishi-plugin-ffxiv-macrodict"]
-	path = plugins/macrodict
-	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
-[submodule "koishi-plugin-ffxiv-lodestone"]
-	path = plugins/lodestone
-	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git
 [submodule "constructeur"]
 	path = packages/constructeur
 	url = https://github.com/AwesomeHamster/constructeur.git
