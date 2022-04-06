@@ -29,7 +29,9 @@ please click those links below.
 
 ## Status
 
-![Hamster Status](./screenshots/uptimerobot.png)
+Working?: [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m791225476-3a475d05519cdc78840c30f1?label=Bot%20Status)](https://stats.uptimerobot.com/Kknj0SDmMg)
+
+Uptime: [![Uptime Robot ratio (7 days)](https://img.shields.io/uptimerobot/ratio/7/m791225476-3a475d05519cdc78840c30f1?label=Bot%20Uptime)](https://stats.uptimerobot.com/Kknj0SDmMg)
 
 [Hamster Status](https://stats.uptimerobot.com/Kknj0SDmMg) is a service status monitor for Hamster,
 which is powered by [Uptime Robot](https://uptimerobot.com/).
