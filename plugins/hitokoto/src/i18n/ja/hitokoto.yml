@@ -1,0 +1,8 @@
+commands:
+  hitokoto:
+    description: ランダムHitokoto(一言)
+
+    messages:
+      # more placeholders can be found on:
+      # https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
+      format: "「{hitokoto}」\n\t\t\t\t——{from_who}《{from}》"
