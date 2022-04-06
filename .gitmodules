@@ -4,9 +4,6 @@
 [submodule "koishi-plugin-ffxiv-macrodict"]
 	path = plugins/macrodict
 	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
-[submodule "koishi-plugin-ffxiv-eorzea"]
-	path = plugins/eorzea
-	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git
 [submodule "koishi-plugin-ffxiv-lodestone"]
 	path = plugins/lodestone
 	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git
