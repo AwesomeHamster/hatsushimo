@@ -1,9 +1,3 @@
-[submodule "constructeur"]
-	path = packages/constructeur
-	url = https://github.com/AwesomeHamster/constructeur.git
 [submodule "koishi-plugin-pics"]
 	path = plugins/pics
 	url = https://code.mycard.moe/3rdeye/koishi-plugin-pics.git
-[submodule "core"]
-	path = packages/core
-	url = https://github.com/AwesomeHamster/core.git
