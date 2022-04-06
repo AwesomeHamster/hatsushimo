@@ -9,11 +9,11 @@
   "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn lerna run build",
+    "build": "yarn workspaces foreach run build",
     "prepare:onebot": "mkdir -p accounts/$HATSUSHIMO_ONEBOT_SELF_ID && yarn onebot:decrypt",
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
-    "test": "yarn lerna run test",
+    "test": "yarn workspaces run test",
     "prepare": "husky install"
   },
   "workspaces": [
@@ -50,7 +50,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^7.0.4",
-    "lerna": "^4.0.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.3"
   },
