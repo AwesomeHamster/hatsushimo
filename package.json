@@ -10,7 +10,6 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn workspaces foreach run build",
-    "prepare:onebot": "mkdir -p accounts/$HATSUSHIMO_ONEBOT_SELF_ID && yarn onebot:decrypt",
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
     "test": "yarn workspaces run test",
@@ -22,7 +21,9 @@
   ],
   "private": true,
   "engines": {
-    "node": "~16.13.1"
+    "node": "~16.13.1",
+    "yarn": "^1.17.0",
+    "npm": "please use yarn"
   },
   "packageManager": "yarn@3.1.1",
   "prettier": {
@@ -41,7 +42,6 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
-    "dotenv": "^16.0.0",
     "eslint": "^8.12.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-typescript": "^2.7.1",
