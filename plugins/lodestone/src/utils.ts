@@ -1,7 +1,7 @@
 import { Context } from 'koishi'
 
 export type NewsCategory = 'topics' | 'notices' | 'maintenance' | 'updates' | 'status' | 'developers'
-export type NewsRagion = 'na' | 'jp' | 'eu'
+export type NewsRagion = 'na' | 'jp' | 'eu' | 'fr' | 'de'
 
 export interface News {
   id: string
