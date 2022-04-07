@@ -1,0 +1,41 @@
+{
+  "name": "constructeur",
+  "version": "0.1.0",
+  "description": "A build tools for koishi plugins",
+  "keywords": [
+    "koishi",
+    "plugin",
+    "build",
+    "tools"
+  ],
+  "private": true,
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
+  "homepage": "https://github.com/AwesomeHamster/constructeur",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "bin": {
+    "constructeur": "lib/index.js",
+    "ctr": "lib/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/constructeur.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/constructeur/issues"
+  },
+  "packageManager": "yarn@3.1.1",
+  "dependencies": {
+    "cac": "^6.7.12",
+    "esbuild": "^0.14.27",
+    "fs-extra": "^10.0.1",
+    "js-yaml": "^4.1.0"
+  }
+}
