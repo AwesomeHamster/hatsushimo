@@ -1,0 +1,72 @@
+{
+  "name": "core",
+  "description": "The runtime core of Hamster (hatsushimo)",
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
+  "homepage": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/core.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto/issues"
+  },
+  "engines": {
+    "node": ">=16.3.0",
+    "yarn": ">=1.17.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "koishi start koishi.config.js",
+    "start:dev": "cross-env NODE_ENV=dev koishi start koishi.config.js",
+    "================== ONEBOT ==================": "",
+    "onebot:encrypt": "node ./scripts/crypt.js encrypt",
+    "onebot:decrypt": "node ./scripts/crypt.js decrypt",
+    "heroku-postbuild": "echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js && yarn onebot:decrypt"
+  },
+  "dependencies": {
+    "@koishijs/cli": "^4.5.1",
+    "@koishijs/plugin-adapter-discord": "^2.0.7",
+    "@koishijs/plugin-adapter-onebot": "^4.1.5",
+    "@koishijs/plugin-admin": "^1.1.1",
+    "@koishijs/plugin-auth": "^1.1.2",
+    "@koishijs/plugin-bind": "^1.2.0",
+    "@koishijs/plugin-chat": "^1.2.3",
+    "@koishijs/plugin-console": "^3.2.4",
+    "@koishijs/plugin-database-mongo": "^3.1.1",
+    "@koishijs/plugin-dataview": "^1.2.2",
+    "@koishijs/plugin-echo": "^1.1.0",
+    "@koishijs/plugin-feedback": "^1.1.0",
+    "@koishijs/plugin-forward": "^2.1.1",
+    "@koishijs/plugin-puppeteer": "^3.0.5",
+    "@koishijs/plugin-rate-limit": "^1.1.2",
+    "@koishijs/plugin-recall": "^1.1.0",
+    "@koishijs/plugin-repeater": "^1.0.1",
+    "@koishijs/plugin-status": "^5.3.4",
+    "@koishijs/plugin-sudo": "^1.1.0",
+    "@koishijs/utils": "^5.2.1",
+    "cac": "^6.7.12",
+    "koishi": "^4.5.1",
+    "koishi-plugin-ffxiv-eorzea": "^0.0.2",
+    "koishi-plugin-ffxiv-lodestone": "^0.0.1",
+    "koishi-plugin-ffxiv-macrodict": "^2.0.4",
+    "koishi-plugin-gocqhttp": "^2.2.4",
+    "koishi-plugin-hitokoto": "^2.1.1",
+    "koishi-plugin-image-search": "^4.0.1",
+    "koishi-plugin-pics": "^8.7.3",
+    "koishi-plugin-picsource-lolicon": "^8.5.5",
+    "puppeteer": "^13.5.2",
+    "schemastery": "^3.1.1"
+  },
+  "devDependencies": {
+    "@koishijs/plugin-database-memory": "^1.1.0",
+    "@koishijs/plugin-manager": "^1.6.0",
+    "@koishijs/plugin-sandbox": "^1.0.2",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^10.0.1"
+  },
+  "packageManager": "yarn@3.1.1"
+}
