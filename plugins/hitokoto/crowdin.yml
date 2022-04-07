@@ -1,0 +1,5 @@
+preserve_hierarchy: false
+
+files:
+  - source: /src/i18n/zh/*.yml
+    translation: /src/i18n/%two_letters_code%/%original_file_name%
