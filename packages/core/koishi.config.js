@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const { Random } = require('koishi')
-
 try {
   require('dotenv').config()
 } catch (e) {}
@@ -85,7 +82,7 @@ const plugins = {
   'sandbox': {},
 
   'bind': {
-    generateToken: () => 'hataushimo/' + Random.id(6, 10),
+    tokenPrefix: 'hataushimo/',
   },
   'forward': {},
   'echo': {},
