@@ -12,7 +12,7 @@
     "build": "yarn workspaces foreach run build",
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
-    "test": "yarn workspaces run test",
+    "test": "yarn workspaces foreach run test",
     "prepare": "husky install"
   },
   "workspaces": [
@@ -40,6 +40,7 @@
     "jsxSingleQuote": true
   },
   "devDependencies": {
+    "@types/chai": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "eslint": "^8.12.0",
