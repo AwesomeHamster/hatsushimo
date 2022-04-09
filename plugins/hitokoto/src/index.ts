@@ -37,21 +37,6 @@ export const Config = Schema.object({
   defaultTypes: Schema.array(Schema.string()).description('默认一言类别'),
 })
 
-export const types = {
-  a: '动画',
-  b: '漫画',
-  c: '游戏',
-  d: '文学',
-  e: '原创',
-  f: '来自网络',
-  g: '其他',
-  h: '影视',
-  i: '诗词',
-  j: '网易云',
-  k: '哲学',
-  l: '抖机灵',
-}
-
 export const name = 'hitokoto'
 
 export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promise<void> {
@@ -63,7 +48,7 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
   ctx.i18n.define('en', i18n.en)
   ctx.i18n.define('zh', i18n.zh)
 
-  const api = new HitokotoApi(ctx, config)
+  ctx.plugin(HitokotoApi)
 
   ctx
     .command('hitokoto')
@@ -106,7 +91,7 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
       }
 
       try {
-        const resp = await api.getHitokoto(params)
+        const resp = await ctx.hitokoto.getHitokoto(params)
         return session?.text('.format', resp)
       } catch (error) {
         const err = error as Error
@@ -119,7 +104,7 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
 
   ctx.command('hitokoto.types').action(async ({ session }) => {
     return session?.text('.list', [
-      Object.entries(types)
+      Object.entries(ctx.hitokoto.types)
         .map(([type, desc]) => `${type} - ${desc}`)
         .join('\n'),
     ])
