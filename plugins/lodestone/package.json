@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "constructeur build && tsc --emitDeclarationOnly",
-    "test": "NODE_OPTIONS=\"-r ts-node/register\" mocha --extension .spec.ts ./__tests__"
+    "test": "mocha -r ts-node/register --extension .spec.ts ./__tests__"
   },
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone/issues"
