@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- add `ctx.hitokoto` as a service for other koishi plugins
+
+    - `ctx.hitokoto.getHitokoto(params)` returns a sentence from hitokoto.
+
 ## [2.1.1] - 2022-03-26
 
 ### Added
