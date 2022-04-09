@@ -1,8 +1,19 @@
 import { Context, Schema } from 'koishi'
 
 import * as i18n from './i18n'
+import { HitokotoApi } from './api'
+export { HitokotoRet } from './api'
+
+declare module 'koishi' {
+  namespace Context {
+    interface Services {
+      hitokoto: HitokotoApi
+    }
+  }
+}
 
 export interface HitokotoOptions {
+  service?: boolean
   /**
    * @default "https://v1.hitokoto.cn"
    */
@@ -41,21 +52,6 @@ export const types = {
   l: '抖机灵',
 }
 
-export interface HitokotoRet {
-  id: number
-  hitokoto: string
-  type: string
-  from: string
-  from_who: string | null
-  creator: string
-  creator_uid: number
-  reviewer: number
-  uuid: string
-  commit_from: string
-  created_at: string
-  length: number
-}
-
 export const name = 'hitokoto'
 
 export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promise<void> {
@@ -66,6 +62,8 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
 
   ctx.i18n.define('en', i18n.en)
   ctx.i18n.define('zh', i18n.zh)
+
+  const api = new HitokotoApi(ctx, config)
 
   ctx
     .command('hitokoto')
@@ -108,14 +106,8 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
       }
 
       try {
-        const resp = await ctx.http.get<HitokotoRet>(config.apiUrl, {
-          params,
-        })
-        return session?.text('.format', {
-          ...resp,
-          // the `from_who` field may be null.
-          from_who: resp.from_who ?? '',
-        })
+        const resp = await api.getHitokoto(params)
+        return session?.text('.format', resp)
       } catch (error) {
         const err = error as Error
         if (/ETIMEOUT/.test(err.message)) {
