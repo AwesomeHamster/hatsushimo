@@ -9,10 +9,10 @@
   "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspaces foreach run build",
+    "build": "yarn workspaces foreach -p -j 4 run build",
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
-    "test": "yarn workspaces foreach run test",
+    "test": "yarn workspaces foreach -p -j 4 --verbose run test",
     "prepare": "husky install"
   },
   "workspaces": [
