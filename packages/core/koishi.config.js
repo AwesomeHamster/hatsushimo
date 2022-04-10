@@ -13,8 +13,6 @@ const devPlugins = [
   'ffxiv-eorzea',
   'ffxiv-macrodict',
   'ffxiv-lodestone',
-  'pics',
-  'picsource-lolicon',
 ]
 const prodPlugins = [
   'adapter-discord',
@@ -33,6 +31,7 @@ const prodPlugins = [
   'recall',
   'feedback',
   'forward',
+  'github',
   'repeater',
   'puppeteer',
   'image-search',
@@ -96,6 +95,7 @@ const plugins = {
       probability: 0.75,
     },
   },
+  'github': {},
 
   'puppeteer': {
     browser: { args: ['--no-sandbox'] },

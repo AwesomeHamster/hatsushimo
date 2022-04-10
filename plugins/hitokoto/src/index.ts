@@ -1,8 +1,19 @@
 import { Context, Schema } from 'koishi'
 
 import * as i18n from './i18n'
+import { HitokotoApi } from './api'
+export { HitokotoRet } from './api'
+
+declare module 'koishi' {
+  namespace Context {
+    interface Services {
+      hitokoto: HitokotoApi
+    }
+  }
+}
 
 export interface HitokotoOptions {
+  service?: boolean
   /**
    * @default "https://v1.hitokoto.cn"
    */
@@ -26,36 +37,6 @@ export const Config = Schema.object({
   defaultTypes: Schema.array(Schema.string()).description('默认一言类别'),
 })
 
-export const types = {
-  a: '动画',
-  b: '漫画',
-  c: '游戏',
-  d: '文学',
-  e: '原创',
-  f: '来自网络',
-  g: '其他',
-  h: '影视',
-  i: '诗词',
-  j: '网易云',
-  k: '哲学',
-  l: '抖机灵',
-}
-
-export interface HitokotoRet {
-  id: number
-  hitokoto: string
-  type: string
-  from: string
-  from_who: string | null
-  creator: string
-  creator_uid: number
-  reviewer: number
-  uuid: string
-  commit_from: string
-  created_at: string
-  length: number
-}
-
 export const name = 'hitokoto'
 
 export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promise<void> {
@@ -66,6 +47,8 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
 
   ctx.i18n.define('en', i18n.en)
   ctx.i18n.define('zh', i18n.zh)
+
+  ctx.plugin(HitokotoApi)
 
   ctx
     .command('hitokoto')
@@ -108,14 +91,8 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
       }
 
       try {
-        const resp = await ctx.http.get<HitokotoRet>(config.apiUrl, {
-          params,
-        })
-        return session?.text('.format', {
-          ...resp,
-          // the `from_who` field may be null.
-          from_who: resp.from_who ?? '',
-        })
+        const resp = await ctx.hitokoto.getHitokoto(params)
+        return session?.text('.format', resp)
       } catch (error) {
         const err = error as Error
         if (/ETIMEOUT/.test(err.message)) {
@@ -127,7 +104,7 @@ export async function apply(ctx: Context, _config: HitokotoOptions = {}): Promis
 
   ctx.command('hitokoto.types').action(async ({ session }) => {
     return session?.text('.list', [
-      Object.entries(types)
+      Object.entries(ctx.hitokoto.types)
         .map(([type, desc]) => `${type} - ${desc}`)
         .join('\n'),
     ])

@@ -41,6 +41,7 @@
     "@koishijs/plugin-echo": "^1.1.0",
     "@koishijs/plugin-feedback": "^1.1.0",
     "@koishijs/plugin-forward": "^2.1.1",
+    "@koishijs/plugin-github": "^4.1.0",
     "@koishijs/plugin-puppeteer": "^3.0.5",
     "@koishijs/plugin-rate-limit": "^1.1.2",
     "@koishijs/plugin-recall": "^1.1.0",
