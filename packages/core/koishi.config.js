@@ -6,6 +6,7 @@ const isDev = process.env.NODE_ENV === 'dev'
 
 const devPlugins = [
   'database-memory',
+  'assets-local',
   'console',
   'manager',
   'sandbox',
@@ -19,6 +20,7 @@ const prodPlugins = [
   'gocqhttp',
   'adapter-onebot',
   'database-mongo',
+  'assets-local',
   'admin',
   'sudo',
   'console',
@@ -68,6 +70,13 @@ const plugins = {
     username: process.env['HATSUSHIMO_MONGO_USERNAME'] || 'root',
     password: process.env['HATSUSHIMO_MONGO_PASSWORD'] || '',
     database: process.env['HATSUSHIMO_MONGO_DATABASE'] || 'koishiv4',
+  },
+
+  'assets-local': {
+    root: '/assets',
+    path: '/static',
+    selfUrl: `0.0.0.0:${process.env['PORT'] || 8080}`,
+    secret: process.env['HATSUSHIMO_ASSETS_SECRET'] || '',
   },
 
   'admin': {},
