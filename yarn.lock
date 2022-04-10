@@ -292,6 +292,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-github@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@koishijs/plugin-github@npm:4.1.0"
+  dependencies:
+    "@octokit/webhooks-types": ^5.5.1
+    axios: ^0.24.0
+    marked: ^4.0.12
+  peerDependencies:
+    koishi: ^4.4.2
+  checksum: d287efbb09d634abc59e473e9cd2111d4f7f570dd33684a58b7e5d43105bfe510215756709d85166df19944cbbb03a5bf1d0f55715b9e65bc14c8e3e3eff9358
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-manager@npm:^1.6.0":
   version: 1.6.0
   resolution: "@koishijs/plugin-manager@npm:1.6.0"
@@ -452,6 +465,13 @@ __metadata:
     mkdirp: ^1.0.4
     rimraf: ^3.0.2
   checksum: 1388777b507b0c592d53f41b9d182e1a8de7763bc625fc07999b8edbc22325f074e5b3ec90af79c89d6987fdb2325bc66d59f483258543c14a43661621f841b0
+  languageName: node
+  linkType: hard
+
+"@octokit/webhooks-types@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "@octokit/webhooks-types@npm:5.5.1"
+  checksum: c9b1eacc02f68c0bcdccaa662c4c1adc19e6d5799370d5f4f9429a382ecb2d63b4be52711da7058aafa36afb6d98bf0ddb4bcf1d8dda8251068c720cf9fa2b40
   languageName: node
   linkType: hard
 
@@ -1553,6 +1573,7 @@ __metadata:
     "@koishijs/plugin-echo": ^1.1.0
     "@koishijs/plugin-feedback": ^1.1.0
     "@koishijs/plugin-forward": ^2.1.1
+    "@koishijs/plugin-github": ^4.1.0
     "@koishijs/plugin-manager": ^1.6.0
     "@koishijs/plugin-puppeteer": ^3.0.5
     "@koishijs/plugin-rate-limit": ^1.1.2
@@ -4032,6 +4053,15 @@ __metadata:
     socks-proxy-agent: ^6.1.1
     ssri: ^9.0.0
   checksum: 42825d119a7e4f5b1a8e7048a86d328cd36bb1ff875d155ce7079d9a0afdd310c198fb310096af358cfa9ecdf643cecf960380686792457dccb36e17efe89eb0
+  languageName: node
+  linkType: hard
+
+"marked@npm:^4.0.12":
+  version: 4.0.13
+  resolution: "marked@npm:4.0.13"
+  bin:
+    marked: bin/marked.js
+  checksum: 98e5acb793feb41b56f6257a3f6f9158111576d1d9bd1dd1c9069a7581d755bd07c30c7ae42414899f90d8b0302a44792b103d962413fb16d6f4d64a41560938
   languageName: node
   linkType: hard
 
