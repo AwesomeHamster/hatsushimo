@@ -1603,10 +1603,10 @@ __metadata:
     koishi-plugin-gocqhttp: ^2.2.4
     koishi-plugin-hitokoto: ^2.1.1
     koishi-plugin-image-search: ^4.0.1
-    koishi-plugin-pics: ^8.7.3
+    koishi-plugin-pics: ^8.7.8
     koishi-plugin-picsource-lolicon: ^8.5.5
     puppeteer: ^13.5.2
-    schemastery: ^3.1.1
+    schemastery: ^3.2.0
   languageName: unknown
   linkType: soft
 
@@ -3801,15 +3801,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-plugin-pics@npm:^8.7.3":
-  version: 8.7.3
-  resolution: "koishi-plugin-pics@npm:8.7.3"
+"koishi-plugin-pics@npm:^8.7.8":
+  version: 8.7.8
+  resolution: "koishi-plugin-pics@npm:8.7.8"
   dependencies:
     koishi-thirdeye: ^9.2.18
     lodash: ^4.17.21
   peerDependencies:
     koishi: ^4.5.0
-  checksum: a94f06ad719f7edf120124510cb25dedeaa8786584c5aa5cdde165a8696f77542a546e8f083dcdd46279d1cf5f49269b51ade9e7c3eacd5660ee2fb51554bd51
+  checksum: d51a5d924e9cdf2fa6d303934234fb1f6765075bf0283dfff5a07c007ec8d6c4506d1476f7d457c1d6ff81a8217ca337861afc0ba45456c57421ab98d68ebbba
   languageName: node
   linkType: hard
 
@@ -5127,6 +5127,13 @@ __metadata:
   version: 3.1.1
   resolution: "schemastery@npm:3.1.1"
   checksum: acddbb6717e47f1c50be7c31f8d4ab4cbed8db0b759449fc21e5033089a5586c2997abb17cc09ed2845d666cac104eb9d6f2c2af47a109813b3d8e63eed022e1
+  languageName: node
+  linkType: hard
+
+"schemastery@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "schemastery@npm:3.2.0"
+  checksum: 3cac37a91b6926cf1a53c8ca8b7bf52ff35b986c17ec57d706e7428fa1a3a045ec77b08fad54072f3428f069b4aae6345a92c4a2a5c4c5fccd45e6221d25a353
   languageName: node
   linkType: hard
 
