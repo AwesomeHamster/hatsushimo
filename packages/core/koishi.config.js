@@ -1,3 +1,5 @@
+const path = require('path')
+
 try {
   require('dotenv').config()
 } catch (e) {}
@@ -11,6 +13,7 @@ const devPlugins = [
   'manager',
   'sandbox',
   'hitokoto',
+  'assets-local',
   'ffxiv-eorzea',
   'ffxiv-macrodict',
   'ffxiv-lodestone',
@@ -73,7 +76,7 @@ const plugins = {
   },
 
   'assets-local': {
-    root: '/assets',
+    root: path.resolve(__dirname, 'assets'),
     path: '/static',
     selfUrl: `0.0.0.0:${process.env['PORT'] || 8080}`,
     secret: process.env['HATSUSHIMO_ASSETS_SECRET'] || '',
