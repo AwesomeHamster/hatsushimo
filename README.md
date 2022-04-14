@@ -1,16 +1,14 @@
 # hatsushimo 初霜
 
-**hatsushimo** is the 4th generation of **Hamster** (仓鼠) the chatbot which is based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
+**hatsushimo** is the 4th generation of **Hamster** (仓鼠 in Chinese) the chatbot which is based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
 
 Currently **Hamster** (仓鼠) supports Discord and QQ, and we are working on other platforms.
 
-The codename **hatsushimo** is a Japanese word (初霜) which means the "first frost in the year".
+The codename **hatsushimo** is a Japanese word 初霜 which means the "first frost in the year".
 
 ## Note
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
-This repository is a workspace powered by lerna for developing the bot,
+This repository is a workspace powered by Yarn v2 for developing the bot,
 if you want to read the source code of plugins that are used in this bot,
 please click those links below.
 
