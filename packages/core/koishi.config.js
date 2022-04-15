@@ -78,7 +78,7 @@ const plugins = {
   'assets-local': {
     root: path.resolve(__dirname, 'assets'),
     path: '/static',
-    selfUrl: `0.0.0.0:${process.env['PORT'] || 8080}`,
+    selfUrl: `http://127.0.0.1:${process.env['PORT'] || 8080}`,
     secret: process.env['HATSUSHIMO_ASSETS_SECRET'] || '',
   },
 
