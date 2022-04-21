@@ -133,6 +133,9 @@ const plugins = {
   'picsource-lolicon': {
     isDefault: true,
     r18: 0,
+    extraConfig: {
+      size: 'regular',
+    },
   },
 }
 
