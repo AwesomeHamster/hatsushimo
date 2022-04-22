@@ -69,6 +69,7 @@ const plugins = {
 
   'database-mongo': {
     protocol: 'mongodb+srv',
+    port: 0,
     host: process.env['HATSUSHIMO_MONGO_HOST'] || 'localhost',
     username: process.env['HATSUSHIMO_MONGO_USERNAME'] || 'root',
     password: process.env['HATSUSHIMO_MONGO_PASSWORD'] || '',
