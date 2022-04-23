@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          token: ${{ secrets.HAMSTER_PAT }}
 
       - uses: actions/setup-node@v1
         with:
@@ -38,6 +39,4 @@ jobs:
 
       - name: Push Lock File
         run: |
-          git push https://PersonalAccessToken:${{ secrets.HAMSTER_PAT }}@github.com/${{ github.repository }}.git $(git branch --show-current):${{ github.event.pull_request.head.ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.HAMSTER_PAT }}
+          git push https://github.com/${{ github.repository }}.git $(git branch --show-current):${{ github.event.pull_request.head.ref }}
