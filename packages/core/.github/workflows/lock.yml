@@ -38,6 +38,6 @@ jobs:
 
       - name: Push Lock File
         run: |
-          git push ${{ github.repositoryUrl }} $(git branch --show-current):${{ github.event.pull_request.head.ref }}
+          git push https://github.com/${{ github.repository }}.git $(git branch --show-current):${{ github.event.pull_request.head.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.HAMSTER_PAT }}
