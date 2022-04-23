@@ -28,8 +28,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "{{ github.actor.name }}"
-          git config user.email "{{ github.actor.email }}"
+          git config user.name "awesome-hamster-bot"
+          git config user.email "awesome.hamster.git@gmail.com"
       
       - name: Commit Lock File
         run: |
@@ -40,4 +40,4 @@ jobs:
         run: |
           git push ${{ github.repositoryUrl }} ${{ github.ref_name }}
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.HAMSTER_PAT }}
