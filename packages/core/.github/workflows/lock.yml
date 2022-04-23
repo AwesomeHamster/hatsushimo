@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - uses: actions/checkout@v2
         with:
           depth: 0
@@ -38,6 +43,6 @@ jobs:
 
       - name: Push Lock File
         run: |
-          git push ${{ github.repositoryUrl }} ${{ github.ref_name }}
+          git push ${{ github.repositoryUrl }} ${{ steps.extract_branch.outputs.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.HAMSTER_PAT }}
