@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Let Github Actions add lock files for us
+yarn.lock
