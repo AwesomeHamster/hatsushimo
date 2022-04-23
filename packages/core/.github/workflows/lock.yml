@@ -1,12 +1,9 @@
 name: Generate Lock File
 
 on:
-  pull_request:
+  push:
     branches:
-      - master
-
-permissions:
-  pull-requests: write
+      - develop
 
 jobs:
   lock:
@@ -16,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          token: ${{ secrets.HAMSTER_PAT }}
+          persist-credentials: false
 
       - uses: actions/setup-node@v1
         with:
@@ -37,6 +34,8 @@ jobs:
           git add -f yarn.lock
           git commit -m "[CI] update yarn.lock"
 
-      - name: Push Lock File
-        run: |
-          git push https://github.com/${{ github.repository }}.git $(git branch --show-current):${{ github.event.pull_request.head.ref }}
+      - name: Push Commit
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.HAMSTER_PAT }}
+          branch: ${{ github.ref }}
