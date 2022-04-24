@@ -9,7 +9,7 @@ jobs:
   lock:
     runs-on: ubuntu-latest
 
-    if: '!startWith("${{ github.event.head_commit.message }}", "[CI]")'
+    if: '!startWith(github.event.head_commit.message, "[CI]")'
 
     steps:
       - uses: actions/checkout@v2
