@@ -55,7 +55,6 @@
     "typescript": "^4.6.3"
   },
   "resolutions": {
-    "koishi-plugin-image-search@4.0.1": "patch:koishi-plugin-image-search@npm:4.0.1#.yarn/patches/koishi-plugin-image-search-npm-4.0.1-afad21d577",
     "constructeur": "workspace:packages/constructeur"
   }
 }
