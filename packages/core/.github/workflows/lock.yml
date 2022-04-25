@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "16.x"
+          node-version: '16.x'
           yarn: true
 
       - name: Generate Lock File
@@ -30,7 +30,7 @@ jobs:
         run: |
           git config user.name "awesome-hamster-bot"
           git config user.email "awesome.hamster.git@gmail.com"
-      
+
       - name: Commit Lock File
         run: |
           git add -f yarn.lock
