@@ -1,9 +1,9 @@
-import { Context, template } from 'koishi'
+import { Context } from 'koishi'
 
 import { Config } from './config'
 import { renderMacroView } from './render'
-import macrodictTemplates from './template'
 import { updateMacros } from './update'
+import * as i18n from './i18n'
 
 declare module 'koishi' {
   interface Tables {
@@ -55,17 +55,16 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     ..._config,
   }
 
-  template.set('macrodict', macrodictTemplates)
+  ctx.i18n.define('zh', i18n.zh)
 
   ctx
-    .command('macrodict <macro>', template('macrodict.description'))
+    .command('macrodict <macro>')
     .alias(...config.aliases)
-    .usage('macrodict <macro>')
     .option('lang', '-l <language:string>')
     .action(async ({ session, options }, macro) => {
       let lang = (options?.lang as typeof locales[number]) ?? config.defaultLanguage
       if (!lang || !locales.includes(lang)) {
-        session?.sendQueued(template('macrodict.wrong_language', locales.join(', '), config.defaultLanguage))
+        session?.sendQueued(session.text('.wrong_language', [locales.join(', '), config.defaultLanguage]))
         lang = config.defaultLanguage as typeof locales[number]
       }
       macro = macro.startsWith('/') ? macro : '/' + macro
@@ -91,11 +90,11 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
       const puppeteer = ctx.puppeteer
 
       if (!puppeteer) {
-        return template('macrodict.not_found_puppeteer')
+        return session?.text('.not_found_puppeteer')
       }
 
       if (!db || !db[0]) {
-        return template('macrodict.not_found_macro', macro)
+        return session?.text('.not_found_macro', [macro])
       }
 
       return renderMacroView(puppeteer, {
@@ -109,8 +108,8 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     ctx.on('ready', () => updateMacros(ctx))
   }
 
-  ctx.command('macrodict.update', template('macrodict.update_description')).action(({ session }) => {
-    session?.sendQueued(template('macrodict.start_updating_macros'))
+  ctx.command('macrodict.update').action(({ session }) => {
+    session?.sendQueued(session.text('.start_updating_macros'))
     updateMacros(ctx)
   })
 }
