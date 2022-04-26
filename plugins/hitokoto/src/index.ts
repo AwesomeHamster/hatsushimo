@@ -5,7 +5,7 @@ import { HitokotoApi } from './api'
 import { Config } from './config'
 
 export const name = 'hitokoto'
-export { Config }
+export { Config, HitokotoApi }
 
 export async function apply(ctx: Context, _config: Config = {}): Promise<void> {
   const config = {
