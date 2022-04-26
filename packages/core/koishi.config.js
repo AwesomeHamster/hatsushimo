@@ -114,7 +114,7 @@ const plugins = {
     browser: { args: ['--no-sandbox'] },
   },
 
-  'image-search': {
+  '~image-search': {
     saucenaoApiKey: (process.env['HATSUSHIMO_SAUCENAO_API_KEY'] || '').split(','),
   },
   'ffxiv-eorzea': {},
