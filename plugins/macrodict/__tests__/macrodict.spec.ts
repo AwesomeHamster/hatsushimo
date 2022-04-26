@@ -2,7 +2,7 @@ import { App } from 'koishi'
 import mock from '@koishijs/plugin-mock'
 import memory from '@koishijs/plugin-database-memory'
 
-import * as macrodict from '../src/index'
+import * as macrodict from '..'
 
 describe('basic', async () => {
   const app = new App()
