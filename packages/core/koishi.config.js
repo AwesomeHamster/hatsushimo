@@ -1,5 +1,11 @@
 const path = require('path')
 
+const { Axios } = require('axios')
+const https = require('https')
+
+const agent = new https.Agent({})``
+
+
 try {
   require('dotenv').config()
 } catch (e) {}
@@ -108,7 +114,10 @@ const plugins = {
       probability: 0.75,
     },
   },
-  'github': {},
+  'github': {
+    appId: process.env['HATSUSHIMO_GITHUB_APP_ID'],
+    appSecret: process.env['HATSUSHIMO_GITHUB_APP_SECRET'],
+  },
 
   'puppeteer': {
     browser: { args: ['--no-sandbox'] },
