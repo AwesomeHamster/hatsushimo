@@ -1,11 +1,5 @@
 const path = require('path')
 
-const { Axios } = require('axios')
-const https = require('https')
-
-const agent = new https.Agent({})``
-
-
 try {
   require('dotenv').config()
 } catch (e) {}
