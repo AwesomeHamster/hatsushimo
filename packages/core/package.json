@@ -20,9 +20,9 @@
   },
   "private": true,
   "scripts": {
-    "start": "koishi start koishi.yaml",
+    "start": "yarn generate-yaml && koishi start koishi.yaml",
     "start:dev": "koishi start koishi.dev.yaml",
-    "heroku-postbuild": "yarn onebot:download-gocqhttp && yarn onebot:decrypt && yarn generate-yaml",
+    "heroku-postbuild": "yarn onebot:download-gocqhttp && yarn onebot:decrypt",
     "generate-yaml": "node ./scripts/generate-yaml.js",
     "================== ONEBOT ==================": "",
     "onebot:encrypt": "node ./scripts/crypt.js encrypt",
