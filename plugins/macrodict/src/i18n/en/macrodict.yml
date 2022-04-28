@@ -1,15 +1,15 @@
 ---
 commands:
   macrodict:
-    description: 宏学词典
+    description: Macro Dictionary
     usage: |
-      macrodict action         输出 action 宏指令的介绍
-      macrodict -l ja hotbar   输出 hotbar 宏指令的日语介绍
+      macrodict action         output the description of the macro "action"
+      macrodict -l ja hotbar   output the description of the macro "hotbar" in Japanese
     options:
-      lang: 设定输出的语言
+      lang: Set the output language
     messages:
-      database_error: '数据库错误，无法搜索到宏指令'
-      not_updated: '宏学词典未更新'
+      database_error: 'Error in database, not found any text commands.'
+      not_updated: 'The macro dictionary database is not updated.'
       wrong_language: '语言错误，可用的语言有：[{0}]，将采用默认语言{1}进行搜索'
       not_found_puppeteer: '未找到 koishi-plugin-puppeteer 插件，无法渲染宏指令'
       not_found_macro: '找不到宏指令'
