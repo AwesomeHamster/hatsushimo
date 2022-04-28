@@ -1,8 +1,22 @@
+---
 commands:
   hitokoto:
     description: ランダムHitokoto(一言)
-
+    options:
+      type: ヒトコトの分野を指定してください。複数の分野を指定する場合は、半角英数のコンマ（,）で区切りしてください。指定可能な分野は「hitokoto.types 」でご確認ください。
+      min-length: ランダムなヒトコトの最小文字数を指定してください。デフォルト値が１です。
+      max-length: ヒトコトの最大文字数を指定してください。デフォルトは指定しません。
     messages:
-      # more placeholders can be found on:
-      # https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
-      format: "「{hitokoto}」\n\t\t\t\t——{from_who}《{from}》"
+      invalid_type: 指定されたヒトコトの分野が見つかりません。：{0}
+      min_length_gt_max_length: 最小文字数は最大文字数を超えてはなりません。
+      service_unavailable: このサービスは現在ご利用いただけません
+      unknown_error: "不明なエラーが発生しました。しばらく経ってから再度お試しください。{message}"
+      timeout: リクエストがタイムアウトしました。しばらく経ってから再度お試しください
+      #the format that the bot would generate, {hitokoto} is the sentence that hitokoto API returns,
+      #more placeholders can be found on:
+      #https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
+      format: "「{hitokoto}」\n\\t\\t\\t\\t——{from_who}《{from}》"
+  hitokoto.types:
+    description: ヒトコトの分野リスト
+    messages:
+      list: "以下から一つまたは複数の分野を指定してください。半角英数のコンマ(,)で区切りしてください。\n{0}"
