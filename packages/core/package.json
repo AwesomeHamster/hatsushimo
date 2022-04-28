@@ -45,6 +45,7 @@
     "@koishijs/plugin-feedback": "^1.1.0",
     "@koishijs/plugin-forward": "^2.1.1",
     "@koishijs/plugin-github": "^4.1.1",
+    "@koishijs/plugin-manager": "^1.7.3",
     "@koishijs/plugin-puppeteer": "^3.0.6",
     "@koishijs/plugin-rate-limit": "^1.1.2",
     "@koishijs/plugin-recall": "^1.1.0",
@@ -69,7 +70,6 @@
   },
   "devDependencies": {
     "@koishijs/plugin-database-memory": "^1.1.0",
-    "@koishijs/plugin-manager": "^1.7.0",
     "@koishijs/plugin-sandbox": "^1.1.0",
     "cross-env": "^7.0.3"
   },

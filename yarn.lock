@@ -333,19 +333,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-manager@npm:^1.7.0":
-  version: 1.7.0
-  resolution: "@koishijs/plugin-manager@npm:1.7.0"
+"@koishijs/plugin-manager@npm:^1.7.3":
+  version: 1.7.3
+  resolution: "@koishijs/plugin-manager@npm:1.7.3"
   dependencies:
     "@koishijs/market": ^1.0.0
     cross-spawn: ^7.0.3
-    semver: ^7.3.5
+    ns-require: ^1.1.2
+    semver: ^7.3.7
     which-pm-runs: ^1.1.0
   peerDependencies:
-    "@koishijs/cli": ^4.5.2
-    "@koishijs/plugin-console": ^3.2.5
-    koishi: ^4.5.2
-  checksum: ccb2ef1ac5248fa25ab04f61ef578bf36f3f600e13315c17b182205f3079ff99aa5bcb9c7259216739645bebd631eac8b5d356f062a3c4f9dc2a12ca138d83f9
+    "@koishijs/cli": ^4.6.1
+    "@koishijs/plugin-console": ^3.2.8
+    koishi: ^4.6.1
+  checksum: 2743777a83dc2d8b208b882c370925c87d26083b7fbd3b18cac06f2bb7a09ba7a65a3b72abf349e5baa804cf1d517e9a277c50c23f494f45af5ad8a936d4e098
   languageName: node
   linkType: hard
 
@@ -1615,7 +1616,7 @@ __metadata:
     "@koishijs/plugin-feedback": ^1.1.0
     "@koishijs/plugin-forward": ^2.1.1
     "@koishijs/plugin-github": ^4.1.1
-    "@koishijs/plugin-manager": ^1.7.0
+    "@koishijs/plugin-manager": ^1.7.3
     "@koishijs/plugin-puppeteer": ^3.0.6
     "@koishijs/plugin-rate-limit": ^1.1.2
     "@koishijs/plugin-recall": ^1.1.0
@@ -4462,6 +4463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ns-require@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "ns-require@npm:1.1.2"
+  checksum: 187756e8b71d689ea1ca1da98455f5eda9d5ee66db83b362f4b32da57f737a60302dcf8fa506414b400fe8ef73b8206f8545ace6bbde55a168f042ea5cd5a3a2
+  languageName: node
+  linkType: hard
+
 "nth-check@npm:^2.0.1":
   version: 2.0.1
   resolution: "nth-check@npm:2.0.1"
@@ -5186,6 +5194,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 5eafe6102bea2a7439897c1856362e31cc348ccf96efd455c8b5bc2c61e6f7e7b8250dc26b8828c1d76a56f818a7ee907a36ae9fb37a599d3d24609207001d60
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.3.7":
+  version: 7.3.7
+  resolution: "semver@npm:7.3.7"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
   languageName: node
   linkType: hard
 
