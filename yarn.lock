@@ -1627,6 +1627,7 @@ __metadata:
     cac: ^6.7.12
     cross-env: ^7.0.3
     fs-extra: ^10.0.1
+    js-yaml: ^4.1.0
     koishi: ^4.5.2
     koishi-plugin-ffxiv-eorzea: ^0.0.2
     koishi-plugin-ffxiv-lodestone: ^0.0.1

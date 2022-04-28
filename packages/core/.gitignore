@@ -105,3 +105,7 @@ dist
 
 # Let Github Actions add lock files for us
 yarn.lock
+
+# Development
+koishi.dev.*
+koishi.yaml

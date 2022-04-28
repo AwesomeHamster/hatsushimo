@@ -9,7 +9,7 @@ jobs:
   lock:
     runs-on: ubuntu-latest
 
-    if: '!startWith(github.event.head_commit.message, "[CI]")'
+    if: '!contains(github.event.head_commit.message, "[ci skip]")'
 
     steps:
       - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate Lock File
         run: |
-          yarn install
+          yarn install --no-immutable
 
       - name: Configure Git
         run: |
@@ -34,7 +34,7 @@ jobs:
       - name: Commit Lock File
         run: |
           git add -f yarn.lock
-          git commit -m "[CI] update yarn.lock"
+          git commit -m "[ci skip] update yarn.lock"
 
       - name: Push Commit
         uses: ad-m/github-push-action@master

@@ -20,12 +20,14 @@
   },
   "private": true,
   "scripts": {
-    "start": "koishi start koishi.config.js",
-    "start:dev": "cross-env NODE_ENV=dev koishi start koishi.config.js",
+    "start": "koishi start koishi.yaml",
+    "start:dev": "koishi start koishi.dev.yaml",
+    "heroku-postbuild": "yarn onebot:download-gocqhttp && yarn onebot:decrypt && yarn generate-yaml",
+    "generate-yaml": "node ./scripts/generate-yaml.js",
     "================== ONEBOT ==================": "",
     "onebot:encrypt": "node ./scripts/crypt.js encrypt",
     "onebot:decrypt": "node ./scripts/crypt.js decrypt",
-    "heroku-postbuild": "echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js && yarn onebot:decrypt"
+    "onebot:download-gocqhttp": "echo 'downloading go-cqhttp' && node ./node_modules/koishi-plugin-gocqhttp/install.js"
   },
   "dependencies": {
     "@koishijs/cli": "^4.5.2",
@@ -51,6 +53,7 @@
     "@koishijs/plugin-sudo": "^1.1.0",
     "@koishijs/utils": "^5.2.2",
     "cac": "^6.7.12",
+    "js-yaml": "^4.1.0",
     "koishi": "^4.5.2",
     "koishi-plugin-ffxiv-eorzea": "^0.0.2",
     "koishi-plugin-ffxiv-lodestone": "^0.0.1",
