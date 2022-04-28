@@ -53,6 +53,7 @@
     "@koishijs/plugin-sudo": "^1.1.0",
     "@koishijs/utils": "^5.2.2",
     "cac": "^6.7.12",
+    "fs-extra": "^10.0.1",
     "js-yaml": "^4.1.0",
     "koishi": "^4.5.2",
     "koishi-plugin-ffxiv-eorzea": "^0.0.2",
@@ -70,8 +71,7 @@
     "@koishijs/plugin-database-memory": "^1.1.0",
     "@koishijs/plugin-manager": "^1.7.0",
     "@koishijs/plugin-sandbox": "^1.1.0",
-    "cross-env": "^7.0.3",
-    "fs-extra": "^10.0.1"
+    "cross-env": "^7.0.3"
   },
   "packageManager": "yarn@3.1.1"
 }
