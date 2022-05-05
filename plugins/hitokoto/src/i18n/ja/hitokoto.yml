@@ -1,9 +1,9 @@
 ---
 commands:
   hitokoto:
-    description: ランダムHitokoto(一言)
+    description: ランダム一言、Hitokoto API から。
     options:
-      type: ヒトコトの分野を指定してください。複数の分野を指定する場合は、半角英数のコンマ（,）で区切りしてください。指定可能な分野は「hitokoto.types 」でご確認ください。
+      type: ヒトコトの分野を指定する。複数の分野を指定する場合は、半角英数のコンマ（,）で区切りしてください。指定可能な分野は「hitokoto.types 」でご確認ください。
       min-length: ランダムなヒトコトの最小文字数を指定してください。デフォルト値が１です。
       max-length: ヒトコトの最大文字数を指定してください。デフォルトは指定しません。
     messages:
