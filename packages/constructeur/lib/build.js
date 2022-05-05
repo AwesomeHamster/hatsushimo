@@ -35,28 +35,31 @@ const yamlPlugin = (options = {}) => ({
  * @returns {CAC}
  */
 function apply(cac) {
-  cac.command('build [config]').action((config) => {
-    let entry = 'src/index.ts'
-    let output = 'dist/index.bundle.js'
+  cac
+    .command('build [config]')
+    .option('minify', 'minify the bundle', { default: true })
+    .action((config, options) => {
+      let entry = 'src/index.ts'
+      let output = 'dist/index.bundle.js'
 
-    if (config) {
-      const c = require(config)
-      entry = c.entry ?? entry
-      output = c.outfile ?? output
-    }
-    esbuild.build({
-      bundle: true,
-      format: 'cjs',
-      platform: 'node',
-      target: 'node12',
-      entryPoints: [entry],
-      outfile: output,
-      external: ['koishi'],
-      minify: true,
-      sourcemap: true,
-      plugins: [yamlPlugin()],
+      if (config) {
+        const c = require(config)
+        entry = c.entry ?? entry
+        output = c.outfile ?? output
+      }
+      esbuild.build({
+        bundle: true,
+        format: 'cjs',
+        platform: 'node',
+        target: 'node12',
+        entryPoints: [entry],
+        outfile: output,
+        external: ['koishi'],
+        minify: options.minify,
+        sourcemap: true,
+        plugins: [yamlPlugin()],
+      })
     })
-  })
 
   return cac
 }

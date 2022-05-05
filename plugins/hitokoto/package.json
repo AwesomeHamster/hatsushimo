@@ -32,6 +32,7 @@
   },
   "scripts": {
     "build": "constructeur build && tsc --emitDeclarationOnly",
+    "dev": "constructeur build --minify false && tsc --emitDeclarationOnly",
     "clean": "rimraf dist/*",
     "test": "mocha -r ts-node/register --extension .spec.ts ./__tests__"
   },

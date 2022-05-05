@@ -30,6 +30,7 @@
   },
   "scripts": {
     "build": "constructeur build && tsc --emitDeclarationOnly",
+    "dev": "constructeur build --minify false && tsc --emitDeclarationOnly",
     "test": "mocha -r ts-node/register --extension .spec.ts ./__tests__"
   },
   "bugs": {
