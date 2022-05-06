@@ -18,7 +18,9 @@ const locales = ['en', 'de', 'fr', 'ja', 'ko', 'chs'] as const
 export type LocalizedKeys<T extends string> = `${T}_${typeof locales[number]}`
 
 export type MacroDictDatabase = Record<
-  LocalizedKeys<'Command' | 'Alias' | 'ShortCommand' | 'ShortAlias' | 'Description'>,
+  LocalizedKeys<
+    'Command' | 'Alias' | 'ShortCommand' | 'ShortAlias' | 'Description'
+  >,
   string
 > & {
   id: number
@@ -70,9 +72,15 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     .alias(...config.aliases)
     .option('lang', '-l <language:string>')
     .action(async ({ session, options }, macro) => {
-      let lang = (options?.lang as typeof locales[number]) ?? config.defaultLanguage
+      let lang =
+        (options?.lang as typeof locales[number]) ?? config.defaultLanguage
       if (!lang || !locales.includes(lang)) {
-        session?.sendQueued(session.text('.wrong_language', [locales.join(', '), config.defaultLanguage]))
+        session?.sendQueued(
+          session.text('.wrong_language', [
+            locales.join(', '),
+            config.defaultLanguage,
+          ]),
+        )
         lang = config.defaultLanguage as typeof locales[number]
       }
       macro = macro.startsWith('/') ? macro : '/' + macro
@@ -122,6 +130,11 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
   })
 }
 
-export function localizedKeys<T extends string, V>(key: T, value: V): Record<LocalizedKeys<T>, V> {
-  return Object.fromEntries(locales.map((loc) => [`${key}_${loc}`, value])) as Record<LocalizedKeys<T>, V>
+export function localizedKeys<T extends string, V>(
+  key: T,
+  value: V,
+): Record<LocalizedKeys<T>, V> {
+  return Object.fromEntries(
+    locales.map((loc) => [`${key}_${loc}`, value]),
+  ) as Record<LocalizedKeys<T>, V>
 }

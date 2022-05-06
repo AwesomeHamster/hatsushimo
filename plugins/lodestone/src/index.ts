@@ -3,7 +3,14 @@ import { Context } from 'koishi'
 import * as i18n from './i18n'
 import { getNews, NewsCategory, NewsRagion } from './utils'
 
-const categories = ['topics', 'notices', 'maintenance', 'updates', 'status', 'developers']
+const categories = [
+  'topics',
+  'notices',
+  'maintenance',
+  'updates',
+  'status',
+  'developers',
+]
 
 const ragions = ['jp', 'eu', 'na', 'fr', 'de']
 
@@ -39,7 +46,14 @@ export function apply(ctx: Context, config?: {}): void {
     })
     .action(async ({ options, session }, category) => {
       try {
-        const news = (await getNews(ctx, 5, (category ?? 'topics') as NewsCategory, options?.ragion as NewsRagion))
+        const news = (
+          await getNews(
+            ctx,
+            5,
+            (category ?? 'topics') as NewsCategory,
+            options?.ragion as NewsRagion,
+          )
+        )
           .map((item) => `${item.title}\n${item.url}`)
           .join('\n\n')
         return news
