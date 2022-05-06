@@ -10,7 +10,7 @@ commands:
       invalid_type: 指定されたヒトコトの分野が見つかりません。：{0}
       min_length_gt_max_length: 最小文字数は最大文字数を超えてはなりません。
       service_unavailable: このサービスは現在ご利用いただけません
-      unknown_error: "不明なエラーが発生しました。しばらく経ってから再度お試しください。{message}"
+      unknown_error: '不明なエラーが発生しました。しばらく経ってから再度お試しください。{message}'
       timeout: リクエストがタイムアウトしました。しばらく経ってから再度お試しください
       #the format that the bot would generate, {hitokoto} is the sentence that hitokoto API returns,
       #more placeholders can be found on:

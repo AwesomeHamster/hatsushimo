@@ -32,14 +32,16 @@ module.exports = {
     'gocqhttp': {},
 
     'adapter-onebot': {
-      bots: [{
-        gocqhttp: true,
-        selfId: process.env['HATSUSHIMO_ONEBOT_SELF_ID'],
-        password: process.env['HATSUSHIMO_ONEBOT_PASSWORD'],
-        protocol: 'ws',
-        token: process.env['HATSUSHIMO_ONEBOT_TOKEN'],
-        endpoint: 'ws://localhost:6700/',
-      }],
+      bots: [
+        {
+          gocqhttp: true,
+          selfId: process.env['HATSUSHIMO_ONEBOT_SELF_ID'],
+          password: process.env['HATSUSHIMO_ONEBOT_PASSWORD'],
+          protocol: 'ws',
+          token: process.env['HATSUSHIMO_ONEBOT_TOKEN'],
+          endpoint: 'ws://localhost:6700/',
+        },
+      ],
     },
 
     'database-mongo': {
@@ -73,7 +75,9 @@ module.exports = {
     'echo': {},
     'recall': {},
     'feedback': {
-      operators: (process.env['HATSUSHIMO_FEEDBACK_OPERATORS'] || '').split(','),
+      operators: (process.env['HATSUSHIMO_FEEDBACK_OPERATORS'] || '').split(
+        ',',
+      ),
     },
     'repeater': {
       onRepeat: {
@@ -85,13 +89,15 @@ module.exports = {
       appId: process.env['HATSUSHIMO_GITHUB_APP_ID'],
       appSecret: process.env['HATSUSHIMO_GITHUB_APP_SECRET'],
     },
-  
+
     'puppeteer': {
       browser: { args: ['--no-sandbox'] },
     },
-  
+
     '~image-search': {
-      saucenaoApiKey: (process.env['HATSUSHIMO_SAUCENAO_API_KEY'] || '').split(','),
+      saucenaoApiKey: (process.env['HATSUSHIMO_SAUCENAO_API_KEY'] || '').split(
+        ',',
+      ),
     },
     'ffxiv-eorzea': {},
     'hitokoto': {
@@ -102,7 +108,7 @@ module.exports = {
       defaultLanguage: 'chs',
     },
     'ffxiv-lodestone': {},
-  
+
     'pics': {
       commandName: 'setu',
     },

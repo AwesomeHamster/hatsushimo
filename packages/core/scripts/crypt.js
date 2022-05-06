@@ -10,7 +10,10 @@ try {
 const algorithm = 'aes-256-ctr'
 
 function hash(/** @type {string} */ input, /** @type {number} */ length) {
-  const hashed = crypto.createHash('sha256').update(Buffer.from(input)).digest('base64')
+  const hashed = crypto
+    .createHash('sha256')
+    .update(Buffer.from(input))
+    .digest('base64')
   if (length && length > 0 && length <= 32) {
     return hashed.substring(0, length)
   }
@@ -43,7 +46,10 @@ const argv = cac('crypt')
 
 argv.command('encrypt', 'encrypt a file').action(async () => {
   for (const file of files) {
-    const encrypted = encrypt(await readFile(file), process.env['HATSUSHIMO_ENCRYPT_KEY'])
+    const encrypted = encrypt(
+      await readFile(file),
+      process.env['HATSUSHIMO_ENCRYPT_KEY'],
+    )
     const outputName = `accounts/enc/${hash(file, 16)}`
     outputFile(outputName, encrypted)
   }
@@ -52,7 +58,10 @@ argv.command('encrypt', 'encrypt a file').action(async () => {
 argv.command('decrypt', 'decrypt a file').action(async () => {
   for (const file of files) {
     const filename = `accounts/enc/${hash(file, 16)}`
-    const decryped = decrypt(await readFile(filename), process.env['HATSUSHIMO_ENCRYPT_KEY'])
+    const decryped = decrypt(
+      await readFile(filename),
+      process.env['HATSUSHIMO_ENCRYPT_KEY'],
+    )
     outputFile(file, decryped)
   }
 })

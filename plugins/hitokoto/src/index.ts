@@ -41,7 +41,10 @@ export async function apply(ctx: Context, _config: Config = {}): Promise<void> {
         return
       }
       const types = options?.type?.split(',')
-      if (types.length <= 0 || !types.every((t) => typeof t === 'string' && t)) {
+      if (
+        types.length <= 0 ||
+        !types.every((t) => typeof t === 'string' && t)
+      ) {
         return session?.text('.invalid_type', [options.type])
       }
     })

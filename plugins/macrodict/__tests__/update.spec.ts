@@ -19,17 +19,23 @@ describe('update', () => {
   it('fetch international macros', async () => {
     const data = await fetchIntlMacros(ctx)
     expect(data.length).greaterThan(0)
-  }).timeout(0).retries(3)
+  })
+    .timeout(0)
+    .retries(3)
 
   it('fetch chinese macros', async () => {
     const data = await fetchCnMacros(ctx)
     expect(data.length).greaterThan(0)
-  }).timeout(0).retries(3)
+  })
+    .timeout(0)
+    .retries(3)
 
   it('fetch korean macros', async () => {
     const data = await fetchKoMacros(ctx)
     expect(data.length).greaterThan(0)
-  }).timeout(0).retries(3)
+  })
+    .timeout(0)
+    .retries(3)
 
   after(() => app.stop())
 })

@@ -18,7 +18,9 @@ export interface Config {
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const Config = Schema.object({
-  apiUrl: Schema.string().description('获取一言的 API 地址').default('https://v1.hitokoto.cn'),
+  apiUrl: Schema.string()
+    .description('获取一言的 API 地址')
+    .default('https://v1.hitokoto.cn'),
   minLength: Schema.number().description('一言的最小长度'),
   maxLength: Schema.number().description('一言的最大长度'),
   defaultTypes: Schema.array(Schema.string()).description('默认一言类别'),
