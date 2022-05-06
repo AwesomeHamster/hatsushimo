@@ -33,3 +33,25 @@ jobs:
         run: |
           yarn test
         timeout-minutes: 10
+
+  push:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    needs:
+      - test
+    
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.HAMSTER_PAT }}
+
+      - name: Setup Git
+        run: |
+          git config --global user.email "awesome.hamster.git@gmail.com"
+          git config --global user.name "awesome-hamster-bot"
+          ./scripts/init.sh
+
+      - name: Push subtrees to GitHub
+        run: |
+          ./scripts/push.sh
