@@ -25,7 +25,7 @@ export function apply(ctx: Context, config?: {}): void {
   ctx.i18n.define('ko', i18n.ko)
   ctx.i18n.define('ru', i18n.ru)
   ctx.i18n.define('zh', i18n.zh)
-  ctx.i18n.define('zht', i18n.zhtw)
+  ctx.i18n.define('zh-tw', i18n.zhtw)
 
   ctx
     .command('lodestone')
@@ -37,20 +37,26 @@ export function apply(ctx: Context, config?: {}): void {
 
       const { category, ragion } = options
 
-      if (category && !categories.includes(category)) {
-        return session?.text('.invalid_category', [categories.join(', ')])
+      if (
+        category &&
+        !categories.some((cat) => cat === category || cat.startsWith(category))
+      ) {
+        return session?.text('.invalid_category')
       }
-      if (ragion && !ragions.includes(ragion)) {
-        return session?.text('.invalid_ragion', [ragions.join(', ')])
+      if (
+        ragion &&
+        !ragions.some((rag) => rag === ragion || rag.startsWith(ragion))
+      ) {
+        return session?.text('.invalid_ragion')
       }
     })
-    .action(async ({ options, session }, category) => {
+    .action(async ({ options, session }) => {
       try {
         const news = (
           await getNews(
             ctx,
             5,
-            (category ?? 'topics') as NewsCategory,
+            (options?.category ?? 'topics') as NewsCategory,
             options?.ragion as NewsRagion,
           )
         )
