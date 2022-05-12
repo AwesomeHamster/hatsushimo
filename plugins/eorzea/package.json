@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-eorzea",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A plugin includes tool functions for FFXIV (Final Fantasy XIV) players in Eorzea.",
   "keywords": [
     "bot",
@@ -49,7 +49,7 @@
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea/issues"
   },
   "peerDependencies": {
-    "koishi": "^4.0.1"
+    "koishi": "^4.4.0"
   },
   "packageManager": "yarn@3.1.1",
   "devDependencies": {
