@@ -1,6 +1,6 @@
 import { App } from 'koishi'
 import mock from '@koishijs/plugin-mock'
-import memory from '@koishijs/plugin-database-memory'
+import * as memory from '@koishijs/plugin-database-memory'
 
 import * as macrodict from '..'
 

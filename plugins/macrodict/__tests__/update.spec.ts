@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import { App } from 'koishi'
 import mock from '@koishijs/plugin-mock'
-import memory from '@koishijs/plugin-database-memory'
+import * as memory from '@koishijs/plugin-database-memory'
 
 import { fetchCnMacros, fetchIntlMacros, fetchKoMacros } from '../src/update'
 
