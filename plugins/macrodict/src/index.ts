@@ -65,7 +65,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
   ctx.i18n.define('ko', i18n.ko)
   ctx.i18n.define('ru', i18n.ru)
   ctx.i18n.define('zh', i18n.zh)
-  ctx.i18n.define('zht', i18n.zhtw)
+  ctx.i18n.define('zh-tw', i18n.zhtw)
 
   ctx
     .command('macrodict <macro>')
@@ -76,10 +76,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
         (options?.lang as typeof locales[number]) ?? config.defaultLanguage
       if (!lang || !locales.includes(lang)) {
         session?.sendQueued(
-          session.text('.wrong_language', [
-            locales.join(', '),
-            config.defaultLanguage,
-          ]),
+          session.text('.wrong_language', [lang, config.defaultLanguage]),
         )
         lang = config.defaultLanguage as typeof locales[number]
       }

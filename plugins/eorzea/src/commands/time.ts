@@ -4,17 +4,19 @@ export const name = 'time'
 
 export async function apply(ctx: Context): Promise<void> {
   ctx.command('eorzea.time').action(({ session }) => {
+    const time = localTime2EorzeaTime(new Date())
+
     return session?.text('.eorzea_time_now', [
-      timeFormat(localTime2EorzeaTime(new Date())),
+      session.text('.format', {
+        hour: time.getUTCHours(),
+        minute: time.getUTCMinutes(),
+        second: time.getUTCSeconds(),
+      }),
     ])
   })
 }
 
 const EORZEA_MULTIPLIER: number = 3600 / 175
-
-export const timeFormat = (time: Date): string => {
-  return `${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`
-}
 
 export const eorzeaTime2LocalTime = (eorzeaDate: Date): Date => {
   const epochTicks: number = Math.round(
