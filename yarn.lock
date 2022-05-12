@@ -5,6 +5,29 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@cosmotype/driver-memory@npm:^1.0.2":
+  version: 1.0.3
+  resolution: "@cosmotype/driver-memory@npm:1.0.3"
+  dependencies:
+    cosmokit: ^1.1.2
+  peerDependencies:
+    cosmotype: ^1.0.7
+  checksum: 88baf9d53e140b13b8fc25bc3e98e9ed35cec7d8715b34b125f10b5b4d8e990d98bd389715c9d9c5c49021c2e7eed3c4f9e6c41f0a5750fe26ebadf436922bc6
+  languageName: node
+  linkType: hard
+
+"@cosmotype/driver-mongo@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@cosmotype/driver-mongo@npm:1.1.2"
+  dependencies:
+    cosmokit: ^1.1.2
+    mongodb: ^4.5.0
+  peerDependencies:
+    cosmotype: ^1.0.7
+  checksum: 5bf3ae78cb30a1277f7e2932592e6aba6e47a5ddeb5418d7bb4d65e3551c1249c76879e026fa3e2ad9f31ce923024707c501b42e3e503cb0ca477465722f4a67
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-consumer@npm:0.8.0":
   version: 0.8.0
   resolution: "@cspotcode/source-map-consumer@npm:0.8.0"
@@ -91,33 +114,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/cli@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "@koishijs/cli@npm:4.5.2"
+"@koishijs/cli@npm:^4.6.3":
+  version: 4.6.3
+  resolution: "@koishijs/cli@npm:4.6.3"
   dependencies:
-    "@koishijs/loader": ^1.0.0
+    "@koishijs/loader": ^1.0.1
     cac: ^6.7.12
     chokidar: ^3.5.3
     dotenv: ^16.0.0
     kleur: ^4.1.4
+    ns-require: ^1.1.2
     prompts: ^2.4.2
     throttle-debounce: ^3.0.1
   peerDependencies:
-    koishi: ^4.5.2
+    koishi: ^4.6.3
   bin:
     koishi: lib/bin.js
-  checksum: f54629d2a2823ffd4ececa12d0e07b6f0a58a0502489f79f5727876656792e13219360d142a56ddfb4848f67008c4e1d5ace013e3bc2d9192348a5f3494fc325
+  checksum: cb1bdadb612b048c530a9aedd9e42b839eb95174c07451b34caf40d1f17508685801ab9e7bb549056ba25bfae60064f57fcaa405ed68ae4d4d90729998fc7934
   languageName: node
   linkType: hard
 
-"@koishijs/core@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "@koishijs/core@npm:4.5.2"
+"@koishijs/core@npm:^4.6.3":
+  version: 4.6.3
+  resolution: "@koishijs/core@npm:4.6.3"
   dependencies:
-    "@koishijs/orm": ^1.0.1
-    "@koishijs/utils": ^5.2.2
+    "@koishijs/utils": ^5.4.2
+    cosmotype: ^1.0.9
     fastest-levenshtein: ^1.0.12
-  checksum: cd84ed5259f12dc256713fb09e52aaa9185ae874850d0cb8955f511150d82022a8bf3359c7034794924065fd9cc826570ff9dac7c3d3a7e4aabd8f77601a5501
+    ns-require: ^1.1.2
+  checksum: c4ad4abacfa1cfe20844ca1f94998658857efe2be70c92bb9c611676d34dec3eb099d491136ef777ec263508da9d50f53d33011c3e1d4cd8bb47f69db53021fa
   languageName: node
   linkType: hard
 
@@ -130,22 +155,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/loader@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@koishijs/loader@npm:1.0.0"
-  dependencies:
-    js-yaml: ^4.1.0
-  checksum: 36029e06d3e6540c2f398c400f5f8d2cea30f44e45fe59dea11338b08a65027c13d5997d7b3f985d65c89991de5ec259a162f59d322adcb286b46fecb46e9a28
+"@koishijs/helpers@npm:^1.1.1, @koishijs/helpers@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@koishijs/helpers@npm:1.2.0"
+  peerDependencies:
+    koishi: ^4.6.2
+  checksum: 09d84279d3d97fee229c5b0f17870df05f582e250d9a350065fd3c47cee426554c86a574b4a1f9a168220995d3ecc47f638b40b82e123a580c36f68e3a48eafa
   languageName: node
   linkType: hard
 
-"@koishijs/market@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@koishijs/market@npm:1.0.0"
+"@koishijs/loader@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@koishijs/loader@npm:1.0.1"
   dependencies:
-    "@koishijs/utils": ^5.2.2
-    semver: ^7.3.5
-  checksum: 268c3a3a1efddb8da2768a5b6c90e92d7bb8e2b55047227f48c64b45227dfb80347829f2841b4a3de51d707e9d62481636bf857e273789c999cc12b2aeb14ed5
+    js-yaml: ^4.1.0
+  checksum: 8df6c70b0c14417609f2f142ed18c367deb6620dacb0499122fb5ee6708b2347cdf8abd939759507c6c944223adf1bd939d5317258312b997726ef2326eb3695
+  languageName: node
+  linkType: hard
+
+"@koishijs/market@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@koishijs/market@npm:1.0.1"
+  dependencies:
+    cosmokit: ^1.1.2
+    semver: ^7.3.7
+  checksum: a72de7dffd0efffa24db7433a71326dcc70f85cd5b4983a679a48932eeb8dbad5f97b555868885b07084db7bdf1295609323189aa10415fdda021b615cd7418c
   languageName: node
   linkType: hard
 
@@ -158,49 +192,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/orm@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@koishijs/orm@npm:1.0.1"
-  dependencies:
-    "@koishijs/utils": ^5.2.2
-  checksum: 371b2a7823c0733a313dfc5f7ed487bc9482f0bc1d4ca6d49a3e6c8bad733417de73c667305b5f650de9e7bf360b5dae60b5631ccaa4ab30acc37e14d4bfab26
-  languageName: node
-  linkType: hard
-
-"@koishijs/plugin-adapter-discord@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@koishijs/plugin-adapter-discord@npm:2.0.8"
+"@koishijs/plugin-adapter-discord@npm:^2.0.9":
+  version: 2.0.9
+  resolution: "@koishijs/plugin-adapter-discord@npm:2.0.9"
   dependencies:
     es-aggregate-error: ^1.0.7
     file-type: ^16.5.3
     form-data: ^4.0.0
-    ws: ^8.5.0
+    ws: ^8.6.0
   peerDependencies:
-    koishi: ^4.5.2
-  checksum: 3e09edbce798048a0d686f92ab12cd63d25a8608a8839e16f75284058aad9f18a874e751e3a5a083167c9dcc6e294646fe0b21bd407a7cca14f00fe043776222
+    koishi: ^4.6.3
+  checksum: 2dcc581304344c4586b9e86a9c9de65885b41d29dd0fb6d2ae125d45bdbe37d9c97d40ef670d583550bd132fcca847cd100d29c64f6860f023cef07c426a12a4
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-adapter-onebot@npm:^4.1.6":
-  version: 4.1.6
-  resolution: "@koishijs/plugin-adapter-onebot@npm:4.1.6"
+"@koishijs/plugin-adapter-onebot@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "@koishijs/plugin-adapter-onebot@npm:4.2.2"
   dependencies:
     qface: ^1.2.0
-    ws: ^8.5.0
+    ws: ^8.6.0
   peerDependencies:
-    koishi: ^4.5.2
-  checksum: 9d3d67c2bb4c88e78bc6098969c769dbe914dba4d70c3fbfb09f462655115129eb078f24b99cede1d2a2ae1b4fe67ae326323fe497b44cbe55a2d3e1dc6fabc3
+    koishi: ^4.6.3
+  checksum: 8fb33a0171e706173285ce16bae62454812e758c9f0a33397d35366e92ded03bd365cb8025d45842de361835afc206850410bc4ff578c640007482a64683ceff
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-admin@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@koishijs/plugin-admin@npm:1.1.1"
+"@koishijs/plugin-admin@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@koishijs/plugin-admin@npm:1.1.2"
   dependencies:
-    "@koishijs/helpers": ^1.1.0
+    "@koishijs/helpers": ^1.1.1
   peerDependencies:
-    koishi: ^4.4.2
-  checksum: e42f3511fe8f1a37b19e71e05a1fb5a3f8e6c4419cdde085a7062dbc7bc3ead04027ab6863c099c0781a3bbb1dca1c7a387fe1d0585b23bc070266bed7ad8da2
+    koishi: ^4.6.0
+  checksum: 090b872cc5b9569bc758f9c1c813e05b4e776330a8952c5aac872ba2268ac9af2f36475de77230780f1224578f550c40a59991c094f9e2adb642ac50d5199d1d
   languageName: node
   linkType: hard
 
@@ -232,29 +257,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-chat@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@koishijs/plugin-chat@npm:1.2.3"
+"@koishijs/plugin-chat@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "@koishijs/plugin-chat@npm:1.3.1"
   peerDependencies:
-    koishi: ^4.5.0
-  checksum: cd83bbb48ebccaefb2eafb2781d6312bd80be5031239f8edaaf388180a85791bed10c0767c644729e6ef075973ac8c3e046805f229cb9a47f4c02d96a4f8a140
+    koishi: ^4.6.3
+  checksum: e5f36c923da987cf2c08102d7edc7d99c992ad060a2dd27763f0ad1b0d610817f4d0341451114388bead0b21572d802e2e09ffde79a54a437d005769fe5ffaf3
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-console@npm:^3.2.5":
-  version: 3.2.5
-  resolution: "@koishijs/plugin-console@npm:3.2.5"
+"@koishijs/plugin-console@npm:^3.2.10":
+  version: 3.2.10
+  resolution: "@koishijs/plugin-console@npm:3.2.10"
   dependencies:
     open: ^8.4.0
     uuid: ^8.3.2
-    ws: ^8.5.0
+    ws: ^8.6.0
   peerDependencies:
-    koishi: ^4.5.2
-  checksum: 0a4b815c3f7ec37b06bea4328d86fa1e00eb95d69bbe359b291299d273d0ac0e02570c9c4c0581a1a38ed376daaa785892470e0e3a99148e9d300872ba0e077d
+    koishi: ^4.6.3
+  checksum: 7c8a610a80ab995acf6af20363dd3db22657e5c552d5e8f15e2ce04ca540dcb9b95c5a49a68b29e9a408adddb6c87dbe58c5ad4d198930e90481f828ee513634
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-database-memory@npm:^1.0.0, @koishijs/plugin-database-memory@npm:^1.1.0":
+"@koishijs/plugin-database-memory@npm:^1.0.0":
   version: 1.1.0
   resolution: "@koishijs/plugin-database-memory@npm:1.1.0"
   dependencies:
@@ -265,36 +290,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-database-mongo@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "@koishijs/plugin-database-mongo@npm:3.1.2"
+"@koishijs/plugin-database-memory@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@koishijs/plugin-database-memory@npm:1.2.0"
   dependencies:
-    "@koishijs/orm": ^1.0.1
-    mongodb: ^4.5.0
+    "@cosmotype/driver-memory": ^1.0.2
   peerDependencies:
-    koishi: ^4.5.2
-  checksum: bd082a4a7efdcb231aec47acfd6fed78201c3f53fe91bcd07421237fdb5b94e57e289db83c2e6c9a376641604316c0b24cdd26301294116e5b9a20d26c9a694c
+    koishi: ^4.6.0
+  checksum: 74102eead5051261ffec0346d8e6f0df0fef2188fb242f07bde56bb8b1eb9284079bec9cc0bb78f082452c1e581efc7792971067d074d829f678a251fd6beabc
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-dataview@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@koishijs/plugin-dataview@npm:1.2.2"
+"@koishijs/plugin-database-mongo@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "@koishijs/plugin-database-mongo@npm:3.2.2"
+  dependencies:
+    "@cosmotype/driver-mongo": ^1.1.2
   peerDependencies:
-    "@koishijs/plugin-console": ^3.2.4
-    koishi: ^4.5.0
-  checksum: 8413938f1bd1ed4cd302b871c426a1c9b448145475df6a36c4a67c9de009a1956772594aa37d7b900fe4b60b99775e9b36c9c924877f843679800fe3a8961ddc
+    koishi: ^4.6.2
+  checksum: 2cfe591635e3fef69282aaddfe3391fd82815e7dc68f6e3ac24920bb80001224bc54f66bee8d37f89007bae35bca4d260a20a757f795d0ef6573c549f23c0aec
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-echo@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@koishijs/plugin-echo@npm:1.1.0"
-  dependencies:
-    "@koishijs/helpers": ^1.1.0
+"@koishijs/plugin-dataview@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "@koishijs/plugin-dataview@npm:1.2.4"
   peerDependencies:
-    koishi: ^4.4.1
-  checksum: d1f0c7b51d22d5b3a31eceef46342d01d6c34e6d00a332d36264f0d25d333dcc2534eec05b8756f08cb34b4173cb1174a4df196d283efd664a434b2539c96b72
+    "@koishijs/plugin-console": ^3.2.8
+    koishi: ^4.6.1
+  checksum: 82124613222e0510aedf03eda83c542e27a454bb095425483c4278a5e629d7fe7e64311caa9e71eb8bd4b1ce4c0a065e388952e5adbf0913cfbd54c0a1a1cd4e
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-echo@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@koishijs/plugin-echo@npm:2.0.0"
+  dependencies:
+    "@koishijs/helpers": ^1.2.0
+  peerDependencies:
+    koishi: ^4.6.2
+  checksum: b47443cd516318a83b0f05ed61db520a847680a9d1bf0e40fe1550f786f63b1abe83c48d5a7824e14a599b20b8d2d7ad7fb33ceae4589528eaf1b12d10a463af
   languageName: node
   linkType: hard
 
@@ -333,20 +368,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-manager@npm:^1.7.3":
-  version: 1.7.3
-  resolution: "@koishijs/plugin-manager@npm:1.7.3"
+"@koishijs/plugin-manager@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "@koishijs/plugin-manager@npm:1.8.0"
   dependencies:
-    "@koishijs/market": ^1.0.0
+    "@koishijs/market": ^1.0.1
     cross-spawn: ^7.0.3
     ns-require: ^1.1.2
     semver: ^7.3.7
     which-pm-runs: ^1.1.0
   peerDependencies:
-    "@koishijs/cli": ^4.6.1
-    "@koishijs/plugin-console": ^3.2.8
-    koishi: ^4.6.1
-  checksum: 2743777a83dc2d8b208b882c370925c87d26083b7fbd3b18cac06f2bb7a09ba7a65a3b72abf349e5baa804cf1d517e9a277c50c23f494f45af5ad8a936d4e098
+    "@koishijs/cli": ^4.6.3
+    "@koishijs/plugin-console": ^3.2.10
+    koishi: ^4.6.3
+  checksum: fad466474f1e4670560eb29e22ef9d4ef3e4f5c47b08e093b4503d46ebcb783e6155be65d171f2afa565c311bff2ef61f028cbb2e79d27414a4eb49bd5000b6f
   languageName: node
   linkType: hard
 
@@ -372,14 +407,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-rate-limit@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@koishijs/plugin-rate-limit@npm:1.1.2"
+"@koishijs/plugin-rate-limit@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@koishijs/plugin-rate-limit@npm:1.1.3"
   dependencies:
-    "@koishijs/helpers": ^1.1.0
+    "@koishijs/helpers": ^1.1.1
   peerDependencies:
-    koishi: ^4.5.1
-  checksum: df2c3c0ca696c9466648a235c73d21f18e6af9107df258051279eeff418230310a32a35e4c93a9ce599677efc5b4221e689a3bafa29527c698e5f55860327ab2
+    koishi: ^4.6.0
+  checksum: 812af697fadf1e5f808511f62c0ac0003f88bff4900c8ed010ffc0c90353662bb48086c3809b7a1456803fb0315bfe015bea6166cc0d74a55a76bfc9c26b00c7
   languageName: node
   linkType: hard
 
@@ -401,35 +436,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-sandbox@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@koishijs/plugin-sandbox@npm:1.1.0"
+"@koishijs/plugin-sandbox@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@koishijs/plugin-sandbox@npm:1.1.1"
   peerDependencies:
-    koishi: ^4.5.2
-  checksum: c971037fb1c44577ae87d383ac2234cc313ef8159669e3b0edfb8221541b4d59bb62117dca6b8f5f4f7cabda4010fe0b929ca59a232e2f60a39422616e3d0241
+    koishi: ^4.6.3
+  checksum: 8b0d4087ad4d3ea68db0cd4a60ef27c3b8995f5139fada8eaa8cacfa83cfa09919deb6449c9e755318d810297cde52d922e6ad96ce7e450e96348f2339f007a6
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-status@npm:^5.3.5":
-  version: 5.3.5
-  resolution: "@koishijs/plugin-status@npm:5.3.5"
+"@koishijs/plugin-status@npm:^5.3.6":
+  version: 5.3.6
+  resolution: "@koishijs/plugin-status@npm:5.3.6"
   dependencies:
     systeminformation: ^5.11.9
   peerDependencies:
-    "@koishijs/plugin-console": ^3.2.5
-    koishi: ^4.5.2
-  checksum: 08c69ee966782344319436aae0ba03977fa0d3096dcfc195a243cd9f5df226445cec3f43d6029ae57349af67ceeb704727995ad0f010e2d1da427d8631339ea8
+    "@koishijs/plugin-console": ^3.2.6
+    koishi: ^4.6.0
+  checksum: d540289872b69451bb5ac1413cb43e3de932c4ad734f3e2a4339744a319d87f184f91863646d87b37ecafeda0239b345cd6fbd3d007652fe03c76088aba94495
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-sudo@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@koishijs/plugin-sudo@npm:1.1.0"
+"@koishijs/plugin-sudo@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@koishijs/plugin-sudo@npm:1.1.1"
   dependencies:
-    "@koishijs/helpers": ^1.1.0
+    "@koishijs/helpers": ^1.1.1
   peerDependencies:
-    koishi: ^4.4.1
-  checksum: 6ccef29c2c58ab16c0b4031f170779522bb69c3cc4155ccdc36de7728ca52e24e05958ea971c95136f2f98ede09d558a86d12586d0d88ac418de4b5aace8b414
+    koishi: ^4.6.0
+  checksum: 9eda5b0a5740280be3f5530ab97d446301e202fa980f87bcc9e0c65854706ee316e83e407c3b757f61526f9b56fd564337a3bf4d8bbb1d58086297e453d2da3f
   languageName: node
   linkType: hard
 
@@ -451,14 +486,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/utils@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "@koishijs/utils@npm:5.2.2"
+"@koishijs/utils@npm:^5.4.2, @koishijs/utils@npm:^5.4.3":
+  version: 5.4.3
+  resolution: "@koishijs/utils@npm:5.4.3"
   dependencies:
     "@koishijs/segment": ^1.1.1
-    schemastery: ^3.2.0
+    cosmokit: ^1.1.2
+    reggol: ^1.0.3
+    schemastery: ^3.3.3
     supports-color: ^8.1.1
-  checksum: 7651b432422fdb3adba2b2478644234b80a03b0261bd73df186880b1bb7fcbefc7dcd061bbe910e7e0384d5dab328d897fb498ff332b97f98d4325616432cc4e
+  checksum: 1c85b093ee466d8a4077aa36e90f9f98848d1f45cf67343908f32cf846a8c7a99ccef31f7ce6a7890a75f44f8e3a9b8ca60c648022aca3d37c0fb4905ab1069e
   languageName: node
   linkType: hard
 
@@ -1600,48 +1637,77 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "core@workspace:packages/core"
   dependencies:
-    "@koishijs/cli": ^4.5.2
-    "@koishijs/plugin-adapter-discord": ^2.0.8
-    "@koishijs/plugin-adapter-onebot": ^4.1.6
-    "@koishijs/plugin-admin": ^1.1.1
+    "@koishijs/cli": ^4.6.3
+    "@koishijs/plugin-adapter-discord": ^2.0.9
+    "@koishijs/plugin-adapter-onebot": ^4.2.2
+    "@koishijs/plugin-admin": ^1.1.2
     "@koishijs/plugin-assets-local": ^2.0.4
     "@koishijs/plugin-auth": ^1.1.2
     "@koishijs/plugin-bind": ^1.2.0
-    "@koishijs/plugin-chat": ^1.2.3
-    "@koishijs/plugin-console": ^3.2.5
-    "@koishijs/plugin-database-memory": ^1.1.0
-    "@koishijs/plugin-database-mongo": ^3.1.2
-    "@koishijs/plugin-dataview": ^1.2.2
-    "@koishijs/plugin-echo": ^1.1.0
+    "@koishijs/plugin-chat": ^1.3.1
+    "@koishijs/plugin-console": ^3.2.10
+    "@koishijs/plugin-database-memory": ^1.2.0
+    "@koishijs/plugin-database-mongo": ^3.2.2
+    "@koishijs/plugin-dataview": ^1.2.4
+    "@koishijs/plugin-echo": ^2.0.0
     "@koishijs/plugin-feedback": ^1.1.0
     "@koishijs/plugin-forward": ^2.1.1
     "@koishijs/plugin-github": ^4.1.1
-    "@koishijs/plugin-manager": ^1.7.3
+    "@koishijs/plugin-manager": ^1.8.0
     "@koishijs/plugin-puppeteer": ^3.0.6
-    "@koishijs/plugin-rate-limit": ^1.1.2
+    "@koishijs/plugin-rate-limit": ^1.1.3
     "@koishijs/plugin-recall": ^1.1.0
     "@koishijs/plugin-repeater": ^1.0.1
-    "@koishijs/plugin-sandbox": ^1.1.0
-    "@koishijs/plugin-status": ^5.3.5
-    "@koishijs/plugin-sudo": ^1.1.0
-    "@koishijs/utils": ^5.2.2
+    "@koishijs/plugin-sandbox": ^1.1.1
+    "@koishijs/plugin-status": ^5.3.6
+    "@koishijs/plugin-sudo": ^1.1.1
+    "@koishijs/utils": ^5.4.3
     cac: ^6.7.12
     cross-env: ^7.0.3
-    fs-extra: ^10.0.1
+    fs-extra: ^10.1.0
     js-yaml: ^4.1.0
-    koishi: ^4.5.2
+    koishi: ^4.6.3
     koishi-plugin-ffxiv-eorzea: ^0.0.2
     koishi-plugin-ffxiv-lodestone: ^0.0.1
     koishi-plugin-ffxiv-macrodict: ^2.0.4
     koishi-plugin-gocqhttp: ^2.2.4
     koishi-plugin-hitokoto: ^2.1.1
-    koishi-plugin-image-search: ^4.0.1
-    koishi-plugin-pics: ^8.7.8
-    koishi-plugin-picsource-lolicon: ^8.5.5
-    puppeteer: ^13.5.2
-    schemastery: ^3.2.0
+    koishi-plugin-image-search: ^4.0.6
+    koishi-plugin-pics: ^9.1.3
+    koishi-plugin-picsource-lolicon: ^9.0.4
+    puppeteer: ^14.0.0
+    schemastery: ^3.3.3
   languageName: unknown
   linkType: soft
+
+"cosmokit@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "cosmokit@npm:1.1.2"
+  checksum: 031b52f5dcd5faf8aa2041f8524ec94e1c951cc5f30a55628e594a9c4a81226cede2e656304773e3159aa0c0e8579d6d36e5fe496397e852d192ef1846836f82
+  languageName: node
+  linkType: hard
+
+"cosmotype-decorators@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "cosmotype-decorators@npm:2.0.5"
+  dependencies:
+    lodash: ^4.17.21
+    typed-reflector: ^1.0.10
+  peerDependencies:
+    cosmotype: ^1.0.3
+  checksum: f5550953a4546e439f508875e6aab56e7c8786a910cfe7c247bf73cff586d3ae2aa9c0561f313c90781f333c98c48fd89fa39c5c902f66fbd6a32b9471845090
+  languageName: node
+  linkType: hard
+
+"cosmotype@npm:^1.0.9":
+  version: 1.0.10
+  resolution: "cosmotype@npm:1.0.10"
+  dependencies:
+    cosmokit: ^1.1.2
+    ns-require: ^1.1.2
+  checksum: 98458c3649833106b54096b8556b708bea884d8935bceb59a2336cb86c57cdcc2fba1126ea396be12944845a53f45a2f916517266354492522b61f7712207515
+  languageName: node
+  linkType: hard
 
 "create-require@npm:^1.1.0":
   version: 1.1.1
@@ -1855,6 +1921,13 @@ __metadata:
   version: 0.0.969999
   resolution: "devtools-protocol@npm:0.0.969999"
   checksum: c67e2a40864edfbdc892eb6db2b6edf82a277af5bcc070741a6b39ffe052955a3c1fb99a0bb029631b326d290861a79deea423634d5a441b9faeab2884208396
+  languageName: node
+  linkType: hard
+
+"devtools-protocol@npm:0.0.982423":
+  version: 0.0.982423
+  resolution: "devtools-protocol@npm:0.0.982423"
+  checksum: c144574b9c2092f38a1a9153e5d723f0bf4ad4f4363d9d2ea5bdd3d7e0e1416d1a71a77256120ba0e0dd524bc101845d42aa0b723aaedc0b6b4023137da76cf3
   languageName: node
   linkType: hard
 
@@ -2807,6 +2880,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "fs-extra@npm:10.1.0"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: dc94ab37096f813cc3ca12f0f1b5ad6744dfed9ed21e953d72530d103cea193c2f81584a39e9dee1bea36de5ee66805678c0dddc048e8af1427ac19c00fffc50
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:^8.1.0":
   version: 8.1.0
   resolution: "fs-extra@npm:8.1.0"
@@ -3202,6 +3286,16 @@ __metadata:
     agent-base: 6
     debug: 4
   checksum: 165bfb090bd26d47693597661298006841ab733d0c7383a8cb2f17373387a94c903a3ac687090aa739de05e379ab6f868bae84ab4eac288ad85c328cd1ec9e53
+  languageName: node
+  linkType: hard
+
+"https-proxy-agent@npm:5.0.1":
+  version: 5.0.1
+  resolution: "https-proxy-agent@npm:5.0.1"
+  dependencies:
+    agent-base: 6
+    debug: 4
+  checksum: 571fccdf38184f05943e12d37d6ce38197becdd69e58d03f43637f7fa1269cf303a7d228aa27e5b27bbd3af8f09fd938e1c91dcfefff2df7ba77c20ed8dfc765
   languageName: node
   linkType: hard
 
@@ -3704,9 +3798,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-decorators@npm:^1.3.4":
-  version: 1.3.4
-  resolution: "koishi-decorators@npm:1.3.4"
+"koishi-decorators@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "koishi-decorators@npm:2.0.1"
   dependencies:
     "@types/koa": ^2.13.4
     "@types/koa__router": ^8.0.11
@@ -3714,21 +3808,8 @@ __metadata:
     reflect-metadata: ^0.1.13
     typed-reflector: ^1.0.10
   peerDependencies:
-    koishi: ^4.5.0
-  checksum: ccad1ffaf2f4fd06624739f8850e308abf47d6c624f49e9250b966a15aca36891803846e908cff0073f6a4f708af5455e0aba07a312ab6e28fe6f047accb24a5
-  languageName: node
-  linkType: hard
-
-"koishi-entities@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "koishi-entities@npm:1.0.4"
-  dependencies:
-    "@koishijs/plugin-database-memory": ^1.1.0
-    lodash: ^4.17.21
-    typed-reflector: ^1.0.10
-  peerDependencies:
-    koishi: ^4.5.0
-  checksum: c4cd8e7875915433a23bff20472d0b6bbca45f4572001ddd7d5b0e368a86e0e56b44cf6e9cfa63fea71c50959b3b44fbbe143130a14c8f3b3632d2119e1fa998
+    koishi: ^4.6.0
+  checksum: aa42081f9408c8d7cd9300ae28ecd8dd13f3e629665b297554c627413822a0b2f8481a16e5fa9c0f6855a73324f84040e4259a55268c33bda89ecc214a0168d1
   languageName: node
   linkType: hard
 
@@ -3821,40 +3902,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"koishi-plugin-image-search@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "koishi-plugin-image-search@npm:4.0.1"
+"koishi-plugin-image-search@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "koishi-plugin-image-search@npm:4.0.6"
   dependencies:
     cheerio: ^1.0.0-rc.10
     iqdb-client: ^1.1.0
     nhentai-api: ^3.4.3
   peerDependencies:
-    koishi: ^4.2.0
-  checksum: 214d3e203f6e4cf5ec84a5524e98be9e31d3cde5431837741fec2748a6201862771b58d43cd67785c8d8a8fd7009084b8a773ac014bc60e7a6b5c963bfee1e84
+    koishi: ^4.6.1
+  checksum: dbe3188cd7f39a00564c9c5271ad8b357e9e597e47bb59347400daed0fcfd4e392596f1a0019b503758725d07f804a89e1b77f53f9d92138ec7c4812fdce7b83
   languageName: node
   linkType: hard
 
-"koishi-plugin-pics@npm:^8.7.8":
-  version: 8.7.8
-  resolution: "koishi-plugin-pics@npm:8.7.8"
+"koishi-plugin-pics@npm:^9.1.3":
+  version: 9.1.3
+  resolution: "koishi-plugin-pics@npm:9.1.3"
   dependencies:
-    koishi-thirdeye: ^9.2.18
+    koishi-thirdeye: ^10.0.25
     lodash: ^4.17.21
   peerDependencies:
-    koishi: ^4.5.0
-  checksum: d51a5d924e9cdf2fa6d303934234fb1f6765075bf0283dfff5a07c007ec8d6c4506d1476f7d457c1d6ff81a8217ca337861afc0ba45456c57421ab98d68ebbba
+    koishi: ^4.6.3
+  checksum: 340e3a01cbe6c2c20a7e4ea62aa5e6a64f72c827f2d0e23ece1d4f9e920fea1dbbe50fb23902d57a1d5ab55f238a402a9014056460cbbea36a9d57cf7f3163f0
   languageName: node
   linkType: hard
 
-"koishi-plugin-picsource-lolicon@npm:^8.5.5":
-  version: 8.5.5
-  resolution: "koishi-plugin-picsource-lolicon@npm:8.5.5"
+"koishi-plugin-picsource-lolicon@npm:^9.0.4":
+  version: 9.0.4
+  resolution: "koishi-plugin-picsource-lolicon@npm:9.0.4"
   dependencies:
-    koishi-thirdeye: ^9.2.18
+    koishi-thirdeye: ^10.0.25
   peerDependencies:
-    koishi: ^4.5.0
-    koishi-plugin-pics: ^8.7.3
-  checksum: 60ee6134cf9cc0f4f39ad5021a0795d23704c7a0072f1eed3654f6f5c5ee01d9cf0df3c4b8ce5dc6c1f9009c58567317657b55951069e5acf98da4147c9f2efe
+    koishi: ^4.6.3
+    koishi-plugin-pics: ^9.1.2
+  checksum: fc6aa47c1d77cbfd83d243795b2c339a6da79d57875d7e69daff3fae81533634710faa17aed10f7827dec01dfebf9700368a92f4121a89c913fd63259dc09ee4
   languageName: node
   linkType: hard
 
@@ -3870,22 +3951,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-thirdeye@npm:^9.2.18":
-  version: 9.2.20
-  resolution: "koishi-thirdeye@npm:9.2.20"
+"koishi-thirdeye@npm:^10.0.25":
+  version: 10.0.25
+  resolution: "koishi-thirdeye@npm:10.0.25"
   dependencies:
     "@types/koa": ^2.13.4
     "@types/koa__router": ^8.0.11
-    koishi-decorators: ^1.3.4
-    koishi-entities: ^1.0.4
+    cosmotype-decorators: ^2.0.5
+    koishi-decorators: ^2.0.1
     lodash: ^4.17.21
     reflect-metadata: ^0.1.13
-    schemastery-gen: ^3.1.2
+    schemastery-gen: ^3.1.13
     typed-reflector: ^1.0.10
   peerDependencies:
-    koishi: ^4.5.0
+    koishi: ^4.6.2
     schemastery: ^3.1.0
-  checksum: c53ae887da0578bd79b6621467aa05cfd0d408105ab78d700d5c4b4d1509e08e91dcdc2a6e40d3c25422e94d4b477b0ce93ab98ff22dd47707ae9fc0a0ff99aa
+  checksum: 8a179d6a176941b64b86eaa2de7ebafe8c092feb543637df9aa1d37f4c303ff3bef1d5b3403996e7203af25ad87e963fc8a1feafe2004df6105fbc4224e23e55
   languageName: node
   linkType: hard
 
@@ -3898,13 +3979,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "koishi@npm:4.5.2"
+"koishi@npm:^4.6.3":
+  version: 4.6.3
+  resolution: "koishi@npm:4.6.3"
   dependencies:
     "@koa/router": ^10.1.1
-    "@koishijs/core": ^4.5.2
-    "@koishijs/utils": ^5.2.2
+    "@koishijs/core": ^4.6.3
+    "@koishijs/utils": ^5.4.2
     "@types/koa": "*"
     "@types/koa__router": "*"
     "@types/ws": ^8.5.3
@@ -3915,8 +3996,8 @@ __metadata:
     parseurl: ^1.3.3
     path-to-regexp: ^6.2.0
     proxy-agent: ^5.0.0
-    ws: ^8.5.0
-  checksum: 4e1ab92a91c991802dc6447e9aca1d0f6146a15352f752178c6745afda2d8af74d96fcad9e577bbf6ba5a871e1df2d51c0dc4d5922c23c5cc3b0cac8b750b2da
+    ws: ^8.6.0
+  checksum: 1e948ba74835ad3c003b39baafbbac9164887bf681ad3dc5398bcc8625e0b623d4c4266e2958785d918017da046b707539fd864c3bec335b270483811ad60d00
   languageName: node
   linkType: hard
 
@@ -4927,23 +5008,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer@npm:^13.5.2":
-  version: 13.5.2
-  resolution: "puppeteer@npm:13.5.2"
+"puppeteer@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "puppeteer@npm:14.0.0"
   dependencies:
     cross-fetch: 3.1.5
     debug: 4.3.4
-    devtools-protocol: 0.0.969999
+    devtools-protocol: 0.0.982423
     extract-zip: 2.0.1
-    https-proxy-agent: 5.0.0
+    https-proxy-agent: 5.0.1
     pkg-dir: 4.2.0
     progress: 2.0.3
     proxy-from-env: 1.1.0
     rimraf: 3.0.2
     tar-fs: 2.1.1
     unbzip2-stream: 1.4.3
-    ws: 8.5.0
-  checksum: 5f03c8a606067ae114ea646d9773b76b3e2c8f0654ef4453c5f813686a218481d934708fefc607822b75673c6e82b812755892f57d02e42a0dadeaabe3c56138
+    ws: 8.6.0
+  checksum: cce00cede6a5c970604e744f481c852b8af76727b1ddfe2969598a69767a5f4a060cef4e5059dd71b25c952a76387a595b8804746c57363a96ce35f607010f59
   languageName: node
   linkType: hard
 
@@ -5053,6 +5134,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reggol@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "reggol@npm:1.0.3"
+  dependencies:
+    cosmokit: ^1.1.2
+    supports-color: ^8.1.1
+  checksum: b0948d964cf902628b727a5b04aac7175ba991ffe167cb3d4779b3aa9510a6badefd379753af99138e1519084b898933c0c02328e87d8f147f38e0dcc4d30670
+  languageName: node
+  linkType: hard
+
 "require-directory@npm:^2.1.1":
   version: 2.1.1
   resolution: "require-directory@npm:2.1.1"
@@ -5150,16 +5241,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schemastery-gen@npm:^3.1.2":
-  version: 3.1.3
-  resolution: "schemastery-gen@npm:3.1.3"
+"schemastery-gen@npm:^3.1.13":
+  version: 3.1.13
+  resolution: "schemastery-gen@npm:3.1.13"
   dependencies:
     lodash: ^4.17.21
     reflect-metadata: ^0.1.13
     typed-reflector: ^1.0.10
   peerDependencies:
-    schemastery: ^3.1.0
-  checksum: 87c7775e4a8ceef584f8d0efac3f35a35e9d3cc29266eafd86006e1f7f825819b1acff6fb48e944a534d64c5c82ae30c967d27669ea287a210ea495ac2f22c16
+    schemastery: ^3.3.3
+  checksum: 1aa7c02802c7a09971facd1e4ad6521107b59201ab5c47d6acaa6a9622e3c71620e140ebe8f45a73b0d4519d1e96d1f54033f692c40d7f5d60a46509acdfffc0
   languageName: node
   linkType: hard
 
@@ -5170,10 +5261,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schemastery@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "schemastery@npm:3.2.0"
-  checksum: 3cac37a91b6926cf1a53c8ca8b7bf52ff35b986c17ec57d706e7428fa1a3a045ec77b08fad54072f3428f069b4aae6345a92c4a2a5c4c5fccd45e6221d25a353
+"schemastery@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "schemastery@npm:3.3.3"
+  dependencies:
+    cosmokit: ^1.1.2
+  checksum: bb5c93f3aaf5c8579c291ac96a86b1d3a4ea2f4cb828fcc522de36966d9f4b22def07f0b351292e43cc4324db436d73aec566e77459a3a59541022ea8732722d
   languageName: node
   linkType: hard
 
@@ -5952,7 +6045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.5.0, ws@npm:^8.5.0":
+"ws@npm:8.5.0":
   version: 8.5.0
   resolution: "ws@npm:8.5.0"
   peerDependencies:
@@ -5964,6 +6057,21 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 76f2f90e40344bf18fd544194e7067812fb1372b2a37865678d8f12afe4b478ff2ebc0c7c0aff82cd5e6b66fc43d889eec0f1865c2365d8f7a66d92da7744a77
+  languageName: node
+  linkType: hard
+
+"ws@npm:8.6.0, ws@npm:^8.6.0":
+  version: 8.6.0
+  resolution: "ws@npm:8.6.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: e2fca82059f1e087d0c78e2f37135e1b8332bc804fce46f83c2db1cb8571685abf9d2c99b964bab3752536ad90b99b46fb8d1428899aed3e560684ab4641bffd
   languageName: node
   linkType: hard
 
