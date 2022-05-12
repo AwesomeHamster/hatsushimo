@@ -2,20 +2,26 @@
 commands:
   macrodict:
     description: 宏学词典
-    usage: |
+    example: |
       macrodict action         输出 action 宏指令的介绍
       macrodict -l ja hotbar   输出 hotbar 宏指令的日语介绍
     options:
-      lang: 设定输出的语言
+      lang: 指定输出的语言
     messages:
-      database_error: '数据库错误，无法搜索到宏指令'
+      database_error: '数据库发生错误，无法搜索到宏指令'
       not_updated: '宏学词典未更新'
-      wrong_language: '语言错误，可用的语言有：[{0}]，将采用默认语言{1}进行搜索'
+      wrong_language: '不存在语言 {0}，将采用默认语言 {1} 进行搜索'
       not_found_puppeteer: '未找到 koishi-plugin-puppeteer 插件，无法渲染宏指令'
       not_found_macro: '找不到宏指令'
-      start_updating_macros: '开始更新宏学词典'
-      puppeteer_error: 'koishi-plugin-puppeteer 插件错误，无法渲染宏指令'
+      puppeteer_error: 'koishi-plugin-puppeteer 插件发生错误，无法渲染宏指令'
+  #macrodict.languages:
+  #description: 宏学词典语言列表
+  #messages:
+  #language_list: '可用的语言有：{0}'
   macrodict.update:
     description: 更新宏学词典
     usage: |
       macrodict.update
+    message:
+      start_updating_macros: '开始更新宏学词典'
+      updated_macros: '宏学词典更新完毕。当前版本为 {0}，共 {1} 个宏指令'
