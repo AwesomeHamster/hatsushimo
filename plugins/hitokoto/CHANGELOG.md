@@ -5,13 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.1.2] - 2022-05-12
 
 ### Added
 
 - add `ctx.hitokoto` as a service for other koishi plugins
 
   - `ctx.hitokoto.getHitokoto(params)` returns a sentence from hitokoto.
+  - `ctx.hitokoto.types` returns a list of hitokoto types.
+
+- Better conprehensive descriptions of options.
+- Better Japanese and English translations.
+- Experimental support for more languages.
 
 ## [2.1.1] - 2022-03-26
 
