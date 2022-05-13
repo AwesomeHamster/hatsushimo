@@ -13,9 +13,9 @@ declare module 'koishi' {
 
 export { Config }
 
-const locales = ['en', 'de', 'fr', 'ja', 'ko', 'chs'] as const
-
-export type LocalizedKeys<T extends string> = `${T}_${typeof locales[number]}`
+export const locales = ['en', 'de', 'fr', 'ja', 'ko', 'chs'] as const
+export type Locale = typeof locales[number]
+export type LocalizedKeys<T extends string> = `${T}_${Locale}`
 
 export type MacroDictDatabase = Record<
   LocalizedKeys<
@@ -39,11 +39,9 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     {
       id: 'unsigned',
       lastUpdated: 'integer',
-      ...localizedKeys('Command', 'string'),
-      ...localizedKeys('ShortCommand', 'string'),
-      ...localizedKeys('Alias', 'string'),
-      ...localizedKeys('ShortAlias', 'string'),
-      ...localizedKeys('Description', 'string'),
+      ...['Command', 'ShortCommand', 'Alias', 'ShortAlias', 'Description']
+        .map((key) => localizedKeys(key, 'string'))
+        .flat(),
     },
     {
       primary: 'id',
@@ -52,7 +50,6 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
 
   const config = {
     aliases: [],
-    axiosConfig: {},
     defaultLanguage: 'en',
     ..._config,
   }
@@ -72,13 +69,12 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     .alias(...config.aliases)
     .option('lang', '-l <language:string>')
     .action(async ({ session, options }, macro) => {
-      let lang =
-        (options?.lang as typeof locales[number]) ?? config.defaultLanguage
+      let lang = (options?.lang as Locale) ?? config.defaultLanguage
       if (!lang || !locales.includes(lang)) {
         session?.sendQueued(
           session.text('.wrong_language', [lang, config.defaultLanguage]),
         )
-        lang = config.defaultLanguage as typeof locales[number]
+        lang = config.defaultLanguage as Locale
       }
       macro = macro.startsWith('/') ? macro : '/' + macro
       const db = await ctx.database.get(
