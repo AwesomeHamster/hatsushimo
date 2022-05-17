@@ -93,6 +93,7 @@ module.exports = {
     'puppeteer': {
       browser: { args: ['--no-sandbox'] },
     },
+    'teach': {},
 
     '~image-search': {
       saucenaoApiKey: (process.env['HATSUSHIMO_SAUCENAO_API_KEY'] || '').split(

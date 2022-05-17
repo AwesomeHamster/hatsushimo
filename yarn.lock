@@ -468,6 +468,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-teach@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@koishijs/plugin-teach@npm:3.2.0"
+  dependencies:
+    fastest-levenshtein: ^1.0.12
+    simplify-chinese: ^1.1.0
+  peerDependencies:
+    koishi: ^4.6.0
+  checksum: a227ca151e7058863c418437fd85e97cb781f0b1499ee566ce22d89cf0ab1e24a8936cec793cbdf85397552f508428fee8650cc6911f28fc9515f9a6a422b6db
+  languageName: node
+  linkType: hard
+
 "@koishijs/segment@npm:^1.1.1":
   version: 1.1.1
   resolution: "@koishijs/segment@npm:1.1.1"
@@ -1661,6 +1673,7 @@ __metadata:
     "@koishijs/plugin-sandbox": ^1.1.1
     "@koishijs/plugin-status": ^5.3.6
     "@koishijs/plugin-sudo": ^1.1.1
+    "@koishijs/plugin-teach": ^3.2.0
     "@koishijs/utils": ^5.4.3
     cac: ^6.7.12
     cross-env: ^7.0.3
@@ -5355,6 +5368,13 @@ __metadata:
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
+  languageName: node
+  linkType: hard
+
+"simplify-chinese@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "simplify-chinese@npm:1.1.0"
+  checksum: 971531eac44cd3ab3d56a86f8dd59aac8a30332a9b6c46554d57178dbae5cec57da82d1654eedf12055860123c86558ce0c3d45e6eda8afb73aacc622f13baee
   languageName: node
   linkType: hard
 
