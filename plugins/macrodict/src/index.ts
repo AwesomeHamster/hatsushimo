@@ -2,7 +2,7 @@ import { Context } from 'koishi'
 
 import { Config } from './config'
 import { renderMacroView } from './render'
-import { updateMacros } from './update'
+import { Updater } from './update'
 import * as i18n from './i18n'
 
 declare module 'koishi' {
@@ -112,15 +112,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
       })
     })
 
-  if (config.fetchOnStart) {
-    // update macro database when bot connected successfully.
-    ctx.on('ready', () => updateMacros(ctx))
-  }
-
-  ctx.command('macrodict.update').action(({ session }) => {
-    session?.sendQueued(session.text('.start_updating_macros'))
-    updateMacros(ctx)
-  })
+  ctx.plugin(Updater)
 }
 
 export function localizedKeys<T extends string, V>(
