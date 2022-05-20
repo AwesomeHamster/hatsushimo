@@ -18,7 +18,6 @@ echo "  ---> Pushing hatsushimo to origin"
 git push
 ## push every subtree to github
 push packages/constructeur constructeur
-push packages/core core develop
 push plugins/eorzea plugin-eorzea
 push plugins/hitokoto plugin-hitokoto
 push plugins/lodestone plugin-lodestone

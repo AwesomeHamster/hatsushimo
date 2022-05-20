@@ -9,7 +9,6 @@ function register() {
 }
 
 register constructeur https://github.com/AwesomeHamster/constructeur.git
-register core https://github.com/AwesomeHamster/core.git
 register plugin-eorzea https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git
 register plugin-hitokoto https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git
 register plugin-lodestone https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git
