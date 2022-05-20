@@ -106,10 +106,12 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
         return session?.text('.not_found_macro', [macro])
       }
 
-      return renderMacroView(puppeteer, {
-        name: db[0][`Command_${lang}`],
-        description: db[0][`Description_${lang}`],
-      })
+      if (session) {
+        return renderMacroView(session, puppeteer, {
+          name: db[0][`Command_${lang}`],
+          description: db[0][`Description_${lang}`],
+        })
+      }
     })
 
   ctx.plugin(Updater)

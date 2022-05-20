@@ -1,4 +1,4 @@
-import { segment, template } from 'koishi'
+import { segment, Session } from 'koishi'
 import path from 'path'
 
 import { parseMacroDescriptionForHtml } from './parser'
@@ -11,6 +11,7 @@ import Puppeteer from '@koishijs/plugin-puppeteer'
  * This function requires `koishi-plugin-puppeteer` plugin to be installed.
  */
 export async function renderMacroView(
+  session: Session,
   puppeteer: Puppeteer,
   macro: { name: string; description: string },
 ): Promise<string> {
@@ -20,10 +21,6 @@ export async function renderMacroView(
   const descriptionHtml = parseMacroDescriptionForHtml(description)
 
   const page = await puppeteer.page()
-
-  if (!page) {
-    return template('macrodict.not_found_puppeteer')
-  }
 
   try {
     await page.goto(`file:///${path.resolve(__dirname, '../view/macro.html')}`)
@@ -46,7 +43,7 @@ export async function renderMacroView(
     )
 
     if (result === false) {
-      return template('macrodict.puppeteer_error')
+      return session.text('.puppeteer_error')
     }
 
     // set the viewport to the same size as the page
@@ -69,7 +66,7 @@ export async function renderMacroView(
     })
   } catch (err) {
     await page.close()
-    return template('macrodict.puppeteer_error', err)
+    return session.text('.puppeteer_error', [err])
   }
 
   // don't forget to close the page
