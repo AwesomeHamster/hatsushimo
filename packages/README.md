@@ -10,10 +10,10 @@ All changes to these sub-packages would be push to `hatsushimo` repository, so t
 
 > `git subtree add --prefix=<folder-path> <git-repo> <branch> [--squash]`
 
-    * `--prefix=<folder-path>`: The path of the sub-package.
-    * `<git-repo>`: The git repository of the sub-package.
-    * `<branch>`: The branch of the sub-package.
-    * `--squash`: Squash the changes of the sub-package into the main package.
+- `--prefix=<folder-path>`: The path of the sub-package.
+- `<git-repo>`: The git repository of the sub-package.
+- `<branch>`: The branch of the sub-package.
+- `--squash`: Squash the changes of the sub-package into the main package.
 
 This command is used to add a sub-package to the main workspace.
 
@@ -23,10 +23,10 @@ It is recommanded to use `git remote add <name> <git-repo>` to add a short name 
 
 > `git subtree pull --prefix=<folder-path> <name> <branch> [--squash]`
 
-    * `--prefix=<folder-path>`: The path of the sub-package.
-    * `<name>`: The short name of the git repository of the sub-package.
-    * `<branch>`: The branch of the sub-package.
-    * `--squash`: Squash the changes of the sub-package into the main package.
+- `--prefix=<folder-path>`: The path of the sub-package.
+- `<name>`: The short name of the git repository of the sub-package.
+- `<branch>`: The branch of the sub-package.
+- `--squash`: Squash the changes of the sub-package into the main package.
 
 This command would pull the changes of the sub-package into the main workspace, just like `git pull`.
 
@@ -34,8 +34,8 @@ This command would pull the changes of the sub-package into the main workspace, 
 
 > `git subtree push --prefix=<folder-path> <name> <branch>`
 
-    * `--prefix=<folder-path>`: The path of the sub-package.
-    * `<name>`: The short name of the git repository of the sub-package.
-    * `<branch>`: The branch of the sub-package.
+- `--prefix=<folder-path>`: The path of the sub-package.
+- `<name>`: The short name of the git repository of the sub-package.
+- `<branch>`: The branch of the sub-package.
 
 This command would push the changes of the sub-package into the git repository of the sub-package, just like `git push`.
