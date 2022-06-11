@@ -61,13 +61,13 @@
     "koishi": "^4.0.0-rc.1"
   },
   "devDependencies": {
+    "@hamster-bot/constructeur": "*",
     "@koishijs/plugin-database-memory": "^1.0.0",
     "@koishijs/plugin-mock": "^1.0.0",
     "@types/fs-extra": "^9.0.13",
     "@types/js-yaml": "^4.0.5",
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.5",
-    "constructeur": "AwesomeHamster/constructeur#master",
     "esbuild": "^0.14.27",
     "fs-extra": "^10.0.1",
     "js-yaml": "^4.1.0",
