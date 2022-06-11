@@ -1,14 +1,15 @@
 {
-  "name": "constructeur",
+  "name": "@hamster-bot/constructeur",
   "version": "0.1.0",
-  "description": "A build tools for koishi plugins",
+  "description": "A build tools for koishi plugins used in Hamster",
   "keywords": [
     "koishi",
     "plugin",
     "build",
-    "tools"
+    "tools",
+    "esbuild",
+    "typescript"
   ],
-  "private": true,
   "author": {
     "name": "Maiko Tan",
     "email": "maiko.tan.coding@gmail.com"
