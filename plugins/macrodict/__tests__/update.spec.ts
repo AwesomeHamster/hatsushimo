@@ -1,14 +1,12 @@
 import { expect } from 'chai'
 import { App } from 'koishi'
 import mock from '@koishijs/plugin-mock'
-import * as memory from '@koishijs/plugin-database-memory'
 
 import { Updater } from '../src/update'
 
 describe('update', () => {
   const app = new App()
 
-  app.plugin(memory)
   app.plugin(mock)
 
   const client = app.mock.client('123')
