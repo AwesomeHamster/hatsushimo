@@ -1,6 +1,6 @@
 {
   "name": "@hamster-bot/constructeur",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A build tools for koishi plugins used in Hamster",
   "keywords": [
     "koishi",
