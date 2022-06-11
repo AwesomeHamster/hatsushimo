@@ -38,6 +38,26 @@
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict/issues"
   },
+  "koishi": {
+    "description": {
+      "en": "FFXIV (FINAL FANTASY XIV) Macro Dictionary",
+      "zh": "FFXIV (最终幻想14) 宏学词典"
+    },
+    "service": {
+      "required": [
+        "database",
+        "puppeteer"
+      ],
+      "optional": [],
+      "implements": []
+    },
+    "locales": [
+      "en",
+      "zh",
+      "ja"
+    ],
+    "recommendeds": []
+  },
   "devDependencies": {
     "@types/node": "^17.0.5",
     "@types/pug": "^2.0.6",
