@@ -1,9 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# exit if any command fails
 set -e
 
 yarn format
+
+git add -u # stage formatted files
 
 yarn lint
 
