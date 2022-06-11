@@ -36,6 +36,22 @@
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone/issues"
   },
+  "koishi": {
+    "description": {
+      "en": "FFXIV (FINAL FANTASY XIV) Lodestone Integration",
+      "zh": "FFXIV (最终幻想14) Lodestone 集成"
+    },
+    "service": {
+      "required": [],
+      "optional": [],
+      "implements": []
+    },
+    "locales": [
+      "en",
+      "zh"
+    ],
+    "recommendeds": []
+  },
   "devDependencies": {
     "@types/node": "^17.0.5",
     "chai": "^4.3.4",

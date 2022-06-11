@@ -39,6 +39,24 @@
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto/issues"
   },
+  "koishi": {
+    "description": {
+      "en": "Hitokoto on Koishi (powered by http://hitokoto.cn/)",
+      "zh": "随机一言 (数据来源: http://hitokoto.cn)"
+    },
+    "service": {
+      "required": [],
+      "optional": [
+        "database"
+      ],
+      "implements": []
+    },
+    "locales": [
+      "en",
+      "zh"
+    ],
+    "recommendeds": []
+  },
   "peerDependencies": {
     "koishi": "^4.0.0-rc.1"
   },
