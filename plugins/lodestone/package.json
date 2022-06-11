@@ -53,9 +53,9 @@
     "recommendeds": []
   },
   "devDependencies": {
+    "@hamster-bot/constructeur": "*",
     "@types/node": "^17.0.5",
     "chai": "^4.3.4",
-    "constructeur": "AwesomeHamster/constructeur#master",
     "koishi-test-utils": "^7.0.2",
     "mocha": "^9.1.3",
     "ts-node": "^10.8.1",
