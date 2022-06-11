@@ -73,7 +73,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hamster-bot/constructeur@workspace:packages/constructeur"
   dependencies:
-    "@hamster-bot/constructeur": "*"
     cac: ^6.7.12
     esbuild: ^0.14.27
     fs-extra: ^10.0.1
