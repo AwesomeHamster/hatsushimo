@@ -14,7 +14,9 @@
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
     "test": "yarn workspaces foreach -p -j 4 --verbose run test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "=========== git commands ==========": "",
+    "gp": "node ./scripts/push.js"
   },
   "workspaces": [
     "plugins/*",
