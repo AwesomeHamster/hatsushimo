@@ -1,3 +1,4 @@
+import { closest } from 'fastest-levenshtein'
 import { Context } from 'koishi'
 
 import { Config } from './config'
@@ -15,12 +16,30 @@ export { Config }
 
 export const locales = ['en', 'de', 'fr', 'ja', 'ko', 'chs'] as const
 export type Locale = typeof locales[number]
+export const commandPrefix = [
+  'Command',
+  'Alias',
+  'ShortCommand',
+  'ShortAlias',
+] as const
+export type CommandPrefix = typeof commandPrefix[number]
 export type LocalizedKeys<T extends string> = `${T}_${Locale}`
 
+export function localizeKeys<T extends string>(
+  key: T,
+  loc?: Locale[],
+): LocalizedKeys<T>[] {
+  loc ??= locales as unknown as Locale[]
+  return loc.map((locale) => `${key}_${locale}`) as LocalizedKeys<T>[]
+}
+
+export function localizeCommandPrefix(lang: Locale) {
+  const langKeys: Locale[] = lang === 'en' ? ['en'] : ['en', lang]
+  return commandPrefix.map((prefix) => localizeKeys(prefix, langKeys)).flat()
+}
+
 export type MacroDictDatabase = Record<
-  LocalizedKeys<
-    'Command' | 'Alias' | 'ShortCommand' | 'ShortAlias' | 'Description'
-  >,
+  LocalizedKeys<CommandPrefix | 'Description'>,
   string
 > & {
   id: number
@@ -39,7 +58,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     {
       id: 'unsigned',
       lastUpdated: 'integer',
-      ...['Command', 'ShortCommand', 'Alias', 'ShortAlias', 'Description']
+      ...[...commandPrefix, 'Description']
         .map((key) => localizedKeys(key, 'string'))
         .flat(),
     },
@@ -77,23 +96,28 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
         lang = config.defaultLanguage as Locale
       }
       macro = macro.startsWith('/') ? macro : '/' + macro
+      const all = await ctx.database.get('macrodict', {}, [
+        'id',
+        ...localizeCommandPrefix(lang),
+      ])
+      const predict = closest(
+        macro,
+        all
+          .map((row) => localizeCommandPrefix(lang).map((key) => row[key]))
+          .flat(2),
+      )
+      const found = all.find((row) =>
+        localizeCommandPrefix(lang)
+          .map((key) => row[key])
+          .includes(predict),
+      )
+      if (!found) {
+        return session?.text('.not_found', [macro])
+      }
       const db = await ctx.database.get(
         'macrodict',
-        {
-          $or: [
-            { [`Command_${lang}`]: { $eq: macro } },
-            { [`ShortCommand_${lang}`]: { $eq: macro } },
-            { [`Alias_${lang}`]: { $eq: macro } },
-            { [`ShortAlias_${lang}`]: { $eq: macro } },
-            /* eslint-disable @typescript-eslint/naming-convention */
-            { Command_en: { $eq: macro } },
-            { ShortCommand_en: { $eq: macro } },
-            { Alias_en: { $eq: macro } },
-            { ShortAlias_en: { $eq: macro } },
-            /* eslint-enable @typescript-eslint/naming-convention */
-          ],
-        },
-        [`Command_${lang}`, `Description_${lang}`, 'id'],
+        { id: { $eq: found.id } },
+        [`Command_${lang}`, `Description_${lang}`],
       )
 
       const puppeteer = ctx.puppeteer

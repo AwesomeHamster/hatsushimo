@@ -6,7 +6,8 @@
     "checkJs": true,
     "allowJs": true,
     "jsx": "preserve",
-    "strictFunctionTypes": true
+    "strictFunctionTypes": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "**/node_modules/*"]
 }
