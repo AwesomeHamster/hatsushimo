@@ -12,7 +12,10 @@
     "ffxiv",
     "eorzea"
   ],
-  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
   "maintainers": [
     {
       "name": "Maiko Tan",

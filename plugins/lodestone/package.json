@@ -11,7 +11,10 @@
     "bot",
     "qqbot"
   ],
-  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
   "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone",
   "license": "MIT",
   "main": "dist/index.bundle.js",
