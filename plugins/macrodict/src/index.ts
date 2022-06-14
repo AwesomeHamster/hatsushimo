@@ -4,10 +4,17 @@ import { Config } from './config'
 import { renderMacroView } from './render'
 import { Updater } from './update'
 import * as i18n from './i18n'
+import { Search } from './search'
 
 declare module 'koishi' {
   interface Tables {
     macrodict: MacroDictDatabase
+  }
+
+  namespace Context {
+    interface Services {
+      macrodict: Search
+    }
   }
 }
 
@@ -64,6 +71,8 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
   ctx.i18n.define('zh', i18n.zh)
   ctx.i18n.define('zh-tw', i18n.zhtw)
 
+  ctx.plugin(Search)
+
   ctx
     .command('macrodict <macro>')
     .alias(...config.aliases)
@@ -77,24 +86,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
         lang = config.defaultLanguage as Locale
       }
       macro = macro.startsWith('/') ? macro : '/' + macro
-      const db = await ctx.database.get(
-        'macrodict',
-        {
-          $or: [
-            { [`Command_${lang}`]: { $eq: macro } },
-            { [`ShortCommand_${lang}`]: { $eq: macro } },
-            { [`Alias_${lang}`]: { $eq: macro } },
-            { [`ShortAlias_${lang}`]: { $eq: macro } },
-            /* eslint-disable @typescript-eslint/naming-convention */
-            { Command_en: { $eq: macro } },
-            { ShortCommand_en: { $eq: macro } },
-            { Alias_en: { $eq: macro } },
-            { ShortAlias_en: { $eq: macro } },
-            /* eslint-enable @typescript-eslint/naming-convention */
-          ],
-        },
-        [`Command_${lang}`, `Description_${lang}`, 'id'],
-      )
+      const db = await ctx.macrodict.search(macro, lang)
 
       const puppeteer = ctx.puppeteer
 
