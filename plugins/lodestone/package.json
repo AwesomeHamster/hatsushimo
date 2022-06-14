@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-lodestone",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A koishi plugin that provides lodestone related feature for FFXIV players",
   "keywords": [
     "ffxiv",
