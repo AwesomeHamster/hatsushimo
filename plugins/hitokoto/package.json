@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-hitokoto",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "A simple plugin for koishi the bot framework to get a random Hitokoto sentence, which is from [一言网](https://hitokoto.cn).",
   "keywords": [
     "bot",
