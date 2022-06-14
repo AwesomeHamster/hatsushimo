@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-macrodict",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "A koishi plugin for searching macro descriptions which is used in the famous video game FFXIV (Final Fantasy XIV)",
   "keywords": [
     "ffxiv",
@@ -11,7 +11,10 @@
     "bot",
     "qqbot"
   ],
-  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
   "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict",
   "license": "MIT",
   "main": "dist/index.bundle.js",
