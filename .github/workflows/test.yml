@@ -46,12 +46,16 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.HAMSTER_PAT }}
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
       - name: Setup Git
         run: |
           git config --global user.email "awesome.hamster.git@gmail.com"
           git config --global user.name "awesome-hamster-bot"
-          ./scripts/init.sh
+          node ./scripts/init.js
 
       - name: Push subtrees to GitHub
         run: |
-          ./scripts/push.sh
+          node ./scripts/push.js
