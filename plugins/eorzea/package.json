@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-eorzea",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Toolbox for FFXIV (FINAL FANTASY XIV) Players",
   "keywords": [
     "bot",
