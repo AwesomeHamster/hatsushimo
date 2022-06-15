@@ -5,19 +5,33 @@ import path from 'path'
 import { Locale } from '.'
 import { parseMacroDescriptionForHtml } from './parser'
 
+interface Macro {
+  id: number
+  name: string
+  description: string
+}
+
 export class Search extends Service {
   constructor(ctx: Context) {
     super(ctx, 'macrodict', true)
   }
 
-  async get(id: number, lang: Locale) {
-    return await this.ctx.database.get(
+  async get(
+    id: number,
+    lang: Locale,
+  ): Promise<Macro> {
+    const db = await this.ctx.database.get(
       'macrodict',
       {
         id: { $eq: id },
       },
-      ['id', `Description_${lang}`],
+      ['id', `Command_${lang}`, `Description_${lang}`],
     )
+    return {
+      id: db[0].id,
+      name: db[0][`Command_${lang}`],
+      description: db[0][`Description_${lang}`],
+    }
   }
 
   async search(
