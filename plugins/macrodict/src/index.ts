@@ -71,6 +71,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
   ctx.i18n.define('zh-tw', i18n.zhtw)
 
   ctx.plugin(Search)
+  ctx.plugin(Updater)
 
   ctx
     .command('macrodict <macro>')
@@ -87,12 +88,8 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
       macro = macro.startsWith('/') ? macro : '/' + macro
       const db = await ctx.macrodict.search(macro, lang)
 
-      if (session) {
-        return await ctx.macrodict.render(db)
-      }
+      return await ctx.macrodict.render(db)
     })
-
-  ctx.plugin(Updater)
 }
 
 export function localizedKeys<T extends string, V>(
