@@ -1,7 +1,6 @@
 import { Context } from 'koishi'
 
 import { Config } from './config'
-import { renderMacroView } from './render'
 import { Updater } from './update'
 import * as i18n from './i18n'
 import { Search } from './search'
@@ -88,21 +87,8 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
       macro = macro.startsWith('/') ? macro : '/' + macro
       const db = await ctx.macrodict.search(macro, lang)
 
-      const puppeteer = ctx.puppeteer
-
-      if (!puppeteer) {
-        return session?.text('.not_found_puppeteer')
-      }
-
-      if (!db || !db[0]) {
-        return session?.text('.not_found_macro', [macro])
-      }
-
       if (session) {
-        return renderMacroView(session, puppeteer, {
-          name: db[0][`Command_${lang}`],
-          description: db[0][`Description_${lang}`],
-        })
+        return await ctx.macrodict.render(db)
       }
     })
 
