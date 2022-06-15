@@ -58,7 +58,7 @@ export class Search extends Service {
     )
 
     if (!db || !db[0]) {
-      throw new Error('')
+      throw new Error(`Not found macro: ${name}`)
     }
 
     const macro = db[0]
