@@ -1,6 +1,7 @@
 ---
 commands:
   eorzea.time:
-    description: 获取艾欧泽亚时间 (ET)
+    description: 显示当前艾欧泽亚时间 (ET)
     messages:
-      eorzea_time_now: '当前的艾欧泽亚时间为：{0}'
+      eorzea_time_now: '当前艾欧泽亚时间为：{0}'
+      format: '{hour}:{minute}:{second}'

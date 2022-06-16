@@ -1,10 +1,20 @@
 ---
 commands:
   lodestone:
+    description: 查询 Lodestone 新闻
+    usage: |
+      lodestone [-r <ragion>] [-c <category>]
+
+      选项：
+        -r <ragion>     指定搜索的区域
+          可选值有：jp(日本)、eu(欧洲)、na(美洲)、fr(法国)、de(德国)
+        -c <category>   指定搜索的类别
+          可选值有：topics(话题) notices(公告) maintenance(维护) updates(更新) status(状态) developers(开发)
+          ※ 你也可以输入首个字母指定类别，如：t。
     options:
-      ragion: 设定搜索的区域，可选值为 {0} 之一，默认基于当前频道语言适配区域
-      category: 设定搜索的类别，可选值为 {0} 之一，默认返回最新话题 (topics)
+      ragion: 指定搜索的区域。
+      category: 指定搜索的类别。
     messages:
-      invalid_ragion: 不存在 {0} 的区域，请输入 {1} 之一
-      invalid_category: 不存在 {0} 的类别，请输入 {1} 之一
-      service_unavailable: 服务不可用，请稍候再试
+      invalid_ragion: 不存在 {0} 的区域，请输入 help lodestone 查询可用的区域。
+      invalid_category: 不存在 {0} 的类别，请输入 help lodestone 查询可用的类别。
+      service_unavailable: 当前服务不可用，请稍候再试。
