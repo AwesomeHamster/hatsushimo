@@ -33,6 +33,7 @@ export type IntlMacros = Record<
 export class Updater {
   private logger = new Logger('macrodict')
   private ctx: Context
+  public name = 'macrodict-updater'
 
   constructor(ctx: Context, config: Config) {
     this.ctx = ctx

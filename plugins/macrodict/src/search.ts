@@ -2,8 +2,9 @@ import { Context, segment, Service } from 'koishi'
 import type {} from '@koishijs/plugin-puppeteer'
 import path from 'path'
 
-import { Locale } from '.'
+import { commandPrefixKeys, Locale } from './utils'
 import { parseMacroDescriptionForHtml } from './parser'
+import { closest } from 'fastest-levenshtein'
 
 interface Macro {
   id: number
@@ -12,14 +13,42 @@ interface Macro {
 }
 
 export class Search extends Service {
+  names?: Record<Locale, Record<number, string[]>>
+
   constructor(ctx: Context) {
     super(ctx, 'macrodict', true)
   }
 
-  async get(
-    id: number,
-    lang: Locale,
-  ): Promise<Macro> {
+  async getNames(): Promise<Record<Locale, Record<number, string[]>>> {
+    const db = await this.ctx.database.get('macrodict', {}, [
+      'id',
+      ...commandPrefixKeys,
+    ])
+
+    const ret: Record<Locale, Record<number, string[]>> = {
+      en: {},
+      de: {},
+      fr: {},
+      ja: {},
+      chs: {},
+      ko: {},
+    }
+
+    for (const row of db) {
+      const { id } = row
+      for (const key of commandPrefixKeys) {
+        const loc = key.substring(key.lastIndexOf('_') + 1) as Locale
+        if (typeof ret[loc][id] === 'undefined') {
+          ret[loc][id] = []
+        }
+        ret[loc][id].push(row[key])
+      }
+    }
+
+    return ret
+  }
+
+  async get(id: number, lang: Locale): Promise<Macro> {
     const db = await this.ctx.database.get(
       'macrodict',
       {
@@ -37,28 +66,37 @@ export class Search extends Service {
   async search(
     name: string,
     lang: Locale,
-  ): Promise<{ name: string; description: string; id: number }> {
-    const db = await this.ctx.database.get(
-      'macrodict',
-      {
-        $or: [
-          { [`Command_${lang}`]: { $eq: name } },
-          { [`ShortCommand_${lang}`]: { $eq: name } },
-          { [`Alias_${lang}`]: { $eq: name } },
-          { [`ShortAlias_${lang}`]: { $eq: name } },
-          /* eslint-disable @typescript-eslint/naming-convention */
-          { Command_en: { $eq: name } },
-          { ShortCommand_en: { $eq: name } },
-          { Alias_en: { $eq: name } },
-          { ShortAlias_en: { $eq: name } },
-          /* eslint-enable @typescript-eslint/naming-convention */
-        ],
-      },
-      [`Command_${lang}`, `Description_${lang}`, 'id'],
+  ): Promise<{ name: string; description: string; id: number } | undefined> {
+    if (!this.names) {
+      this.names = await this.getNames()
+    }
+
+    const predict = closest(
+      name,
+      ([] as string[][]).concat(Object.values(this.names[lang])).flat(),
     )
 
+    if (!predict) {
+      return
+    }
+
+    const id = Object.entries(this.names[lang]).find(([_, value]) => {
+      if (value.includes(predict)) return true
+      return false
+    })?.[0]
+
+    if (!id) {
+      return
+    }
+
+    const db = await this.ctx.database.get('macrodict', id, [
+      `Command_${lang}`,
+      `Description_${lang}`,
+      'id',
+    ])
+
     if (!db || !db[0]) {
-      throw new Error(`Not found macro: ${name}`)
+      return
     }
 
     const macro = db[0]
