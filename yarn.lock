@@ -171,12 +171,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koishijs/plugin-database-memory@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "@koishijs/plugin-database-memory@npm:1.3.1"
+  dependencies:
+    "@minatojs/driver-memory": ^1.0.3
+  peerDependencies:
+    koishi: ^4.7.2
+  checksum: 2d96644a520845121ef3997d807ed606758ac0dc4783717b66806ab43aa51086a5e0050b2b70920da6f4ad45df9073f964a843c70ed749047283c79e27c7f754
+  languageName: node
+  linkType: hard
+
 "@koishijs/plugin-mock@npm:^1.0.0":
   version: 1.0.3
   resolution: "@koishijs/plugin-mock@npm:1.0.3"
   peerDependencies:
     koishi: ^4.3.2
   checksum: ed34c765d4015c0c5fa3d46308d0a00153c51f3e5823a5d92748c24288849c1b62a9c02b5da6a1a458275b6dd5cd271a7e6ef66d5f6083fea6f5408af1ac6b11
+  languageName: node
+  linkType: hard
+
+"@koishijs/plugin-mock@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@koishijs/plugin-mock@npm:1.0.6"
+  peerDependencies:
+    koishi: ^4.7.2
+  checksum: 31e201cecfee0f74718d9f823aa11aa2c338132e4919a7d2972fa161390728cf8831caf518a3dbbba014a220a9199e30a3d2feba788c9cd94529923dd816b96a
   languageName: node
   linkType: hard
 
@@ -221,6 +241,17 @@ __metadata:
     schemastery: ^3.4.3
     supports-color: ^8.1.1
   checksum: 56784bea089f120ab5250e8cab10b14b05a6f8bd953cfde25ba8860084e923693b8b97df54e3d1b3b61023ac687fca6e2966101240cfa987ae0abcb4c3e17acc
+  languageName: node
+  linkType: hard
+
+"@minatojs/driver-memory@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@minatojs/driver-memory@npm:1.0.3"
+  dependencies:
+    cosmokit: ^1.1.2
+  peerDependencies:
+    minato: ^1.0.10
+  checksum: 86b77248f1bace155b3f86fd8862365f67a1c25cd136acceeaf7cf412c1547778b8b4eb5ff4fa6d180ccf924cd9452408f6d4a13a76a31167f70547c2da65d50
   languageName: node
   linkType: hard
 
@@ -473,19 +504,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa__router@npm:*, @types/koa__router@npm:^8.0.8":
+"@types/koa__router@npm:*":
   version: 8.0.11
   resolution: "@types/koa__router@npm:8.0.11"
   dependencies:
     "@types/koa": "*"
   checksum: 81f55ed77273871728c81a20fa546ee906bebfe72fd72e3723d983a19504eb7d9578908a0fb8ef230764c5495031412df4245eee93479161bd7bd5135ca1ea04
-  languageName: node
-  linkType: hard
-
-"@types/lru-cache@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "@types/lru-cache@npm:5.1.1"
-  checksum: e1d6c0085f61b16ec5b3073ec76ad1be4844ea036561c3f145fc19f71f084b58a6eb600b14128aa95809d057d28f1d147c910186ae51219f58366ffd2ff2e118
   languageName: node
   linkType: hard
 
@@ -545,15 +569,6 @@ __metadata:
     "@types/mime": ^1
     "@types/node": "*"
   checksum: eaca858739483e3ded254cad7d7a679dc2c8b3f52c8bb0cd845b3b7eb1984bde0371fdcb0a5c83aa12e6daf61b6beb762545021f520f08a1fe882a3fa4ea5554
-  languageName: node
-  linkType: hard
-
-"@types/ws@npm:^7.4.7":
-  version: 7.4.7
-  resolution: "@types/ws@npm:7.4.7"
-  dependencies:
-    "@types/node": "*"
-  checksum: b4c9b8ad209620c9b21e78314ce4ff07515c0cadab9af101c1651e7bfb992d7fd933bd8b9c99d110738fd6db523ed15f82f29f50b45510288da72e964dedb1a3
   languageName: node
   linkType: hard
 
@@ -912,15 +927,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.21.4":
-  version: 0.21.4
-  resolution: "axios@npm:0.21.4"
-  dependencies:
-    follow-redirects: ^1.14.0
-  checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
-  languageName: node
-  linkType: hard
-
 "axios@npm:^0.24.0":
   version: 0.24.0
   resolution: "axios@npm:0.24.0"
@@ -1085,17 +1091,6 @@ __metadata:
   version: 6.3.0
   resolution: "camelcase@npm:6.3.0"
   checksum: 8c96818a9076434998511251dcb2761a94817ea17dbdc37f47ac080bd088fc62c7369429a19e2178b993497132c8cbcf5cc1f44ba963e76782ba469c0474938d
-  languageName: node
-  linkType: hard
-
-"chai-as-promised@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "chai-as-promised@npm:7.1.1"
-  dependencies:
-    check-error: ^1.0.2
-  peerDependencies:
-    chai: ">= 2.1.2 < 5"
-  checksum: 7262868a5b51a12af4e432838ddf97a893109266a505808e1868ba63a12de7ee1166e9d43b5c501a190c377c1b11ecb9ff8e093c89f097ad96c397e8ec0f8d6a
   languageName: node
   linkType: hard
 
@@ -2304,16 +2299,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
-  version: 1.14.9
-  resolution: "follow-redirects@npm:1.14.9"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: f5982e0eb481818642492d3ca35a86989c98af1128b8e1a62911a3410621bc15d2b079e8170b35b19d3bdee770b73ed431a257ed86195af773771145baa57845
-  languageName: node
-  linkType: hard
-
 "follow-redirects@npm:^1.14.4":
   version: 1.15.0
   resolution: "follow-redirects@npm:1.15.0"
@@ -3148,7 +3133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koa@npm:^2.13.1, koa@npm:^2.13.4":
+"koa@npm:^2.13.4":
   version: 2.13.4
   resolution: "koa@npm:2.13.4"
   dependencies:
@@ -3179,24 +3164,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-core@npm:^3.14.2":
-  version: 3.14.2
-  resolution: "koishi-core@npm:3.14.2"
-  dependencies:
-    "@koa/router": ^10.1.1
-    "@types/koa__router": ^8.0.8
-    "@types/lru-cache": ^5.1.1
-    "@types/ws": ^7.4.7
-    axios: ^0.21.4
-    fastest-levenshtein: ^1.0.12
-    koa: ^2.13.1
-    koa-bodyparser: ^4.3.0
-    koishi-utils: ^4.3.0
-    lru-cache: ^6.0.0
-  checksum: b559c76ea0d5c60858595c6e940d5b38101508c12b51bfcbea67d0852b9dd5506f5b6151e6e87fed3c7a2ab7d9437c31c55cae5f9365790259748430b89bd5e7
-  languageName: node
-  linkType: hard
-
 "koishi-plugin-ffxiv-eorzea@workspace:plugins/eorzea":
   version: 0.0.0-use.local
   resolution: "koishi-plugin-ffxiv-eorzea@workspace:plugins/eorzea"
@@ -3217,9 +3184,9 @@ __metadata:
   resolution: "koishi-plugin-ffxiv-lodestone@workspace:plugins/lodestone"
   dependencies:
     "@hamster-bot/constructeur": "*"
+    "@koishijs/plugin-mock": ^1.0.6
     "@types/node": ^17.0.5
     chai: ^4.3.4
-    koishi-test-utils: ^7.0.2
     mocha: ^9.1.3
     ts-node: ^10.8.1
     typescript: ^4.7.3
@@ -3235,11 +3202,12 @@ __metadata:
   dependencies:
     "@fast-csv/parse": ^4.3.6
     "@hamster-bot/constructeur": "*"
+    "@koishijs/plugin-database-memory": ^1.3.1
+    "@koishijs/plugin-mock": ^1.0.6
     "@types/node": ^17.0.5
     "@types/pug": ^2.0.6
     chai: ^4.3.4
     fastest-levenshtein: ^1.0.12
-    koishi-test-utils: ^7.0.2
     mocha: ^9.1.3
     ts-node: ^10.4.0
     typescript: ^4.7.3
@@ -3271,27 +3239,6 @@ __metadata:
     koishi: ^4.0.0-rc.1
   languageName: unknown
   linkType: soft
-
-"koishi-test-utils@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "koishi-test-utils@npm:7.0.2"
-  dependencies:
-    chai: ^4.3.4
-    chai-as-promised: ^7.1.1
-    koishi-core: ^3.14.2
-    koishi-utils: ^4.3.0
-  checksum: c1a131b8bd2134a35893a13b8d28a9e03e7c5314d54101ccf4647e01fb9b1606f9cb0ce1b7928743bab932683f4c4f234c70fa92ae5e216079aa6c8542f81042
-  languageName: node
-  linkType: hard
-
-"koishi-utils@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "koishi-utils@npm:4.3.0"
-  dependencies:
-    supports-color: ^8.1.0
-  checksum: 4cc79c3acaf80055b4751454fea3a77c639643b755fa18faf2f3a4c8c8ecfb99885c67a04c30f41b166186d81f203b5ffc4520cc402f13f4cc9bff58301bc8a0
-  languageName: node
-  linkType: hard
 
 "koishi@npm:^4.7.3":
   version: 4.7.3
@@ -4709,7 +4656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supports-color@npm:8.1.1, supports-color@npm:^8.1.0, supports-color@npm:^8.1.1":
+"supports-color@npm:8.1.1, supports-color@npm:^8.1.1":
   version: 8.1.1
   resolution: "supports-color@npm:8.1.1"
   dependencies:
