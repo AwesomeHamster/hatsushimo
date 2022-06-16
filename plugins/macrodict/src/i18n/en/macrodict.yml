@@ -6,18 +6,18 @@ commands:
       macrodict action         show the description of the macro "action"
       macrodict -l ja hotbar   show the description of the macro "hotbar" in Japanese
     options:
-      lang: 指定输出的语言
+      lang: Specify the language of the output.
     messages:
-      database_error: '数据库发生错误，无法搜索到宏指令。'
-      not_updated: '宏学词典未更新。'
-      wrong_language: '不存在语言 {0}，将采用默认语言 {1} 进行搜索。'
-      not_found_puppeteer: '未找到 koishi-plugin-puppeteer 插件，无法渲染宏指令。'
-      not_found_macro: '找不到宏指令。'
-      puppeteer_error: "koishi-plugin-puppeteer 插件发生错误，无法渲染宏指令。\n{0}"
+      database_error: 'Database error, could not search for text commands.'
+      not_updated: 'The macro database is not updated.'
+      wrong_language: 'Invalid language {0}. Trying to search macros with default language {1}.'
+      not_found_puppeteer: 'Plugin puppeteer was not found, could not render text commands.'
+      not_found_macro: 'Macro not found.'
+      puppeteer_error: "Errors occurred when invoing plugin puppeteer, could not render the text commands.\n{0}"
   macrodict.update:
-    description: 更新宏学词典
+    description: Update Database of Macros
     usage: |
       macrodict.update
     messages:
-      start_updating_macros: '开始更新宏学词典。'
-      updated_macros: '宏学词典更新完毕。当前版本为 {0}，共 {1} 个宏指令。'
+      start_updating_macros: 'Start updating the database of macros.'
+      updated_macros: 'Macro database has been updated. Current version is {0}, total {1} macros.'
