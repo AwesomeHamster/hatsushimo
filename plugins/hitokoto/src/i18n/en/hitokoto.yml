@@ -1,22 +1,27 @@
 ---
 commands:
   hitokoto:
-    description: Get a random sentence from Hitokoto API
+    description: Random Hitokoto
+    usage: |
+      Get a random sentence from hitokoto.cn.
+    example: |
+      hitokoto        Get a random sentence
+      hitokoto -l 2   Get a random sentence with at least 2 characters
     options:
-      type: 'Return Hitokoto sentence in specific type(s), you can use comma (,) to seperate different type names. The description of types could be found at https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0'
-      min-length: Return Hitokoto sentence that has at least n characters
-      max-length: Return Hitokoto sentence that has at most n characters
+      type: Specify the type of Hitokoto sentences. If you want to specify multiple types, you can use comma "," to separate different type names. Enter "hitokoto.types" to check available types.
+      min-length: Specify the minimum length of Hitokoto sentences.
+      max-length: Specify the minimum length of Hitokoto sentences.
     messages:
-      invalid_type: Invalid type
-      min_length_gt_max_length: min-length cannot be greater than max-length
-      service_unavailable: Service unavailable currently
-      unknown_error: "Unknown error, please retry later.\n{message}"
-      timeout: Request timeout, please retry later
+      invalid_type: The specified type {0} does not exist. Please enter hitokoto.types to check available types.
+      min_length_gt_max_length: The minimum length cannot be greater than the maximum length.
+      service_unavailable: Service is not available at this moment, please try again later
+      unknown_error: "An unknown error occurred. Please try again.\n{message}"
+      timeout: Request timed out. Please try again later.
       #the format that the bot would generate, {hitokoto} is the sentence that hitokoto API returns,
       #more placeholders can be found on:
       #https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F
-      format: "「{hitokoto}」\n\\t\\t\\t\\t——{from_who}《{from}》"
+      format: "\"{hitokoto}\"\n\\t\\t\\t\\t{from}, {from_who}"
   hitokoto.types:
-    description: List all the available types of Hitokoto
+    description: List of types available in Hitokoto
     messages:
-      list: "You can specify one or more of the following types, using commas (,) to separate them:\n{0}"
+      list: "You can specify one or more of the following types, using commas \",\" to separate them:\n{0}"
