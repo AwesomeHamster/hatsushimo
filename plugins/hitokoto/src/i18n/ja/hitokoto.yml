@@ -17,6 +17,7 @@ commands:
       service_unavailable: 当前服务不可用，请稍候再试。
       unknown_error: "不明なエラーが発生しました。しばらく経ってから再度お試しください。{message}"
       timeout: 请求超时，请稍候再试。
+
       #the format that the bot would generate, {hitokoto} is the sentence that hitokoto API returns,
       #more placeholders can be found on:
       #https://developer.hitokoto.cn/sentence/#%E8%BF%94%E5%9B%9E%E6%A0%BC%E5%BC%8F

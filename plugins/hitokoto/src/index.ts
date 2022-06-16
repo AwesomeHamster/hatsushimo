@@ -21,7 +21,7 @@ export async function apply(ctx: Context, _config: Config = {}): Promise<void> {
   ctx.i18n.define('ko', i18n.ko)
   ctx.i18n.define('ru', i18n.ru)
   ctx.i18n.define('zh', i18n.zh)
-  ctx.i18n.define('zht', i18n.zhtw)
+  ctx.i18n.define('zh-tw', i18n.zhtw)
 
   ctx.plugin(HitokotoApi)
 
@@ -41,7 +41,10 @@ export async function apply(ctx: Context, _config: Config = {}): Promise<void> {
         return
       }
       const types = options?.type?.split(',')
-      if (types.length <= 0 || !types.every((t) => typeof t === 'string' && t)) {
+      if (
+        types.length <= 0 ||
+        !types.every((t) => typeof t === 'string' && t)
+      ) {
         return session?.text('.invalid_type', [options.type])
       }
     })

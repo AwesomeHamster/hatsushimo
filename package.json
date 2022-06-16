@@ -14,7 +14,9 @@
     "lint": "eslint 'plugins/**/*.ts' && yarn prettier --check '**/*.{ts,js,json,md,yml}'",
     "format": "prettier --write '**/*.{js,ts,json,md,yml}'",
     "test": "yarn workspaces foreach -p -j 4 --verbose run test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "=========== git commands ==========": "",
+    "gp": "node ./scripts/push.js"
   },
   "workspaces": [
     "plugins/*",
@@ -28,7 +30,7 @@
   },
   "packageManager": "yarn@3.2.0",
   "prettier": {
-    "printWidth": 120,
+    "printWidth": 80,
     "tabWidth": 2,
     "useTabs": false,
     "semi": false,
@@ -41,21 +43,21 @@
     "jsxSingleQuote": true
   },
   "devDependencies": {
-    "@types/chai": "^4.3.0",
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@typescript-eslint/parser": "^5.18.0",
-    "eslint": "^8.12.0",
-    "eslint-config-standard": "^16.0.3",
+    "@hamster-bot/constructeur": "*",
+    "@koishijs/plugin-puppeteer": "^3.0.7",
+    "@types/chai": "^4.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-mocha": "^10.0.3",
-    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-mocha": "^10.0.5",
+    "eslint-plugin-n": "^15.2.2",
     "eslint-plugin-promise": "^6.0.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
+    "koishi": "^4.7.3",
     "prettier": "^2.6.2",
-    "typescript": "^4.6.3"
-  },
-  "resolutions": {
-    "constructeur": "workspace:packages/constructeur"
+    "typescript": "^4.7.3"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-ffxiv-macrodict",
-  "version": "2.0.4",
+  "version": "2.0.7",
   "description": "A koishi plugin for searching macro descriptions which is used in the famous video game FFXIV (Final Fantasy XIV)",
   "keywords": [
     "ffxiv",
@@ -11,7 +11,10 @@
     "bot",
     "qqbot"
   ],
-  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
   "homepage": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict",
   "license": "MIT",
   "main": "dist/index.bundle.js",
@@ -38,21 +41,42 @@
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict/issues"
   },
+  "koishi": {
+    "description": {
+      "en": "FFXIV (FINAL FANTASY XIV) Macro Dictionary",
+      "zh": "FFXIV (最终幻想14) 宏学词典"
+    },
+    "service": {
+      "required": [
+        "database",
+        "puppeteer"
+      ],
+      "optional": [],
+      "implements": []
+    },
+    "locales": [
+      "en",
+      "zh",
+      "ja"
+    ],
+    "recommendeds": []
+  },
   "devDependencies": {
+    "@hamster-bot/constructeur": "*",
     "@types/node": "^17.0.5",
     "@types/pug": "^2.0.6",
     "chai": "^4.3.4",
-    "constructeur": "^0.1.0",
     "koishi-test-utils": "^7.0.2",
     "mocha": "^9.1.3",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.7.3"
   },
   "peerDependencies": {
     "@koishijs/plugin-puppeteer": "^3.0.0-rc.0",
-    "koishi": "^4.0.0-rc.1"
+    "koishi": "^4.4.0"
   },
   "dependencies": {
-    "@fast-csv/parse": "^4.3.6"
+    "@fast-csv/parse": "^4.3.6",
+    "fastest-levenshtein": "^1.0.12"
   }
 }

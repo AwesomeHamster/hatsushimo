@@ -1,4 +1,5 @@
-commit_message: "[ci skip]"
+commit_message: '[ci skip]'
+preserve_hierarchy: false
 
 files:
   - source: /plugins/eorzea/src/i18n/zh/*.yml

@@ -39,7 +39,7 @@ function apply(cac) {
     .command('build [config]')
     .option('minify', 'minify the bundle', { default: true })
     .action((config, options) => {
-      let entry = 'src/index.ts'
+      let entry = ['src/index.ts']
       let output = 'dist/index.bundle.js'
 
       if (config) {
@@ -52,7 +52,7 @@ function apply(cac) {
         format: 'cjs',
         platform: 'node',
         target: 'node12',
-        entryPoints: [entry],
+        entryPoints: entry,
         outfile: output,
         external: ['koishi'],
         minify: options.minify,
