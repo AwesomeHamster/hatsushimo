@@ -17,6 +17,11 @@ export class Search extends Service {
 
   constructor(ctx: Context) {
     super(ctx, 'macrodict', true)
+
+    this.ctx.on(
+      'macrodict/update',
+      async () => (this.names = await this.getNames()),
+    )
   }
 
   async getNames(): Promise<Record<Locale, Record<number, string[]>>> {

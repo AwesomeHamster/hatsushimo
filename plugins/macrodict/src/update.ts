@@ -66,6 +66,7 @@ export class Updater {
     }
     await this.ctx.database.upsert('macrodict', Object.values(macros))
     this.logger.info('macros updated')
+    this.ctx.emit('macrodict/update')
   }
 
   async fetchXivapi<T>(url: string, columns: string[]): Promise<T[]> {

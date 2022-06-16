@@ -20,12 +20,3 @@ export function localizeKeys<T extends string>(
 export const commandPrefixKeys = commandPrefix
   .map((loc) => localizeKeys(loc, ['chs', 'de', 'en', 'fr', 'ja', 'ko']))
   .flat()
-
-export function localizedKeys<T extends string, V>(
-  key: T,
-  value: V,
-): Record<LocalizedKeys<T>, V> {
-  return Object.fromEntries(
-    locales.map((loc) => [`${key}_${loc}`, value]),
-  ) as Record<LocalizedKeys<T>, V>
-}

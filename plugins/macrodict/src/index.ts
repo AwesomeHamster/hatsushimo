@@ -9,8 +9,8 @@ import {
   CommandPrefix,
   Locale,
   locales,
-  localizedKeys,
   LocalizedKeys,
+  localizeKeys,
 } from './utils'
 
 declare module 'koishi' {
@@ -22,6 +22,12 @@ declare module 'koishi' {
     interface Services {
       macrodict: Search
     }
+  }
+
+  interface Events {
+    /* eslint-disable @typescript-eslint/naming-convention */
+    'macrodict/update': () => void
+    /* eslint-enable @typescript-eslint/naming-convention */
   }
 }
 
@@ -47,9 +53,13 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     {
       id: 'unsigned',
       lastUpdated: 'integer',
-      ...[...commandPrefix, 'Description']
-        .map((key) => localizedKeys(key, 'string'))
-        .flat(),
+      ...Object.fromEntries(
+        ['Description']
+          .concat(commandPrefix)
+          .map((key) => localizeKeys(key, [...locales]))
+          .flat()
+          .map((value) => [value, 'string']),
+      ),
     },
     {
       primary: 'id',
