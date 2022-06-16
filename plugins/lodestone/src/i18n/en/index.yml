@@ -1,10 +1,20 @@
 ---
 commands:
   lodestone:
+    description: Check Lodestone News
+    usage: |
+      lodestone [-r <ragion>] [-c <category>]
+
+      选项：
+        -r <ragion>     specify the ragion
+          available: jp(Japan), eu(Europe), na(North America), fr(French), de(German)
+        -c <category>   Specify the category
+          available: topics, notices, maintenance, updates, status, developers
+          ※ You can also specify the category with the first letter of them, for example: t for topics.
     options:
-      ragion: 设定搜索的区域，可选值为 {0} 之一，默认基于当前频道语言适配区域
-      category: 设定搜索的类别，可选值为 {0} 之一，默认返回最新话题 (topics)
+      ragion: Specify the ragion.
+      category: Specify the category.
     messages:
-      invalid_ragion: 不存在 {0} 的区域，请输入 {1} 之一
-      invalid_category: 不存在 {0} 的类别，请输入 {1} 之一
-      service_unavailable: 服务不可用，请稍候再试
+      invalid_ragion: No ragion "{0}" exists, please enter "help lodestone" to check available ragions.
+      invalid_category: No category "{0}" exists, please enter "help lodestone" to check available categories.
+      service_unavailable: Service is not available at this moment, please try again later
