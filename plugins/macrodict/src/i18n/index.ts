@@ -1,9 +1,14 @@
-export * as de from './de/macrodict.yml'
-export * as en from './en/macrodict.yml'
-export * as es from './es/macrodict.yml'
-export * as fr from './fr/macrodict.yml'
-export * as ja from './ja/macrodict.yml'
-export * as ko from './ko/macrodict.yml'
-export * as ru from './ru/macrodict.yml'
-export * as zh from './zh/macrodict.yml'
-export * as zhtw from './zh-tw/macrodict.yml'
+export default {
+  de: require('./de/macrodict.yml'),
+  en: require('./en/macrodict.yml'),
+  es: require('./es/macrodict.yml'),
+  fr: require('./fr/macrodict.yml'),
+  ja: require('./ja/macrodict.yml'),
+  ko: require('./ko/macrodict.yml'),
+  ru: require('./ru/macrodict.yml'),
+  zh: require('./zh/macrodict.yml'),
+  /* eslint-disable @typescript-eslint/naming-convention */
+  'zh-cn': require('./zh/macrodict.yml'),
+  'zh-tw': require('./zh-tw/macrodict.yml'),
+  /* eslint-enable @typescript-eslint/naming-convention */
+}
