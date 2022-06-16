@@ -38,7 +38,8 @@ function apply(cac) {
   cac
     .command('build [config]')
     .option('minify', 'minify the bundle', { default: true })
-    .action((config, options) => {
+    .action(async (config, options) => {
+      const pkg = JSON.parse(await readFile('./package.json', 'utf-8'))
       let entry = ['src/index.ts']
       let output = 'dist/index.bundle.js'
 
@@ -54,7 +55,13 @@ function apply(cac) {
         target: 'node12',
         entryPoints: entry,
         outfile: output,
-        external: ['koishi'],
+        external: [
+          ...Object.keys({
+            ...pkg.dependencies ?? {},
+            ...pkg.devDependencies ?? {},
+            ...pkg.peerDependencies ?? {},
+          }),
+        ],
         minify: options.minify,
         sourcemap: true,
         plugins: [yamlPlugin()],

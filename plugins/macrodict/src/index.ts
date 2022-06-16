@@ -2,13 +2,19 @@ import { closest } from 'fastest-levenshtein'
 import { Context } from 'koishi'
 
 import { Config } from './config'
-import { renderMacroView } from './render'
 import { Updater } from './update'
-import * as i18n from './i18n'
+import i18n from './i18n'
+import { Search } from './search'
 
 declare module 'koishi' {
   interface Tables {
     macrodict: MacroDictDatabase
+  }
+
+  namespace Context {
+    interface Services {
+      macrodict: Search
+    }
   }
 }
 
@@ -73,15 +79,11 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     ..._config,
   }
 
-  ctx.i18n.define('de', i18n.de)
-  ctx.i18n.define('en', i18n.en)
-  ctx.i18n.define('es', i18n.es)
-  ctx.i18n.define('fr', i18n.fr)
-  ctx.i18n.define('ja', i18n.ja)
-  ctx.i18n.define('ko', i18n.ko)
-  ctx.i18n.define('ru', i18n.ru)
-  ctx.i18n.define('zh', i18n.zh)
-  ctx.i18n.define('zh-tw', i18n.zhtw)
+  // register i18n resources
+  Object.entries(i18n).forEach(([key, value]) => ctx.i18n.define(key, value))
+
+  ctx.plugin(Search)
+  ctx.plugin(Updater)
 
   ctx
     .command('macrodict <macro>')
@@ -96,49 +98,10 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
         lang = config.defaultLanguage as Locale
       }
       macro = macro.startsWith('/') ? macro : '/' + macro
-      const all = await ctx.database.get('macrodict', {}, [
-        'id',
-        ...localizeCommandPrefix(lang),
-      ])
-      const predict = closest(
-        macro,
-        all
-          .map((row) => localizeCommandPrefix(lang).map((key) => row[key]))
-          .flat(2),
-      )
-      const found = all.find((row) =>
-        localizeCommandPrefix(lang)
-          .map((key) => row[key])
-          .includes(predict),
-      )
-      if (!found) {
-        return session?.text('.not_found', [macro])
-      }
-      const db = await ctx.database.get(
-        'macrodict',
-        { id: { $eq: found.id } },
-        [`Command_${lang}`, `Description_${lang}`],
-      )
+      const db = await ctx.macrodict.search(macro, lang)
 
-      const puppeteer = ctx.puppeteer
-
-      if (!puppeteer) {
-        return session?.text('.not_found_puppeteer')
-      }
-
-      if (!db || !db[0]) {
-        return session?.text('.not_found_macro', [macro])
-      }
-
-      if (session) {
-        return renderMacroView(session, puppeteer, {
-          name: db[0][`Command_${lang}`],
-          description: db[0][`Description_${lang}`],
-        })
-      }
+      return await ctx.macrodict.render(db)
     })
-
-  ctx.plugin(Updater)
 }
 
 export function localizedKeys<T extends string, V>(
