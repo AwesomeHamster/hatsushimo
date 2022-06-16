@@ -11,7 +11,6 @@ import {
   locales,
   localizedKeys,
   LocalizedKeys,
-  localizeKeys,
 } from './utils'
 
 declare module 'koishi' {
@@ -27,11 +26,6 @@ declare module 'koishi' {
 }
 
 export { Config }
-
-export function localizeCommandPrefix(lang: Locale) {
-  const langKeys: Locale[] = lang === 'en' ? ['en'] : ['en', lang]
-  return commandPrefix.map((prefix) => localizeKeys(prefix, langKeys)).flat()
-}
 
 export type MacroDictDatabase = Record<
   LocalizedKeys<CommandPrefix | 'Description'>,
