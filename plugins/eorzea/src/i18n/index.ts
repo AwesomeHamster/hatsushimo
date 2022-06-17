@@ -1,9 +1,14 @@
-export * as de from './de/eorzea.yml'
-export * as en from './en/eorzea.yml'
-export * as es from './es/eorzea.yml'
-export * as fr from './fr/eorzea.yml'
-export * as ja from './ja/eorzea.yml'
-export * as ko from './ko/eorzea.yml'
-export * as ru from './ru/eorzea.yml'
-export * as zh from './zh/eorzea.yml'
-export * as zhtw from './zh-tw/eorzea.yml'
+export default {
+  'de': require('./de/eorzea.yml'),
+  'en': require('./en/eorzea.yml'),
+  'es': require('./es/eorzea.yml'),
+  'fr': require('./fr/eorzea.yml'),
+  'ja': require('./ja/eorzea.yml'),
+  'ko': require('./ko/eorzea.yml'),
+  'ru': require('./ru/eorzea.yml'),
+  'zh': require('./zh/eorzea.yml'),
+  /* eslint-disable @typescript-eslint/naming-convention */
+  'zh-cn': require('./zh/eorzea.yml'),
+  'zh-tw': require('./zh-tw/eorzea.yml'),
+  /* eslint-enable @typescript-eslint/naming-convention */
+}

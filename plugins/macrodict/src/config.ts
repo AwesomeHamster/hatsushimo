@@ -1,8 +1,9 @@
 import { Schema } from 'koishi'
+import { Locale } from '.'
 
 export interface Config {
   aliases?: string[]
-  defaultLanguage?: string
+  defaultLanguage?: Locale
   fetchOnStart?: boolean
 }
 

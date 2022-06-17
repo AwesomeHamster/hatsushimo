@@ -16,10 +16,7 @@ export class Search extends Service {
     super(ctx, 'macrodict', true)
   }
 
-  async get(
-    id: number,
-    lang: Locale,
-  ): Promise<Macro> {
+  async get(id: number, lang: Locale): Promise<Macro> {
     const db = await this.ctx.database.get(
       'macrodict',
       {
@@ -101,7 +98,7 @@ export class Search extends Service {
       descriptionHtml,
     )
 
-    if (result === false) {
+    if (!result) {
       throw new Error(`Cannot render the description of ${name}.`)
     }
 

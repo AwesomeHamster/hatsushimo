@@ -15,7 +15,7 @@ commands:
       invalid_type: 指定的一言类型 {0} 不存在，请输入 hitokoto.types 查看所有可用类型。
       min_length_gt_max_length: 最小长度不能大于最大长度。
       service_unavailable: 当前服务不可用，请稍候再试。
-      unknown_error: "不明なエラーが発生しました。しばらく経ってから再度お試しください。{message}"
+      unknown_error: '不明なエラーが発生しました。しばらく経ってから再度お試しください。{message}'
       timeout: 请求超时，请稍候再试。
       #the format that the bot would generate, {hitokoto} is the sentence that hitokoto API returns,
       #more placeholders can be found on:

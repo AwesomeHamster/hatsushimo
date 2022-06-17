@@ -1,6 +1,6 @@
 import { Context } from 'koishi'
 
-import * as i18n from './i18n'
+import i18n from './i18n'
 import { HitokotoApi } from './api'
 import { Config } from './config'
 
@@ -13,15 +13,7 @@ export async function apply(ctx: Context, _config: Config = {}): Promise<void> {
     ..._config,
   }
 
-  ctx.i18n.define('de', i18n.de)
-  ctx.i18n.define('en', i18n.en)
-  ctx.i18n.define('es', i18n.es)
-  ctx.i18n.define('fr', i18n.fr)
-  ctx.i18n.define('ja', i18n.ja)
-  ctx.i18n.define('ko', i18n.ko)
-  ctx.i18n.define('ru', i18n.ru)
-  ctx.i18n.define('zh', i18n.zh)
-  ctx.i18n.define('zh-tw', i18n.zhtw)
+  Object.entries(i18n).forEach(([key, value]) => ctx.i18n.define(key, value))
 
   ctx.plugin(HitokotoApi)
 
@@ -43,7 +35,7 @@ export async function apply(ctx: Context, _config: Config = {}): Promise<void> {
       const types = options?.type?.split(',')
       if (
         types.length <= 0 ||
-        !types.every((t) => typeof t === 'string' && t)
+        !types.every((t) => t)
       ) {
         return session?.text('.invalid_type', [options.type])
       }
