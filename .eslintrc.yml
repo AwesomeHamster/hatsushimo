@@ -60,6 +60,7 @@ rules:
     - avoidEscape: true
       allowTemplateLiterals: true
   quote-props:
+    - error
     - consistent-as-needed
 
   valid-typeof: off
