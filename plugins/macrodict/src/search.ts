@@ -144,7 +144,7 @@ export class Search extends Service {
       descriptionHtml,
     )
 
-    if (result === false) {
+    if (!result) {
       throw new Error(`Cannot render the description of ${name}.`)
     }
 

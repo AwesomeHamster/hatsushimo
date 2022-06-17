@@ -66,7 +66,7 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     },
   )
 
-  const config = {
+  const config: Config = {
     aliases: [],
     defaultLanguage: 'en',
     ..._config,
