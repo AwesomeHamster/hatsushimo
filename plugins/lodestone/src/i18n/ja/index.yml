@@ -1,7 +1,7 @@
 ---
 commands:
   lodestone:
-    description: 查询 Lodestone 新闻
+    description: Lodestone ニュース
     usage: |
       lodestone [-r <ragion>] [-c <category>]
 
@@ -17,4 +17,4 @@ commands:
     messages:
       invalid_ragion: 不存在 {0} 的区域，请输入 help lodestone 查询可用的区域。
       invalid_category: 不存在 {0} 的类别，请输入 help lodestone 查询可用的类别。
-      service_unavailable: 当前服务不可用，请稍候再试。
+      service_unavailable: このサービスは現在ご利用いただけません。しばらく経ってから再度お試してください。
