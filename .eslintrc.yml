@@ -59,6 +59,8 @@ rules:
     - single
     - avoidEscape: true
       allowTemplateLiterals: true
+  quote-props:
+    - consistent-as-needed
 
   valid-typeof: off
 
