@@ -62,6 +62,12 @@ export interface MacroDictConfig {
 }
 ```
 
+## Translation
+
+This plugin supports multiple languages.
+
+To contribute translations, please register a [Crowdin](https://crowdin.com/) and contribute translations to the `macrodict` folder of the project [hatsushimo](https://crowdin.com/project/hatsushimo).
+
 ## LICENSE 许可证
 
 This plugin is licensed under the [MIT license](LICENSE).
