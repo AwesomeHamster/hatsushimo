@@ -1,6 +1,5 @@
 commit_message: '[ci skip]'
 preserve_hierarchy: false
-
 files:
   - source: /plugins/eorzea/src/i18n/zh/*.yml
     translation: /plugins/eorzea/src/i18n/%two_letters_code%/%original_file_name%
