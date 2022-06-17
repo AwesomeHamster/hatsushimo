@@ -1,6 +1,6 @@
 # hatsushimo 初霜
 
-**hatsushimo** is the 4th generation of **Hamster** (仓鼠 in Chinese) the chatbot which is based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
+**hatsushimo** is the 4th generation of **Hamster** (仓鼠), a chatbot based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
 
 Currently **Hamster** (仓鼠) supports Discord and QQ, and we are working on other platforms.
 
@@ -14,16 +14,21 @@ please click those links below.
 
 ## Features and Plugins
 
-### FFXIV-related
+### FFXIV related
 
 - [koishi-plugin-ffxiv-eorzea](https://www.npmjs.com/package/koishi-plugin-ffxiv-eorzea): Some useful commands for FFXIV players, such as item searching, Eorzea time, etc.
-- [koishi-plugin-ffxiv-lodestone](https://www.npmjs.com/package/koishi-plugin-ffxiv-lodestone): Search FFXIV news from Lodestone.
-- [koishi-plugin-ffxiv-macrodict](https://www.npmjs.com/package/koishi-plugin-ffxiv-macrodict): Search FFXIV macro (text command) dictionary in English/German/French/Japanese/Chinese/Korean.
+- [koishi-plugin-ffxiv-lodestone](https://www.npmjs.com/package/koishi-plugin-ffxiv-lodestone): Query FFXIV news from Lodestone.
+- [koishi-plugin-ffxiv-macrodict](https://www.npmjs.com/package/koishi-plugin-ffxiv-macrodict): Query FFXIV macro (text command) dictionary in English/German/French/Japanese/Chinese/Korean.
 
 ### Misc
 
-- [koishi-plugin-image-search](https://www.npmjs.com/package/koishi-plugin-image-search): Search image information by image.
 - [koishi-plugin-hitokoto](https://www.npmjs.com/package/koishi-plugin-hitokoto): Random "hitokoto" sentences from [hitokoto.cn](https://hitokoto.cn).
+
+## Translation
+
+Plugins used in Hamster support multiple languages.
+
+To contribute translations, please register a [Crowdin](https://crowdin.com/) and contribute translations to project [hatsushimo](https://crowdin.com/project/hatsushimo).
 
 ## Status
 
