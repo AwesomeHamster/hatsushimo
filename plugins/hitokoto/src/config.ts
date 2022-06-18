@@ -16,7 +16,6 @@ export interface Config {
   defaultTypes?: string[]
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Config = Schema.object({
   apiUrl: Schema.string()
     .description('获取一言的 API 地址')
