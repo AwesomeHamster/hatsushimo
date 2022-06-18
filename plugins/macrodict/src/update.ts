@@ -4,7 +4,6 @@ import { Context, Logger } from 'koishi'
 import type { Config } from './index'
 
 export type XivapiResponse<T = any> = {
-  /* eslint-disable @typescript-eslint/naming-convention */
   Pagination: {
     Page: number
     PageNext: number | null
@@ -15,7 +14,6 @@ export type XivapiResponse<T = any> = {
     ResultsTotal: number
   }
   Results: T[]
-  /* eslint-enable @typescript-eslint/naming-convention */
 }
 
 export type Fields =
@@ -141,14 +139,12 @@ export class Updater {
             // `#` column is the ID, which is always number.
             if (/^[0-9]+$/.test(row?.['#'])) {
               rows.push({
-                /* eslint-disable @typescript-eslint/naming-convention */
                 ID: row?.['#'],
                 Alias_ko: row.Alias,
                 Command_ko: row.Command,
                 Description_ko: row.Description,
                 ShortAlias_ko: row.ShortAlias,
                 ShortCommand_ko: row.ShortCommand,
-                /* eslint-enable @typescript-eslint/naming-convention */
               })
             }
           })

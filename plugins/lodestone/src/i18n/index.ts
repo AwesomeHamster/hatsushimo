@@ -7,8 +7,6 @@ export default {
   'ko': require('./ko/index.yml'),
   'ru': require('./ru/index.yml'),
   'zh': require('./zh/index.yml'),
-  /* eslint-disable @typescript-eslint/naming-convention */
   'zh-cn': require('./zh/index.yml'),
   'zh-tw': require('./zh-tw/index.yml'),
-  /* eslint-enable @typescript-eslint/naming-convention */
 }

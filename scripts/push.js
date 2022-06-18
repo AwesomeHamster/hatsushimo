@@ -2,13 +2,11 @@
 const { exec } = require('./utils')
 
 const REMOTE_MAP = {
-  /* eslint-disable @typescript-eslint/naming-convention */
   'packages/constructeur': 'constructeur',
   'plugins/eorzea': 'plugin-eorzea',
   'plugins/hitokoto': 'plugin-hitokoto',
   'plugins/lodestone': 'plugin-lodestone',
   'plugins/macrodict': 'plugin-macrodict',
-  /* eslint-enable @typescript-eslint/naming-convention */
 }
 /**
  * Push subtree to github

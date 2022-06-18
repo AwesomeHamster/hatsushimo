@@ -1,5 +1,4 @@
 const keyMap: { [k: string]: string } = {
-  /* eslint-disable @typescript-eslint/naming-convention */
   1: '↑',
   2: '↓',
   3: '←',
@@ -10,7 +9,6 @@ const keyMap: { [k: string]: string } = {
   11: '△',
   14: 'L2',
   15: 'R2',
-  /* eslint-enable @typescript-eslint/naming-convention */
 }
 
 /**
