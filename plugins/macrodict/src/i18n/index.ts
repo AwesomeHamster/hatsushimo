@@ -7,8 +7,6 @@ export default {
   'ko': require('./ko/macrodict.yml'),
   'ru': require('./ru/macrodict.yml'),
   'zh': require('./zh/macrodict.yml'),
-  /* eslint-disable @typescript-eslint/naming-convention */
   'zh-cn': require('./zh/macrodict.yml'),
   'zh-tw': require('./zh-tw/macrodict.yml'),
-  /* eslint-enable @typescript-eslint/naming-convention */
 }

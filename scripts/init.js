@@ -2,7 +2,6 @@
 const { exec } = require('./utils')
 
 const REMOTE_MAP = {
-  /* eslint-disable quote-props, @typescript-eslint/naming-convention */
   'constructeur': 'https://github.com/AwesomeHamster/constructeur.git',
   'plugin-eorzea':
     'https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git',
@@ -12,7 +11,6 @@ const REMOTE_MAP = {
     'https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git',
   'plugin-macrodict':
     'https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git',
-  /* eslint-enable quote-props, @typescript-eslint/naming-convention */
 }
 
 /** Register remote url */
