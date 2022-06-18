@@ -85,7 +85,9 @@ export class Search extends Service {
       return
     }
 
-    const id = Object.entries(this.names[lang]).find(([_, value]) => value.includes(predict))?.[0]
+    const id = Object.entries(this.names[lang]).find(([_, value]) =>
+      value.includes(predict),
+    )?.[0]
 
     if (!id) {
       return

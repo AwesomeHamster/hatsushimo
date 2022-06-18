@@ -4,42 +4,9 @@ import { Config } from './config'
 import i18n from './i18n'
 import { Search } from './search'
 import { Updater } from './update'
-import {
-  commandPrefix,
-  CommandPrefix,
-  Locale,
-  locales,
-  LocalizedKeys,
-  localizeKeys,
-} from './utils'
-
-declare module 'koishi' {
-  interface Tables {
-    macrodict: MacroDictDatabase
-  }
-
-  namespace Context {
-    interface Services {
-      macrodict: Search
-    }
-  }
-
-  interface Events {
-    /* eslint-disable @typescript-eslint/naming-convention */
-    'macrodict/update': () => void
-    /* eslint-enable @typescript-eslint/naming-convention */
-  }
-}
+import { commandPrefix, Locale, locales, localizeKeys } from './utils'
 
 export { Config }
-
-export type MacroDictDatabase = Record<
-  LocalizedKeys<CommandPrefix | 'Description'>,
-  string
-> & {
-  id: number
-  lastUpdated: number
-}
 
 export const name = 'macrodict'
 
@@ -66,9 +33,10 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     },
   )
 
-  const config: Config = {
+  const config: Required<Config> = {
     aliases: [],
     defaultLanguage: 'en',
+    fetchOnStart: false,
     ..._config,
   }
 
