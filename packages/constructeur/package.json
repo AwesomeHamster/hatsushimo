@@ -21,10 +21,10 @@
     "constructeur": "lib/index.js",
     "ctr": "lib/index.js"
   },
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "files": [
+    "lib/*",
+    "tsconfig.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AwesomeHamster/constructeur.git"
