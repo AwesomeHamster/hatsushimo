@@ -93,7 +93,7 @@ export class Search extends Service {
       return
     }
 
-    const db = await this.ctx.database.get('macrodict', id, [
+    const db = await this.ctx.database.get('macrodict', Number(id), [
       `Command_${lang}`,
       `Description_${lang}`,
       'id',

@@ -1,5 +1,5 @@
 import { Schema } from 'koishi'
-import { Locale } from '.'
+import { Locale } from './utils'
 
 export interface Config {
   aliases?: string[]
