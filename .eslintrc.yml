@@ -59,6 +59,9 @@ rules:
     - single
     - avoidEscape: true
       allowTemplateLiterals: true
+  quote-props:
+    - error
+    - consistent-as-needed
 
   valid-typeof: off
 
@@ -79,28 +82,6 @@ rules:
 
   keyword-spacing: off
   '@typescript-eslint/keyword-spacing': error
-
-  camelcase: off
-  '@typescript-eslint/naming-convention':
-    - error
-
-    # group selectors
-    - selector: default
-      format: [camelCase, UPPER_CASE]
-      leadingUnderscore: allow
-    - selector: [variableLike, memberLike]
-      format: [camelCase, UPPER_CASE, snake_case]
-      leadingUnderscore: allow
-    - selector: [typeLike]
-      format: [PascalCase]
-
-    # selectors
-    - selector: [function]
-      format: [camelCase, PascalCase]
-    - selector: [enum]
-      format: [UPPER_CASE, PascalCase]
-    - selector: [typeParameter]
-      format: [PascalCase]
 
   # https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-redeclare.md
   no-redeclare: off

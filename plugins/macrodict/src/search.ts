@@ -2,7 +2,7 @@ import { Context, segment, Service } from 'koishi'
 import type {} from '@koishijs/plugin-puppeteer'
 import path from 'path'
 
-import { Locale } from '.'
+import { Locale } from './utils'
 import { parseMacroDescriptionForHtml } from './parser'
 
 interface Macro {
@@ -16,10 +16,7 @@ export class Search extends Service {
     super(ctx, 'macrodict', true)
   }
 
-  async get(
-    id: number,
-    lang: Locale,
-  ): Promise<Macro> {
+  async get(id: number, lang: Locale): Promise<Macro> {
     const db = await this.ctx.database.get(
       'macrodict',
       {
@@ -46,12 +43,10 @@ export class Search extends Service {
           { [`ShortCommand_${lang}`]: { $eq: name } },
           { [`Alias_${lang}`]: { $eq: name } },
           { [`ShortAlias_${lang}`]: { $eq: name } },
-          /* eslint-disable @typescript-eslint/naming-convention */
           { Command_en: { $eq: name } },
           { ShortCommand_en: { $eq: name } },
           { Alias_en: { $eq: name } },
           { ShortAlias_en: { $eq: name } },
-          /* eslint-enable @typescript-eslint/naming-convention */
         ],
       },
       [`Command_${lang}`, `Description_${lang}`, 'id'],
@@ -101,7 +96,7 @@ export class Search extends Service {
       descriptionHtml,
     )
 
-    if (result === false) {
+    if (!result) {
       throw new Error(`Cannot render the description of ${name}.`)
     }
 

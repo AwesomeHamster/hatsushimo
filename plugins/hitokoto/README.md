@@ -62,6 +62,12 @@ You can configure this plugin using the following configurations.
 |  `maxLength`   |    `number`     |       no 否       |             30             |                                                           The maximum length of the sentence, can be override via options. 句子最大长度，可在调用指令时用选项覆盖。                                                           |
 | `defaultTypes` | `Array<string>` |       no 否       |     all types 所有类型     | The default types of the sentence, can be override via options. If an empty array was passed in, then the plugin would treat it as `['a']`. 默认句子类型，可在调用指令时用选项覆盖。若传入的是空字符串，则当作 `['a']` 类型。 |
 
+## Translation
+
+This plugin supports multiple languages.
+
+To contribute translations, please register a [Crowdin](https://crowdin.com/) and contribute translations to the `hitokoto` folder of the project [hatsushimo](https://crowdin.com/project/hatsushimo).
+
 ## ChangeLog 修订日志
 
 The change log of this plugin can be found [here](./CHANGELOG.md).

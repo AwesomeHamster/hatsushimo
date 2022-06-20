@@ -57,9 +57,9 @@ function apply(cac) {
         outfile: output,
         external: [
           ...Object.keys({
-            ...pkg.dependencies ?? {},
-            ...pkg.devDependencies ?? {},
-            ...pkg.peerDependencies ?? {},
+            ...(pkg.dependencies ?? {}),
+            ...(pkg.devDependencies ?? {}),
+            ...(pkg.peerDependencies ?? {}),
           }),
         ],
         minify: options.minify,
