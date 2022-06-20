@@ -46,7 +46,8 @@ describe('macrodict', () => {
       .retries(3)
 
     it('update database', async () => {
-      await updater.update()
+      const count = await updater.update()
+      expect(count).greaterThan(0)
     })
       .timeout(0)
       .retries(3)

@@ -1,5 +1,5 @@
 import { Schema } from 'koishi'
-import { Locale } from './utils'
+import { Locale, locales } from './utils'
 
 export interface Config {
   aliases?: string[]
@@ -9,6 +9,6 @@ export interface Config {
 
 export const Config = Schema.object({
   aliases: Schema.array(Schema.string()),
-  defaultLanguage: Schema.union(['en', 'de', 'fr', 'ja', 'ko', 'chs']),
+  defaultLanguage: Schema.union(locales),
   fetchOnStart: Schema.boolean(),
 })
