@@ -34,7 +34,7 @@
   "scripts": {
     "build": "constructeur build && tsc --emitDeclarationOnly",
     "dev": "constructeur build --minify false && tsc --emitDeclarationOnly",
-    "test": "mocha -r ts-node/register --extension .spec.ts ./__tests__"
+    "test": "mocha -r ts-node/register -r yml-register --extension .spec.ts ./__tests__"
   },
   "bugs": {
     "url": "https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone/issues"
@@ -62,7 +62,8 @@
     "chai": "^4.3.4",
     "mocha": "^9.1.3",
     "ts-node": "^10.8.1",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "yml-register": "^1.0.0"
   },
   "peerDependencies": {
     "@koishijs/plugin-puppeteer": "^3.0.0-rc.0",
