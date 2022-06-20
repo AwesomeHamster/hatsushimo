@@ -52,4 +52,25 @@ describe('macrodict', () => {
       .timeout(0)
       .retries(3)
   })
+
+  describe('search', () => {
+    it('should get all names', async () => {
+      const data = await ctx.macrodict.getNames()
+      expect(Object.keys(data.en).length).greaterThan(0)
+    })
+    it('should get macro by id', async () => {
+      // id 102 is "/say" command
+      const say = await ctx.macrodict.get(102, 'en')
+      expect(say.id)
+        .to.be.a('number', 'id should be a number')
+        .and.equal(102, 'id should be 102')
+    })
+    it('should search macro by name', async () => {
+      const say = await ctx.macrodict.search('say', 'en')
+      expect(say).to.not.be.a('undefined', 'should not be undefined')
+      expect(say?.id)
+        .to.be.a('number', 'id should be a number')
+        .and.equal(102, 'id should be 102')
+    })
+  })
 })
