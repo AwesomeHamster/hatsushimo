@@ -14,6 +14,7 @@ commands:
       not_found_puppeteer: 'Plugin puppeteer was not found, could not render text commands.'
       not_found_macro: 'Macro not found.'
       puppeteer_error: "Errors occurred when invoing plugin puppeteer, could not render the text commands.\n{0}"
+      hint: '你想找的是 {0} 吗？'
   macrodict.update:
     description: Update Database of Macros
     usage: |
