@@ -15,6 +15,8 @@ interface Macro {
   id: number
   name: string
   description: string
+  /** used to determine the input is exactly the same as the result */
+  exactly?: boolean
 }
 
 export class Search extends Service {
@@ -79,10 +81,7 @@ export class Search extends Service {
     }
   }
 
-  async search(
-    name: string,
-    lang: Locale,
-  ): Promise<{ name: string; description: string; id: number } | undefined> {
+  async search(name: string, lang: Locale): Promise<Macro | undefined> {
     if (!this.macros) {
       this.macros = await this.getNames()
     }
@@ -96,6 +95,8 @@ export class Search extends Service {
       return
     }
 
+    const exactly = predict === name || predict.substring(1) === name
+
     const id = this.macros[lang].find(({ names }) =>
       names.includes(predict),
     )?.id
@@ -104,22 +105,15 @@ export class Search extends Service {
       return
     }
 
-    const db = await this.ctx.database.get('macrodict', Number(id), [
-      `Command_${lang}`,
-      `Description_${lang}`,
-      'id',
-    ])
+    const macro = await this.get(id, lang)
 
-    if (!db || !db[0]) {
+    if (!macro) {
       return
     }
 
-    const macro = db[0]
-
     return {
-      id: macro.id,
-      name: macro[`Command_${lang}`],
-      description: macro[`Description_${lang}`],
+      ...macro,
+      exactly,
     }
   }
 
