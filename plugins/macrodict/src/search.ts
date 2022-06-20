@@ -1,11 +1,16 @@
-import { Context, segment, Service } from 'koishi'
-import type {} from '@koishijs/plugin-puppeteer'
 import path from 'path'
 
-import { commandPrefixKeys, Locale } from './utils'
-import { parseMacroDescriptionForHtml } from './parser'
+import type {} from '@koishijs/plugin-puppeteer'
 import { closest } from 'fastest-levenshtein'
+import { Context, Service, segment } from 'koishi'
 
+import { parseMacroDescriptionForHtml } from './parser'
+import { Locale, commandPrefixKeys, locales } from './utils'
+
+interface MacroWithoutDescription {
+  id: number
+  names: string[]
+}
 interface Macro {
   id: number
   name: string
@@ -13,40 +18,46 @@ interface Macro {
 }
 
 export class Search extends Service {
-  names?: Record<Locale, Record<number, string[]>>
+  macros?: Record<Locale, MacroWithoutDescription[]>
 
   constructor(ctx: Context) {
     super(ctx, 'macrodict', true)
 
     this.ctx.on(
       'macrodict/update',
-      async () => (this.names = await this.getNames()),
+      async () => (this.macros = await this.getNames()),
     )
   }
 
-  async getNames(): Promise<Record<Locale, Record<number, string[]>>> {
+  async getNames(): Promise<Record<Locale, MacroWithoutDescription[]>> {
     const db = await this.ctx.database.get('macrodict', {}, [
       'id',
       ...commandPrefixKeys,
     ])
 
-    const ret: Record<Locale, Record<number, string[]>> = {
-      en: {},
-      de: {},
-      fr: {},
-      ja: {},
-      chs: {},
-      ko: {},
+    const ret: Record<Locale, MacroWithoutDescription[]> = {
+      en: [],
+      de: [],
+      fr: [],
+      ja: [],
+      chs: [],
+      ko: [],
     }
 
     for (const row of db) {
       const { id } = row
+
+      // initialize macro metadata container
+      for (const lang of locales) {
+        ret[lang].push({
+          id,
+          names: [],
+        })
+      }
+
       for (const key of commandPrefixKeys) {
         const loc = key.substring(key.lastIndexOf('_') + 1) as Locale
-        if (typeof ret[loc][id] === 'undefined') {
-          ret[loc][id] = []
-        }
-        ret[loc][id].push(row[key])
+        ret[loc][ret[loc].length - 1].names.push(row[key])
       }
     }
 
@@ -72,22 +83,22 @@ export class Search extends Service {
     name: string,
     lang: Locale,
   ): Promise<{ name: string; description: string; id: number } | undefined> {
-    if (!this.names) {
-      this.names = await this.getNames()
+    if (!this.macros) {
+      this.macros = await this.getNames()
     }
 
     const predict = closest(
       name,
-      ([] as string[][]).concat(Object.values(this.names[lang])).flat(),
+      this.macros[lang].map((macro) => macro.names).flat(),
     )
 
     if (!predict) {
       return
     }
 
-    const id = Object.entries(this.names[lang]).find(([_, value]) =>
-      value.includes(predict),
-    )?.[0]
+    const id = this.macros[lang].find(({ names }) =>
+      names.includes(predict),
+    )?.id
 
     if (!id) {
       return
