@@ -14,6 +14,7 @@ commands:
       not_found_puppeteer: '未找到 koishi-plugin-puppeteer 插件，无法渲染宏指令。'
       not_found_macro: '找不到宏指令。'
       puppeteer_error: "koishi-plugin-puppeteer 插件发生错误，无法渲染宏指令。\n{0}"
+      hint: '你想找的是 {0} 吗？'
   macrodict.update:
     description: 更新宏学词典
     usage: |
