@@ -20,4 +20,4 @@ commands:
       macrodict.update
     messages:
       start_updating_macros: 'Start updating the database of macros.'
-      updated_macros: 'Macro database has been updated. Current version is {0}, total {1} macros.'
+      updated_macros: '宏学词典更新完毕。共 {0} 个宏指令。'
