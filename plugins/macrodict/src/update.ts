@@ -31,22 +31,26 @@ export type IntlMacros = Record<
 export class Updater {
   private logger = new Logger('macrodict')
   private ctx: Context
+  public name = 'macrodict-updater'
 
   constructor(ctx: Context, config: Config) {
     this.ctx = ctx
 
-    ctx.command('macrodict.update').action(({ session }) => {
+    ctx.command('macrodict.update').action(async ({ session }) => {
       session?.sendQueued(session.text('.start_updating_macros'))
-      this.update()
+      const count = await this.update()
+      session?.text('.macros_updated', [count])
     })
 
     if (config.fetchOnStart) {
       // update macro database when bot connected successfully.
-      ctx.on('ready', () => this.update())
+      ctx.on('ready', async () => {
+        await this.update()
+      })
     }
   }
 
-  async update(): Promise<void> {
+  async update(): Promise<number> {
     this.logger.info('start updating macros')
     const macros = this.normalize(await this.fetchIntl())
     const cnMacros = this.normalize(await this.fetchCn())
@@ -63,6 +67,8 @@ export class Updater {
     }
     await this.ctx.database.upsert('macrodict', Object.values(macros))
     this.logger.info('macros updated')
+    this.ctx.emit('macrodict/update')
+    return Object.keys(macros).length
   }
 
   async fetchXivapi<T>(url: string, columns: string[]): Promise<T[]> {

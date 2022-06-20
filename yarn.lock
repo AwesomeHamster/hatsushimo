@@ -3211,6 +3211,7 @@ __metadata:
     mocha: ^9.1.3
     ts-node: ^10.4.0
     typescript: ^4.7.3
+    yml-register: ^1.0.0
   peerDependencies:
     "@koishijs/plugin-puppeteer": ^3.0.0-rc.0
     koishi: ^4.4.0
@@ -3235,6 +3236,7 @@ __metadata:
     rimraf: ^3.0.2
     ts-node: ^10.8.1
     typescript: ^4.7.3
+    yml-register: ^1.0.0
   peerDependencies:
     koishi: ^4.0.0-rc.1
   languageName: unknown
@@ -5261,6 +5263,15 @@ __metadata:
   version: 1.3.2
   resolution: "ylru@npm:1.3.2"
   checksum: b6bb3931144424114f2350c072cfeb180f205add93509c605ae025cbed8059846f8a5767655feeeab890d288b5b4c4b36f5d5d867ee4e6946c16bcc7ec3ddaee
+  languageName: node
+  linkType: hard
+
+"yml-register@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "yml-register@npm:1.0.0"
+  dependencies:
+    js-yaml: ^4.1.0
+  checksum: 571d8c3e778b0f8b80c42f6a7ffd1a395bb7c364d20c01b65ec84fb68a489eee1d79156e010e8241e98538dac0c043d6e3971d7345dd147e563f855662107ce3
   languageName: node
   linkType: hard
 
