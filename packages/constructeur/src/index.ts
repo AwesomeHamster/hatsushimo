@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { CAC } = require('cac')
+import { CAC } from 'cac'
 
-const { apply: build } = require('./build')
+import { apply as build } from './build'
 
 const cac = new CAC('constructeur')
 

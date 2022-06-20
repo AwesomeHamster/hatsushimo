@@ -1,14 +1,11 @@
-const { readFile } = require('fs-extra')
-const { resolve } = require('path')
+import { readFile } from 'fs-extra'
+import { resolve } from 'path'
 
-const esbuild = require('esbuild')
-const yaml = require('js-yaml')
+import { CAC } from 'cac'
+import esbuild from 'esbuild'
+import yaml from 'js-yaml'
 
-/**
- * @param {yaml.LoadOptions} options
- * @returns {import('esbuild').Plugin}
- */
-const yamlPlugin = (options = {}) => ({
+const yamlPlugin = (options: yaml.LoadOptions = {}): esbuild.Plugin => ({
   name: 'yaml',
   setup(build) {
     build.onResolve({ filter: /\.ya?ml$/ }, ({ path, resolveDir }) => {
@@ -29,12 +26,7 @@ const yamlPlugin = (options = {}) => ({
   },
 })
 
-/** @typedef {import('cac').CAC} CAC */
-/**
- * @param {CAC} cac
- * @returns {CAC}
- */
-function apply(cac) {
+export function apply(cac: CAC): CAC {
   cac
     .command('build [config]')
     .option('minify', 'minify the bundle', { default: true })
@@ -70,5 +62,3 @@ function apply(cac) {
 
   return cac
 }
-
-module.exports.apply = apply
