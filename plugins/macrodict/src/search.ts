@@ -1,19 +1,69 @@
-import { Context, segment, Service } from 'koishi'
-import type {} from '@koishijs/plugin-puppeteer'
 import path from 'path'
 
-import { Locale } from './utils'
-import { parseMacroDescriptionForHtml } from './parser'
+import type {} from '@koishijs/plugin-puppeteer'
+import { closest } from 'fastest-levenshtein'
+import { Context, Service, segment } from 'koishi'
 
+import { parseMacroDescriptionForHtml } from './parser'
+import { Locale, commandPrefixKeys, locales } from './utils'
+
+interface MacroWithoutDescription {
+  id: number
+  names: string[]
+}
 interface Macro {
   id: number
   name: string
   description: string
+  /** used to determine the input is exactly the same as the result */
+  exactly?: boolean
 }
 
 export class Search extends Service {
+  macros?: Record<Locale, MacroWithoutDescription[]>
+
   constructor(ctx: Context) {
     super(ctx, 'macrodict', true)
+
+    this.ctx.on(
+      'macrodict/update',
+      async () => (this.macros = await this.getNames()),
+    )
+  }
+
+  async getNames(): Promise<Record<Locale, MacroWithoutDescription[]>> {
+    const db = await this.ctx.database.get('macrodict', {}, [
+      'id',
+      ...commandPrefixKeys,
+    ])
+
+    const ret: Record<Locale, MacroWithoutDescription[]> = {
+      en: [],
+      de: [],
+      fr: [],
+      ja: [],
+      chs: [],
+      ko: [],
+    }
+
+    for (const row of db) {
+      const { id } = row
+
+      // initialize macro metadata container
+      for (const lang of locales) {
+        ret[lang].push({
+          id,
+          names: [],
+        })
+      }
+
+      for (const key of commandPrefixKeys) {
+        const loc = key.substring(key.lastIndexOf('_') + 1) as Locale
+        ret[loc][ret[loc].length - 1].names.push(row[key])
+      }
+    }
+
+    return ret
   }
 
   async get(id: number, lang: Locale): Promise<Macro> {
@@ -31,37 +81,39 @@ export class Search extends Service {
     }
   }
 
-  async search(
-    name: string,
-    lang: Locale,
-  ): Promise<{ name: string; description: string; id: number }> {
-    const db = await this.ctx.database.get(
-      'macrodict',
-      {
-        $or: [
-          { [`Command_${lang}`]: { $eq: name } },
-          { [`ShortCommand_${lang}`]: { $eq: name } },
-          { [`Alias_${lang}`]: { $eq: name } },
-          { [`ShortAlias_${lang}`]: { $eq: name } },
-          { Command_en: { $eq: name } },
-          { ShortCommand_en: { $eq: name } },
-          { Alias_en: { $eq: name } },
-          { ShortAlias_en: { $eq: name } },
-        ],
-      },
-      [`Command_${lang}`, `Description_${lang}`, 'id'],
-    )
-
-    if (!db || !db[0]) {
-      throw new Error(`Not found macro: ${name}`)
+  async search(name: string, lang: Locale): Promise<Macro | undefined> {
+    if (!this.macros) {
+      this.macros = await this.getNames()
     }
 
-    const macro = db[0]
+    const predict = closest(
+      name,
+      this.macros[lang].map((macro) => macro.names).flat(),
+    )
+
+    if (!predict) {
+      return
+    }
+
+    const exactly = predict === name || predict.substring(1) === name
+
+    const id = this.macros[lang].find(({ names }) =>
+      names.includes(predict),
+    )?.id
+
+    if (!id) {
+      return
+    }
+
+    const macro = await this.get(id, lang)
+
+    if (!macro) {
+      return
+    }
 
     return {
-      id: macro.id,
-      name: macro[`Command_${lang}`],
-      description: macro[`Description_${lang}`],
+      ...macro,
+      exactly,
     }
   }
 
