@@ -58,13 +58,15 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
         )
         lang = config.defaultLanguage as Locale
       }
-      macro = macro.startsWith('/') ? macro : '/' + macro
       const db = await ctx.macrodict.search(macro, lang)
 
       if (!db) {
         return session?.text('.not_found_macro')
       }
 
+      if (db.exactly) {
+        session?.text('.hint', [db.name])
+      }
       return await ctx.macrodict.render(db)
     })
 }

@@ -36,9 +36,9 @@ export class Updater {
   constructor(ctx: Context, config: Config) {
     this.ctx = ctx
 
-    ctx.command('macrodict.update').action(({ session }) => {
+    ctx.command('macrodict.update').action(async ({ session }) => {
       session?.sendQueued(session.text('.start_updating_macros'))
-      this.update()
+      await this.update()
     })
 
     if (config.fetchOnStart) {
