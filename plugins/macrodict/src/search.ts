@@ -2,7 +2,7 @@ import { Context, segment, Service } from 'koishi'
 import type {} from '@koishijs/plugin-puppeteer'
 import path from 'path'
 
-import { Locale } from '.'
+import { Locale } from './utils'
 import { parseMacroDescriptionForHtml } from './parser'
 
 interface Macro {

@@ -4,34 +4,9 @@ import { Config } from './config'
 import { Updater } from './update'
 import i18n from './i18n'
 import { Search } from './search'
-
-declare module 'koishi' {
-  interface Tables {
-    macrodict: MacroDictDatabase
-  }
-
-  namespace Context {
-    interface Services {
-      macrodict: Search
-    }
-  }
-}
+import { commandPrefix, Locale, locales, localizeKeys } from './utils'
 
 export { Config }
-
-export const locales = ['en', 'de', 'fr', 'ja', 'ko', 'chs'] as const
-export type Locale = typeof locales[number]
-export type LocalizedKeys<T extends string> = `${T}_${Locale}`
-
-export type MacroDictDatabase = Record<
-  LocalizedKeys<
-    'Command' | 'Alias' | 'ShortCommand' | 'ShortAlias' | 'Description'
-  >,
-  string
-> & {
-  id: number
-  lastUpdated: number
-}
 
 export const name = 'macrodict'
 
@@ -45,18 +20,23 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
     {
       id: 'unsigned',
       lastUpdated: 'integer',
-      ...['Command', 'ShortCommand', 'Alias', 'ShortAlias', 'Description']
-        .map((key) => localizedKeys(key, 'string'))
-        .flat(),
+      ...Object.fromEntries(
+        ['Description']
+          .concat(commandPrefix)
+          .map((key) => localizeKeys(key, [...locales]))
+          .flat()
+          .map((value) => [value, 'string']),
+      ),
     },
     {
       primary: 'id',
     },
   )
 
-  const config: Config = {
+  const config: Required<Config> = {
     aliases: [],
     defaultLanguage: 'en',
+    fetchOnStart: false,
     ..._config,
   }
 
@@ -83,13 +63,4 @@ export async function apply(ctx: Context, _config: Config): Promise<void> {
 
       return await ctx.macrodict.render(db)
     })
-}
-
-export function localizedKeys<T extends string, V>(
-  key: T,
-  value: V,
-): Record<LocalizedKeys<T>, V> {
-  return Object.fromEntries(
-    locales.map((loc) => [`${key}_${loc}`, value]),
-  ) as Record<LocalizedKeys<T>, V>
 }
