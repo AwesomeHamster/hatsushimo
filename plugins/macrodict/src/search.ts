@@ -4,6 +4,7 @@ import type {} from '@koishijs/plugin-puppeteer'
 import { closest } from 'fastest-levenshtein'
 import { Context, Service, segment } from 'koishi'
 
+import { Locale } from './utils'
 import { parseMacroDescriptionForHtml } from './parser'
 import { Locale, commandPrefixKeys, locales } from './utils'
 
