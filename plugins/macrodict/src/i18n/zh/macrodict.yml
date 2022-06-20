@@ -26,4 +26,4 @@ commands:
 
     messages:
       start_updating_macros: '开始更新宏学词典。'
-      updated_macros: '宏学词典更新完毕。当前版本为 {0}，共 {1} 个宏指令。'
+      updated_macros: '宏学词典更新完毕。共 {0} 个宏指令。'
