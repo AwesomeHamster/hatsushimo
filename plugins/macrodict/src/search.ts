@@ -143,6 +143,7 @@ export class Search extends Service {
           return false
         }
         el.innerHTML = description
+        return true
       },
       name,
       descriptionHtml,
