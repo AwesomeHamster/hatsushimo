@@ -1,35 +1,29 @@
 #!/bin/env node
-const { exec } = require('./utils')
+const { exec, readConfig } = require('./utils')
 
-const REMOTE_MAP = {
-  'packages/constructeur': 'constructeur',
-  'plugins/eorzea': 'plugin-eorzea',
-  'plugins/hitokoto': 'plugin-hitokoto',
-  'plugins/lodestone': 'plugin-lodestone',
-  'plugins/macrodict': 'plugin-macrodict',
-}
 /**
  * Push subtree to github
  */
-async function push(path, name, branch) {
+async function push(path, url, branch) {
   // setup environment variables in codespaces
   const env = process.env
   if (process.env.GITHUB_TOKEN && process.env.PAT) {
     env.GITHUB_TOKEN = process.env.PAT
   }
   branch ??= 'master'
-  console.log(`  ---> Pushing ${path} to ${name}:${branch}`)
-  await exec('git', ['subtree', 'push', `--prefix=${path}`, name, branch], {
+  console.log(`  ---> Pushing ${path} to ${url}:${branch}`)
+  await exec('git', ['subtree', 'push', `--prefix=${path}`, url, branch], {
     env,
   })
 }
 
 ;(async () => {
+  const config = await readConfig()
   console.log('  ---> Pushing hatsushimo to origin')
   await exec('git', ['push'])
 
   // push every subtree to github
-  for (const [path, name] of Object.entries(REMOTE_MAP)) {
-    await push(path, name)
+  for (const { path, url } of Object.values(config.subtree)) {
+    await push(path, url)
   }
 })()
