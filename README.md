@@ -16,13 +16,13 @@ please click those links below.
 
 ### FFXIV related
 
-- [koishi-plugin-ffxiv-eorzea](https://www.npmjs.com/package/koishi-plugin-ffxiv-eorzea): Some useful commands for FFXIV players, such as item searching, Eorzea time, etc.
-- [koishi-plugin-ffxiv-lodestone](https://www.npmjs.com/package/koishi-plugin-ffxiv-lodestone): Query FFXIV news from Lodestone.
-- [koishi-plugin-ffxiv-macrodict](https://www.npmjs.com/package/koishi-plugin-ffxiv-macrodict): Query FFXIV macro (text command) dictionary in English/German/French/Japanese/Chinese/Korean.
+- [ffxiv-eorzea](https://www.npmjs.com/package/koishi-plugin-ffxiv-eorzea): Some useful commands for FFXIV players, such as item searching, Eorzea time, etc.
+- [ffxiv-lodestone](https://www.npmjs.com/package/koishi-plugin-ffxiv-lodestone): Query FFXIV news from Lodestone.
+- [ffxiv-macrodict](https://www.npmjs.com/package/koishi-plugin-ffxiv-macrodict): Query FFXIV macro (text command) dictionary in English/German/French/Japanese/Chinese/Korean.
 
 ### Misc
 
-- [koishi-plugin-hitokoto](https://www.npmjs.com/package/koishi-plugin-hitokoto): Random "hitokoto" sentences from [hitokoto.cn](https://hitokoto.cn).
+- [hitokoto](https://www.npmjs.com/package/koishi-plugin-hitokoto): Random "hitokoto" sentences from [hitokoto.cn](https://hitokoto.cn).
 
 ## Translation
 
