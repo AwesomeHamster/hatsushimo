@@ -55,6 +55,10 @@ jobs:
           git config --global user.email "awesome.hamster.git@gmail.com"
           git config --global user.name "awesome-hamster-bot"
 
+      - name: Install Dependencies
+        run: |
+          yarn install
+
       - name: Push subtrees to GitHub
         run: |
           node ./scripts/push.js
