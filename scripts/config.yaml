@@ -1,0 +1,16 @@
+subtree:
+  constructeur:
+    path: packages/constructeur
+    url: https://github.com/AwesomeHamster/constructeur.git
+  plugin-eorzea:
+    path: plugins/eorzea
+    url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git
+  plugin-hitokoto:
+    path: plugins/hitokoto
+    url: https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git
+  plugin-lodestone:
+    path: plugins/lodestone
+    url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git
+  plugin-macrodict:
+    path: plugins/macrodict
+    url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
