@@ -1,16 +1,16 @@
 subtree:
-  constructeur:
+  '@hamster-bot/constructeur':
     path: packages/constructeur
     url: https://github.com/AwesomeHamster/constructeur.git
-  plugin-eorzea:
+  koishi-plugin-ffxiv-eorzea:
     path: plugins/eorzea
     url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git
-  plugin-hitokoto:
+  koishi-plugin-hitokoto:
     path: plugins/hitokoto
     url: https://github.com/AwesomeHamster/koishi-plugin-hitokoto.git
-  plugin-lodestone:
+  koishi-plugin-ffxiv-lodestone:
     path: plugins/lodestone
     url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git
-  plugin-macrodict:
+  koishi-plugin-ffxiv-macrodict:
     path: plugins/macrodict
     url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
