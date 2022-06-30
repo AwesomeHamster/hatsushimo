@@ -11,6 +11,7 @@
     "scraper"
   ],
   "main": "dist/index.bundle.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "LICENCE",
