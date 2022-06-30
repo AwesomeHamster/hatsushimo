@@ -11,6 +11,7 @@ describe('lodestone-news', () => {
       expect(news[0]).has.property('title').which.is.a('string')
       expect(news[0]).has.property('epoch').which.is.a('number')
       expect(news[0]).has.property('url').which.is.a('string')
+      expect(news[0]).has.property('date').which.is.a('date')
 
       expect(page).has.property('current').which.is.a('number').greaterThan(0)
       expect(page).has.property('total').which.is.a('number').greaterThan(0)

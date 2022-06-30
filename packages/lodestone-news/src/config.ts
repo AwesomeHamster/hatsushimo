@@ -49,10 +49,12 @@ const config: Config = {
             const time = $timeScript.match(
               /ldst_strftime\((\d+), 'YMD'\);/,
             )?.[1]!
+            const epoch = parseInt(time, 10)
 
             return {
               title,
-              epoch: parseInt(time, 10),
+              epoch,
+              date: new Date(epoch * 1000),
               url,
             }
           })
@@ -78,6 +80,7 @@ export interface Rule {
 export interface News {
   title: string
   epoch: number
+  date: Date
   url: string
 }
 
