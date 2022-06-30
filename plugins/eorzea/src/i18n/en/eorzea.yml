@@ -1,7 +1,0 @@
----
-commands:
-  eorzea.time:
-    description: Show Current Eorzea Time (ET)
-    messages:
-      eorzea_time_now: 'Current Eorzea Time: {0}'
-      format: '{hour}:{minute}:{second}'

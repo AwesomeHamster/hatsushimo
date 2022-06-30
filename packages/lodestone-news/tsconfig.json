@@ -1,7 +1,0 @@
-{
-  "extends": "@hamster-bot/constructeur/tsconfig.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src/**/*.ts"]
-}
