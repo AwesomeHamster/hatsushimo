@@ -1,5 +1,7 @@
 # hatsushimo 初霜
 
+[![Master Branch](https://github.com/AwesomeHamster/hatsushimo/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/AwesomeHamster/hatsushimo/actions/workflows/test.yml)
+
 **hatsushimo** is the 4th generation of **Hamster** (仓鼠), a chatbot based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
 
 Currently **Hamster** (仓鼠) supports Discord and QQ, and we are working on other platforms.
