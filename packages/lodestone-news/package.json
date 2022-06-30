@@ -1,6 +1,6 @@
 {
   "name": "lodestone-news",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "FFXIV Lodestone news crawler",
   "keywords": [
     "ffxiv",
@@ -48,5 +48,6 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12"
-  }
+  },
+  "stableVersion": "0.0.1"
 }
