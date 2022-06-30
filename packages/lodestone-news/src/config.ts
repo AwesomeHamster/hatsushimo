@@ -1,5 +1,6 @@
 import { Cheerio, CheerioAPI, Element } from 'cheerio'
 import { Context } from '.'
+import { fixUrl } from './utils'
 
 const locales = {
   pager: {
@@ -33,7 +34,7 @@ const config: Config = {
           total: parseInt(m?.[2] ?? '0', 10),
         }
       },
-      items(el, $) {
+      items(el, $, context) {
         const items = el.find('li.news__list--topics')
         return items
           .map((i, el) => {
@@ -55,7 +56,7 @@ const config: Config = {
               title,
               epoch,
               date: new Date(epoch * 1000),
-              url,
+              url: fixUrl(url, context.referer),
             }
           })
           .toArray()

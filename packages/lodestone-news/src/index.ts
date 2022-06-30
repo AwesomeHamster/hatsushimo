@@ -10,6 +10,7 @@ export interface Context {
   locale: Locale
   category: string
   page: number
+  referer: string
 }
 
 async function getLodestoneNews(
@@ -27,9 +28,10 @@ async function getLodestoneNews(
     throw new Error(`Invalid page: ${page}`)
   }
 
-  const ctx = { locale, category, page }
+  const ctx: Context = { locale, category, page, referer: '' }
   const rule = config.rules[category]
   const url = typeof rule.url === 'function' ? rule.url(ctx) : rule.url
+  ctx.referer = url
 
   const resp = await getUrl(url)
   const $ = load(resp)
