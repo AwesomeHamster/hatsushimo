@@ -1,12 +1,4 @@
 const { spawn } = require('child_process')
-const { promises: fsp } = require('fs')
-const path = require('path')
-
-const yaml = require('js-yaml')
-
-async function readConfig() {
-  return yaml.load(await fsp.readFile(path.resolve(__dirname, 'config.yaml')))
-}
 
 async function exec(command, args, options = {}) {
   return await new Promise((resolve) => {
@@ -22,5 +14,4 @@ async function exec(command, args, options = {}) {
 
 module.exports = {
   exec,
-  readConfig,
 }
