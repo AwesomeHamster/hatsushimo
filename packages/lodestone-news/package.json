@@ -1,0 +1,42 @@
+{
+  "name": "lodestone-news",
+  "version": "0.0.1",
+  "description": "FFXIV Lodestone news crawler",
+  "keywords": [
+    "ffxiv",
+    "final-fantasy-xiv",
+    "lodestone",
+    "news",
+    "crawler",
+    "scraper"
+  ],
+  "main": "dist/index.bundle.js",
+  "files": [
+    "dist",
+    "LICENCE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "constructeur build && tsc --emitDeclarationOnly",
+    "dev": "constructeur build --minify false && tsc --emitDeclarationOnly"
+  },
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com",
+    "url": "https://github.com/MaikoTan"
+  },
+  "homepage": "https://github.com/AwesomeHamster/lodestone-news",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/lodestone-news.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/lodestone-news/issues"
+  },
+  "packageManager": "yarn@3.2.0",
+  "devDependencies": {
+    "@hamster-bot/constructeur": "*",
+    "typescript": "^4.7.4"
+  }
+}
