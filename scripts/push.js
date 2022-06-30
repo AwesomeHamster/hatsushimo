@@ -12,9 +12,17 @@ async function push(path, url, branch) {
   }
   branch ??= 'master'
   console.log(`  ---> Pushing ${path} to ${url}:${branch}`)
-  await exec('git', ['subtree', 'push', `--prefix=${path}`, url, branch], {
-    env,
-  })
+  const code = await exec(
+    'git',
+    ['subtree', 'push', `--prefix=${path}`, url, branch],
+    {
+      env,
+    },
+  )
+  if (code !== 0) {
+    console.error(`ERROR: Failed to push ${path} to ${url}:${branch}`)
+    process.exit(code)
+  }
 }
 
 ;(async () => {
