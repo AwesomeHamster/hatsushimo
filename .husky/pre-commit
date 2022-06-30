@@ -10,4 +10,4 @@ git add -u # stage formatted files
 
 yarn lint
 
-yarn test
+node ./scripts/push.js # push all sub-modules
