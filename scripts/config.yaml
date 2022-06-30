@@ -2,6 +2,9 @@ subtree:
   '@hamster-bot/constructeur':
     path: packages/constructeur
     url: https://github.com/AwesomeHamster/constructeur.git
+  lodestone-news:
+    path: packages/lodestone-news
+    url: https://github.com/AwesomeHamster/lodestone-news.git
   koishi-plugin-ffxiv-eorzea:
     path: plugins/eorzea
     url: https://github.com/AwesomeHamster/koishi-plugin-ffxiv-eorzea.git
