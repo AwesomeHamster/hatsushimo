@@ -5,17 +5,9 @@ preserve_hierarchy: false
 files:
   - source: /plugins/eorzea/src/i18n/zh/*.yml
     translation: /plugins/eorzea/src/i18n/%two_letters_code%/%original_file_name%
-    ignore:
-      - /plugins/eorzea/src/i18n/zh/*.yml
   - source: /plugins/hitokoto/src/i18n/zh/*.yml
     translation: /plugins/hitokoto/src/i18n/%two_letters_code%/%original_file_name%
-    ignore:
-      - /plugins/hitokoto/src/i18n/zh/*.yml
   - source: /plugins/lodestone/src/i18n/zh/*.yml
     translation: /plugins/lodestone/src/i18n/%two_letters_code%/%original_file_name%
-    ignore:
-      - /plugins/lodestone/src/i18n/zh/*.yml
   - source: /plugins/macrodict/src/i18n/zh/*.yml
     translation: /plugins/macrodict/src/i18n/%two_letters_code%/%original_file_name%
-    ignore:
-      - /plugins/macrodict/src/i18n/zh/*.yml
