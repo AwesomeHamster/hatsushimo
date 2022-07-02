@@ -16,7 +16,10 @@
     "test": "yarn workspaces foreach -p -j 4 --verbose run test",
     "prepare": "husky install",
     "=========== git commands ==========": "",
-    "gp": "node ./scripts/push.js"
+    "gp": "node ./scripts/push.js",
+    "=========== Crowdin commands ==========": "",
+    "crowdin:upload": "crowdin upload sources",
+    "crowdin:download": "crowdin download"
   },
   "workspaces": [
     "plugins/*",
@@ -43,6 +46,7 @@
     "jsxSingleQuote": true
   },
   "devDependencies": {
+    "@crowdin/cli": "^3.7.8",
     "@hamster-bot/constructeur": "*",
     "@koishijs/plugin-puppeteer": "^3.0.7",
     "@koishijs/plugin-suggest": "^1.1.1",
