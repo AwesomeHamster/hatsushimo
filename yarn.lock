@@ -155,15 +155,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/core@npm:^4.7.3":
-  version: 4.7.3
-  resolution: "@koishijs/core@npm:4.7.3"
+"@koishijs/core@npm:^4.7.6":
+  version: 4.7.6
+  resolution: "@koishijs/core@npm:4.7.6"
   dependencies:
     "@koishijs/utils": ^5.4.5
-    cordis: ^1.3.2
+    cordis: ^1.6.0
     fastest-levenshtein: ^1.0.12
-    minato: ^1.1.0
-  checksum: 8c83ff633b7f20fca1894957694af29f88fe6da787c8bc3e3eea9efbd8fc6597a8efc1b15835a67157aacbcfae14dbea2a8a5206d566ae00dd2588488dfb59b0
+    minato: ^1.2.1
+  checksum: 304747360b9e364486ed7c078a8d23a5379f693b05ce9a08cec1446833b61baa73c5e03c3a7110b45eb02fd7ff1dbbbf6c233b0968fc995453e9d40fa2fc1414
   languageName: node
   linkType: hard
 
@@ -187,14 +187,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-database-memory@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "@koishijs/plugin-database-memory@npm:1.3.1"
+"@koishijs/plugin-database-memory@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@koishijs/plugin-database-memory@npm:1.4.0"
   dependencies:
-    "@minatojs/driver-memory": ^1.0.3
+    "@minatojs/driver-memory": ^1.1.0
   peerDependencies:
-    koishi: ^4.7.2
-  checksum: 2d96644a520845121ef3997d807ed606758ac0dc4783717b66806ab43aa51086a5e0050b2b70920da6f4ad45df9073f964a843c70ed749047283c79e27c7f754
+    koishi: ^4.7.5
+  checksum: 99748e0f276c264cabbfb4d984843afec50a054f112bb5aeb7ee09bc917373c09ac92b41d45074a38aae48f07a01702586a1d6ad838cbcde67ec5d6b064e2987
   languageName: node
   linkType: hard
 
@@ -269,14 +269,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@minatojs/driver-memory@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@minatojs/driver-memory@npm:1.0.3"
+"@minatojs/driver-memory@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@minatojs/driver-memory@npm:1.1.0"
   dependencies:
     cosmokit: ^1.1.2
   peerDependencies:
-    minato: ^1.0.10
-  checksum: 86b77248f1bace155b3f86fd8862365f67a1c25cd136acceeaf7cf412c1547778b8b4eb5ff4fa6d180ccf924cd9452408f6d4a13a76a31167f70547c2da65d50
+    minato: ^1.2.0
+  checksum: a8d6206249282681045be332cb529b3243e4974ab2aa7049510c3459d8bef8f866f348fad621c834e25d3d8607527669bd889222470f9c60a99491b5464a00c0
   languageName: node
   linkType: hard
 
@@ -1350,12 +1350,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cordis@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "cordis@npm:1.3.2"
+"cordis@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "cordis@npm:1.6.0"
   dependencies:
     cosmokit: ^1.1.2
-  checksum: cce0ebec818f8eb2fa34a46741f4cfd03aca1c471d8327c2f0510d7814a58543127f84ba21845e3e3fa2a5935eadbe1a79c109de2a71894c8f5415b3c8bfbf67
+  checksum: 8cde5db84e62d61e43cd0bbde57c0eb7ee0b9b08d60dcd79de9f0f06c80bc90fe90da7e33be226c7876fa3d89c74a6641cb749229f2542a3356e6cc86bdae2f0
   languageName: node
   linkType: hard
 
@@ -2783,7 +2783,7 @@ __metadata:
     eslint-plugin-promise: ^6.0.0
     husky: ^8.0.1
     js-yaml: ^4.1.0
-    koishi: ^4.7.3
+    koishi: ^4.7.5
     prettier: ^2.6.2
     typescript: ^4.7.3
   languageName: unknown
@@ -3354,6 +3354,7 @@ __metadata:
   resolution: "koishi-plugin-ffxiv-eorzea@workspace:plugins/eorzea"
   dependencies:
     "@hamster-bot/constructeur": "*"
+    "@koishijs/plugin-mock": ^1.0.6
     "@types/mocha": ^9.1.0
     "@types/node": ^17.0.12
     mocha: ^9.2.0
@@ -3389,8 +3390,10 @@ __metadata:
   dependencies:
     "@fast-csv/parse": ^4.3.6
     "@hamster-bot/constructeur": "*"
-    "@koishijs/plugin-database-memory": ^1.3.1
+    "@koishijs/plugin-database-memory": ^1.4.0
     "@koishijs/plugin-mock": ^1.0.6
+    "@types/chai": ^4.3.1
+    "@types/mocha": ^9.1.0
     "@types/node": ^17.0.5
     "@types/pug": ^2.0.6
     chai: ^4.3.4
@@ -3400,8 +3403,8 @@ __metadata:
     typescript: ^4.7.3
     yml-register: ^1.0.0
   peerDependencies:
-    "@koishijs/plugin-puppeteer": ^3.0.0-rc.0
-    koishi: ^4.4.0
+    "@koishijs/plugin-puppeteer": ^3.1.0
+    koishi: ^4.7.5
   languageName: unknown
   linkType: soft
 
@@ -3412,10 +3415,12 @@ __metadata:
     "@hamster-bot/constructeur": "*"
     "@koishijs/plugin-database-memory": ^1.0.0
     "@koishijs/plugin-mock": ^1.0.0
+    "@types/chai": ^4.3.1
     "@types/fs-extra": ^9.0.13
     "@types/js-yaml": ^4.0.5
     "@types/mocha": ^9.1.0
     "@types/node": ^17.0.5
+    chai: ^4.3.4
     esbuild: ^0.14.27
     fs-extra: ^10.0.1
     js-yaml: ^4.1.0
@@ -3429,12 +3434,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"koishi@npm:^4.7.3":
-  version: 4.7.3
-  resolution: "koishi@npm:4.7.3"
+"koishi@npm:^4.7.5":
+  version: 4.7.6
+  resolution: "koishi@npm:4.7.6"
   dependencies:
     "@koa/router": ^10.1.1
-    "@koishijs/core": ^4.7.3
+    "@koishijs/core": ^4.7.6
     "@koishijs/utils": ^5.4.5
     "@types/koa": "*"
     "@types/koa__router": "*"
@@ -3443,13 +3448,13 @@ __metadata:
     file-type: ^16.5.3
     koa: ^2.13.4
     koa-bodyparser: ^4.3.0
-    ns-require: ^1.1.2
+    ns-require: ^1.1.4
     parseurl: ^1.3.3
     path-to-regexp: ^6.2.1
     portfinder: ^1.0.28
     proxy-agent: ^5.0.0
     ws: ^8.6.0
-  checksum: 40ec95a3c8345eddf5282306b4ec6190c9e5b1d208036ccdbc5cebfd52ce4ab680a24503b5c34b9eff9b29aaa352c691e9aa23b4af41b1173384dcc8b633acb3
+  checksum: 3b06ade5550830d324d7983f0d73eb096198dde03a464ff9fdea99adb5ef687871430b2309dae3aed449897a916e4d1f6d507fa3599445fbe8b8cb8dbb89546e
   languageName: node
   linkType: hard
 
@@ -3694,13 +3699,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minato@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "minato@npm:1.1.0"
+"minato@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "minato@npm:1.2.1"
   dependencies:
     cosmokit: ^1.1.2
-    ns-require: ^1.1.2
-  checksum: a865e21181fcd8335afb8c9f8308a00f6af003321bdae327a70af8953fa567398bd685394369208620c39266f408623b1e837f7682e3a25a60e87b1074ebea5b
+    ns-require: ^1.1.4
+  checksum: cbfc295fb858ea019162dde8861f49d8980942c3f9842c8947719242de89e889963afff9dfb541220cef9c2b05c06d063d56aff926f92a4deb6c172b175113ee
   languageName: node
   linkType: hard
 
@@ -4014,10 +4019,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ns-require@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "ns-require@npm:1.1.2"
-  checksum: 187756e8b71d689ea1ca1da98455f5eda9d5ee66db83b362f4b32da57f737a60302dcf8fa506414b400fe8ef73b8206f8545ace6bbde55a168f042ea5cd5a3a2
+"ns-require@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "ns-require@npm:1.1.4"
+  checksum: f5d978ce8642b3465a161d158df0b1725cfe9baadff5b522539ac992d4224f297165849e52c51b46f223e1f3c9cf16e07af985f4cb1d07241c5d5541bd2b1cd0
   languageName: node
   linkType: hard
 
@@ -5277,21 +5282,21 @@ __metadata:
 
 "typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
   version: 4.7.3
-  resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=bda367"
+  resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8257ce7ecbbf9416da60045a76a99d473698ca9e973fa0ddab7137cacb1587255431176cbbcc801a650938c4dc8109ab88355774829a714fabe56a53a2fe4524
+  checksum: 137d18a77f52254a284960b16ab53d0619f57b69b5d585804b8413f798a1175ce3e774fb95e6a101868577aafe357d8fcfc9171f0dc9fc0c210e9ae59d107cc0
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=bda367"
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 96d3030cb01143570567cb4f3a616b10df65f658f0e74e853e77a089a6a954e35c800be7db8b9bfe9a1ae05d9c2897e281359f65e4caa1caf266368e1c4febd3
+  checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
   languageName: node
   linkType: hard
 
