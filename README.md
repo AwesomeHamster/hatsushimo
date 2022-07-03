@@ -1,7 +1,5 @@
 # hatsushimo 初霜
 
-[![Master Branch](https://github.com/AwesomeHamster/hatsushimo/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/AwesomeHamster/hatsushimo/actions/workflows/test.yml)
-
 **hatsushimo** is the 4th generation of **Hamster** (仓鼠), a chatbot based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
 
 Currently **Hamster** (仓鼠) supports Discord and QQ, and we are working on other platforms.
@@ -13,24 +11,6 @@ The codename **hatsushimo** is a Japanese word 初霜 which means the "first fro
 This repository is a workspace powered by Yarn v2 for developing the bot,
 if you want to read the source code of plugins that are used in this bot,
 please click those links below.
-
-## Features and Plugins
-
-### FFXIV related
-
-- [ffxiv-eorzea](https://www.npmjs.com/package/koishi-plugin-ffxiv-eorzea): Some useful commands for FFXIV players, such as item searching, Eorzea time, etc.
-- [ffxiv-lodestone](https://www.npmjs.com/package/koishi-plugin-ffxiv-lodestone): Query FFXIV news from Lodestone.
-- [ffxiv-macrodict](https://www.npmjs.com/package/koishi-plugin-ffxiv-macrodict): Query FFXIV macro (text command) dictionary in English/German/French/Japanese/Chinese/Korean.
-
-### Misc
-
-- [hitokoto](https://www.npmjs.com/package/koishi-plugin-hitokoto): Random "hitokoto" sentences from [hitokoto.cn](https://hitokoto.cn).
-
-## Translation
-
-Plugins used in Hamster support multiple languages.
-
-To contribute translations, please register a [Crowdin](https://crowdin.com/) and contribute translations to project [hatsushimo](https://crowdin.com/project/hatsushimo).
 
 ## Status
 
