@@ -144,3 +144,6 @@ dist
 # go-cqhttp
 accounts/*/*
 !accounts/enc/*
+
+# Test
+/test/
