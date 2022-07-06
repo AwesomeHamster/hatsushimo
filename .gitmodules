@@ -16,3 +16,15 @@
 [submodule "lodestone-news"]
 	path = packages/lodestone-news
 	url = https://github.com/AwesomeHamster/lodestone-news.git
+[submodule "packages/eslint-config"]
+	path = packages/eslint-config
+	url = https://github.com/AwesomeHamster/eslint-config.git
+[submodule "packages/prettier-config"]
+	path = packages/prettier-config
+	url = https://github.com/AwesomeHamster/prettier-config.git
+[submodule "actions/publish"]
+	path = actions/publish
+	url = https://github.com/AwesomeHamster/actions-publish.git
+[submodule "actions/test"]
+	path = actions/test
+	url = https://github.com/AwesomeHamster/actions-test.git
