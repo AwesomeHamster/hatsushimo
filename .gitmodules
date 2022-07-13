@@ -28,3 +28,6 @@
 [submodule "actions/test"]
 	path = actions/test
 	url = https://github.com/AwesomeHamster/actions-test.git
+[submodule "image-search"]
+	path = plugins/image-search
+	url = https://github.com/koishijs/koishi-plugin-image-search.git
