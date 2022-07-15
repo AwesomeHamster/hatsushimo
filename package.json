@@ -14,7 +14,6 @@
     "lint": "yarn workspaces foreach run lint",
     "format": "yarn workspaces foreach -p -j 4 run format",
     "test": "yarn workspaces foreach -p -j 4 --verbose run test",
-    "prepare": "husky install",
     "=========== git commands ==========": "",
     "gp": "node ./scripts/push.js",
     "=========== Crowdin commands ==========": "",
@@ -36,7 +35,6 @@
   "devDependencies": {
     "@crowdin/cli": "^3.7.9",
     "@koishijs/plugin-puppeteer": "^3.1.1",
-    "husky": "^8.0.1",
     "koishi": "^4.7.3",
     "prettier": "^2.7.1"
   }
