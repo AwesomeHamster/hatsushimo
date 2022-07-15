@@ -5,15 +5,15 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@crowdin/cli@npm:^3.7.8":
-  version: 3.7.8
-  resolution: "@crowdin/cli@npm:3.7.8"
+"@crowdin/cli@npm:^3.7.9":
+  version: 3.7.9
+  resolution: "@crowdin/cli@npm:3.7.9"
   dependencies:
     njre: ^0.2.0
     shelljs: ^0.8.4
   bin:
     crowdin: jdeploy-bundle/jdeploy.js
-  checksum: 4898403bc034d5058197f0e975a924aaa9c871ca77012add7a2819c597a81a0f9b89d365bab01b651bf978e775809b91eac5d161edc01e77fc08c8bd6efd89d2
+  checksum: 3f8b12fc6c6d9ef8d4abd924d4a19c745c5db5a6a5337b5a5bc4336dc8ba7f3aae0631d9fa5c2e87ffbc4ff8e6c069e4f762820bfbb2f4096f83e6458423369f
   languageName: node
   linkType: hard
 
@@ -94,6 +94,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.30.5
     cac: ^6.7.12
     esbuild: ^0.14.27
+    esbuild-plugin-yaml: ^0.0.1
     eslint: ^8.19.0
     fs-extra: ^10.0.1
     js-yaml: ^4.1.0
@@ -991,6 +992,13 @@ __metadata:
   version: 0.4.0
   resolution: "asynckit@npm:0.4.0"
   checksum: 7b78c451df768adba04e2d02e63e2d0bf3b07adcd6e42b4cf665cb7ce899bedd344c69a1dcbce355b5f972d597b25aaa1c1742b52cffd9caccb22f348114f6be
+  languageName: node
+  linkType: hard
+
+"at-least-node@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "at-least-node@npm:1.0.0"
+  checksum: 463e2f8e43384f1afb54bc68485c436d7622acec08b6fad269b421cb1d29cebb5af751426793d0961ed243146fe4dc983402f6d5a51b720b277818dbf6f2e49e
   languageName: node
   linkType: hard
 
@@ -1896,6 +1904,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-plugin-yaml@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "esbuild-plugin-yaml@npm:0.0.1"
+  dependencies:
+    fs-extra: ^9.1.0
+    js-yaml: ^4.0.0
+  checksum: 4ea6156b9de6be4ec78ab67486a8b339380daedb97ae9880aa60d7637bd6b5d6daf3ff7037d8198a3ff0e78697b9ec6efca2ba0c266e453f625686a8b680ecd7
+  languageName: node
+  linkType: hard
+
 "esbuild-sunos-64@npm:0.14.31":
   version: 0.14.31
   resolution: "esbuild-sunos-64@npm:0.14.31"
@@ -2531,6 +2549,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "fs-extra@npm:9.1.0"
+  dependencies:
+    at-least-node: ^1.0.0
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: ba71ba32e0faa74ab931b7a0031d1523c66a73e225de7426e275e238e312d07313d2da2d33e34a52aa406c8763ade5712eb3ec9ba4d9edce652bcacdc29e6b20
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^1.2.7":
   version: 1.2.7
   resolution: "fs-minipass@npm:1.2.7"
@@ -2813,7 +2843,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hatsushimo@workspace:."
   dependencies:
-    "@crowdin/cli": ^3.7.8
+    "@crowdin/cli": ^3.7.9
     "@koishijs/plugin-puppeteer": ^3.1.1
     husky: ^8.0.1
     koishi: ^4.7.3
@@ -3264,7 +3294,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:4.1.0, js-yaml@npm:^4.1.0":
+"js-yaml@npm:4.1.0, js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
   dependencies:
@@ -3420,18 +3450,13 @@ __metadata:
   resolution: "koishi-plugin-ffxiv-lodestone@workspace:plugins/lodestone"
   dependencies:
     "@hamster-bot/constructeur": "*"
-    "@hamster-bot/eslint-config": ^1.0.0
-    "@hamster-bot/prettier-config": ^1.0.0
     "@koishijs/plugin-mock": ^1.0.6
     "@types/chai": ^4.3.1
     "@types/mocha": ^9.1.0
     "@types/node": ^17.0.5
-    "@typescript-eslint/eslint-plugin": ^5.30.5
-    "@typescript-eslint/parser": ^5.30.5
     chai: ^4.3.4
-    eslint: ^8.19.0
+    lodestone-news: ^0.1.0
     mocha: ^9.1.3
-    prettier: ^2.7.1
     ts-node: ^10.8.1
     typescript: ^4.7.3
     yml-register: ^1.0.0
@@ -3644,7 +3669,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodestone-news@workspace:packages/lodestone-news":
+"lodestone-news@^0.1.0, lodestone-news@workspace:packages/lodestone-news":
   version: 0.0.0-use.local
   resolution: "lodestone-news@workspace:packages/lodestone-news"
   dependencies:
