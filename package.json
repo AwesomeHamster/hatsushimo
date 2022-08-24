@@ -33,9 +33,14 @@
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "@crowdin/cli": "^3.7.9",
-    "@koishijs/plugin-puppeteer": "^3.1.1",
-    "koishi": "^4.7.3",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@crowdin/cli": "^3.7.10",
+    "@koishijs/plugin-puppeteer": "^3.2.0",
+    "@koishijs/plugin-suggest": "^1.1.1",
+    "husky": "^8.0.1",
+    "koishi": "^4.8.5",
+    "koishi-plugin-puppeteer": "^3.0.2",
     "prettier": "^2.7.1"
   }
 }

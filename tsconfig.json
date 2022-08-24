@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@hamster-bot/constructeur": ["packages/constructeur/src"],
+      "@hamster-bot/eslint-config": ["packages/eslint-config"],
+      "@hamster-bot/prettier-config": ["packages/prettier-config"],
+      "lodestone-news": ["packages/lodestone-news/src"],
+      "koishi-plugin-image-search": ["plugins/image-search/src"],
+      "koishi-plugin-hitokoto": ["plugins/hitokoto/src"],
+      "koishi-plugin-ffxiv-eorzea": ["plugins/eorzea/src"],
+      "koishi-plugin-ffxiv-lodestone": ["plugins/lodestone/src"],
+      "koishi-plugin-ffxiv-macrodict": ["plugins/macrodict/src"],
+    }
+  }
+}
