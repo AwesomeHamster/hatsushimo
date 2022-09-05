@@ -16,6 +16,7 @@
     "test": "yarn workspaces foreach -p -j 4 --verbose run test",
     "=========== git commands ==========": "",
     "gp": "node ./scripts/push.js",
+    "prepare": "husky install",
     "=========== Crowdin commands ==========": "",
     "crowdin:upload": "crowdin upload sources",
     "crowdin:download": "crowdin download"
@@ -27,7 +28,7 @@
   ],
   "private": true,
   "engines": {
-    "node": "~16.13.1",
+    "node": "~18.7.0",
     "yarn": "^1.17.0",
     "npm": "please use yarn"
   },
