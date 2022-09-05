@@ -572,7 +572,6 @@ __metadata:
     "@hamster-bot/prettier-config": "*"
     "@typescript-eslint/eslint-plugin": ^5.30.5
     "@typescript-eslint/parser": ^5.30.5
-    eslint: ^8.19.0
     eslint-config-standard: ^17.0.0
     eslint-import-resolver-typescript: ^3.4.1
     eslint-plugin-import: ^2.26.0
@@ -580,6 +579,7 @@ __metadata:
     eslint-plugin-n: ^15.2.5
     eslint-plugin-promise: ^6.0.0
   peerDependencies:
+    eslint: ^8.19.0
     typescript: ^4.7.0
   peerDependenciesMeta:
     typescript:
@@ -2355,6 +2355,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chai-each@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "chai-each@npm:0.0.1"
+  checksum: bc4dc57fd60687a2dbe212e4a9cfc6e4598931749f66a48d3aa800dd821ec3f7e31bd53937fb16ff6f5936be94e11e50f3baee4b243a838ceeb46e6b7bfa72e3
+  languageName: node
+  linkType: hard
+
 "chai@npm:^4.3.4, chai@npm:^4.3.6":
   version: 4.3.6
   resolution: "chai@npm:4.3.6"
@@ -3980,7 +3987,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.18.0, eslint@npm:^8.19.0, eslint@npm:^8.22.0":
+"eslint@npm:^8.19.0, eslint@npm:^8.22.0":
   version: 8.22.0
   resolution: "eslint@npm:8.22.0"
   dependencies:
@@ -5708,7 +5715,7 @@ __metadata:
     prettier: ^2.7.1
     ts-node: ^10.8.1
     typescript: ^4.7.3
-    yml-register: ^1.1.0
+    yml-register: ^1.0.0
   peerDependencies:
     "@koishijs/plugin-puppeteer": ^3.1.1
     koishi: ^4.7.0
@@ -5956,12 +5963,13 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.34.0
     "@typescript-eslint/parser": ^5.34.0
     chai: ^4.3.6
+    chai-each: ^0.0.1
     cheerio: ^1.0.0-rc.12
     cross-env: ^7.0.3
     esbuild: ^0.15.5
     esbuild-plugin-yaml: ^0.0.1
     esbuild-register: ^3.3.3
-    eslint: ^8.18.0
+    eslint: ^8.22.0
     eslint-import-resolver-typescript: ^3.5.0
     fast-glob: ^3.2.11
     js-yaml: ^4.1.0
@@ -8903,7 +8911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yml-register@npm:^1.1.0":
+"yml-register@npm:^1.0.0, yml-register@npm:^1.1.0":
   version: 1.1.0
   resolution: "yml-register@npm:1.1.0"
   dependencies:
