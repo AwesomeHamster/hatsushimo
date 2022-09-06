@@ -1,0 +1,24 @@
+name: Auto approve
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: 'approve it'
+          reaction: hooray
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: hmarr/auto-approve-action@v2
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          github-token: ${{ secrets.HAMSTER_PAT }}
+          review-message: "Auto approved by Hamster Bot"
+          pull-request-number: ${{ github.event.issue.number }}
