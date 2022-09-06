@@ -1,4 +1,5 @@
 # hatsushimo 初霜
+test
 
 **hatsushimo** is the 4th generation of **Hamster** (仓鼠), a chatbot based on the [koishi](https://github.com/koishijs/koishi) bot framework, providing some useful commands for our guild which called **Eorzea Macrology Association** (艾欧泽亚宏学研讨会).
 
