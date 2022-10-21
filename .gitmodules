@@ -25,3 +25,6 @@
 [submodule "image-search"]
 	path = plugins/image-search
 	url = https://github.com/koishijs/koishi-plugin-image-search.git
+[submodule "ffxiv-textcommand-data"]
+	path = packages/ffxiv-textcommand-data
+	url = https://github.com/AwesomeHamster/ffxiv-textcommand-data.git

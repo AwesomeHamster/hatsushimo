@@ -41,7 +41,7 @@
     "@koishijs/plugin-suggest": "^1.1.1",
     "cross-env": "^7.0.3",
     "husky": "^8.0.1",
-    "koishi": "^4.8.5",
+    "koishi": "^4.9.4",
     "koishi-plugin-puppeteer": "^3.0.2",
     "prettier": "^2.7.1"
   }
