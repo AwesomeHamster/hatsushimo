@@ -10,9 +10,6 @@
 [submodule "koishi-plugin-ffxiv-macrodict"]
 	path = plugins/macrodict
 	url = https://github.com/AwesomeHamster/koishi-plugin-ffxiv-macrodict.git
-[submodule "@hamster-bot/constructeur"]
-	path = packages/constructeur
-	url = https://github.com/AwesomeHamster/constructeur.git
 [submodule "lodestone-news"]
 	path = packages/lodestone-news
 	url = https://github.com/AwesomeHamster/lodestone-news.git
