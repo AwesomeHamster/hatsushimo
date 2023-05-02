@@ -43,5 +43,8 @@
     "koishi": "^4.11.0",
     "koishi-plugin-puppeteer": "^3.3.1",
     "prettier": "^2.7.1"
+  },
+  "resolutions": {
+    "koishi": "4.11.4"
   }
 }
