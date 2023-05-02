@@ -3,11 +3,11 @@ api_token_env: CROWDIN_PERSONAL_TOKEN
 commit_message: '[ci skip]'
 preserve_hierarchy: false
 files:
-  - source: /plugins/eorzea/src/i18n/zh/*.yml
-    translation: /plugins/eorzea/src/i18n/%two_letters_code%/%original_file_name%
-  - source: /plugins/hitokoto/src/i18n/zh/*.yml
-    translation: /plugins/hitokoto/src/i18n/%two_letters_code%/%original_file_name%
-  - source: /plugins/lodestone/src/i18n/zh/*.yml
-    translation: /plugins/lodestone/src/i18n/%two_letters_code%/%original_file_name%
-  - source: /plugins/macrodict/src/i18n/zh/*.yml
-    translation: /plugins/macrodict/src/i18n/%two_letters_code%/%original_file_name%
+  - source: /plugins/eorzea/src/i18n/en-US/*.yml
+    translation: /plugins/eorzea/src/i18n/%locale%/%original_file_name%
+  - source: /plugins/hitokoto/src/i18n/en-US/*.yml
+    translation: /plugins/hitokoto/src/i18n/%locale%/%original_file_name%
+  - source: /plugins/lodestone/src/i18n/en-US/*.yml
+    translation: /plugins/lodestone/src/i18n/%locale%/%original_file_name%
+  - source: /plugins/macrodict/src/i18n/en-US/*.yml
+    translation: /plugins/macrodict/src/i18n/%locale%/%original_file_name%
