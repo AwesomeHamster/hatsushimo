@@ -13,9 +13,6 @@
 [submodule "lodestone-news"]
 	path = packages/lodestone-news
 	url = https://github.com/AwesomeHamster/lodestone-news.git
-[submodule "packages/prettier-config"]
-	path = packages/prettier-config
-	url = https://github.com/AwesomeHamster/prettier-config.git
 [submodule "ffxiv-textcommand-data"]
 	path = packages/ffxiv-textcommand-data
 	url = https://github.com/AwesomeHamster/ffxiv-textcommand-data.git
