@@ -45,6 +45,6 @@
     "prettier": "^2.7.1"
   },
   "resolutions": {
-    "koishi": "4.11.4"
+    "koishi": "4.13.0"
   }
 }

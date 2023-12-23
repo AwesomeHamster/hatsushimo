@@ -13,9 +13,6 @@
 [submodule "lodestone-news"]
 	path = packages/lodestone-news
 	url = https://github.com/AwesomeHamster/lodestone-news.git
-[submodule "packages/eslint-config"]
-	path = packages/eslint-config
-	url = https://github.com/AwesomeHamster/eslint-config.git
 [submodule "packages/prettier-config"]
 	path = packages/prettier-config
 	url = https://github.com/AwesomeHamster/prettier-config.git
