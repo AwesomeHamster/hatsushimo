@@ -36,7 +36,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@koishijs/plugin-suggest": "^1.1.5",
     "@koishijs/translator": "^1.0.0",
     "cross-env": "^7.0.3",
     "husky": "^8.0.2",
