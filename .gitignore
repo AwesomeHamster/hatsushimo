@@ -146,4 +146,4 @@ accounts/*/*
 !accounts/enc/*
 
 # Test
-/test/
+/test
