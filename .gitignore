@@ -147,3 +147,7 @@ accounts/*/*
 
 # Test
 /test
+
+/actions
+/packages
+/plugins
