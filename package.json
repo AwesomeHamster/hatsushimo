@@ -31,7 +31,7 @@
     "yarn": "^1.17.0",
     "npm": "please use yarn"
   },
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "yarn@4.2.2",
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
@@ -43,6 +43,7 @@
     "prettier": "^3.1.0"
   },
   "resolutions": {
-    "koishi": "4.15.6"
+    "koishi": "<4.16.8",
+    "typescript": "5.4.3"
   }
 }
